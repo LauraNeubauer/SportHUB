@@ -80,7 +80,7 @@
         <item name="android:text">"KALENDER"</item>
     </style>
 
-    <style name="ctab_infos" parent="Widget.Material3.FloatingActionButton.Large.Primary">
+    <style name="ctab_infos" parent="Widget.Material3.Button">
         <!-- Color-->
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:backgroundTint">@color/button_inAppDircetion</item>
