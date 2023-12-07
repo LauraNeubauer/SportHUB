@@ -1,4 +1,6 @@
 package com.example.myapplication.ui
 
-class CalenderFragment {
+import androidx.fragment.app.Fragment
+
+class CalenderFragment : Fragment() {
 }

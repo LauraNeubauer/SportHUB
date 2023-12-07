@@ -23,6 +23,25 @@
         <item name="backgroundTint">#FF4081</item>
     </style>
 
+    <style name="ctab_club_name" parent="Widget.Material3.Button">
+        <!-- Color-->
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:backgroundTint">@color/button_inAppDircetion</item>
+        <!-- Fonts-->
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+        <!-- Maße & Padding -->
+        <item name="android:layout_width">371dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <!-- Text-->
+        <item name="android:text">"CLUBNAME INSERT"</item>
+    </style>
+
     <style name="ctab_matchRequest" parent="Widget.Material3.Button">
         <!-- Color-->
         <item name="android:textColor">?android:attr/textColorPrimary</item>
@@ -40,6 +59,63 @@
         <item name="android:padding">0dp</item>
         <!-- Text-->
         <item name="android:text">"MATCH ANFRAGEN"</item>
+    </style>
+
+    <style name="ctab_calender" parent="Widget.Material3.Button">
+        <!-- Color-->
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:backgroundTint">@color/button_inAppDircetion</item>
+        <!-- Fonts-->
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+        <!-- Maße & Padding -->
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <!-- Text-->
+        <item name="android:text">"KALENDER"</item>
+    </style>
+
+    <style name="ctab_infos" parent="Widget.Material3.FloatingActionButton.Large.Primary">
+        <!-- Color-->
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:backgroundTint">@color/button_inAppDircetion</item>
+        <!-- Fonts-->
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+        <!-- Maße & Padding -->
+        <item name="android:layout_width">155dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <!-- Text-->
+        <item name="android:text">"INFOS"</item>
+    </style>
+
+    <style name="bt_info_participants" parent="Widget.Material3.Button">
+        <!-- Color-->
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:backgroundTint">@color/button_inAppDircetion</item>
+        <!-- Fonts-->
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">15sp</item>
+        <!-- Maße & Padding -->
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+        <!-- Text-->
+        <item name="android:text">"123"</item>
     </style>
 
 </resources>
