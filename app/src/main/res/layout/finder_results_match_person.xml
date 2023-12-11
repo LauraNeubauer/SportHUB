@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_item_finder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_finder_results"
+                android:layout_width="0dp"
+                android:layout_height="240dp"
+                android:backgroundTint="@color/widget_background"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_black"
+                            android:text="Leon Friedel"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                        <Button
+                            android:id="@+id/bt_profile"
+                            style="@style/ctab_profil" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="center_vertical"
+                        android:text="Hobby Tennis-Match"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/bt_request"
+                            style="@style/ctab_request" />
+
+                        <ImageButton
+                            android:id="@+id/ib_friend"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/button_stroke"
+                            android:backgroundTint="@color/header"
+                            android:clipToOutline="true"
+                            android:padding="6dp"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/save_icon" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/bt_club"
+                        style="@style/ctab_club_name"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/imageViewd4dddwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-25dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4dddwd"
+            app:layout_constraintStart_toEndOf="@+id/imageView4ddddwd"
+            app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
+            app:srcCompat="@drawable/text_field" />
+
+        <TextView
+            android:id="@+id/tv_level_sdtring"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/kronaone_regular"
+            android:text="22"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddwd"
+            app:layout_constraintTop_toTopOf="@+id/imageViewd4dddwd" />
+
+        <TextView
+            android:id="@+id/tv_lvld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Alter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4dddwd"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddwd" />
+
+        <ImageView
+            android:id="@+id/imageView4dddwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
+            app:srcCompat="@drawable/text_field" />
+
+        <TextView
+            android:id="@+id/tv_level_string"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/kronaone_regular"
+            android:gravity="center"
+            android:text="22"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4dddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageView4dddwd"
+            app:layout_constraintTop_toTopOf="@+id/imageView4dddwd" />
+
+        <TextView
+            android:id="@+id/tv_lvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Alter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4dddwd"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4dddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageView4dddwd" />
+
+        <ImageView
+            android:id="@+id/imageView4ddddwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
+            app:srcCompat="@drawable/text_field" />
+
+        <TextView
+            android:id="@+id/tv_age_number"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/kronaone_regular"
+            android:gravity="center"
+            android:text="22"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4ddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageView4ddddwd"
+            app:layout_constraintTop_toTopOf="@+id/imageView4ddddwd" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Alter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4ddddwd"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4ddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageView4ddddwd" />
+
+        <ImageView
+            android:id="@+id/imageViewd4ddddwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
+            app:srcCompat="@drawable/text_field" />
+
+        <TextView
+            android:id="@+id/tv_won_string"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/kronaone_regular"
+            android:gravity="center"
+            android:text="22"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4ddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4ddddwd"
+            app:layout_constraintTop_toTopOf="@+id/imageViewd4ddddwd" />
+
+        <TextView
+            android:id="@+id/tv_won"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Alter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4ddddwd"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4ddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4ddddwd" />
+
+        <ImageView
+            android:id="@+id/imageViewd4dddddwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-25dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewd4ddddwd"
+            app:layout_constraintStart_toEndOf="@+id/imageView4dddwd"
+            app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
+            app:srcCompat="@drawable/text_field" />
+
+        <TextView
+            android:id="@+id/tv_won_stridng"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/kronaone_regular"
+            android:text="22"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddddwd"
+            app:layout_constraintTop_toTopOf="@+id/imageViewd4dddddwd" />
+
+        <TextView
+            android:id="@+id/tv_wdon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Alter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4dddddwd"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddddwd"
+            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddddwd" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

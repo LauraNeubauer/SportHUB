@@ -30,10 +30,7 @@ class FinderResultAdapter(
         val item = dataset[position]
 
         holder.binding.btClub.text = item.person.club
-        holder.binding.tvAgeNumber.text = item.person.age
-        holder.binding.tvMatchesNumber.text = item.person.matches
-        holder.binding.tvLevelString.text = item.person.level
-        holder.binding.tvPointsNumber.text = item.person.points.toString()
+        holder.binding.tvWonStridng.text = item.person.age
         holder.binding.tvName.text = (item.person.firstName + " " + item.person.lastName)
 
     }
