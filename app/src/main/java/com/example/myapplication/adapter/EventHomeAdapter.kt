@@ -7,21 +7,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.EventsHomeListItemBinding
 import com.example.myapplication.model.Event
 
-class EventAdapter(
+class EventHomeAdapter(
     private val dataset: List<Event>,
-) : RecyclerView.Adapter<EventAdapter.ItemViewHolder>() {
+) : RecyclerView.Adapter<EventHomeAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: EventsHomeListItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventAdapter.ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventHomeAdapter.ItemViewHolder {
         Log.d("TAG", "Binding des ItemViewHolders") // Verschoben vor der return-Anweisung
         val binding =
             EventsHomeListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: EventAdapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EventHomeAdapter.ItemViewHolder, position: Int) {
         val item = dataset[position]
         Log.d("TAG", "Adapter hat datenset gezogen")
 
