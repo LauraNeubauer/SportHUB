@@ -1,6 +1,6 @@
 package com.example.myapplication.model
 
-class event(
+class Event(
     var name: String,
     var club: String,
     var participants: Int,

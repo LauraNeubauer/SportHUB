@@ -7,22 +7,6 @@
         <item name="colorOnPrimary">#000</item>
     </style>
 
-    <style name="TestStyle" parent="Theme.AppCompat.Light">
-        <item name="android:textColor">#FF4081</item>
-    </style>
-
-    <style name="TestStyleButton" parent="Widget.Material3.Button">
-        <!-- Eigenschaften von Widget.Material3.Button -->
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <!-- Zusätzliche Eigenschaften aus TestStyleButton -->
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:fontFamily">@font/inter_black</item>
-        <item name="backgroundTint">#FF4081</item>
-    </style>
-
     <style name="ctab_club_name" parent="Widget.Material3.Button">
         <!-- Color-->
         <item name="android:backgroundTint">@color/black</item>
@@ -35,7 +19,7 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">15sp</item>
         <!-- Maße & Padding -->
-        <item name="android:layout_width">340dp</item>
+        <item name="android:layout_width">302dp</item>
         <item name="android:layout_height">30dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
