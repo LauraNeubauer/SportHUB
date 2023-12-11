@@ -217,7 +217,7 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="250dp"
+        android:layout_width="260dp"
         android:layout_height="2dp"
         android:layout_marginLeft="15dp"
         android:background="@color/header"
@@ -235,8 +235,6 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_events"
         app:layout_constraintVertical_bias="0.757" />
 
@@ -265,7 +263,7 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="2dp"
         android:background="@color/header"
         app:layout_constraintBottom_toBottomOf="@+id/textView111"
