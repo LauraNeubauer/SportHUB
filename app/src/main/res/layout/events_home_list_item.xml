@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_item"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_event_item"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_header"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="-5dp"
+                android:src="@drawable/abigail_keenan_8_s5quubtym_unsplash" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="46dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/bt_clubname"
+                    style="@style/ctab_club_name"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="9dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/location_icon" />
+
+                    <TextView
+                        android:id="@+id/tv_place"
+                        android:layout_width="260dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/inter_bold"
+                        android:gravity="center_vertical"
+                        android:text="Hamburg, Deutschland"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/crash_test_m"
+                        android:background="@drawable/rounded_profilpictures"
+                        android:clipToOutline="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/inter_extrabold"
+                        android:text="Holstein Cup 2024"
+                        android:textAllCaps="true"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_player"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="•" />
+
+                    <TextView
+                        android:id="@+id/tv_level"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Donnerstag, 16.01.2024, 18:30 Uhr"
+                    android:textSize="13dp" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_profil1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="-21dp"
+        android:background="@drawable/rounded_profilpictures"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item"
+        app:srcCompat="@drawable/crash_test_m" />
+
+    <ImageView
+        android:id="@+id/iv_profil2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="-21dp"
+        android:background="@drawable/rounded_profilpictures"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item"
+        app:srcCompat="@drawable/edgar_chaparro_shfo3woggtu_unsplash" />
+
+    <ImageView
+        android:id="@+id/iv_profil3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="-21dp"
+        android:background="@drawable/rounded_profilpictures"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item"
+        app:srcCompat="@drawable/karsten_winegeart_r6zarepldje_unsplash" />
+
+    <ImageView
+        android:id="@+id/iv_profil4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="-21dp"
+        android:background="@drawable/rounded_profilpictures"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item"
+        app:srcCompat="@drawable/crash_test_m" />
+
+    <Button
+        android:id="@+id/bt_participants"
+        style="@style/bt_info_participants"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="-15dp"
+        app:layout_constraintStart_toStartOf="@+id/cl_item"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item" />
+
+    <Button
+        android:id="@+id/bt_infos"
+        style="@style/ctab_infos"
+        android:layout_marginTop="-15dp"
+        android:layout_marginRight="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

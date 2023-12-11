@@ -4,8 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="header">#BDFF00</color>
     <color name="tags">#688D00</color>
-    <color name="button_callToAction">#FF6B00</color>
-    <color name="button_inAppDircetion">#FF9900</color>
+    <color name="button_callToAction">#FF000000</color>
+    <color name="button_inAppDircetion">#FF000000</color>
     <color name="gray_Text">#D2D2D2</color>
     <color name="widget_background">#4A4A4A</color>
 </resources>
