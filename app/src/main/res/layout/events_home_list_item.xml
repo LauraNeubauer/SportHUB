@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="325dp"
-    android:layout_height="280dp">
+    android:layout_height="210dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_item"
         android:layout_marginBottom="15dp"
         android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_height="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,31 +18,25 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_event_item"
             android:layout_width="300dp"
-            android:layout_height="250dp"
+            android:layout_height="180dp"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/iv_header"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="-5dp"
-                android:src="@drawable/abigail_keenan_8_s5quubtym_unsplash" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="46dp"
+                android:layout_marginTop="0dp"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/bt_clubname"
                     style="@style/ctab_club_name"
+                    android:layout_marginTop="2dp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="9dp" />
+/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -101,7 +95,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="3dp"
                     android:orientation="horizontal">
 
 

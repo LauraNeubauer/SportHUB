@@ -2,7 +2,9 @@ package com.example.myapplication.data
 
 import com.example.myapplication.R
 import com.example.myapplication.model.Event
+import com.example.myapplication.model.Match
 import com.example.myapplication.model.News
+import com.example.myapplication.model.Person
 
 class ExampleDatabase {
 
@@ -32,4 +34,27 @@ class ExampleDatabase {
         return newsList
     }
 
+    var personList: List<Person> = listOf(
+        Person("Anna", "Friedel", "22", "Beginner", "23", 12, 18, "Hockeyclub Hamburg"),
+        Person("Max", "Mustermann", "30", "Intermediate", "42", 10, 15, "Football Club"),
+        Person("Lena", "Schmidt", "25", "Advanced", "55", 8, 20, "Tennis Club"),
+        Person("Jan", "Müller", "28", "Beginner", "37", 14, 16, "Chess Club"),
+        Person("Sophie", "Schneider", "33", "Advanced", "61", 9, 22, "Swimming Club"),
+    )
+
+    fun loadPersons() : List<Person> {
+        return personList
+    }
+
+    var matchList : List<Match> = listOf(
+        Match(personList[0], false),
+        Match(personList[1], false),
+        Match(personList[2], false),
+        Match(personList[3], false),
+        Match(personList[4], false),
+    )
+
+    fun loadMatches() : List<Match> {
+        return matchList
+    }
 }

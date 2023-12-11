@@ -1,0 +1,62 @@
+package com.example.myapplication.ui
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.PopupMenu
+import androidx.fragment.app.Fragment
+import com.example.myapplication.R
+import com.example.myapplication.adapter.FinderResultAdapter
+import com.example.myapplication.data.ExampleDatabase
+import com.example.myapplication.databinding.FinderFragmentBinding
+
+class FinderFragment : Fragment() {
+
+    private lateinit var binding : FinderFragmentBinding
+    var datasetMatches = ExampleDatabase().loadMatches()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FinderFragmentBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.dropdownButton.setOnClickListener {
+            showPopupMenu(it)
+        }
+
+        binding.rvFinderResults.adapter = FinderResultAdapter(datasetMatches)
+    }
+
+    private fun showPopupMenu(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dropdown_menu, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    // Aktion für Option 1
+                    true
+                }
+                R.id.option2 -> {
+                    // Aktion für Option 2
+                    true
+                }
+                // Weitere Optionen können hier hinzugefügt werden
+
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+}
