@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="390dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_groupPic"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/rounded_profilpictures"
+                    android:clipToOutline="true"
+                    android:padding="-5dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/edgar_chaparro_shfo3woggtu_unsplash" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_name_chat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/kronaone_regular"
+                            android:text="GymBros"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/tv_chat_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="Gestern" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_chat_last_texter"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="end"
+                            android:text="Fritz:"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/tv_lastMessage"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:gravity="start"
+                            android:text="Gestern habe ich vergesen..." />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
