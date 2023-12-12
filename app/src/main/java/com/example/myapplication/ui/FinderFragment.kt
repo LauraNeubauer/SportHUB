@@ -37,7 +37,7 @@ class FinderFragment : Fragment() {
     }
 
     private fun showPopupMenu(view: View) {
-        val popupMenu = PopupMenu(requireContext(), view)
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
         menuInflater.inflate(R.menu.dropdown_menu, popupMenu.menu)
 

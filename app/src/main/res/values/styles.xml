@@ -304,8 +304,8 @@
         <item name="android:color">@color/tags</item>
     </style>
 
-    <style name="dowpdown" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/tags</item>
+    <style name="PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">@color/tags</item>
     </style>
 
     <style name="tags" parent="Widget.Material3.Button">
