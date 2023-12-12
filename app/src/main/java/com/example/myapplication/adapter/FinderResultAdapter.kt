@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
-import com.example.myapplication.model.Match
+import com.example.myapplication.model.Request
 
 class FinderResultAdapter(
-    private val dataset: List<Match>
+    private val dataset: List<Request>
 ) : RecyclerView.Adapter<FinderResultAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FinderResultsMatchPersonBinding) :

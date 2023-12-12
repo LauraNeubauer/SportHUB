@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_homeFragment_to_profilFragment"
             app:destination="@id/profilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_clubFragment"
+            app:destination="@id/clubFragment" />
     </fragment>
     <fragment
         android:id="@+id/finderFragment"
@@ -40,6 +43,14 @@
         android:label="ProfilFragment" >
         <action
             android:id="@+id/action_profilFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clubFragment"
+        android:name="com.example.myapplication.ui.ClubFragment"
+        android:label="ClubFragment" >
+        <action
+            android:id="@+id/action_clubFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

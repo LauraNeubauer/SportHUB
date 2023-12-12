@@ -2,10 +2,11 @@ package com.example.myapplication.data
 
 import com.example.myapplication.R
 import com.example.myapplication.model.Chat
+import com.example.myapplication.model.Club
 import com.example.myapplication.model.Event
-import com.example.myapplication.model.Match
 import com.example.myapplication.model.News
 import com.example.myapplication.model.Person
+import com.example.myapplication.model.Request
 
 class ExampleDatabase {
 
@@ -138,15 +139,15 @@ class ExampleDatabase {
         return personList
     }
 
-    var matchList: List<Match> = listOf(
-        Match(personList[0], false),
-        Match(personList[1], false),
-        Match(personList[2], false),
-        Match(personList[3], false),
-        Match(personList[4], false),
+    var matchList: List<Request> = listOf(
+        Request(personList[0], false),
+        Request(personList[1], false),
+        Request(personList[2], false),
+        Request(personList[3], false),
+        Request(personList[4], false),
     )
 
-    fun loadMatches(): List<Match> {
+    fun loadMatches(): List<Request> {
         return matchList
     }
 
@@ -197,5 +198,17 @@ class ExampleDatabase {
 
     fun loadChats() : List<Chat> {
         return chatList
+    }
+
+    var ClubList : List<Club> = listOf(
+        Club("Hamburger-Sportverein", "Hamburg, Deutschland", "1840", 293, 3200, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
+        Club("Hamburger-Sportverein", "Hamburg, Deutschland", "1840", 293, 3200, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
+        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
+        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
+        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat.")
+    )
+
+    fun loadClubs() : List<Club> {
+        return ClubList
     }
 }

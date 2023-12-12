@@ -45,6 +45,10 @@ class HomeFragment : Fragment() {
          findNavController().navigate(R.id.action_homeFragment_to_profilFragment)
       }
 
+      binding.floatingActionButton7.setOnClickListener {
+         findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
+      }
+
    }
 }
 

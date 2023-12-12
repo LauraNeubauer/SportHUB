@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="@string/profil"
+        android:text="@string/club"
         android:textColor="@color/header"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/CHANGE"
@@ -59,7 +58,21 @@
         android:layout_marginTop="15dp"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:srcCompat="@drawable/karsten_winegeart_r6zarepldje_unsplash" />
+        app:srcCompat="@drawable/klim_musalimov_5vhcyguw8_k_unsplash" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_club"
+        android:layout_width="406dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <TextView
         android:id="@+id/textView8"
@@ -68,69 +81,34 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Timo Freitag"
+        android:text="Halstenbeker HockeyClub"
         android:textAllCaps="true"
         android:textColor="@color/header"
         android:textSize="17dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/textViedw8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/kronaone_regular"
-        android:text="BEGINNER"
-        android:textAllCaps="true"
-        android:textColor="@color/tags"
-        android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button6"
         style="@style/tags"
-        android:layout_width="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
         android:text="HOCKEY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
-    <Button
-        android:id="@+id/button2d"
-        style="@style/tags"
+    <TextView
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TENNIS"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <Button
-        android:id="@+id/bdutton2d"
-        style="@style/tags"
-        android:layout_width="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:text="FUSSBALL"
-        app:layout_constraintStart_toEndOf="@+id/button2d"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_profil"
-        android:layout_width="409dp"
-        android:layout_height="472dp"
-        android:layout_marginStart="1dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Hamburg, Deutschland"
+        android:textColor="@color/gray_Text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
