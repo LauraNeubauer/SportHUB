@@ -28,5 +28,4 @@ class ClubFragment : Fragment() {
 
         binding.rvClub.adapter = ClubAdapter(dataset)
     }
-
 }

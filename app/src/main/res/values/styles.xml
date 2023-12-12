@@ -300,6 +300,14 @@
         <item name="android:text">"VEREINSCHAT"</item>
     </style>
 
+    <style name="activeIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/tags</item>
+    </style>
+
+    <style name="dowpdown" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/tags</item>
+    </style>
+
     <style name="tags" parent="Widget.Material3.Button">
         <!-- Color-->
         <item name="android:backgroundTint">@color/tags</item>
