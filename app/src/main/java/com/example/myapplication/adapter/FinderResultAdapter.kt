@@ -32,6 +32,5 @@ class FinderResultAdapter(
         holder.binding.btClub.text = item.person.club
         holder.binding.tvWonStridng.text = item.person.age
         holder.binding.tvName.text = (item.person.firstName + " " + item.person.lastName)
-
     }
 }
