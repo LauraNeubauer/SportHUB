@@ -132,6 +132,4 @@
         android:text="FUSSBALL"
         app:layout_constraintStart_toEndOf="@+id/button2d"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
