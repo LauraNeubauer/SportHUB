@@ -7,6 +7,7 @@ import com.example.myapplication.model.Event
 import com.example.myapplication.model.News
 import com.example.myapplication.model.Person
 import com.example.myapplication.model.Request
+import com.example.myapplication.model.Results
 
 class ExampleDatabase {
 
@@ -210,5 +211,22 @@ class ExampleDatabase {
 
     fun loadClubs() : List<Club> {
         return ClubList
+    }
+
+    val ResultList: List<Results> = listOf(
+        Results("HEUTE, 19:50 Uhr", "FUSSBALL-FREUNDSCHAFTSSPIEL", "StadionSignal Iduna Park, Dortmund", "Borussia Dortmund", "Gruppe F", "Paris Saint-Germain", "Gruppe F", "0:0"),
+        Results("GESTERN, 18:20 Uhr", "Champions League", "StadionMarakana, Belgrad", "Roter Stern Belgra", "Gruppe G", "Manchester City", "Gruppe G", "0:1"),
+        Results("GESTERN, 15:30 Uhr", "Bundesliga", "Allianz Arena, München", "FC Bayern München", "Gruppe A", "Borussia Mönchengladbach", "Gruppe A", "2:1"),
+        Results("MORGEN, 20:00 Uhr", "Premier League", "Old Trafford, Manchester", "Manchester United", "Gruppe B", "Liverpool FC", "Gruppe B", "0:0"),
+        Results("MORGEN, 21:00 Uhr", "La Liga", "Camp Nou, Barcelona", "FC Barcelona", "Gruppe C", "Real Madrid", "Gruppe C", "0:0"),
+        Results("ÜBERMORGEN, 19:45 Uhr", "Serie A", "San Siro, Mailand", "AC Mailand", "Gruppe D", "Juventus", "Gruppe D", "0:0"),
+        Results("05.03.2023, 18:30 Uhr", "Eredivisie", "Johan Cruyff Arena, Amsterdam", "Ajax Amsterdam", "Gruppe E", "PSV Eindhoven", "Gruppe E", "0:0"),
+        Results("07.03.2023, 20:15 Uhr", "Primeira Liga", "Estádio da Luz, Lissabon", "Benfica Lissabon", "Gruppe F", "FC Porto", "Gruppe F", "0:0"),
+        Results("10.03.2023, 17:00 Uhr", "Super Lig", "Türk Telekom Stadyumu, Istanbul", "Galatasaray Istanbul", "Gruppe G", "Fenerbahçe", "Gruppe G", "0:0"),
+        Results("12.03.2023, 16:45 Uhr", "Russian Premier League", "Gazprom Arena, Sankt Petersburg", "Zenit Sankt Petersburg", "Gruppe H", "CSKA Moskau", "Gruppe H", "0:0")
+    )
+
+    fun loadResults() : List<Results> {
+        return ResultList
     }
 }

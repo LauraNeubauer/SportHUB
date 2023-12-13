@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/button_settings_background" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton9"
+        android:id="@+id/fb_results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -54,10 +54,10 @@
         android:text="Ergebnisse"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton9"
+        app:layout_constraintEnd_toEndOf="@+id/fb_results"
         app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton9"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton9" />
+        app:layout_constraintStart_toStartOf="@+id/fb_results"
+        app:layout_constraintTop_toBottomOf="@+id/fb_results" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton6"
@@ -91,7 +91,7 @@
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
         app:layout_constraintEnd_toStartOf="@+id/floatingActionButton6"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton9"
+        app:layout_constraintStart_toEndOf="@+id/fb_results"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@drawable/property_1_linear_kopie_2"
         tools:ignore="ContentDescription" />
@@ -102,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton9"
+        app:layout_constraintEnd_toStartOf="@+id/fb_results"
         app:layout_constraintStart_toEndOf="@+id/floatingActionButton5"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@drawable/clipboard"

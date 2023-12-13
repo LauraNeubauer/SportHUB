@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homeFragment_to_calenderFragment"
             app:destination="@id/calenderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
     </fragment>
     <fragment
         android:id="@+id/finderFragment"
@@ -62,6 +65,22 @@
         android:label="CalenderFragment" >
         <action
             android:id="@+id/action_calenderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingOneFragment"
+        android:name="com.example.myapplication.ui.OnBoardingOneFragment"
+        android:label="OnBoardingOneFragment" />
+    <fragment
+        android:id="@+id/onBoardingTwoFragment"
+        android:name="com.example.myapplication.ui.OnBoardingTwoFragment"
+        android:label="OnBoardingTwoFragment" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.example.myapplication.ui.ResultsFragment"
+        android:label="ResultsFragment" >
+        <action
+            android:id="@+id/action_resultsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
