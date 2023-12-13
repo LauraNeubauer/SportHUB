@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         navHost.navController.addOnDestinationChangedListener{_,destination,_ ->
             when (destination.id) {
-                R.id.profilFragment -> binding.bnv.visibility = View.GONE
+               // R.id.profilFragment -> binding.bnv.visibility = View.GONE
                 else -> binding.bnv.visibility = View.VISIBLE
 
-            }            }
+            }
+        }
     }
 }

@@ -10,14 +10,14 @@
 
     <item
         android:id="@+id/calenderFragment"
-        android:icon="@drawable/message"
+        android:icon="@drawable/cal_icon_white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="Events" />
+        android:title="Kalender" />
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/notification_circle"
+        android:icon="@drawable/home_icon_white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Home" />

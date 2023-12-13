@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/property_1_linear_kopie_7" />
 
     <TextView
         android:id="@+id/textView4"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Profil"
+        android:text="Ergebnisse"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton9"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toStartOf="@+id/floatingActionButton6"
         app:layout_constraintStart_toEndOf="@+id/floatingActionButton9"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/notification_circle"
+        app:srcCompat="@drawable/property_1_linear_kopie_2"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -105,7 +105,7 @@
         app:layout_constraintEnd_toStartOf="@+id/floatingActionButton9"
         app:layout_constraintStart_toEndOf="@+id/floatingActionButton5"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/search_zoom_in"
+        app:srcCompat="@drawable/clipboard"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -119,7 +119,7 @@
         app:fabSize="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/message"
+        app:srcCompat="@drawable/club_icon_white"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Chat"
+        android:text="Verein"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton5"
@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Finder"
+        android:text="Matches"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Verein"
+        android:text="Saved"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"
