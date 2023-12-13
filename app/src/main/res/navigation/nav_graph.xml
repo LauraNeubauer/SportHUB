@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/onBoardingOneFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -70,11 +70,19 @@
     <fragment
         android:id="@+id/onBoardingOneFragment"
         android:name="com.example.myapplication.ui.OnBoardingOneFragment"
-        android:label="OnBoardingOneFragment" />
+        android:label="OnBoardingOneFragment" >
+        <action
+            android:id="@+id/action_onBoardingOneFragment_to_onBoardingTwoFragment"
+            app:destination="@id/onBoardingTwoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onBoardingTwoFragment"
         android:name="com.example.myapplication.ui.OnBoardingTwoFragment"
-        android:label="OnBoardingTwoFragment" />
+        android:label="OnBoardingTwoFragment" >
+        <action
+            android:id="@+id/action_onBoardingTwoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.example.myapplication.ui.ResultsFragment"
