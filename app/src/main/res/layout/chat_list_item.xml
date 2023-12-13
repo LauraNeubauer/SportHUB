@@ -19,7 +19,8 @@
             android:layout_height="60dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            app:cardCornerRadius="40dp"
+            app:cardCornerRadius="15dp"
+            android:backgroundTint="@color/header"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +35,8 @@
                     android:id="@+id/iv_groupPic"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/rounded_profilpictures"
-                    android:clipToOutline="true"
-                    android:padding="-5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/edgar_chaparro_shfo3woggtu_unsplash" />
 
@@ -54,11 +54,13 @@
                             android:id="@+id/tv_name_chat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="9dp"
+                            android:layout_marginTop="7dp"
                             android:layout_weight="1"
-                            android:fontFamily="@font/kronaone_regular"
+                            android:fontFamily="@font/inter_black"
                             android:text="GymBros"
+                            android:textAllCaps="true"
                             android:textSize="15dp" />
 
                         <TextView
@@ -80,10 +82,10 @@
 
                         <TextView
                             android:id="@+id/tv_chat_last_texter"
-                            android:layout_width="20dp"
+                            android:layout_width="2dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="1dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/inter_medium"
                             android:gravity="end"
@@ -95,7 +97,7 @@
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="7dp"
-                            android:layout_marginTop="3dp"
+                            android:layout_marginTop="1dp"
                             android:layout_marginRight="20dp"
                             android:layout_weight="1"
                             android:gravity="start"
