@@ -2,17 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Search"
+        android:id="@+id/finderFragment"
+        android:name="com.example.myapplication.ui.FinderFragment"
         android:icon="@drawable/search_zoom_in"
         android:title="Finder" />
 
     <item
-        android:id="@+id/Events"
+        android:id="@+id/calenderFragment"
         android:icon="@drawable/message"
         android:title="Events" />
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/notification_circle"
         android:title="Home" />
 
@@ -22,7 +23,7 @@
         android:title="Profile" />
 
     <item
-        android:id="@+id/message"
+        android:id="@+id/chatFragment"
         android:icon="@drawable/message"
         android:title="Nachrichten" />
 
