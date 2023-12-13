@@ -5,11 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.myapplication.adapter.EventHomeAdapter
+import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.CalenderFragmentBinding
 
 class CalenderFragment : Fragment() {
 
     private lateinit var binding : CalenderFragmentBinding
+    var datasetEvents = ExampleDatabase().loadEvents()
 
 
     override fun onCreateView(
@@ -23,6 +26,8 @@ class CalenderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.rvEvents.adapter = EventHomeAdapter(datasetEvents)
 
     }
 }
