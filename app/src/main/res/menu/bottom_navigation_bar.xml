@@ -3,28 +3,37 @@
 
     <item
         android:id="@+id/finderFragment"
-        android:name="com.example.myapplication.ui.FinderFragment"
         android:icon="@drawable/search_zoom_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:title="Finder" />
 
     <item
         android:id="@+id/calenderFragment"
         android:icon="@drawable/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:title="Events" />
 
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/notification_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:title="Home" />
 
     <item
         android:id="@+id/profilFragment"
         android:icon="@drawable/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:title="Profile" />
 
     <item
         android:id="@+id/chatFragment"
         android:icon="@drawable/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:title="Nachrichten" />
 
 </menu>
