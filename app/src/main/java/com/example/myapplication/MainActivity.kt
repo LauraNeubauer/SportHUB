@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                R.id.onBoardingOneFragment -> binding.bnv.visibility = View.GONE
                R.id.onBoardingTwoFragment -> binding.bnv.visibility = View.GONE
+               R.id.resultsFragment -> binding.bnv.visibility = View.GONE
                 else -> binding.bnv.visibility = View.VISIBLE
 
             }
