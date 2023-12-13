@@ -178,20 +178,6 @@
             android:hint="Durchsuchen Sie SportHUB" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:itemIconTint="@color/header"
-        app:itemTextColor="@color/header"
-        app:itemActiveIndicatorStyle="@style/activeIndicator"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_bar" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_events"
         android:layout_width="409dp"
@@ -231,13 +217,14 @@
         android:id="@+id/rv_home_news"
         android:layout_width="0dp"
         android:layout_height="140dp"
+        android:layout_marginBottom="24dp"
         android:orientation="horizontal"
         android:padding="2dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_events"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_events" />
 
     <Button
         android:id="@+id/button"

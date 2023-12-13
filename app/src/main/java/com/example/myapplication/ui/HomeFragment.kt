@@ -30,6 +30,8 @@ class HomeFragment : Fragment() {
    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
       super.onViewCreated(view, savedInstanceState)
 
+
+
       binding.rvEvents.adapter = EventHomeAdapter(datasetEvents)
       binding.rvHomeNews.adapter = NewsHomeAdapter(datasetNews)
 
@@ -47,6 +49,10 @@ class HomeFragment : Fragment() {
 
       binding.floatingActionButton7.setOnClickListener {
          findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
+      }
+
+      binding.floatingActionButton9.setOnClickListener {
+         findNavController().navigate(R.id.action_homeFragment_to_calenderFragment)
       }
 
    }
