@@ -6,12 +6,12 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="260dp"
-        android:layout_height="120dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="@color/widget_background"
+        android:backgroundTint="@color/tags"
         app:layout_constraintTop_toTopOf="parent" >
 
         <LinearLayout
@@ -24,25 +24,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:fontFamily="@font/kronaone_regular"
-                android:textSize="13dp"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="12dp"
                 android:textAllCaps="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:text="Neue Sponsoren für den Holstein Cup" />
+                android:text="Neue Sponsoren" />
 
             <TextView
                 android:id="@+id/newsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="15dp"
                 android:fontFamily="@font/inter_regular"
-                android:textSize="12dp"
+                android:textSize="11dp"
                 android:layout_marginLeft="15dp"
-                android:text="Die Veranstaltung freut, Sponsoren gewonnen zu haben. Ihre großzügige Unterstützung ermöglicht es." />
+                android:text="Der Holstein-Cup hat einen neuen Sponsor: Syntax. " />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -98,27 +98,27 @@ class ExampleDatabase {
 
     var newsList: List<News> = listOf(
         News(
-            "Holstein Cup: Neue Sponsoren gewonnen",
+            "Neue Sponsoren",
             "Zwei Sponsoren unterstützen die Veranstaltung, um sie auf ein neues Niveau zu heben."
         ),
         News(
-            "Holstein Cup Ergebnisse veröffentlicht",
+            "Holstein Cup Ergebnisse",
             "Die Gewinner und Ergebnisse sind jetzt verfügbar. Herzlichen Glückwunsch an alle Teilnehmer."
         ),
         News(
-            "Wichtige Änderung am Veranstaltungsort",
+            "Wichtige Änderung",
             "Der Austragungsort des Holstein Cups wurde geändert. Bitte beachten Sie die Aktualisierungen."
         ),
         News(
-            "Holstein Cup: Rekordteilnahme",
+            "Rekordteilnahme",
             "Die diesjährige Ausgabe verzeichnet die höchste Teilnehmerzahl. Vielen Dank an die unterstützende Community."
         ),
         News(
-            "Interview mit Holstein Cup Champion",
+            "Holstein Cup Champion",
             "Exklusives Interview mit dem diesjährigen Gewinner. Erfahren Sie mehr über seine Vorbereitungen und Gefühle."
         ),
         News(
-            "Neue Jugendkategorie beim Holstein Cup",
+            "Neue Jugendkategorie",
             "Die Veranstaltung erweitert das Teilnehmerfeld um eine Jugendkategorie zur Förderung junger Talente."
         ),
     )
@@ -156,14 +156,14 @@ class ExampleDatabase {
         Chat(
             "GymBros",
             "Fritz",
-            "Gestern habe ich vergessen Tschüß zu sagen",
+            "Gestern habe ich vergessen...",
             "Gestern",
             R.drawable.crash_test_m
         ),
         Chat(
             "Holsteiner Eagels",
             "Torben",
-            "Nicht vergessen: Am Mittwoch kein...",
+            "Nicht vergessen: Am...",
             "Heute",
             R.drawable.crash_test_m
         ),
@@ -175,58 +175,190 @@ class ExampleDatabase {
             R.drawable.crash_test_m
         ),
         Chat(
-            "GymBros",
+            "TurnGruppe",
             "Fritz",
-            "Gestern habe ich vergessen Tschüß zu sagen",
+            "Gestern habe ich vergessen...",
             "Gestern",
             R.drawable.crash_test_m
         ),
         Chat(
-            "Holsteiner Eagels",
+            "HH SV",
             "Torben",
-            "Nicht vergessen: Am Mittwoch kein...",
+            "Nicht vergessen: Am Mittwoch...",
             "Heute",
             R.drawable.crash_test_m
         ),
         Chat(
-            "Ski-Bergen 08",
+            "SkatePark",
             "Tanja",
+            "Hey Ihr Lieben, ich habe am...",
+            "Mittwoch",
+            R.drawable.crash_test_m
+        ),
+        Chat(
+            "Helo",
+            "Tina",
             "Hey Ihr Lieben, ich habe am...",
             "Mittwoch",
             R.drawable.crash_test_m
         )
     )
 
-    fun loadChats() : List<Chat> {
+    fun loadChats(): List<Chat> {
         return chatList
     }
 
-    var ClubList : List<Club> = listOf(
-        Club("Hamburger-Sportverein", "Hamburg, Deutschland", "1840", 293, 3200, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
-        Club("Hamburger-Sportverein", "Hamburg, Deutschland", "1840", 293, 3200, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
-        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
-        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."),
-        Club("HockeyClub 22", "Hamburg, Deutschland", "1920", 342, 323, "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat.")
+    var ClubList: List<Club> = listOf(
+        Club(
+            "Hamburger-Sportverein",
+            "Hamburg, Deutschland",
+            "1840",
+            293,
+            3200,
+            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
+        ),
+        Club(
+            "Hamburger-Sportverein",
+            "Hamburg, Deutschland",
+            "1840",
+            293,
+            3200,
+            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
+        ),
+        Club(
+            "HockeyClub 22",
+            "Hamburg, Deutschland",
+            "1920",
+            342,
+            323,
+            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
+        ),
+        Club(
+            "HockeyClub 22",
+            "Hamburg, Deutschland",
+            "1920",
+            342,
+            323,
+            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
+        ),
+        Club(
+            "HockeyClub 22",
+            "Hamburg, Deutschland",
+            "1920",
+            342,
+            323,
+            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
+        )
     )
 
-    fun loadClubs() : List<Club> {
+    fun loadClubs(): List<Club> {
         return ClubList
     }
 
     val ResultList: List<Results> = listOf(
-        Results("HEUTE, 19:50 Uhr", "FUSSBALL-FREUNDSCHAFTSSPIEL", "StadionSignal Iduna Park, Dortmund", "Borussia Dortmund", "Gruppe F", "Paris Saint-Germain", "Gruppe F", "0:0"),
-        Results("GESTERN, 18:20 Uhr", "Champions League", "StadionMarakana, Belgrad", "Roter Stern Belgra", "Gruppe G", "Manchester City", "Gruppe G", "0:1"),
-        Results("GESTERN, 15:30 Uhr", "Bundesliga", "Allianz Arena, München", "FC Bayern München", "Gruppe A", "Borussia Mönchengladbach", "Gruppe A", "2:1"),
-        Results("MORGEN, 20:00 Uhr", "Premier League", "Old Trafford, Manchester", "Manchester United", "Gruppe B", "Liverpool FC", "Gruppe B", "0:0"),
-        Results("MORGEN, 21:00 Uhr", "La Liga", "Camp Nou, Barcelona", "FC Barcelona", "Gruppe C", "Real Madrid", "Gruppe C", "0:0"),
-        Results("ÜBERMORGEN, 19:45 Uhr", "Serie A", "San Siro, Mailand", "AC Mailand", "Gruppe D", "Juventus", "Gruppe D", "0:0"),
-        Results("05.03.2023, 18:30 Uhr", "Eredivisie", "Johan Cruyff Arena, Amsterdam", "Ajax Amsterdam", "Gruppe E", "PSV Eindhoven", "Gruppe E", "0:0"),
-        Results("07.03.2023, 20:15 Uhr", "Primeira Liga", "Estádio da Luz, Lissabon", "Benfica Lissabon", "Gruppe F", "FC Porto", "Gruppe F", "0:0"),
-        Results("10.03.2023, 17:00 Uhr", "Super Lig", "Türk Telekom Stadyumu, Istanbul", "Galatasaray Istanbul", "Gruppe G", "Fenerbahçe", "Gruppe G", "0:0"),
-        Results("12.03.2023, 16:45 Uhr", "Russian Premier League", "Gazprom Arena, Sankt Petersburg", "Zenit Sankt Petersburg", "Gruppe H", "CSKA Moskau", "Gruppe H", "0:0")
+        Results(
+            "HEUTE, 19:50 Uhr",
+            "FUSSBALL-FREUNDSCHAFTSSPIEL",
+            "StadionSignal Iduna Park, Dortmund",
+            "Borussia Dortmund",
+            "Gruppe F",
+            "Paris Saint-Germain",
+            "Gruppe F",
+            "0:0"
+        ),
+        Results(
+            "GESTERN, 18:20 Uhr",
+            "Champions League",
+            "StadionMarakana, Belgrad",
+            "Roter Stern Belgra",
+            "Gruppe G",
+            "Manchester City",
+            "Gruppe G",
+            "0:1"
+        ),
+        Results(
+            "GESTERN, 15:30 Uhr",
+            "Bundesliga",
+            "Allianz Arena, München",
+            "FC Bayern München",
+            "Gruppe A",
+            "Borussia Mönchengladbach",
+            "Gruppe A",
+            "2:1"
+        ),
+        Results(
+            "MORGEN, 20:00 Uhr",
+            "Premier League",
+            "Old Trafford, Manchester",
+            "Manchester United",
+            "Gruppe B",
+            "Liverpool FC",
+            "Gruppe B",
+            "0:0"
+        ),
+        Results(
+            "MORGEN, 21:00 Uhr",
+            "La Liga",
+            "Camp Nou, Barcelona",
+            "FC Barcelona",
+            "Gruppe C",
+            "Real Madrid",
+            "Gruppe C",
+            "0:0"
+        ),
+        Results(
+            "ÜBERMORGEN, 19:45 Uhr",
+            "Serie A",
+            "San Siro, Mailand",
+            "AC Mailand",
+            "Gruppe D",
+            "Juventus",
+            "Gruppe D",
+            "0:0"
+        ),
+        Results(
+            "05.03.2023, 18:30 Uhr",
+            "Eredivisie",
+            "Johan Cruyff Arena, Amsterdam",
+            "Ajax Amsterdam",
+            "Gruppe E",
+            "PSV Eindhoven",
+            "Gruppe E",
+            "0:0"
+        ),
+        Results(
+            "07.03.2023, 20:15 Uhr",
+            "Primeira Liga",
+            "Estádio da Luz, Lissabon",
+            "Benfica Lissabon",
+            "Gruppe F",
+            "FC Porto",
+            "Gruppe F",
+            "0:0"
+        ),
+        Results(
+            "10.03.2023, 17:00 Uhr",
+            "Super Lig",
+            "Türk Telekom Stadyumu, Istanbul",
+            "Galatasaray Istanbul",
+            "Gruppe G",
+            "Fenerbahçe",
+            "Gruppe G",
+            "0:0"
+        ),
+        Results(
+            "12.03.2023, 16:45 Uhr",
+            "Russian Premier League",
+            "Gazprom Arena, Sankt Petersburg",
+            "Zenit Sankt Petersburg",
+            "Gruppe H",
+            "CSKA Moskau",
+            "Gruppe H",
+            "0:0"
+        )
     )
 
-    fun loadResults() : List<Results> {
+    fun loadResults(): List<Results> {
         return ResultList
     }
 }

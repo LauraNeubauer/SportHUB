@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
+import com.example.myapplication.adapter.EventHomeAdapter
+import com.example.myapplication.adapter.NewsHomeAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.HomeFragmentBinding
 
@@ -35,6 +37,9 @@ class HomeFragment : Fragment() {
       binding.btClub.setOnClickListener {
          findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
       }
+
+      binding.rvHome.adapter = EventHomeAdapter(datasetEvents)
+      binding.rvNews.adapter = NewsHomeAdapter(datasetNews)
 
    }
 }
