@@ -23,7 +23,8 @@ class ExampleDatabase {
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
             R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            R.drawable.karsten_winegeart_r6zarepldje_unsplash,
+            false
         ),
         Event(
             "Holstein Cup",
@@ -36,7 +37,8 @@ class ExampleDatabase {
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
             R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            R.drawable.karsten_winegeart_r6zarepldje_unsplash,
+            false
         ),
         Event(
             "Holstein Cup",
@@ -49,20 +51,22 @@ class ExampleDatabase {
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
             R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            R.drawable.karsten_winegeart_r6zarepldje_unsplash,
+            false
         ),
         Event(
-            "Holstein Cup",
+            "TennisMatch Gegner: Marius Fleb",
             "Friedländer CLT",
-            3,
-            "fortgeschrittene",
-            "11",
+            null,
+            null,
+            null,
             "20.01.2024, 13:20 Uhr",
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
-            R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
-            R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            null,
+            null,
+            null,
+            true
         ),
         Event(
             "Holstein Cup",
@@ -75,7 +79,8 @@ class ExampleDatabase {
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
             R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            R.drawable.karsten_winegeart_r6zarepldje_unsplash,
+            false
         ),
         Event(
             "Holstein Cup",
@@ -88,7 +93,8 @@ class ExampleDatabase {
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
             R.drawable.jack_van_tricht_izwepu8aqbc_unsplash,
-            R.drawable.karsten_winegeart_r6zarepldje_unsplash
+            R.drawable.karsten_winegeart_r6zarepldje_unsplash,
+            false
         ),
     )
 
