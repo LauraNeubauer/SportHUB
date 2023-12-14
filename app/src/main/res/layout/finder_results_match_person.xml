@@ -30,7 +30,7 @@
                 android:id="@+id/cv_finder_results"
                 android:layout_width="0dp"
                 android:layout_height="240dp"
-                android:backgroundTint="@color/widget_background"
+                android:backgroundTint="@color/white"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -93,17 +93,7 @@
                             android:id="@+id/bt_request"
                             style="@style/ctab_request" />
 
-                        <ImageButton
-                            android:id="@+id/ib_friend"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/button_stroke"
-                            android:backgroundTint="@color/header"
-                            android:clipToOutline="true"
-                            android:padding="6dp"
-                            android:scaleType="centerInside"
-                            app:srcCompat="@drawable/save_icon" />
+
 
                     </LinearLayout>
 
