@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="390dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="@color/header"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/tags"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_League"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="2dp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="PRIMIER LEAGUE"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/tv_land"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="20dp"
+                        android:paddingLeft="2dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-2dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="England"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:gravity="center_vertical"
+                            android:layout_height="15dp"
+                            android:layout_marginTop="-5dp"
+                            android:src="@drawable/club_icon" />
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="-5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="90'+2" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/grouponepic"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/download" />
+
+                        <ImageView
+                            android:id="@+id/grouptwopic"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:padding="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:srcCompat="@drawable/download__1_" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_group_one"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="7dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nottm Ferest" />
+
+                        <TextView
+                            android:id="@+id/tv_group_two"
+                            android:layout_marginTop="7dp"
+                            android:gravity="center_vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Everton" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_group_one_goals"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginRight="15dp"
+                            android:textAlignment="viewEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/tv_group_two_goals"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginRight="15dp"
+                            android:textAlignment="viewEnd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
