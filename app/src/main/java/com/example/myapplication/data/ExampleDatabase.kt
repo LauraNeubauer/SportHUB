@@ -4,8 +4,8 @@ import com.example.myapplication.R
 import com.example.myapplication.model.Chat
 import com.example.myapplication.model.Club
 import com.example.myapplication.model.Event
+import com.example.myapplication.model.ExamplePerson
 import com.example.myapplication.model.News
-import com.example.myapplication.model.Person
 import com.example.myapplication.model.Request
 import com.example.myapplication.model.Results
 
@@ -134,24 +134,24 @@ class ExampleDatabase {
         return newsList
     }
 
-    var personList: List<Person> = listOf(
-        Person("Anna", "Friedel", "22", "Beginner", "23", 12, 18, "Hockeyclub Hamburg"),
-        Person("Max", "Mustermann", "30", "Intermediate", "42", 10, 15, "Football Club"),
-        Person("Lena", "Schmidt", "25", "Advanced", "55", 8, 20, "Tennis Club"),
-        Person("Jan", "Müller", "28", "Beginner", "37", 14, 16, "Chess Club"),
-        Person("Sophie", "Schneider", "33", "Advanced", "61", 9, 22, "Swimming Club"),
+    var examplePersonLists: List<ExamplePerson> = listOf(
+        ExamplePerson("Anna", "Friedel", "22", "Beginner", "23", 12, 18, "Hockeyclub Hamburg"),
+        ExamplePerson("Max", "Mustermann", "30", "Intermediate", "42", 10, 15, "Football Club"),
+        ExamplePerson("Lena", "Schmidt", "25", "Advanced", "55", 8, 20, "Tennis Club"),
+        ExamplePerson("Jan", "Müller", "28", "Beginner", "37", 14, 16, "Chess Club"),
+        ExamplePerson("Sophie", "Schneider", "33", "Advanced", "61", 9, 22, "Swimming Club"),
     )
 
-    fun loadPersons(): List<Person> {
-        return personList
+    fun loadPersons(): List<ExamplePerson> {
+        return examplePersonLists
     }
 
     var matchList: List<Request> = listOf(
-        Request(personList[0], false),
-        Request(personList[1], false),
-        Request(personList[2], false),
-        Request(personList[3], false),
-        Request(personList[4], false),
+        Request(examplePersonLists[0], false),
+        Request(examplePersonLists[1], false),
+        Request(examplePersonLists[2], false),
+        Request(examplePersonLists[3], false),
+        Request(examplePersonLists[4], false),
     )
 
     fun loadMatches(): List<Request> {

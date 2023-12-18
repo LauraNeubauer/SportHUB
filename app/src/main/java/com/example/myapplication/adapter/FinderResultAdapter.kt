@@ -29,8 +29,8 @@ class FinderResultAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.binding.btClub.text = item.person.club
-        holder.binding.tvWonStridng.text = item.person.age
-        holder.binding.tvName.text = (item.person.firstName + " " + item.person.lastName)
+        holder.binding.btClub.text = item.examplePerson.club
+        holder.binding.tvWonStridng.text = item.examplePerson.age
+        holder.binding.tvName.text = (item.examplePerson.firstName + " " + item.examplePerson.lastName)
     }
 }

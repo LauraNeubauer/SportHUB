@@ -1,6 +1,6 @@
 package com.example.myapplication.model
 
-class Person(
+class ExamplePerson(
     var firstName: String,
     var lastName: String,
     var age: String,

@@ -1,7 +1,7 @@
 package com.example.myapplication.model
 
 class Request(
-    var person: Person,
+    var examplePerson: ExamplePerson,
     var saved: Boolean,
 ) {
 }
