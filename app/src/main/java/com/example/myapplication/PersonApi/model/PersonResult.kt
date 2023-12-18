@@ -1,4 +1,4 @@
-package com.example.myapplication.api.model
+package com.example.myapplication.PersonApi.model
 
 class PersonResult(
     var results: List<Person>

@@ -1,9 +1,9 @@
-package com.example.myapplication.api
+package com.example.myapplication.PersonApi
 
 import android.util.Log
-import com.example.myapplication.api.local.PersonDatabase
-import com.example.myapplication.api.model.Person
-import com.example.myapplication.api.model.PersonData
+import com.example.myapplication.PersonApi.local.PersonDatabase
+import com.example.myapplication.PersonApi.model.Person
+import com.example.myapplication.PersonApi.model.PersonData
 
 
 class Repository(

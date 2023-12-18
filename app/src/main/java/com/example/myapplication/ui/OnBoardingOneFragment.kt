@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
-import com.example.myapplication.api.PersonViewModel
+import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.databinding.OnboardingOneFragmentBinding
 
 class OnBoardingOneFragment : Fragment() {

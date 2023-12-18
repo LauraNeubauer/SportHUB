@@ -1,4 +1,4 @@
-package com.example.myapplication.api.model
+package com.example.myapplication.PersonApi.model
 
 data class Person(
     val gender: String,

@@ -1,11 +1,11 @@
-package com.example.myapplication.api
+package com.example.myapplication.PersonApi
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.api.local.getDatabase
+import com.example.myapplication.PersonApi.local.getDatabase
 import com.example.myapplication.model.ExamplePerson
 import kotlinx.coroutines.launch
 

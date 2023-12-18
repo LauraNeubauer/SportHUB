@@ -1,6 +1,6 @@
-package com.example.myapplication.api
+package com.example.myapplication.PersonApi
 
-import com.example.myapplication.api.model.PersonResult
+import com.example.myapplication.PersonApi.model.PersonResult
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
