@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option1"
+        android:title="Entfernung" />
+    <item
+        android:id="@+id/option2"
+        android:title="Datum" />
+    <item
+        android:id="@+id/option3"
+        android:title="Alter" />
+    <item
+        android:id="@+id/option4"
+        android:title="Übereinstimmung" />
+</menu>

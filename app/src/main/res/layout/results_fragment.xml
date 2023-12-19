@@ -58,7 +58,7 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/dropdownButton"
+            android:id="@+id/dd_bt_sports"
             style="@style/ib_dd_sports"
             android:textAlignment="textStart" />
 
@@ -75,7 +75,7 @@
         tools:context=".MainActivity">
 
         <Button
-            android:id="@+id/dropdownButton2"
+            android:id="@+id/ddbt_lvl"
             style="@style/ib_dd_level"
             android:textAlignment="textStart" />
 

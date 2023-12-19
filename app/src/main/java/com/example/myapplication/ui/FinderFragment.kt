@@ -9,12 +9,10 @@ import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.PersonApi.PersonViewModel
-import com.example.myapplication.PersonApi.local.PersonDatabase
 import com.example.myapplication.R
 import com.example.myapplication.adapter.FinderResultAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.FinderFragmentBinding
-import com.example.myapplication.databinding.HomeFragmentBinding
 
 class FinderFragment : Fragment() {
 
@@ -36,29 +34,110 @@ class FinderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.dropdownButton.setOnClickListener {
-            showPopupMenu(it)
+        binding.ddBtSports.text = "SPORTS"
+        binding.ddBtSports.setOnClickListener {
+            showPopupMenuSports(it)
+        }
+
+        binding.ddbtLvl.text = "LEVEL"
+        binding.ddbtLvl.setOnClickListener {
+            showPopupMenuLevel(it)
+        }
+
+        binding.ddBtSort.text = "SORT"
+        binding.ddBtSort.setOnClickListener {
+            showPopupMenuSort(it)
         }
 
         binding.rvFinderResults.adapter = FinderResultAdapter(datasetMatches)
     }
 
-    private fun showPopupMenu(view: View) {
+    private fun showPopupMenuSports(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
-        menuInflater.inflate(R.menu.dropdown_menu, popupMenu.menu)
+        menuInflater.inflate(R.menu.dd_menu_sports, popupMenu.menu)
 
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
                 R.id.option1 -> {
-                    // Aktion für Option 1
+                    binding.ddBtSports.text = "BADMINTON"
                     true
                 }
                 R.id.option2 -> {
-                    // Aktion für Option 2
+                    binding.ddBtSports.text = "SQUASH"
                     true
                 }
-                // Weitere Optionen können hier hinzugefügt werden
+                R.id.option3 -> {
+                    binding.ddBtSports.text = "TISCHTENNIS"
+                    true
+                }
+                R.id.option4 -> {
+                    binding.ddBtSports.text = "TENNIS"
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+    private fun showPopupMenuSort(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dd_menu_sort, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    binding.ddBtSort.text = "ENTFERNUNG"
+                    true
+                }
+                R.id.option2 -> {
+                    binding.ddBtSort.text = "DATUM"
+                    true
+                }
+                R.id.option3 -> {
+                    binding.ddBtSort.text = "ALTER"
+                    true
+                }
+                R.id.option4 -> {
+                    binding.ddBtSort.text = "ÜBEREINSTIMMUNG"
+                    true
+                }
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+    private fun showPopupMenuLevel(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dd_menu_level, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    binding.ddbtLvl.text = "BEGINNER"
+                    true
+                }
+                R.id.option2 -> {
+                    binding.ddbtLvl.text = "IMPROVER"
+                    true
+                }
+                R.id.option3 -> {
+                    binding.ddbtLvl.text = "ADVANCED"
+                    true
+                }
+                R.id.option4 -> {
+                    binding.ddbtLvl.text = "PRACTICER"
+                    true
+                }
+                R.id.option5 -> {
+                    binding.ddbtLvl.text = "EXPERT"
+                    true
+                }
 
                 else -> false
             }

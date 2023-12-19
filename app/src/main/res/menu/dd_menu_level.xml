@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option1"
+        android:title="Beginner" />
+    <item
+        android:id="@+id/option2"
+        android:title="Improver" />
+    <item
+        android:id="@+id/option3"
+        android:title="Advanced" />
+    <item
+        android:id="@+id/option4"
+        android:title="Practitioner" />
+    <item
+        android:id="@+id/option5"
+        android:title="Expert" />
+</menu>
