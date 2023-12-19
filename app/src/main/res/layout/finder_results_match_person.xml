@@ -121,21 +121,21 @@
             app:srcCompat="@drawable/text_field" />
 
         <TextView
-            android:id="@+id/tv_level_sdtring"
-            android:layout_width="40dp"
+            android:id="@+id/tv_stat_size"
+            android:layout_width="55dp"
             android:layout_height="30dp"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/kronaone_regular"
             android:gravity="center"
             android:text="22"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddwd"
             app:layout_constraintStart_toStartOf="@+id/imageViewd4dddwd"
             app:layout_constraintTop_toTopOf="@+id/imageViewd4dddwd" />
 
         <TextView
-            android:id="@+id/tv_lvld"
+            android:id="@+id/text_stat_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -159,21 +159,21 @@
             app:srcCompat="@drawable/text_field" />
 
         <TextView
-            android:id="@+id/tv_level_string"
-            android:layout_width="40dp"
+            android:id="@+id/tv_stat_matches"
+            android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/kronaone_regular"
             android:gravity="center"
             android:text="22"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="@+id/imageView4dddwd"
             app:layout_constraintStart_toStartOf="@+id/imageView4dddwd"
             app:layout_constraintTop_toTopOf="@+id/imageView4dddwd" />
 
         <TextView
-            android:id="@+id/tv_lvl"
+            android:id="@+id/text_stat_matches"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -197,21 +197,21 @@
             app:srcCompat="@drawable/text_field" />
 
         <TextView
-            android:id="@+id/tv_age_number"
-            android:layout_width="40dp"
+            android:id="@+id/tv_stat_age"
+            android:layout_width="55dp"
             android:layout_height="30dp"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/kronaone_regular"
             android:gravity="center"
             android:text="22"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="@+id/imageView4ddddwd"
             app:layout_constraintStart_toStartOf="@+id/imageView4ddddwd"
             app:layout_constraintTop_toTopOf="@+id/imageView4ddddwd" />
 
         <TextView
-            android:id="@+id/tv_age"
+            android:id="@+id/text_stat_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -235,21 +235,21 @@
             app:srcCompat="@drawable/text_field" />
 
         <TextView
-            android:id="@+id/tv_won_string"
-            android:layout_width="40dp"
+            android:id="@+id/tv_stat_pokale"
+            android:layout_width="55dp"
             android:layout_height="30dp"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/kronaone_regular"
             android:gravity="center"
             android:text="22"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="@+id/imageViewd4ddddwd"
             app:layout_constraintStart_toStartOf="@+id/imageViewd4ddddwd"
             app:layout_constraintTop_toTopOf="@+id/imageViewd4ddddwd" />
 
         <TextView
-            android:id="@+id/tv_won"
+            android:id="@+id/text_stat_pokale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -273,21 +273,21 @@
             app:srcCompat="@drawable/text_field" />
 
         <TextView
-            android:id="@+id/tv_won_stridng"
-            android:layout_width="40dp"
+            android:id="@+id/tv_stat_wins"
+            android:layout_width="55dp"
             android:layout_height="30dp"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/kronaone_regular"
             android:gravity="center"
             android:text="22"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddddwd"
             app:layout_constraintStart_toStartOf="@+id/imageViewd4dddddwd"
             app:layout_constraintTop_toTopOf="@+id/imageViewd4dddddwd" />
 
         <TextView
-            android:id="@+id/tv_wdon"
+            android:id="@+id/text_stat_wins"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

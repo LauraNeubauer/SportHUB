@@ -34,8 +34,19 @@ class FinderResultAdapter(
         val item = dataset[position]
 
         holder.binding.btClub.text = "Club"
-        holder.binding.tvWonStridng.text = item.age
+
         holder.binding.tvName.text = item.name
+
+        holder.binding.textStatAge.text = "ALTER"
+        holder.binding.tvStatAge.text = item.age
+        holder.binding.textStatMatches.text = "MATCHES"
+        holder.binding.tvStatMatches.text = item.matches
+        holder.binding.textStatPokale.text = "POKALE"
+        holder.binding.tvStatPokale.text = item.trophys
+        holder.binding.textStatSize.text = "GRÖSSE"
+        holder.binding.tvStatSize.text = item.size
+        holder.binding.textStatWins.text = "WINS"
+        holder.binding.tvStatWins.text = item.wins
 
         holder.binding.btProfile.setOnClickListener {
             viewModel.setCurrentProfile(item)

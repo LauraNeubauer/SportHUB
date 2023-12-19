@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_profilePicture" />
 
     <TextView
-        android:id="@+id/textViedw8"
+        android:id="@+id/tv_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -162,7 +162,7 @@
 
     <TextView
         android:id="@+id/stat_one"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
@@ -201,11 +201,12 @@
 
     <TextView
         android:id="@+id/stat_three"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
         android:gravity="center"
+        android:layout_marginRight="2dp"
         android:text="22"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -240,7 +241,7 @@
 
     <TextView
         android:id="@+id/stat_two"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
@@ -279,7 +280,7 @@
 
     <TextView
         android:id="@+id/stat_five"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
@@ -318,7 +319,7 @@
 
     <TextView
         android:id="@+id/stat_four"
-        android:layout_width="40dp"
+        android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"

@@ -33,6 +33,19 @@ class StrangerProfilFragment : Fragment() {
         viewModel.currentProfile.observe(viewLifecycleOwner) {
             binding.tvName.text = it.name
             binding.ivProfilePicture.load(it.pic)
+
+            binding.statOne.text = it.age
+            binding.textStatOne.text = "ALTER"
+            binding.statTwo.text = it.size
+            binding.textStatTwo.text = "GRÖSSE"
+            binding.statThree.text = it.matches
+            binding.textStatThree.text = "MATCHES"
+            binding.statFour.text = it.wins
+            binding.textStatFour.text = "WINS"
+            binding.statFive.text = it.trophys
+            binding.textStatFive.text = "POKALE"
+
+            binding.tvLevel.text = it.level
         }
     }
 }
