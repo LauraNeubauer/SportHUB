@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.adapter.NewsHomeAdapter
@@ -17,6 +19,7 @@ class HomeFragment : Fragment() {
    private lateinit var binding : HomeFragmentBinding
    var datasetEvents = ExampleDatabase().loadEvents()
    var datasetNews = ExampleDatabase().loadNews()
+   private val viewModel : PersonViewModel by activityViewModels()
 
    override fun onCreateView(
       inflater: LayoutInflater,
@@ -38,7 +41,7 @@ class HomeFragment : Fragment() {
          findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
       }
 
-      binding.rvHome.adapter = EventHomeAdapter(datasetEvents)
+      binding.rvHome.adapter = EventHomeAdapter(datasetEvents, viewModel)
       binding.rvNews.adapter = NewsHomeAdapter(datasetNews)
 
    }

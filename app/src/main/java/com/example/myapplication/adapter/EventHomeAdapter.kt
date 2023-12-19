@@ -4,11 +4,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.databinding.EventsHomeListItemBinding
 import com.example.myapplication.databinding.MatchHomeListItemBinding
 import com.example.myapplication.model.Event
 
-class EventHomeAdapter(private val dataset: List<Event>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class EventHomeAdapter(
+    private val dataset: List<Event>,
+    private val viewModel: PersonViewModel
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         return if (dataset[position].Match == true) {
@@ -49,9 +53,9 @@ class EventHomeAdapter(private val dataset: List<Event>) : RecyclerView.Adapter<
                 holder.binding.tvLevel.text = item.level
                 holder.binding.tvPlace.text = item.place
                 holder.binding.tvTime.text = item.time
-                holder.binding.tvPlayer.text = item.player
+                holder.binding.tvPlayer.text = item.name
                 Log.d("TAG", "Binding Elemente positiv")
-                // Handle image resources for EventsItemViewHolder
+
             }
             is MatchItemViewHolder -> {
                 holder.binding.btClubname.text = item.club
