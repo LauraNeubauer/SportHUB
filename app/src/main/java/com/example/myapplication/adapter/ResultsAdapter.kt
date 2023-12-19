@@ -33,4 +33,5 @@ class ResultsAdapter(
     override fun getItemCount(): Int {
         return dataset.size
     }
+
 }

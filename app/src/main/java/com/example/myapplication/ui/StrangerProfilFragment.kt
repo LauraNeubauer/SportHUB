@@ -30,6 +30,5 @@ class StrangerProfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.tvName.text = "Hallo"
-
     }
 }
