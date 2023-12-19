@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option1"
+        android:title="Diese Woche" />
+    <item
+        android:id="@+id/option2"
+        android:title="Nächste Woche" />
+    <item
+        android:id="@+id/option3"
+        android:title="In zwei Wochen" />
+    <item
+        android:id="@+id/option4"
+        android:title="In drei Wochen" />
+    <item
+        android:id="@+id/option5"
+        android:title="Nächsten Monat" />
+    <item
+        android:id="@+id/option6"
+        android:title="Spezielles Datum" />
+</menu>
