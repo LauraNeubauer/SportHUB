@@ -29,6 +29,8 @@ class StrangerProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvName.text = "Hallo"
+        viewModel.currentProfile.observe(viewLifecycleOwner) {
+            binding.tvName.text = it.name
+        }
     }
 }

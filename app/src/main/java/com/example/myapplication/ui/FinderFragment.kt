@@ -18,8 +18,6 @@ class FinderFragment : Fragment() {
 
     private lateinit var binding : FinderFragmentBinding
     var datasetMatches = ExampleDatabase().loadMatches()
-    var datasetEvents = ExampleDatabase().loadEvents()
-    var datasetNews = ExampleDatabase().loadNews()
     private val viewModel : PersonViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -49,7 +47,11 @@ class FinderFragment : Fragment() {
             showPopupMenuSort(it)
         }
 
-        binding.rvFinderResults.adapter = FinderResultAdapter(datasetMatches)
+        viewModel.contacts.observe(viewLifecycleOwner) {
+            binding.rvFinderResults.adapter = FinderResultAdapter(it, viewModel)
+        }
+
+
     }
 
     private fun showPopupMenuSports(view: View) {
