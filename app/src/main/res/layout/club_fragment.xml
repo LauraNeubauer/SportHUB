@@ -138,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ads" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/bt_sportsOne"
         style="@style/tags"
         android:layout_width="wrap_content"
         android:layout_marginStart="20dp"
@@ -157,7 +157,7 @@
         android:text="Stats"
         android:textColor="@color/header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_sportsOne" />
 
     <View
         android:id="@+id/view2"

@@ -23,17 +23,40 @@ class Repository(
 
             val winPercentage = (10..60).random()
 
+            val sportsOne = listOf<String>(
+                "HOCKEY",
+                "TENNIS",
+                "BADMINTON",
+                "SQUASH",
+            )
+            val sportsTwo = listOf<String>(
+                "TISCHTENNIS",
+                "FUSSBALL",
+                "RUGBY",
+                "GOLF",
+                "CRICKET",
+            )
+            val sportOne = sportsOne.random()
+            val sportTwo = if (sportOne == "BADMINTON") {
+                listOf<String>(
+                    "RUGBY",
+                    "GOLF",
+                    "CRICKET"
+                ).random()
+            } else sportsTwo.random()
             val personFullName = "${person.name.first} ${person.name.last}"
             val personAge = person.dob.age
             val personPicture = person.picture.large
             val personMatches = person.location.street.number
             val personTrophys = person.registered.age
-            val personWins = ((winPercentage / 100.0) * personMatches).coerceIn(1.0, personMatches.toDouble()).toInt()
+            val personWins =
+                ((winPercentage / 100.0) * personMatches).coerceIn(1.0, personMatches.toDouble())
+                    .toInt()
             val personSize =
                 if (person.gender == "female") {
                     (156..176).random()
                 } else {
-                    (168 .. 210).random()
+                    (168..210).random()
                 }
             val personLevel =
                 if (personWins in (1..20)) {
@@ -64,7 +87,9 @@ class Repository(
                     matches = personMatches.toString(),
                     wins = personWins.toString(),
                     size = personSize.toString(),
-                    level = personLevel
+                    level = personLevel,
+                    sportsOne = sportOne,
+                    sportsTwo = sportTwo,
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")

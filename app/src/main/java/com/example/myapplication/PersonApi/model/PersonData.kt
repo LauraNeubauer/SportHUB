@@ -16,4 +16,6 @@ data class PersonData(
     var wins: String,
     var size: String,
     var level: String,
+    var sportsOne: String,
+    var sportsTwo: String?,
 )

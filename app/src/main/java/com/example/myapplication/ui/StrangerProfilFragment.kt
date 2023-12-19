@@ -46,6 +46,12 @@ class StrangerProfilFragment : Fragment() {
             binding.textStatFive.text = "POKALE"
 
             binding.tvLevel.text = it.level
+
+            binding.btSportsOne.text = it.sportsOne
+            if (binding.btSportsOne.text == "FUSSBALL") {
+                binding.btSportsOne.width = 100
+            }
+            binding.btSportsTwo.text = it.sportsTwo
         }
     }
 }
