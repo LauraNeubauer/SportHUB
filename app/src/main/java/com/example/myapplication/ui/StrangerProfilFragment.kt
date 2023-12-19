@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import coil.load
 import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.StrangerProfilFragmentBinding
@@ -31,6 +32,7 @@ class StrangerProfilFragment : Fragment() {
 
         viewModel.currentProfile.observe(viewLifecycleOwner) {
             binding.tvName.text = it.name
+            binding.ivProfilePicture.load(it.pic)
         }
     }
 }

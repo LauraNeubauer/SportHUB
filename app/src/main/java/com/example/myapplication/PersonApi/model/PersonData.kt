@@ -8,5 +8,6 @@ data class PersonData(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var name: String,
-    var age: String
+    var age: String,
+    var pic: String,
 )

@@ -20,7 +20,10 @@ class Repository(
             PersonList.addAll(response.results)
 
             val person = response.results.first()
-            val personData = PersonData(name = person.name.first + " " + person.name.last, age = person.dob.age.toString())
+            val personData = PersonData(
+                name = person.name.first + " " + person.name.last,
+                age = person.dob.age.toString(),
+                pic = person.picture.large)
             db.personDao.insertPerson(personData)
             Log.d("TAG", "Person in die Liste geladen")
         }
