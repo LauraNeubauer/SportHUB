@@ -52,6 +52,7 @@ class Repository(
                 personFullName.length <= 18 &&
                 personAge in 16..65 &&
                 personTrophys in 1..999 &&
+                personTrophys < personWins &&
                 personMatches in 1..999
             ) {
                 val personData = PersonData(
