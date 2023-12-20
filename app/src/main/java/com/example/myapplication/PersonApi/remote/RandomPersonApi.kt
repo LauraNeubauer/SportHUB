@@ -1,4 +1,4 @@
-package com.example.myapplication.PersonApi
+package com.example.myapplication.PersonApi.remote
 
 import com.example.myapplication.PersonApi.model.PersonResult
 import com.squareup.moshi.Moshi

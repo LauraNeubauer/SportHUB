@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.myapplication.PersonApi.local.PersonDatabase
 import com.example.myapplication.PersonApi.model.Person
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.PersonApi.remote.PersonApi
 
 
 class Repository(
