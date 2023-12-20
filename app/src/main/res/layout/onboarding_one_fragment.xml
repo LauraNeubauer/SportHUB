@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tiftle" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/bt_login_one"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -78,7 +78,7 @@
         android:layout_marginRight="24dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_login_one" />
 
     <TextView
         android:id="@+id/textView21"
@@ -89,7 +89,7 @@
         android:textColor="@color/gray_Text"
         android:text="Noch kein Konto? Hier:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_login_one" />
 
 
 

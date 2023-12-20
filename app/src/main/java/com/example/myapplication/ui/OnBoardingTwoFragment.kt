@@ -8,10 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingTwoFragmentBinding
-
 class OnBoardingTwoFragment : Fragment() {
 
-    private lateinit var binding : OnboardingTwoFragmentBinding
+    private lateinit var binding: OnboardingTwoFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,10 +24,8 @@ class OnBoardingTwoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button4.setOnClickListener {
+        binding.btLogin.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingTwoFragment_to_homeFragment)
         }
-
     }
-
 }

@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.tags)
@@ -23,13 +22,10 @@ class MainActivity : AppCompatActivity() {
         val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         binding.bnv.setupWithNavController(navHost.navController)
 
-        navHost.navController.addOnDestinationChangedListener{_,destination,_ ->
-            when (destination.id) {
-               R.id.onBoardingOneFragment -> binding.bnv.visibility = View.GONE
-               R.id.onBoardingTwoFragment -> binding.bnv.visibility = View.GONE
-               R.id.resultsFragment -> binding.bnv.visibility = View.GONE
-                else -> binding.bnv.visibility = View.VISIBLE
-
+        navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.bnv.visibility = when (destination.id) {
+                R.id.onBoardingOneFragment, R.id.onBoardingTwoFragment, R.id.resultsFragment -> View.GONE
+                else -> View.VISIBLE
             }
         }
     }

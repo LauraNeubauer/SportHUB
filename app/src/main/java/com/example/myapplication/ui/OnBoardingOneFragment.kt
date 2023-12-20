@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.R
 import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingOneFragmentBinding
 
 class OnBoardingOneFragment : Fragment() {
@@ -21,7 +21,7 @@ class OnBoardingOneFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = OnboardingOneFragmentBinding.inflate(layoutInflater)
+        binding = OnboardingOneFragmentBinding.inflate(inflater, container, false)
         viewModel.loadPersons()
         return binding.root
     }
@@ -29,7 +29,7 @@ class OnBoardingOneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button4.setOnClickListener {
+        binding.btLoginOne.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
         }
 
