@@ -31,31 +31,70 @@
 
     <TextView
         android:id="@+id/tv_tiftle"
-        android:layout_width="310dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Dein Spiel, Dein Team, Dein Hub!"
+        android:text="EMAILADRESSE"
         android:textColor="@color/header"
-        android:textSize="35sp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="409dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tiftle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:hint="Ihre Mail Adresse" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tfextView21"
-        android:layout_width="300dp"
+        android:id="@+id/tv_tifftle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="PASSWORT"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="24dp"
-        android:text="Die Welt des Sports entdecken: sei es als Verein, Sponsor oder begeisterter Nutzer. Gemeinsam schaffen wir eine starke Sportgemeinschaft!"
-        android:textColor="@color/gray_Text"
+        android:textColor="@color/header"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiftle" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tier_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ihr Passwort" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/bt_login_one"
+        android:id="@+id/bt_registrate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -63,7 +102,7 @@
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/header"
         android:fontFamily="@font/kronaone_regular"
-        android:text="LOGIN"
+        android:text="REGISTRIEREN"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,14 +110,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bt_else_registrate"
+        android:id="@+id/button5"
         style="@style/ctab_infos"
-        android:layout_width="140dp"
-        android:text="REGISTRIEREN"
+        android:layout_width="160dp"
+        android:text="LOGIN"
         android:layout_marginRight="24dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_login_one" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
 
     <TextView
         android:id="@+id/textView21"
@@ -87,10 +126,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="15dp"
         android:textColor="@color/gray_Text"
-        android:text="Noch kein Konto? Hier:"
+        android:text="Du hast schon ein Konto?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_login_one" />
-
+        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

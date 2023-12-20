@@ -33,5 +33,9 @@ class OnBoardingOneFragment : Fragment() {
             findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
         }
 
+        binding.btElseRegistrate.setOnClickListener {
+            findNavController().navigate(R.id.action_onBoardingOneFragment_to_registrateFragment)
+        }
+
     }
 }

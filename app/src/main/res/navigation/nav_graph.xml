@@ -77,6 +77,9 @@
         <action
             android:id="@+id/action_onBoardingOneFragment_to_onBoardingTwoFragment"
             app:destination="@id/onBoardingTwoFragment" />
+        <action
+            android:id="@+id/action_onBoardingOneFragment_to_registrateFragment"
+            app:destination="@id/registrateFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingTwoFragment"
@@ -101,5 +104,13 @@
         <action
             android:id="@+id/action_strangerProfilFragment_to_finderFragment"
             app:destination="@id/finderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrateFragment"
+        android:name="com.example.myapplication.ui.RegistrateFragment"
+        android:label="RegistrateFragment" >
+        <action
+            android:id="@+id/action_registrateFragment_to_onBoardingTwoFragment"
+            app:destination="@id/onBoardingTwoFragment" />
     </fragment>
 </navigation>

@@ -19,12 +19,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         binding.bnv.setupWithNavController(navHost.navController)
 
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bnv.visibility = when (destination.id) {
-                R.id.onBoardingOneFragment, R.id.onBoardingTwoFragment, R.id.resultsFragment -> View.GONE
+                R.id.onBoardingOneFragment,
+                R.id.registrateFragment,
+                R.id.onBoardingTwoFragment,
+                R.id.resultsFragment -> View.GONE
+
                 else -> View.VISIBLE
             }
         }
