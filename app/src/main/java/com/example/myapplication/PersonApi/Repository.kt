@@ -60,16 +60,22 @@ class Repository(
                     (168..210).random()
                 }
             val personLevel =
-                if (personWins in (1..20)) {
-                    "BEGINNER"
-                } else if (personWins in (20..80)) {
-                    "IMPROVER"
-                } else if (personWins in (80..150)) {
-                    "ADVANCED"
-                } else if (personWins in (150..200)) {
-                    "PRACTITIONER"
-                } else {
-                    "EXPERT"
+                when (personWins) {
+                    in (1..20) -> {
+                        "BEGINNER"
+                    }
+                    in (20..80) -> {
+                        "IMPROVER"
+                    }
+                    in (80..150) -> {
+                        "ADVANCED"
+                    }
+                    in (150..200) -> {
+                        "PRACTITIONER"
+                    }
+                    else -> {
+                        "EXPERT"
+                    }
                 }
 
             if (!isArabicName(personFullName) &&
@@ -91,6 +97,7 @@ class Repository(
                     level = personLevel,
                     sportsOne = sportOne,
                     sportsTwo = sportTwo,
+                    bio = randomBio()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")
@@ -98,10 +105,39 @@ class Repository(
         }
     }
 
-    fun isArabicName(name: String): Boolean {
+    private fun isArabicName(name: String): Boolean {
         val arabicRegex = Regex("[\\p{InArabic}]+")
         return arabicRegex.containsMatchIn(name)
     }
 
-
+    private fun randomBio() : String {
+        val randomBiography = listOf(
+            "Begeisterter Tennisspieler, Kletterer, Schwimmer und Golfenthusiast. Immer auf der Suche nach neuen sportlichen Herausforderungen und Adrenalinkicks.",
+            "Leidenschaftlicher Basketballer, Radsportler, Volleyballfanatiker und passionierter Läufer. Der Sport ist meine Leidenschaft, und ich genieße jede Minute auf dem Spielfeld oder der Strecke.",
+            "Liebhaber von Tischtennis, Windsurfen, Badminton und Skateboarden. Mein Leben dreht sich um den Nervenkitzel des Sports, egal ob auf dem Wasser, auf dem Platz oder auf der Straße.",
+            "Hockeybegeisterter, Skilangläufer, Rugbyfan und begeisterter Leichtathlet. Sport ist nicht nur meine Leidenschaft, sondern auch meine geliebte Lebensphilosophie.",
+            "Fußballspieler, Snowboarder, Kletterenthusiast und passionierter Bogenschütze. Immer auf der Suche nach neuen Möglichkeiten, meine sportlichen Fähigkeiten zu verbessern.",
+            "Liebhaber von Beachvolleyball, Skifahren, Radfahren und Ultimate Frisbee. Die Vielfalt des Sports fasziniert mich, und ich liebe es, mich in verschiedenen Disziplinen zu beweisen.",
+            "Baseballfanatiker, Surfer, Squashspieler und Hürdenläufer. Der Sport gibt meinem Leben den nötigen Schwung, und ich bin stets bereit für neue sportliche Abenteuer mit anderen.",
+            "Tischfußballprofi, Skater, Handballspieler und leidenschaftlicher Trailrunner. Sportliche Vielfalt ist für mich der Schlüssel zu einem erfüllten, langem und vorallem gesunden Leben.",
+            "Volleyballspieler, Skispringer, Tennisschläger-Schwingender und Marathonläufer. Der Sport ist meine Leidenschaft, und ich liebe die Herausforderung, meine Grenzen zu überschreiten.",
+            "Basketballenthusiast, Wakeboarder, Golfspieler und Marathonläufer. Sport ist für mich nicht nur körperliche Betätigung, sondern auch eine Quelle der Freude und des Teamgeists.",
+            "Ein Abenteurer auf und neben dem Spielfeld: Wenn ich nicht gerade meine Leidenschaft für den Hockey-Stock auslebe, finde mich beim Snowboarden oder Dartwerfen",
+            "In der Welt des Sports bin ich zuhause, sei es beim Jonglieren mit Fußbällen, dem Ritt auf der Snowboardwelle, dem Dartspiel oder dem eleganten Tanz auf dem Hockeyfeld.",
+            "Ein Spieler, egal ob auf dem grünen Rasen, in der eisigen Hockeyarena, auf dem Dartboard oder den verschneiten Pisten. Sport ist Ausdruck meiner Leidenschaft und meines individuellen Stils.",
+            "Mein Herz schlägt im Takt des Sports, sei es beim Dribbeln auf dem Fußballfeld, dem Dartpfeile-Werfen, dem eleganten Gleiten auf dem Snowboard oder einem Duell auf dem Hockeyplatz.",
+            "Ein Künstler auf dem Spielfeld und abseits davon: ob im Dartspiel, auf dem Hockeyfeld, beim Fußball oder auf dem Snowboard. Meine Sportarten sind meine bunten Leinwände.",
+            "Mein Leben ist ein Kaleidoskop des Sports, vom Dartwerfen bis zur Dynamik auf dem Fußballfeld, von der Geschwindigkeit beim Snowboarden bis zur Raffinesse auf dem Hockeyplatz.",
+            "Ein Spieler, sei es mit dem Fußball, dem Dartpfeil, dem Snowboard oder dem Hockey-Schläger. Mein Spiel ist meine Kunst, und die Vielfalt der Sportarten gibt meinem Leben Farbe und Energie.",
+            "Ich jongliere nicht nur mit Bällen auf dem Fußballfeld, sondern auch mit Dartpfeilen, snowboarde durch das Leben und tanze auf dem glitzerndem Eis des Hockeyplatzes.",
+            "Ob auf dem Spielfeld oder vor dem Dartboard oder mit dem Fußball am Fuß – in jedem dieser Momente offenbart sich meine Liebe zum Sport und meine Bereitschaft, neue Herausforderungen anzunehmen.",
+            "Meine Welt ist ein Spiel, sei es auf dem Fußballplatz, auf dem Dartboard, auf dem Snowboard oder auf dem Hockeyfeld. Jede Sportart ist für mich eine einzigartige Symphonie.",
+            "Die Bühne meines Lebens ist vielfältig: sei es der glatte Eisring des Hockeyfelds, das präzise Dartboard, der grüne Rasen des Fußballplatzes oder die verschneite Piste beim Snowboarden.",
+            "Mein Lebensweg ist ein Parcours aus unterschiedlichen Sportarten – von der Präzision des Dartwerfens über das temporeiche Snowboarden bis hin zur Teamdynamik auf dem Fußballfeld.",
+            "Ein leidenschaftlicher Freigeist im Sport: sei es auf dem Fußballfeld, in der Dart-Arena, auf der verschneiten Piste des Snowboards oder dem eisigen Hockeyplatz.",
+            "Im Rhythmus der Sportvielfalt tanze ich durch mein Leben: sei es auf dem Dartboard, dem Fußballfeld, der schneebedeckten Piste beim Snowboarden oder dem Hockeyplatz.",
+            "Meine Welt ist ein Mosaik aus Sportarten: sei es der Anstoß auf dem Fußballfeld, der gezielte Dartwurf, das elegante Gleiten beim Snowboarden oder das Duell auf dem Hockeyplatz."
+        )
+        return randomBiography.random()
+    }
 }

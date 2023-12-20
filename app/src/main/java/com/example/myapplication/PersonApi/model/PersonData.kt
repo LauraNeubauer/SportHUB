@@ -18,4 +18,5 @@ data class PersonData(
     var level: String,
     var sportsOne: String,
     var sportsTwo: String?,
+    val bio: String,
 )

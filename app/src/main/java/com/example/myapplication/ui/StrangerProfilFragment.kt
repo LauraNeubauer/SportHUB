@@ -45,6 +45,8 @@ class StrangerProfilFragment : Fragment() {
             binding.statFive.text = it.trophys
             binding.textStatFive.text = "POKALE"
 
+            binding.tvBio.text = it.bio
+
             binding.tvLevel.text = it.level
 
             binding.btSportsOne.text = it.sportsOne
