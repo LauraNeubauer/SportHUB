@@ -6,6 +6,7 @@ class Club(
     var est: String,
     var matches: Int,
     var participants: Int,
-    var bio: String
+    var bio: String,
+    var sport: String
 ) {
 }

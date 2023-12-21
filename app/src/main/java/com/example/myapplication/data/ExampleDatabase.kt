@@ -2,7 +2,6 @@ package com.example.myapplication.data
 
 import com.example.myapplication.R
 import com.example.myapplication.model.Chat
-import com.example.myapplication.model.Club
 import com.example.myapplication.model.Event
 import com.example.myapplication.model.ExamplePerson
 import com.example.myapplication.model.Message
@@ -220,54 +219,8 @@ class ExampleDatabase {
 
     fun loadChats(): List<Chat> {
         return chatList
-    }
+        }
 
-    var ClubList: List<Club> = listOf(
-        Club(
-            "Hamburger-Sportverein",
-            "Hamburg, Deutschland",
-            "1840",
-            293,
-            3200,
-            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
-        ),
-        Club(
-            "Hamburger-Sportverein",
-            "Hamburg, Deutschland",
-            "1840",
-            293,
-            3200,
-            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
-        ),
-        Club(
-            "HockeyClub 22",
-            "Hamburg, Deutschland",
-            "1920",
-            342,
-            323,
-            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
-        ),
-        Club(
-            "HockeyClub 22",
-            "Hamburg, Deutschland",
-            "1920",
-            342,
-            323,
-            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
-        ),
-        Club(
-            "HockeyClub 22",
-            "Hamburg, Deutschland",
-            "1920",
-            342,
-            323,
-            "Dies ist die Bio über den HSV. Hier gibt es viel geschichte zu den alten zeiten, als der HSV noch in Kinderschuhen gesteckt hat."
-        )
-    )
-
-    fun loadClubs(): List<Club> {
-        return ClubList
-    }
 
     val ResultList: List<Results> = listOf(
         Results(

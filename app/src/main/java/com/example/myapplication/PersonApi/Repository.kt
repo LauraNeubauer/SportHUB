@@ -27,6 +27,7 @@ class Repository(
             val person = response.results.first()
 
             val winPercentage = (10..60).random()
+            val club = (1..21).random()
 
             val sportsOne = listOf<String>(
                 "HOCKEY",
@@ -107,7 +108,7 @@ class Repository(
                     sportsTwo = sportTwo,
                     bio = randomBio(),
                     message = randomMessage(),
-                    club = getClub(),
+                    club = club,
                     chat = getGroupChat(),
                     chattwo = getGroupChat(),
                     messagewritten = getTime(),
@@ -124,42 +125,6 @@ class Repository(
         val arabicRegex = Regex("[\\p{InArabic}]+")
         return arabicRegex.containsMatchIn(name)
     }
-
-    private fun getClub(): String {
-        val randomClub = listOf("Alba Berlin", //(Basketball)
-            "Eisbären Berlin", //(Eishockey)
-            "Füchse Berlin", //(Handball)
-            "SG Dynamo Dresden", //(Fußball - 3. Liga)
-            "Rhein-Neckar Löwen", //(Handball)
-            "THW Kiel", //(Handball)
-            "SC Magdeburg", //(Handball)
-            "EWE Baskets Oldenburg", //(Basketball)
-            "Iserlohn Roosters", //(Eishockey)
-            "FC Bayern München", //(Fußball)
-            "Brose Bamberg", //(Basketball)
-            "Borussia Dortmund", //(Fußball)
-            "Bayer 04 Leverkusen", //(Fußball)
-            "Adler Mannheim", //(Eishockey)
-            "HSG Wetzlar", //(Handball)
-            "HC Empor Rostock", //(Handball)
-            "1. FC Köln", //(Fußball)
-            "TSV 1860 München", //(Fußball)
-            "ERC Ingolstadt", //(Eishockey)
-            "DJK Rimpar Wölfe", //(Handball)
-            "Telekom Baskets Bonn", //(Basketball)
-            "Eispiraten Crimmitschau", //(Eishockey)
-            "Eintracht Frankfurt", //(Fußball)
-            "TVB Stuttgart", //(Handball)
-            "SC Rasta Vechta", //(Basketball)
-            "SG Flensburg-Handewitt", //(Handball)
-            "NINERS Chemnitz", //(Basketball)
-            "SV Darmstadt 98", //(Fußball)
-            "EHC Red Bull München", //(Eishockey)
-            "SV Werder Bremen" //(Fußball)
-        )
-        return randomClub.random()
-    }
-
     private fun getGroupChat(): String {
         val group = listOf(
             "FitFam Legends",
@@ -280,7 +245,7 @@ class Repository(
             "Hey! Das Ergebnis vom gestrigen Match war der Hammer. Welcher Spieler hat euch am meisten beeindruckt? 🤩",
             "Ja, ich habe es gesehen! Der Sieg war hart erkämpft. Was denkt ihr, wie steht es um unsere Chancen in der nächsten Runde? 🤔",
             "Hallo! Das Spiel gestern war wirklich aufregend. Welche Taktik hat unser Team eurer Meinung nach zum Erfolg geführt? ⚾️"
-            )
+        )
         return randomMessage.random()
     }
 }
