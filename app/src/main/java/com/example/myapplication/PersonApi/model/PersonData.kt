@@ -21,9 +21,4 @@ data class PersonData(
     val bio: String,
     var club: Int,
     var chat: String,
-    var chattwo: String,
-    val messagewritten: String,
-    val message: String,
-    val messagetwowritten: String,
-    val messagetwo: String,
 )

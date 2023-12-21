@@ -107,13 +107,8 @@ class Repository(
                     sportsOne = sportOne,
                     sportsTwo = sportTwo,
                     bio = randomBio(),
-                    message = randomMessage(),
                     club = club,
                     chat = getGroupChat(),
-                    chattwo = getGroupChat(),
-                    messagewritten = getTime(),
-                    messagetwo = randomMessage(),
-                    messagetwowritten = getTime()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")
