@@ -106,7 +106,13 @@ class Repository(
                     sportsOne = sportOne,
                     sportsTwo = sportTwo,
                     bio = randomBio(),
-                    message = randomMessage()
+                    message = randomMessage(),
+                    club = getClub(),
+                    chat = getGroupChat(),
+                    chattwo = getGroupChat(),
+                    messagewritten = getTime(),
+                    messagetwo = randomMessage(),
+                    messagetwowritten = getTime()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")
@@ -117,6 +123,93 @@ class Repository(
     private fun isArabicName(name: String): Boolean {
         val arabicRegex = Regex("[\\p{InArabic}]+")
         return arabicRegex.containsMatchIn(name)
+    }
+
+    private fun getClub(): String {
+        val randomClub = listOf("Alba Berlin", //(Basketball)
+            "Eisbären Berlin", //(Eishockey)
+            "Füchse Berlin", //(Handball)
+            "SG Dynamo Dresden", //(Fußball - 3. Liga)
+            "Rhein-Neckar Löwen", //(Handball)
+            "THW Kiel", //(Handball)
+            "SC Magdeburg", //(Handball)
+            "EWE Baskets Oldenburg", //(Basketball)
+            "Iserlohn Roosters", //(Eishockey)
+            "FC Bayern München", //(Fußball)
+            "Brose Bamberg", //(Basketball)
+            "Borussia Dortmund", //(Fußball)
+            "Bayer 04 Leverkusen", //(Fußball)
+            "Adler Mannheim", //(Eishockey)
+            "HSG Wetzlar", //(Handball)
+            "HC Empor Rostock", //(Handball)
+            "1. FC Köln", //(Fußball)
+            "TSV 1860 München", //(Fußball)
+            "ERC Ingolstadt", //(Eishockey)
+            "DJK Rimpar Wölfe", //(Handball)
+            "Telekom Baskets Bonn", //(Basketball)
+            "Eispiraten Crimmitschau", //(Eishockey)
+            "Eintracht Frankfurt", //(Fußball)
+            "TVB Stuttgart", //(Handball)
+            "SC Rasta Vechta", //(Basketball)
+            "SG Flensburg-Handewitt", //(Handball)
+            "NINERS Chemnitz", //(Basketball)
+            "SV Darmstadt 98", //(Fußball)
+            "EHC Red Bull München", //(Eishockey)
+            "SV Werder Bremen" //(Fußball)
+        )
+        return randomClub.random()
+    }
+
+    private fun getGroupChat(): String {
+        val group = listOf(
+            "FitFam Legends",
+            "Muscle Mavericks",
+            "Sweat Sesh Squad",
+            "Iron Tribe",
+            "Flex Fusion Crew",
+            "Powerhouse Pioneers",
+            "Adrenaline Allies",
+            "Ripped Rebels",
+            "Beast Mode Brigade",
+            "Epic Elevate Collective",
+            "Warrior Workout Warriors",
+            "Grit Gang",
+            "Zen & Zeal Fitness Crew",
+            "Sculpted Syndicate",
+            "Pump Posse"
+        )
+        return group.random()
+    }
+
+    private fun getTime(): String {
+        val time = listOf(
+            "Heute, 08:15 Uhr",
+            "Gestern, 20:45 Uhr",
+            "Montag, 14:30 Uhr",
+            "Dienstag, 09:12 Uhr",
+            "Mittwoch, 18:57 Uhr",
+            "Donnerstag, 12:08 Uhr",
+            "Freitag, 16:40 Uhr",
+            "Samstag, 10:20 Uhr",
+            "Sonntag, 21:05 Uhr",
+            "Vor einer Stunde",
+            "Vor 30 Minuten",
+            "Vor 2 Stunden",
+            "Vor 45 Minuten",
+            "Gerade eben",
+            "Vor 5 Stunden",
+            "Gestern, 23:59 Uhr",
+            "Vor 15 Minuten",
+            "Vor 3 Stunden",
+            "Vor 1 Minute",
+            "Heute früh, 06:00 Uhr",
+            "Letzte Woche, Montag",
+            "Vor 8 Stunden",
+            "Morgen, 07:30 Uhr",
+            "In 2 Tagen, 14:00 Uhr",
+            "In 3 Stunden",
+        )
+        return time.random()
     }
 
     private fun randomBio(): String {

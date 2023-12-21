@@ -19,5 +19,11 @@ data class PersonData(
     var sportsOne: String,
     var sportsTwo: String?,
     val bio: String,
+    var club: String,
+    var chat: String,
+    var chattwo: String,
+    val messagewritten: String,
     val message: String,
+    val messagetwowritten: String,
+    val messagetwo: String,
 )
