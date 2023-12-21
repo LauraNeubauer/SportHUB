@@ -17,8 +17,16 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
     val contacts = repo.personenListe
 
     private val _currentProfile = MutableLiveData<PersonData>()
+    private var _currentGroup : Int = 0
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
+
+    val currentGroup: Int
+        get() = _currentGroup
+
+    fun setCurrentGroup(group : Int) {
+        _currentGroup = group
+    }
 
     fun setCurrentProfile(profile: PersonData) {
         _currentProfile.postValue(profile)
@@ -32,6 +40,12 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             repo.getPerson()
             Log.d("TAG", "Person ausgegeben")
+        }
+    }
+
+    fun loadGroup(participants : Int) {
+        viewModelScope.launch {
+            repo.getGroup(participants)
         }
     }
 

@@ -15,4 +15,7 @@ interface PersonDao {
 
     @Query("SELECT * FROM person_table")
     fun getAll(): LiveData<MutableList<PersonData>>
+
+    @Query("SELECT * FROM person_table ORDER BY RANDOM() LIMIT :participants")
+    fun getGroup(participants: Int): LiveData<MutableList<PersonData>>
 }

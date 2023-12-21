@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_width="273dp"
             android:layout_height="match_parent">
 
             <TextView
@@ -30,7 +30,7 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/kronaone_regular"
                 android:text="Felix:"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_pp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_max="225dp" />
 
@@ -39,12 +39,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="15dp"
                 android:text="Heute ist aber schönes Wetter!"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_pp"
                 app:layout_constraintTop_toBottomOf="@+id/tv_send"
                 app:layout_constraintWidth_max="225dp" />
 
@@ -53,11 +51,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="15dp"
                 android:fontFamily="@font/kronaone_regular"
                 android:text="11:33 Uhr,"
                 android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_message"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_pp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_profilpictures"
+                android:clipToOutline="true"
+                android:layout_marginStart="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/crash_test_m" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

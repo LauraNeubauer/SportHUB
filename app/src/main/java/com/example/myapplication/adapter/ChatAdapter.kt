@@ -41,7 +41,9 @@ class ChatAdapter(
         holder.binding.tvLastMessage.text = item.lastMessage
 
         holder.binding.cvChat.setOnClickListener {
+            val participants = (5..13).random()
             viewModel.setCurrentChat(item)
+            personVM.setCurrentGroup(participants)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }
     }

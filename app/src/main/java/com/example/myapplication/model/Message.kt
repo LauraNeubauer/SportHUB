@@ -1,8 +1,9 @@
 package com.example.myapplication.model
 
-class Message(
-    var text: String,
-    var from: String,
-    var timestamp: String,
-    var incomming: Boolean
+data class Message(
+    var loc: Int = 0,
+    var text : String,
+    val from : String,
+    val timestamp: String,
+    val send: Boolean
 )

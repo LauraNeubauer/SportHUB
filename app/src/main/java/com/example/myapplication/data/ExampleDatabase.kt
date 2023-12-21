@@ -5,6 +5,7 @@ import com.example.myapplication.model.Chat
 import com.example.myapplication.model.Club
 import com.example.myapplication.model.Event
 import com.example.myapplication.model.ExamplePerson
+import com.example.myapplication.model.Message
 import com.example.myapplication.model.News
 import com.example.myapplication.model.Request
 import com.example.myapplication.model.Results
@@ -165,7 +166,7 @@ class ExampleDatabase {
             "Gestern habe ich vergessen...",
             "Gestern",
             R.drawable.crash_test_m,
-            null
+            listOf(Message(1, "Hallo Hallo", "Fritz", "12:22 Uhr", true ))
         ),
         Chat(
             "Holsteiner Eagels",

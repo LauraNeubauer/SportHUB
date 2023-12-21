@@ -27,7 +27,7 @@ class ChatDetailAdapter(
     override fun getItemViewType(position: Int): Int {
         val itemChatDetail = dataset[position]
 
-        return if (itemChatDetail.incomming) {
+        return if (itemChatDetail.send) {
             chatIn
         } else {
             chatOut
@@ -59,13 +59,18 @@ class ChatDetailAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val itemChatDetails = dataset[position]
 
+        val participants = personVM.currentGroup
+        var allContacts = personVM.contacts
+
+        val group = personVM.loadGroup(participants)
+
         if (holder is MessageInViewHolder) {
             holder.binding.tvMessage.text = itemChatDetails.text
             holder.binding.tvTime.text = itemChatDetails.timestamp
             holder.binding.tvSend.text = itemChatDetails.from
         } else if (holder is MessageOutViewHolder) {
             holder.binding.tvMessageOut.text = itemChatDetails.text
-            holder.binding.tvTimeOut.text = itemChatDetails.text
+            holder.binding.tvTimeOut.text = itemChatDetails.timestamp
             holder.binding.tvSendOut.text = itemChatDetails.from
         }
     }
