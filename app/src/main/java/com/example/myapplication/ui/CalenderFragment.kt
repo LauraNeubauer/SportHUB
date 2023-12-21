@@ -1,5 +1,6 @@
 package com.example.myapplication.ui
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +22,7 @@ import java.util.Calendar
 class CalenderFragment : Fragment() {
 
     private lateinit var binding: CalenderFragmentBinding
-    var datasetEvents = ExampleDatabase().loadEvents()
+    private var datasetEvents = ExampleDatabase().loadEvents()
     private val viewModel: PersonViewModel by activityViewModels()
 
 
@@ -29,11 +30,12 @@ class CalenderFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = CalenderFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,6 +48,7 @@ class CalenderFragment : Fragment() {
         weekdays()
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun weekdays() {
 
         val currentDate = Calendar.getInstance().time
@@ -53,9 +56,8 @@ class CalenderFragment : Fragment() {
         calendar.time = currentDate
         val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
         val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
-        val dayOfWeekString = SimpleDateFormat("EEEE").format(calendar.time)
 
-        when (dayOfWeekString) {
+        when (SimpleDateFormat("EEEE").format(calendar.time)) {
             "Monday" -> {
                 binding.dateOne.text = dayOfMonth.toString()
                 binding.dateTwo.text = (dayOfMonth.plus(1).toString())
@@ -124,6 +126,7 @@ class CalenderFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showPopupMenuSortCal(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -176,9 +179,8 @@ class CalenderFragment : Fragment() {
 
         val datePickerDialog = DatePickerDialog(
             requireContext(),
-            R.style.DatePickerDialogTheme, // Hier wird der benutzerdefinierte Stil angewendet
-            DatePickerDialog.OnDateSetListener { view: DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
-                // Hier wird das ausgewählte Datum verarbeitet
+            R.style.DatePickerDialogTheme,
+            { _: DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
                 val selectedDate = if (dayOfMonth < 10) {
                     "0$dayOfMonth.${monthOfYear + 1}.$year"
                 } else {
@@ -191,8 +193,6 @@ class CalenderFragment : Fragment() {
             month,
             day
         )
-
-        // DatePicker-Dialog anzeigen
         datePickerDialog.show()
     }
 }

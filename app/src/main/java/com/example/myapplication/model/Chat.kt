@@ -5,5 +5,6 @@ class Chat(
     var lastMessageFrom: String,
     var lastMessage: String,
     var lastMessageDay: String,
-    var groupPic: Int
+    var groupPic: Int,
+    var messages: List<Message>?
 )

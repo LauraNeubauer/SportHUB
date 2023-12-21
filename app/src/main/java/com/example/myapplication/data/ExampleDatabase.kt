@@ -164,49 +164,56 @@ class ExampleDatabase {
             "Fritz",
             "Gestern habe ich vergessen...",
             "Gestern",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "Holsteiner Eagels",
             "Torben",
             "Nicht vergessen: Am...",
             "Heute",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "Ski-Bergen 08",
             "Tanja",
             "Hey Ihr Lieben, ich habe am...",
             "Mittwoch",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "TurnGruppe",
             "Fritz",
             "Gestern habe ich vergessen...",
             "Gestern",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "HH SV",
             "Torben",
             "Nicht vergessen: Am Mittwoch...",
             "Heute",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "SkatePark",
             "Tanja",
             "Hey Ihr Lieben, ich habe am...",
             "Mittwoch",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         ),
         Chat(
             "Helo",
             "Tina",
             "Hey Ihr Lieben, ich habe am...",
             "Mittwoch",
-            R.drawable.crash_test_m
+            R.drawable.crash_test_m,
+            null
         )
     )
 

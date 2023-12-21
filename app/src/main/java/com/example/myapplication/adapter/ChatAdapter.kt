@@ -3,12 +3,18 @@ package com.example.myapplication.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.MainViewModel
+import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ChatListItemBinding
 import com.example.myapplication.model.Chat
 
 class ChatAdapter(
     private val dataset: List<Chat>,
+    private val personVM: PersonViewModel,
+    private val viewModel: MainViewModel,
 ) : RecyclerView.Adapter<ChatAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ChatListItemBinding) :
@@ -33,5 +39,10 @@ class ChatAdapter(
         holder.binding.tvNameChat.text = item.groupName
         holder.binding.tvChatLastTexter.text = item.lastMessageFrom
         holder.binding.tvLastMessage.text = item.lastMessage
+
+        holder.binding.cvChat.setOnClickListener {
+            viewModel.setCurrentChat(item)
+            holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
+        }
     }
 }

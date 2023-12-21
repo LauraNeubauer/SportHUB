@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_chat"
             android:layout_width="390dp"
             android:layout_height="60dp"
             android:layout_marginLeft="15dp"
