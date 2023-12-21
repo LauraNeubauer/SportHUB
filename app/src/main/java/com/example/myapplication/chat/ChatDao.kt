@@ -15,4 +15,7 @@ interface ChatDao {
 
     @Query("SELECT * FROM chat_table")
     fun getAll(): LiveData<MutableList<ChatData>>
+
+    @Query("SELECT * FROM chat_table WHERE groupname = :groupName")
+    fun getMessagesByGroupName(groupName: String): LiveData<MutableList<ChatData>>
 }

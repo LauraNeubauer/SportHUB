@@ -38,7 +38,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="0dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/edgar_chaparro_shfo3woggtu_unsplash" />
 
                 <LinearLayout
@@ -49,7 +49,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="2dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -87,23 +87,24 @@
                             android:layout_width="2dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="1dp"
+                            android:layout_marginTop="3dp"
                             android:layout_weight="1"
                             android:fontFamily="@font/inter_medium"
                             android:gravity="end"
                             android:text="Fritz:"
-                            android:textSize="15dp" />
+                            android:textSize="14dp" />
 
                         <TextView
                             android:id="@+id/tv_lastMessage"
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="7dp"
-                            android:layout_marginTop="1dp"
+                            android:layout_marginTop="3dp"
                             android:layout_marginRight="20dp"
                             android:layout_weight="1"
                             android:gravity="start"
-                            android:text="Gestern habe ich vergesen..." />
+                            android:text="Gestern habe ich vergesen..."
+                            android:textSize="15dp" />
                     </LinearLayout>
                 </LinearLayout>
 

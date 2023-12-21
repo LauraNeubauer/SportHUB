@@ -5,16 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.MainViewModel
+import coil.load
+import com.example.myapplication.PersonApi.ChatViewModel
 import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.model.ChatData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ChatListItemBinding
-import com.example.myapplication.model.Chat
 
 class ChatAdapter(
-    private val dataset: List<Chat>,
+    private val dataset: List<ChatData>,
+    private val chatVM : ChatViewModel,
     private val personVM: PersonViewModel,
-    private val viewModel: MainViewModel,
 ) : RecyclerView.Adapter<ChatAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ChatListItemBinding) :
@@ -34,15 +35,22 @@ class ChatAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         var item = dataset[position]
 
-        holder.binding.ivGroupPic.setImageResource(item.groupPic)
-        holder.binding.tvChatDay.text = item.lastMessageDay
-        holder.binding.tvNameChat.text = item.groupName
-        holder.binding.tvChatLastTexter.text = item.lastMessageFrom
-        holder.binding.tvLastMessage.text = item.lastMessage
+        val maxLength = 25
+        val originalText = item.lastMessage
+
+        if (originalText.length > maxLength) {
+            holder.binding.tvLastMessage.text = originalText.substring(0, maxLength) + "..."
+        } else {
+            holder.binding.tvLastMessage.text = originalText
+        }
+
+        holder.binding.ivGroupPic.load(item.pic)
+        holder.binding.tvChatDay.text = item.time
+        holder.binding.tvNameChat.text = item.groupname
+        holder.binding.tvChatLastTexter.text = item.lastChatter
 
         holder.binding.cvChat.setOnClickListener {
             val participants = (5..13).random()
-            viewModel.setCurrentChat(item)
             personVM.setCurrentGroup(participants)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }

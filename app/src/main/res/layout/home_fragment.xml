@@ -281,7 +281,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:padding="5dp"
-                            app:srcCompat="@drawable/download" />
+                            app:srcCompat="@drawable/balls" />
 
                         <ImageView
                             android:id="@+id/grouptwopic"
@@ -289,7 +289,7 @@
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
                             android:padding="5dp"
-                            app:srcCompat="@drawable/download__1_" />
+                            app:srcCompat="@drawable/balls_bg" />
 
                     </LinearLayout>
 

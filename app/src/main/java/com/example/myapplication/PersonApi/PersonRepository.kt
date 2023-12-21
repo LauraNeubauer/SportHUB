@@ -7,7 +7,7 @@ import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.PersonApi.remote.PersonApi
 
 
-class Repository(
+class PersonRepository(
     private val db: PersonDatabase
 ) {
     val personenListe = db.personDao.getAll()

@@ -11,13 +11,11 @@ import androidx.fragment.app.activityViewModels
 import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.FinderResultAdapter
-import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.FinderFragmentBinding
 
 class FinderFragment : Fragment() {
 
     private lateinit var binding : FinderFragmentBinding
-    var datasetMatches = ExampleDatabase().loadMatches()
     private val viewModel : PersonViewModel by activityViewModels()
 
     override fun onCreateView(

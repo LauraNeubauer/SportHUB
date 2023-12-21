@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class PersonViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
-    private val repo = Repository(database)
+    private val repo = PersonRepository(database)
 
     val contacts = repo.personenListe
 
