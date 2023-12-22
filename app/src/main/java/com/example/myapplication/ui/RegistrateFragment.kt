@@ -6,11 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.Firebase.FirebaseViewModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.RegistrateFragmentBinding
 
 class RegistrateFragment : Fragment() {
 
     private lateinit var binding : RegistrateFragmentBinding
+    private val firebaseViewModel : FirebaseViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,8 +29,17 @@ class RegistrateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btRegistrate.setOnClickListener {
+        firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
+            if (it != null) {
+                findNavController().navigate(R.id.homeFragment)
+            }
+        }
 
+        binding.btRegistrate.setOnClickListener {
+           var email = binding.tietEmail.text.toString()
+           var passwort = binding.tierPassword.text.toString()
+
+            firebaseViewModel.register(email, passwort)
         }
     }
 

@@ -110,7 +110,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/reset"
         style="@style/ctab_infos"
         android:layout_width="160dp"
         android:text="LOGIN"

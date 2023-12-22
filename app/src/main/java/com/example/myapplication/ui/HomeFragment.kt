@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
@@ -20,6 +21,11 @@ class HomeFragment : Fragment() {
    var datasetEvents = ExampleDatabase().loadEvents()
    var datasetNews = ExampleDatabase().loadNews()
    private val viewModel : PersonViewModel by activityViewModels()
+   private val firebaseViewModel : FirebaseViewModel by activityViewModels()
+
+   override fun onCreate(savedInstanceState: Bundle?) {
+      super.onCreate(savedInstanceState)
+   }
 
    override fun onCreateView(
       inflater: LayoutInflater,
@@ -32,6 +38,16 @@ class HomeFragment : Fragment() {
 
    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
       super.onViewCreated(view, savedInstanceState)
+
+      firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
+         if (it == null) {
+            findNavController().navigate(R.id.onBoardingOneFragment)
+         }
+      }
+
+      binding.logout.setOnClickListener {
+         firebaseViewModel.logout()
+      }
 
       binding.fbResults.setOnClickListener {
          findNavController().navigate(R.id.action_homeFragment_to_resultsFragment)

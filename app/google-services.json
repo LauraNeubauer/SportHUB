@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "799864041457",
+    "firebase_url": "https://sporthub-cd6ca-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "sporthub-cd6ca",
+    "storage_bucket": "sporthub-cd6ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799864041457:android:502b97e3692a6ac10c1e50",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXX_6CkzXr4bxQ1iRoENwiOIjzVXF_Zxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
