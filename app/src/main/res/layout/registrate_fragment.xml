@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
-            android:hint="Ihre Mail Adresse" />
+            android:hint="Ihre Mail Adresse"
+            android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -90,7 +91,8 @@
             android:id="@+id/tier_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ihr Passwort" />
+            android:hint="Ihr Passwort"
+            android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
