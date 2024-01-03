@@ -1,5 +1,6 @@
 package com.example.myapplication.ui
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,24 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.R
-import com.example.myapplication.databinding.OnboardingOneFragmentBinding
+import com.example.myapplication.databinding.SigninFragmentBinding
 
-class OnBoardingOneFragment : Fragment() {
+class SigninFragment : Fragment() {
 
-    private lateinit var binding : OnboardingOneFragmentBinding
-    private val viewModel : PersonViewModel by activityViewModels()
+    private lateinit var binding : SigninFragmentBinding
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = OnboardingOneFragmentBinding.inflate(inflater, container, false)
-        viewModel.loadPersons()
+        binding = SigninFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -36,14 +33,6 @@ class OnBoardingOneFragment : Fragment() {
             if (it != null) {
                 findNavController().navigate(R.id.homeFragment)
             }
-        }
-
-        binding.btLogIn.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
-        }
-
-        binding.btRegistrate.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingOneFragment_to_registrateFragment)
         }
     }
 }

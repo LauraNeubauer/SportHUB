@@ -110,10 +110,16 @@
     </fragment>
     <fragment
         android:id="@+id/registrateFragment"
-        android:name="com.example.myapplication.ui.RegistrateFragment"
+        android:name="com.example.myapplication.ui.SigninFragment"
         android:label="RegistrateFragment" >
         <action
             android:id="@+id/action_registrateFragment_to_onBoardingTwoFragment"
+            app:destination="@id/onBoardingTwoFragment" />
+        <action
+            android:id="@+id/action_registrateFragment_to_onBoardingThreeFragment"
+            app:destination="@id/onBoardingThreeFragment" />
+        <action
+            android:id="@+id/action_registrateFragment_to_onBoardingTwoFragment2"
             app:destination="@id/onBoardingTwoFragment" />
     </fragment>
     <fragment
@@ -123,5 +129,27 @@
         <action
             android:id="@+id/action_chatDetailFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingThreeFragment"
+        android:name="com.example.myapplication.ui.OnBoardingThreeFragment"
+        android:label="OnBoardingThreeFragment" >
+        <action
+            android:id="@+id/action_onBoardingThreeFragment_to_onBoardingFourFragment"
+            app:destination="@id/onBoardingFourFragment" />
+        <action
+            android:id="@+id/action_onBoardingThreeFragment_to_registrateFragment"
+            app:destination="@id/registrateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFourFragment"
+        android:name="com.example.myapplication.ui.OnBoardingFourFragment"
+        android:label="OnBoardingFourFragment" >
+        <action
+            android:id="@+id/action_onBoardingFourFragment_to_onBoardingThreeFragment"
+            app:destination="@id/onBoardingThreeFragment" />
+        <action
+            android:id="@+id/action_onBoardingFourFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
