@@ -28,7 +28,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="EMAILADRESSE"
+        android:text="VOLLER NAME"
         android:textColor="@color/header"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
@@ -58,63 +58,57 @@
         android:id="@+id/tv_tifftle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/kronaone_regular"
-        android:text="PASSWORT"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="ALTER"
         android:textColor="@color/header"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout4"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tier_password"
-            android:layout_width="match_parent"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:hint="Ihr Passwort"
+            android:hint="Alter"
             android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_title2"
+        android:id="@+id/tv_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:fontFamily="@font/kronaone_regular"
-        android:text="PASSWORT WIEDERHOLEN"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="GRÖSSE"
         android:textColor="@color/header"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout6"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="match_parent"
+        android:id="@+id/textInputLayout6"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title2">
+        app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tier_password2"
-            android:layout_width="match_parent"
+            android:id="@+id/tier_password22"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:hint="Ihr Passwort"
+            android:hint="Größe"
             android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,6 +138,62 @@
         android:text="ZURÜCK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_login" />
+
+    <Button
+        android:id="@+id/dd_bt_sort_cal"
+        style="@style/ib_dd_sports"
+        android:layout_width="370dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <Button
+        android:id="@+id/dd_bt_sort_cal2"
+        style="@style/ib_dd_level"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dd_bt_sort_cal" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bio"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bio2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:hint="Beschreiben Sie sich in einigen Sätzen"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/inter_light"
+        android:hint="Hier wird ihre Biografie stehen"
+        android:orientation="horizontal"
+        android:textColor="@color/white"
+        android:textColorHint="#FFFFFF"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dd_bt_sort_cal2" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
