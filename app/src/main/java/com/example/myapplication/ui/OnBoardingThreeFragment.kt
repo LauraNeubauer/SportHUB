@@ -18,7 +18,7 @@ class OnBoardingThreeFragment : Fragment() {
 
     private lateinit var binding: OnboardingThreeFragmentBinding
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
-    private var bioVerified = false
+    private var Verified = false
 
 
     override fun onCreateView(
@@ -33,6 +33,10 @@ class OnBoardingThreeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val receivedArguments = arguments
+
+        val email = receivedArguments!!.getString("email")
+        val pw = receivedArguments.getString("pw")
         var name = binding.tietName.text
         var age = binding.tietAge.text
         var size = binding.tietSize.text
@@ -45,27 +49,21 @@ class OnBoardingThreeFragment : Fragment() {
             showPopupMenuLevel(it)
         }
         binding.btWeiter.setOnClickListener {
-            val selectedSports = binding.ddBtSortCal.text.toString()
-            val selectedLevel = binding.ddBtSortCal2.text.toString()
-
-            if (bioVerified &&
+            if (Verified &&
                 bio!!.isNotEmpty() &&
                 binding.tietAge.text!!.isNotEmpty() &&
                 binding.tietName.text!!.isNotEmpty() &&
-                binding.tietSize.text!!.isNotEmpty() &&
-                selectedSports.isNotEmpty() &&
-                selectedLevel.isNotEmpty()
+                binding.tietSize.text!!.isNotEmpty()
             ) {
                 findNavController().navigate(R.id.action_onBoardingThreeFragment_to_onBoardingFourFragment)
             } else if (
-                !bioVerified &&
-                (bio!!.isEmpty() ||
-                binding.tietAge.text!!.isEmpty() ||
+                !Verified &&
+                (binding.tietAge.text!!.isEmpty() ||
                 binding.tietName.text!!.isEmpty() ||
-                binding.tietSize.text!!.isEmpty() ||
-                selectedSports.isEmpty() ||
-                selectedLevel.isEmpty())){
-                binding.tvBio.text = bio
+                binding.tietSize.text!!.isEmpty())) {
+                if (binding.tietBio.text!!.isNotEmpty()) {
+                    binding.tvBio.text = bio
+                }
                 binding.tietBio.text!!.clear()
                 showPopUp("Fehlende Daten", "Bitte füllen sie alle Felder aus und wählen Sie Ihr Sport-Level und Sportarten aus!")
             }
@@ -128,7 +126,7 @@ class OnBoardingThreeFragment : Fragment() {
         builder.setMessage(nachricht)
         builder.setPositiveButton("OK") { dialog, which ->
             binding.btWeiter.isClickable = true
-            bioVerified = true
+            Verified = true
             dialog.dismiss()
         }
         builder.setCancelable(false)
