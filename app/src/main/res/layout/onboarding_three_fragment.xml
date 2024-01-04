@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tier_age"
+            android:id="@+id/tiet_age"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="Alter"
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tier_size"
+            android:id="@+id/tiet_size"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:hint="Größe"
@@ -114,7 +114,7 @@
 
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/bt_weiter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -137,7 +137,7 @@
         android:layout_marginRight="24dp"
         android:text="ZURÜCK"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_weiter" />
 
     <Button
         android:id="@+id/dd_bt_sort_cal"
@@ -163,7 +163,7 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_login"
+        app:layout_constraintBottom_toTopOf="@+id/bt_weiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 

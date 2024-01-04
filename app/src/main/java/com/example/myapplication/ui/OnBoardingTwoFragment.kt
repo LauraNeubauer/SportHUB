@@ -15,6 +15,7 @@ class OnBoardingTwoFragment : Fragment() {
 
     private lateinit var binding: OnboardingTwoFragmentBinding
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
+    private var bioVerified = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,10 +35,31 @@ class OnBoardingTwoFragment : Fragment() {
             }
         }
 
-        binding.reset.setOnClickListener {
-            val email = binding.tietEmail.text.toString()
+        binding.btWeiter.setOnClickListener {
+            var email = binding.tietEmail.text.toString()
+            var pwOne = binding.tietPwOne.text.toString()
+            var pwTwo = binding.tietPwTwo.text.toString()
 
-            firebaseViewModel.sendPasswordReset(email)
+            if (binding.tietEmail.text!!.isEmpty() && binding.tietPwOne.text!!.isEmpty() && binding.tietPwTwo.text!!.isEmpty()) {
+                showPopUp("Daten fehlen", "Bitte geben Sie eine gültige Email-Adresse, ein Passwort mit mindestens 6 Zeichen und bestätigen Sie dieses!")
+                binding.btWeiter.isClickable = false
+            } else if (binding.tietEmail.text!!.isNotEmpty() && binding.tietPwOne.text!!.isEmpty() && binding.tietPwTwo.text!!.isEmpty()) {
+                showPopUp("Daten fehlen", "Bitte geben Sie zum Registrieren ein Passwort mit mindestens 6 Zeichen ein und bestätigen Sie dieses!")
+                binding.btWeiter.isClickable = false
+            } else if (binding.tietEmail.text!!.isEmpty() && binding.tietPwOne.text!!.isNotEmpty() && binding.tietPwTwo.text!!.isNotEmpty()) {
+                showPopUp("Daten fehlen", "Bitte geben Sie zum Registrieren eine gültige Email-Adresse ein!")
+                binding.btWeiter.isClickable = false
+            } else if (binding.tietEmail.text!!.isNotEmpty() && binding.tietPwOne.text!!.isNotEmpty() && binding.tietPwTwo.text!!.isEmpty()) {
+                showPopUp("Daten fehlen", "Bitte bestätigen Sie Ihr Passwort!")
+                binding.btWeiter.isClickable = false
+            } else {
+                if (pwOne == pwTwo) {
+                    binding.btWeiter.isClickable = true
+                    findNavController().navigate(R.id.action_onBoardingTwoFragment_to_onBoardingThreeFragment)
+                } else {
+                    showPopUp("Passwort stimmt nicht überein", "Ihr bestätigtes Passwort stimmt nicht überein - Bitte bestätigen Sie Ihr Passwort")
+                }
+            }
         }
     }
     private fun showPopUp(titel: String, nachricht: String) {
@@ -46,10 +68,9 @@ class OnBoardingTwoFragment : Fragment() {
         builder.setMessage(nachricht)
         builder.setPositiveButton("OK") { dialog, which ->
 
-            binding.btLogin.isClickable = true
+            binding.btWeiter.isClickable = true
             dialog.dismiss()
         }
-
         builder.setCancelable(false)
         val dialog: AlertDialog = builder.create()
         dialog.show()

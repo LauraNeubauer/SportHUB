@@ -93,14 +93,14 @@
         android:text="BILD HOCHLADEN"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_login"
+        app:layout_constraintBottom_toTopOf="@+id/bt_weiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/bt_weiter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -123,14 +123,14 @@
         android:layout_marginRight="24dp"
         android:text="ZURÜCK"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_weiter" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/bio"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_login"
+        app:layout_constraintBottom_toTopOf="@+id/bt_weiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <TextView

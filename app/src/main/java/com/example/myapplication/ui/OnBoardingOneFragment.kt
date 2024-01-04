@@ -23,7 +23,7 @@ class OnBoardingOneFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = OnboardingOneFragmentBinding.inflate(inflater, container, false)
         viewModel.loadPersons()
         return binding.root

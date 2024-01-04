@@ -89,8 +89,8 @@
         android:name="com.example.myapplication.ui.OnBoardingTwoFragment"
         android:label="OnBoardingTwoFragment" >
         <action
-            android:id="@+id/action_onBoardingTwoFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_onBoardingTwoFragment_to_onBoardingThreeFragment"
+            app:destination="@id/onBoardingThreeFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultsFragment"
