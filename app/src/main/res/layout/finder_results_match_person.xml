@@ -67,6 +67,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tv_title"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_gravity="center_vertical"
@@ -100,7 +101,9 @@
                     <Button
                         android:id="@+id/bt_club"
                         style="@style/ctab_club_name"
+                        android:layout_width="match_parent"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp" />
 
                 </LinearLayout>

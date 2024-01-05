@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingThreeFragmentBinding
 
@@ -18,6 +20,8 @@ class OnBoardingThreeFragment : Fragment() {
     private var Verified = false
     private var selectedLevel: String? = null
     private val checkedItems = booleanArrayOf(false, false, false, false)
+    private val firebaseViewModel: FirebaseViewModel by activityViewModels()
+
 
     private var email: String? = null
     private var pw: String? = null
@@ -38,6 +42,12 @@ class OnBoardingThreeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
+            if (it != null) {
+                findNavController().navigate(R.id.homeFragment)
+            }
+        }
 
         binding.ddBtSortCal.setOnClickListener {
             showMultiSelectionDialog(it)

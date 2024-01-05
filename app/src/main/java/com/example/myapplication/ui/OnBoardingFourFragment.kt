@@ -35,6 +35,12 @@ class OnBoardingFourFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
+            if (it != null) {
+                findNavController().navigate(R.id.homeFragment)
+            }
+        }
+
         val receivedArguments = arguments
 
         val email = receivedArguments!!.getString("email")
@@ -94,8 +100,6 @@ class OnBoardingFourFragment : Fragment() {
                 binding.ivProfilpicture.setImageURI(selectedImageUri)
             }
         }
-
-    // ...
 
     fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
