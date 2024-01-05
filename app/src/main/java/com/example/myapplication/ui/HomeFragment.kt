@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
       savedInstanceState: Bundle?
    ): View? {
       binding = HomeFragmentBinding.inflate(layoutInflater)
+      viewModel.loadPersons()
       return binding.root
    }
 
