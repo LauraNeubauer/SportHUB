@@ -160,5 +160,29 @@
         <argument
             android:name="email"
             app:argType="string" />
+        <argument
+            android:name="pw"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="level"
+            app:argType="string" />
+        <argument
+            android:name="sport1"
+            app:argType="string" />
+        <argument
+            android:name="sport2"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            app:argType="string" />
+        <argument
+            android:name="size"
+            app:argType="string" />
+        <argument
+            android:name="bio"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -26,5 +26,21 @@ class OnBoardingFourFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val receivedArguments = arguments
+
+        val email = receivedArguments!!.getString("email")
+        val pw = receivedArguments.getString("pw")
+        val name = receivedArguments.getString("name")
+        val age = receivedArguments.getString("age")
+        val size = receivedArguments.getString("size")
+        val bio = receivedArguments.getString("bio")
+        val level = receivedArguments.getString("level")
+
+        binding.tvName.text = name
+        binding.tvStatAge.text = age
+        binding.tvStatSize.text = size
+        binding.tvBio.text = bio
+        binding.level.text = level
+
     }
 }
