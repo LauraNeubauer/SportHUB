@@ -65,6 +65,8 @@ class OnBoardingThreeFragment : Fragment() {
                 size = binding.tietSize.text!!.toString()
                 bio = binding.tietBio.text!!.toString()
 
+                val selectedSportsString = getSelectedSportsAsString()
+
                 val bundle = Bundle()
 
                 bundle.putString("email", email)
@@ -74,6 +76,8 @@ class OnBoardingThreeFragment : Fragment() {
                 bundle.putString("size", size)
                 bundle.putString("bio", bio)
                 bundle.putString("level", selectedLevel)
+                bundle.putString("selectedSports", selectedSportsString)
+
 
                 findNavController().navigate(
                     R.id.action_onBoardingThreeFragment_to_onBoardingFourFragment,
@@ -214,6 +218,13 @@ class OnBoardingThreeFragment : Fragment() {
         builder.setCancelable(false)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+    private fun getSelectedSportsAsString(): String {
+        val sportsArray = arrayOf("BADMINTON", "SQUASH", "TISCHTENNIS", "TENNIS")
+        val selectedSports = sportsArray.filterIndexed { index, _ ->
+            checkedItems[index]
+        }
+        return selectedSports.joinToString(", ") // Hier kannst du das Trennzeichen nach Bedarf ändern
     }
 
 }

@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/ads"
+        android:id="@+id/iv_profilpicture"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginStart="20dp"
@@ -45,7 +45,7 @@
         android:textColor="@color/header"
         android:textSize="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ads" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_profilpicture" />
 
     <TextView
         android:id="@+id/level"
@@ -59,7 +59,7 @@
         android:textColor="@color/tags"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ads" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_profilpicture" />
 
     <Button
         android:id="@+id/bt_sportsOne"
@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <Button
-        android:id="@+id/bt_login1"
+        android:id="@+id/bt_picturePacker"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
