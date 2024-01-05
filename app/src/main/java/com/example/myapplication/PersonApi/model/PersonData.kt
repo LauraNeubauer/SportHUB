@@ -25,6 +25,6 @@ data class PersonData(
     var sportsOne: String = "",
     var sportsTwo: String = "",
     val bio: String = "",
-    var club: Int = 0,
+    var club: Int? = 0,
     var chat: String = "",
 )

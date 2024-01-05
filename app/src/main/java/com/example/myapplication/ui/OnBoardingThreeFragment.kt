@@ -56,6 +56,7 @@ class OnBoardingThreeFragment : Fragment() {
                 binding.tietSize.text!!.isNotEmpty() &&
                 selectedLevel != null
             ) {
+
                 val receivedArguments = arguments
 
                 email = receivedArguments!!.getString("email")
@@ -77,6 +78,7 @@ class OnBoardingThreeFragment : Fragment() {
                 bundle.putString("bio", bio)
                 bundle.putString("level", selectedLevel)
                 bundle.putString("selectedSports", selectedSportsString)
+                bundle.putString("gender", if (binding.switch1.isChecked) "female" else "male")
 
 
                 findNavController().navigate(
@@ -224,7 +226,7 @@ class OnBoardingThreeFragment : Fragment() {
         val selectedSports = sportsArray.filterIndexed { index, _ ->
             checkedItems[index]
         }
-        return selectedSports.joinToString(", ") // Hier kannst du das Trennzeichen nach Bedarf ändern
+        return selectedSports.joinToString(", ")
     }
 
 }

@@ -116,6 +116,14 @@ class PersonRepository(
         }
     }
 
+    suspend fun insertPerson(person: PersonData) {
+        try {
+            db.personDao.insertPerson(person)
+        } catch (e: Exception) {
+            Log.d("TAG", "Neue Person in die Liste geladen")
+        }
+    }
+
     private fun isArabicName(name: String): Boolean {
         val arabicRegex = Regex("[\\p{InArabic}]+")
         return arabicRegex.containsMatchIn(name)

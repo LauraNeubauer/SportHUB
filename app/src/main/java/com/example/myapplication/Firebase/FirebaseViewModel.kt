@@ -81,6 +81,7 @@ class FirebaseViewModel: ViewModel() {
                 profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
                 // Ein neues, leeres Profil wird für jeden User erstellt der zum ersten mal einen Account für die App anlegt
                 profileRef.set(PersonData(uid = firebaseAuth.currentUser!!.uid))
+
                 // Danach führen wir logout Funktion aus, da beim Erstellen eines Users dieser sofort eingeloggt wird
                 _currentUser.value = firebaseAuth.currentUser
             } else {

@@ -17,14 +17,14 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
     val contacts = repo.personenListe
 
     private val _currentProfile = MutableLiveData<PersonData>()
-    private var _currentGroup : Int = 0
+    private var _currentGroup: Int = 0
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
 
     val currentGroup: Int
         get() = _currentGroup
 
-    fun setCurrentGroup(group : Int) {
+    fun setCurrentGroup(group: Int) {
         _currentGroup = group
     }
 
@@ -43,10 +43,35 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun loadGroup(participants : Int) {
+    fun insertPerson(profile: PersonData) {
         viewModelScope.launch {
-            repo.getGroup(participants)
+            try {
+                val personData = PersonData(
+                    name = profile.name,
+                    gender = profile.gender,
+                    age = profile.age,
+                    pic = profile.pic,
+                    trophys = "0",
+                    matches = "0",
+                    wins = "0",
+                    size = profile.size,
+                    level = profile.level,
+                    sportsOne = profile.sportsOne,
+                    sportsTwo = profile.sportsTwo,
+                    bio = profile.bio,
+                )
+                repo.insertPerson(personData)
+            } catch (e: Exception) {
+                Log.e("Person nicht hinzugefügt","Nicht Hinzugefügt")
         }
     }
+}
+
+
+fun loadGroup(participants: Int) {
+    viewModelScope.launch {
+        repo.getGroup(participants)
+    }
+}
 
 }

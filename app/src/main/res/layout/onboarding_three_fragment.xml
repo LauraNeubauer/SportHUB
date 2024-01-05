@@ -178,5 +178,50 @@
             android:textColor="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/dd_bt_sort_cal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dd_bt_sort_cal2"
+        app:layout_constraintTop_toTopOf="@+id/dd_bt_sort_cal2">
+
+        <TextView
+            android:id="@+id/textMale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/kronaone_regular"
+            android:gravity="start"
+            android:text="Männlich"
+            android:textColor="@color/header"
+            android:textSize="10dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintBottom_toTopOf="@+id/bio"
+            app:layout_constraintTop_toBottomOf="@+id/dd_bt_sort_cal"
+            app:thumbTint="@color/header"
+            app:trackTint="@color/tags" />
+
+        <TextView
+            android:id="@+id/textFemale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/kronaone_regular"
+            android:gravity="end"
+            android:text="Weiblich"
+            android:textColor="@color/header"
+            android:textSize="10dp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

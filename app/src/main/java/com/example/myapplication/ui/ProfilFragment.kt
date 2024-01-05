@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.myapplication.data.ExampleDatabase
+import androidx.fragment.app.activityViewModels
+import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.databinding.ProfilFragmentBinding
 
 class ProfilFragment : Fragment() {
 
     lateinit var binding: ProfilFragmentBinding
-    var datasetPersons = ExampleDatabase().loadPersons()
+    private val viewModel : PersonViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
