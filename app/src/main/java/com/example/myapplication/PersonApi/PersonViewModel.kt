@@ -62,16 +62,8 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
                 )
                 repo.insertPerson(personData)
             } catch (e: Exception) {
-                Log.e("Person nicht hinzugefügt","Nicht Hinzugefügt")
+                Log.e("Person nicht hinzugefügt", "Nicht Hinzugefügt")
+            }
         }
     }
-}
-
-
-fun loadGroup(participants: Int) {
-    viewModelScope.launch {
-        repo.getGroup(participants)
-    }
-}
-
 }

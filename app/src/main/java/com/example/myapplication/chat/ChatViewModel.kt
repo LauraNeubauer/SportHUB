@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.PersonApi.local.getChatDatabase
-import com.example.myapplication.PersonApi.model.ChatData
 import kotlinx.coroutines.launch
 
 class ChatViewModel(application: Application) : AndroidViewModel(application) {
@@ -16,13 +15,13 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
     val chats = repo.chatList
 
-    private val _currentChat = MutableLiveData<ChatData>()
-    private var _currentGroup: Int = 0
-    val currentChat: MutableLiveData<ChatData>
+    private val _currentChat = MutableLiveData<Int>()
+
+    val currentChat: MutableLiveData<Int>
         get() = _currentChat
 
 
-    fun setCurrentChat(chat: ChatData) {
+    fun setCurrentChat(chat: Int) {
         _currentChat.postValue(chat)
     }
 

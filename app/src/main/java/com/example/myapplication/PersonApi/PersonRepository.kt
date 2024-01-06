@@ -12,10 +12,6 @@ class PersonRepository(
 ) {
     val personenListe = db.personDao.getAll()
 
-    fun getGroup(participants: Int) {
-        db.personDao.getGroup(participants)
-    }
-
     suspend fun getPerson() {
         val numberOfPersons = 100
         val personList = mutableListOf<Person>()

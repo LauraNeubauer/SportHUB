@@ -50,8 +50,7 @@ class ChatAdapter(
         holder.binding.tvChatLastTexter.text = item.lastChatter
 
         holder.binding.cvChat.setOnClickListener {
-            var participants = // die liste der menschen die im PersonDatabase die angeklickte Gruppe haben
-           //personVM.setCurrentGroup(participants)
+            chatVM.setCurrentChat(item.id - 1)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }
     }

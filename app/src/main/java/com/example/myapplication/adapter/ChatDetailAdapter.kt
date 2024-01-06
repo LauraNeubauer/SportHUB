@@ -59,12 +59,6 @@ class ChatDetailAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val itemChatDetails = dataset[position]
 
-        val participants = personVM.currentGroup
-        var allContacts = personVM.contacts
-
-
-        val group = personVM.loadGroup(participants)
-
         if (holder is MessageInViewHolder) {
             holder.binding.tvMessage.text = itemChatDetails.text
             holder.binding.tvTime.text = itemChatDetails.timestamp
