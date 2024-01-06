@@ -34,6 +34,7 @@ class ChatDetailFragment : Fragment() {
             var groupname = chatViewModel.chats.value!![it].groupname
 
             binding.tvChatName.text = groupname
+            binding.ads.setImageResource(chatViewModel.chats.value!![it].pic)
         }
 
         // Chatgruppennamen in der Chatdatabase
