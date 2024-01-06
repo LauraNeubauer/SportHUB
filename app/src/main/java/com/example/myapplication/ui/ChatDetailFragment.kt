@@ -28,5 +28,13 @@ class ChatDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Chatgruppennamen in der Chatdatabase
+        // namen der teilnehmer in der persondatabase
+        // zeit der gesendeten nachrichten und die nachrichten in der ChatDatabase
+
+        //Query um die Personen zu lasen die in der Gruppe sind -> PersonDao
+        //if um die namen zuzuweisen der nachrichten für die Chatdatabase (im ChatRepository)
+        //lachmessage im chatDatabase muss zuletzt angezeigt werden
+
     }
 }

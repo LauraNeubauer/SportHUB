@@ -50,8 +50,8 @@ class ChatAdapter(
         holder.binding.tvChatLastTexter.text = item.lastChatter
 
         holder.binding.cvChat.setOnClickListener {
-            val participants = (5..13).random()
-            personVM.setCurrentGroup(participants)
+            var participants = // die liste der menschen die im PersonDatabase die angeklickte Gruppe haben
+           //personVM.setCurrentGroup(participants)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }
     }
