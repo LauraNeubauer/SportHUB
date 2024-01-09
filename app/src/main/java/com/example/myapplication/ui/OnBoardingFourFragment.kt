@@ -87,7 +87,7 @@ class OnBoardingFourFragment : Fragment() {
         personViewModel.insertPerson(personData)
 
         binding.btWeiter.setOnClickListener {
-            firebaseViewModel.register(email!!, pw!!)
+            firebaseViewModel.register(email!!, pw!!, personData)
             findNavController().navigate(R.id.homeFragment)
         }
     }
