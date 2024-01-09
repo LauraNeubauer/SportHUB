@@ -155,6 +155,16 @@
         <item name="srcCompat">@drawable/vector</item>
     </style>
 
+    <style name="ib_plus" parent="Widget.Material3.MaterialTimePicker.ImageButton">
+        <item name="android:backgroundTint">@color/header</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="srcCompat">@drawable/pngwing_com</item>
+    </style>
+
 
     <style name="ib_news" parent="Widget.Material3.MaterialTimePicker.ImageButton">
         <item name="android:backgroundTint">@color/header</item>
