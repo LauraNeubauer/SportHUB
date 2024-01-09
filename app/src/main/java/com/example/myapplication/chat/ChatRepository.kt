@@ -119,7 +119,7 @@ class ChatRepository(
 
     fun randomPic() : Int {
         val piclist = listOf(
-            R.drawable.balls, R.drawable.balls_bg, R.drawable.alex__aol4_fdq3m_unsplash, R.drawable.crash_test_m, R.drawable.images, R.drawable.images__1_avatar, R.drawable.images__2_
+            R.drawable.balls, R.drawable.balls_bg, R.drawable.crash_test_m, R.drawable.images, R.drawable.images__1_avatar, R.drawable.images__2_
         )
         return piclist.random()
     }
