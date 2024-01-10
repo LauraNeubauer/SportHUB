@@ -30,16 +30,10 @@ class FirebaseViewModel: ViewModel() {
                 profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
                 profileRef.set(PersonData)
                 _currentUser.value = firebaseAuth.currentUser
-                createChatCollection()
             } else {
                 Log.e("FIREBASE", "${authResult.exception}")
             }
         }
-    }
-
-    private fun createChatCollection() {
-        // Hier wird eine Referenz zur Chat-Sammlung innerhalb des Benutzerprofils erstellt
-        val chatCollectionRef = profileRef.collection("chats")
     }
 
     fun login(email: String, password: String) {
