@@ -30,7 +30,7 @@
         android:title="Profile" />
 
     <item
-        android:id="@+id/chatFragment"
+        android:id="@+id/myChatsFragment"
         android:icon="@drawable/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

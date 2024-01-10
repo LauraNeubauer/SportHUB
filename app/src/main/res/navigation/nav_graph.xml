@@ -12,9 +12,6 @@
             android:id="@+id/action_homeFragment_to_finderFragment"
             app:destination="@id/finderFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_profilFragment"
             app:destination="@id/profilFragment" />
         <action
@@ -26,6 +23,9 @@
         <action
             android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myChatsFragment"
+            app:destination="@id/myChatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/finderFragment"
@@ -39,7 +39,7 @@
             app:destination="@id/strangerProfilFragment" />
     </fragment>
     <fragment
-        android:id="@+id/chatFragment"
+        android:id="@+id/MyChatsFragment"
         android:name="com.example.myapplication.ui.ChatFragment"
         android:label="ChatFragment" >
         <action
@@ -128,7 +128,7 @@
         android:label="ChatDetailFragment" >
         <action
             android:id="@+id/action_chatDetailFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
+            app:destination="@id/MyChatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingThreeFragment"
@@ -184,5 +184,24 @@
         <argument
             android:name="bio"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/allChatsFragment"
+        android:name="com.example.myapplication.ui.AllChatsFragment"
+        android:label="AllChatsFragment" >
+        <action
+            android:id="@+id/action_allChatsFragment_to_myChatsFragment"
+            app:destination="@id/myChatsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myChatsFragment"
+        android:name="com.example.myapplication.ui.MyChatsFragment"
+        android:label="MyChatsFragment" >
+        <action
+            android:id="@+id/action_myChatsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_myChatsFragment_to_allChatsFragment"
+            app:destination="@id/allChatsFragment" />
     </fragment>
 </navigation>
