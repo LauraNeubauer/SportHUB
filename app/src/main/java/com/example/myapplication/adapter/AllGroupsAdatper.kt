@@ -5,10 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.databinding.AllChatsItemBinding
 
 class AllGroupsAdatper(
     private val dataset: List<Groups>,
+    private val firebaseVM: FirebaseViewModel
 ) : RecyclerView.Adapter<AllGroupsAdatper.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: AllChatsItemBinding) :
@@ -26,5 +28,9 @@ class AllGroupsAdatper(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val item = dataset[position]
+
+        holder.binding.btAdd.setOnClickListener {
+        }
     }
 }

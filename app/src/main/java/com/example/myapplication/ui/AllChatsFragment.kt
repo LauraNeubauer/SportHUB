@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ChatViewModel
 import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.adapter.AllGroupsAdatper
@@ -33,24 +34,24 @@ class AllChatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val groupsList: List<Groups> = listOf(
-            Groups("FitFam Legends", true),
-            Groups("Muscle Mavericks", true),
-            Groups("Sweat Sesh Squad", true),
-            Groups("Iron Tribe", true),
-            Groups("Flex Fusion Crew", true),
-            Groups("Powerhouse Pioneers", true),
-            Groups("Adrenaline Allies", true),
-            Groups("Ripped Rebels", true),
-            Groups("Beast Mode Brigade", true),
-            Groups("Elevate Collective", true),
-            Groups("Warrior Workout", true),
-            Groups("Grit Gang", true),
-            Groups("Zen & Zeal Crew", true),
-            Groups("Sculpted Syndicate", true),
-            Groups("Pump Posse", true)
+            Groups("1", "FitFam Legends", true),
+            Groups("2", "Muscle Mavericks", true),
+            Groups("3","Sweat Sesh Squad", true),
+            Groups("4","Iron Tribe", true),
+            Groups("5","Flex Fusion Crew", true),
+            Groups("6","Powerhouse Pioneers", true),
+            Groups("7","Adrenaline Allies", true),
+            Groups("8","Ripped Rebels", true),
+            Groups("9","Beast Mode Brigade", true),
+            Groups("10","Elevate Collective", true),
+            Groups("11","Warrior Workout", true),
+            Groups("12","Grit Gang", true),
+            Groups("13","Zen & Zeal Crew", true),
+            Groups("14","Sculpted Syndicate", true),
+            Groups("15","Pump Posse", true)
         )
 
-        binding.rvChats.adapter = AllGroupsAdatper(groupsList)
+        binding.rvChats.adapter = AllGroupsAdatper(groupsList, firebaseVM = FirebaseViewModel())
 
     }
 }
