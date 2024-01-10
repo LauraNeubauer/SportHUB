@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ChatViewModel
 import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.R
 import com.example.myapplication.adapter.AllGroupsAdatper
 import com.example.myapplication.databinding.AllChatsFragmentBinding
 
@@ -53,5 +55,8 @@ class AllChatsFragment : Fragment() {
 
         binding.rvChats.adapter = AllGroupsAdatper(groupsList, firebaseVM = FirebaseViewModel())
 
+        binding.btChats.setOnClickListener {
+            findNavController().navigate(R.id.action_allChatsFragment_to_myChatsFragment)
+        }
     }
 }

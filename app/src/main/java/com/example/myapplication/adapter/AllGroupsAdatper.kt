@@ -30,7 +30,5 @@ class AllGroupsAdatper(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.binding.btAdd.setOnClickListener {
-        }
     }
 }

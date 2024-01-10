@@ -10,7 +10,6 @@ data class PersonData(
     val id: Int = 0,
     @DocumentId
     var uid: String? = "",
-
     val email: String? = "",
     val pw : String? = "",
     val gender: String? = "",

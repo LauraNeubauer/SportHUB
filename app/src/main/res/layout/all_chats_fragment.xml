@@ -124,13 +124,13 @@
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
         app:layout_constraintEnd_toStartOf="@+id/fb_results"
-        app:layout_constraintStart_toEndOf="@+id/bt_club_"
+        app:layout_constraintStart_toEndOf="@+id/bt_chats_"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@drawable/search_zoom_in"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bt_club_"
+        android:id="@+id/bt_chats_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -149,12 +149,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Chat"
+        android:text="Meine Chats"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/bt_club_"
-        app:layout_constraintStart_toStartOf="@+id/bt_club_"
-        app:layout_constraintTop_toBottomOf="@+id/bt_club_" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_chats_"
+        app:layout_constraintStart_toStartOf="@+id/bt_chats_"
+        app:layout_constraintTop_toBottomOf="@+id/bt_chats_" />
 
     <TextView
         android:id="@+id/textView3"
@@ -197,17 +197,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Durchsuchen Sie SportHUB" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout><![CDATA[
 
 
-    <Button
-        android:id="@+id/button"
-        style="@style/ctab_alleChats"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
     />
+
+    ]]>
 
     <TextView
         android:id="@+id/textView111"
@@ -223,11 +218,11 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="150dp"
+        android:layout_width="240dp"
         android:layout_height="2dp"
         android:background="@color/header"
         app:layout_constraintBottom_toBottomOf="@+id/textView111"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView111" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -235,12 +230,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="1dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/textView111" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

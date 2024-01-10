@@ -21,13 +21,6 @@ class PersonViewModel(application: Application) : AndroidViewModel(application) 
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
 
-    val currentGroup: Int
-        get() = _currentGroup
-
-    fun setCurrentGroup(group: Int) {
-        _currentGroup = group
-    }
-
     fun setCurrentProfile(profile: PersonData) {
         _currentProfile.postValue(profile)
     }
