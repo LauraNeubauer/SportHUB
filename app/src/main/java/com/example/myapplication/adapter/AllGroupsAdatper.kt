@@ -1,15 +1,15 @@
 package com.example.myapplication.adapter
 
-import Groups
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.databinding.AllChatsItemBinding
+import com.example.myapplication.model.Chat
 
 class AllGroupsAdatper(
-    private val dataset: List<Groups>,
+    private val dataset: List<Chat>,
     private val firebaseVM: FirebaseViewModel
 ) : RecyclerView.Adapter<AllGroupsAdatper.ItemViewHolder>() {
 
@@ -31,8 +31,11 @@ class AllGroupsAdatper(
         val item = dataset[position]
 
         holder.binding.btAdd.setOnClickListener {
-            firebaseVM.addChatGroupToCollection(item.id!!, item.name!!, item.easyJoin!!)
+         //   firebaseVM.addChatGroupToCollection()
         }
+
+        holder.binding.tvNameChat.text = item.groupName
+        holder.binding.imageView.setImageResource(item.groupPic)
 
     }
 }

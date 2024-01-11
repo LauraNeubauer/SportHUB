@@ -4,7 +4,6 @@ import com.example.myapplication.R
 import com.example.myapplication.model.Chat
 import com.example.myapplication.model.Event
 import com.example.myapplication.model.ExamplePerson
-import com.example.myapplication.model.Message
 import com.example.myapplication.model.News
 import com.example.myapplication.model.Request
 import com.example.myapplication.model.Results
@@ -160,60 +159,38 @@ class ExampleDatabase {
 
     var chatList: List<Chat> = listOf(
         Chat(
+            1,
             "GymBros",
-            "Fritz",
-            "Gestern habe ich vergessen...",
-            "Gestern",
             R.drawable.crash_test_m,
-            listOf(Message(1, "Hallo Hallo", "Fritz", "12:22 Uhr", true ))
         ),
         Chat(
+            2,
             "Holsteiner Eagels",
-            "Torben",
-            "Nicht vergessen: Am...",
-            "Heute",
             R.drawable.crash_test_m,
-            null
         ),
         Chat(
+            3,
             "Ski-Bergen 08",
-            "Tanja",
-            "Hey Ihr Lieben, ich habe am...",
-            "Mittwoch",
             R.drawable.crash_test_m,
-            null
         ),
         Chat(
+            4,
             "TurnGruppe",
-            "Fritz",
-            "Gestern habe ich vergessen...",
-            "Gestern",
             R.drawable.crash_test_m,
-            null
         ),
-        Chat(
+        Chat(5,
             "HH SV",
-            "Torben",
-            "Nicht vergessen: Am Mittwoch...",
-            "Heute",
             R.drawable.crash_test_m,
-            null
         ),
         Chat(
+            6,
             "SkatePark",
-            "Tanja",
-            "Hey Ihr Lieben, ich habe am...",
-            "Mittwoch",
             R.drawable.crash_test_m,
-            null
         ),
         Chat(
+            7,
             "Helo",
-            "Tina",
-            "Hey Ihr Lieben, ich habe am...",
-            "Mittwoch",
             R.drawable.crash_test_m,
-            null
         )
     )
 

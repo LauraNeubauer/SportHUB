@@ -3,7 +3,6 @@ package com.example.myapplication.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.PersonApi.ChatViewModel
 import com.example.myapplication.PersonApi.PersonViewModel
 import com.example.myapplication.databinding.IncommingBubbleListItemBinding
 import com.example.myapplication.databinding.OutgoingBubbleListItemBinding
@@ -12,7 +11,6 @@ import com.example.myapplication.model.Message
 class ChatDetailAdapter(
     private val dataset: List<Message>,
     private val personVM: PersonViewModel,
-    private val chatVM: ChatViewModel
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class MessageInViewHolder(val binding: IncommingBubbleListItemBinding) :

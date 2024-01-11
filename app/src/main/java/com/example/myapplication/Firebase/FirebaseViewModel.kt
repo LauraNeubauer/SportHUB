@@ -1,11 +1,11 @@
 package com.example.myapplication.Firebase
 
-import Groups
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.model.Chat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
@@ -28,8 +28,8 @@ class FirebaseViewModel: ViewModel() {
         }
     }
 
-    fun addChatGroupToCollection(groupId: String, groupName: String, easyJoin: Boolean) {
-        profileRef.collection("groups").add(Groups(groupId, groupName, easyJoin))
+    fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
+        profileRef.collection("groups").add(Chat(groupID = groupId, groupName, pic))
     }
 
     fun register(email: String, password: String, PersonData: PersonData) {
