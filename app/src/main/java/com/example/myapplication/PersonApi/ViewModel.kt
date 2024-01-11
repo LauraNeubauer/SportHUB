@@ -3,23 +3,34 @@ package com.example.myapplication.PersonApi
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.PersonApi.local.getDatabase
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.data.ClubDatabase
+import com.example.myapplication.model.Club
 import kotlinx.coroutines.launch
 
-class PersonViewModel(application: Application) : AndroidViewModel(application) {
+class ViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val repo = PersonRepository(database)
+    val clubdatabase : LiveData<List<Club>> = ClubDatabase().getClubs()
 
     val contacts = repo.personenListe
 
+    private val _currentClub = MutableLiveData<Club>()
     private val _currentProfile = MutableLiveData<PersonData>()
-    private var _currentGroup: Int = 0
+
+    val currentClub: MutableLiveData<Club>
+        get() = _currentClub
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
+
+    fun setCurrentClub(club: Club) {
+        _currentClub.postValue(club)
+    }
 
     fun setCurrentProfile(profile: PersonData) {
         _currentProfile.postValue(profile)

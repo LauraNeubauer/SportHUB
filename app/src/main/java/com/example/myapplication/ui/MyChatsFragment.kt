@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.MyChatsFragmentBinding
 
@@ -15,7 +15,7 @@ class MyChatsFragment : Fragment() {
 
 
     private lateinit var binding : MyChatsFragmentBinding
-    private val personViewModel : PersonViewModel by activityViewModels()
+    private val personViewModel : ViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -4,14 +4,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.databinding.EventsHomeListItemBinding
 import com.example.myapplication.databinding.MatchHomeListItemBinding
 import com.example.myapplication.model.Event
 
 class EventHomeAdapter(
     private val dataset: List<Event>,
-    private val viewModel: PersonViewModel
+    private val viewModel: ViewModel
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {

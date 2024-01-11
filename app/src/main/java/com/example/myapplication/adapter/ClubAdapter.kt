@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.PersonApi.ViewModel
-import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
+import com.example.myapplication.model.Club
 
-class FinderResultAdapter(
-    private val dataset: List<PersonData>,
-    private val viewModel: ViewModel,
-) : RecyclerView.Adapter<FinderResultAdapter.ItemViewHolder>() {
+class ClubAdapter(
+    private val dataset: List<Club>,
+    private val viewmodel: ViewModel
+) : RecyclerView.Adapter<ClubAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FinderResultsMatchPersonBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -32,26 +32,26 @@ class FinderResultAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
+        //est, pokale, ligen, quote, tuniere
 
-        holder.binding.btClub.text = "Club"
+        holder.binding.btClub.text = item.name
+        holder.binding.tvName.text = item.sport
 
-        holder.binding.tvName.text = item.name
-
-        holder.binding.textStatAge.text = "ALTER"
-        holder.binding.tvStatAge.text = item.age
-        holder.binding.textStatMatches.text = "MATCHES"
-        holder.binding.tvStatMatches.text = item.matches
-        holder.binding.textStatPokale.text = "POKALE"
-        holder.binding.tvStatPokale.text = item.trophys
-        holder.binding.textStatSize.text = "GRÖSSE"
-        holder.binding.tvStatSize.text = item.size
-        holder.binding.textStatWins.text = "WINS"
-        holder.binding.tvStatWins.text = item.wins
+        holder.binding.textStatAge.text = "EST."
+        holder.binding.tvStatAge.text = item.est.toString()
+        holder.binding.textStatMatches.text = "POKALE"
+        holder.binding.tvStatMatches.text = item.pokale.toString()
+        holder.binding.textStatPokale.text = "LIGEN"
+        holder.binding.tvStatPokale.text = item.ligen.toString()
+        holder.binding.textStatSize.text = "QUOTE"
+        holder.binding.tvStatSize.text = item.Quote
+        holder.binding.textStatWins.text = "TUNIERE"
+        holder.binding.tvStatWins.text = item.tuniere.toString()
 
         holder.binding.btProfile.setOnClickListener {
-            viewModel.setCurrentProfile(item)
+            viewmodel.setCurrentClub(item)
             // Navigation zu einem anderen Fragment mit Hilfe des NavController
-            holder.itemView.findNavController().navigate(R.id.strangerProfilFragment)
+            holder.itemView.findNavController().navigate(R.id.clubFragment)
         }
     }
 }

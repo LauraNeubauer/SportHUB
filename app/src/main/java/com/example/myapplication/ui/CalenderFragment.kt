@@ -11,7 +11,7 @@ import android.widget.DatePicker
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.data.ExampleDatabase
@@ -23,7 +23,7 @@ class CalenderFragment : Fragment() {
 
     private lateinit var binding: CalenderFragmentBinding
     private var datasetEvents = ExampleDatabase().loadEvents()
-    private val viewModel: PersonViewModel by activityViewModels()
+    private val viewModel: ViewModel by activityViewModels()
 
 
     override fun onCreateView(

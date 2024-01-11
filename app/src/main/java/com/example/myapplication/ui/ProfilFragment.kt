@@ -8,14 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
 import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.databinding.ProfilFragmentBinding
 
 class ProfilFragment : Fragment() {
 
     lateinit var binding: ProfilFragmentBinding
-    private val viewModel : PersonViewModel by activityViewModels()
+    private val viewModel : ViewModel by activityViewModels()
     private val firebaseVM : FirebaseViewModel by activityViewModels()
 
     override fun onCreateView(

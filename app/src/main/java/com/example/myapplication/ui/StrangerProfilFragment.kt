@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.databinding.StrangerProfilFragmentBinding
 
 class StrangerProfilFragment : Fragment() {
 
     private lateinit var binding : StrangerProfilFragmentBinding
-    private val viewModel : PersonViewModel by activityViewModels()
+    private val viewModel : ViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

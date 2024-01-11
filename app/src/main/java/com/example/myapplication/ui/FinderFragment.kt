@@ -8,15 +8,16 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.myapplication.PersonApi.PersonViewModel
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
+import com.example.myapplication.adapter.ClubAdapter
 import com.example.myapplication.adapter.FinderResultAdapter
 import com.example.myapplication.databinding.FinderFragmentBinding
 
 class FinderFragment : Fragment() {
 
     private lateinit var binding : FinderFragmentBinding
-    private val viewModel : PersonViewModel by activityViewModels()
+    private val viewModel : ViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,11 +51,9 @@ class FinderFragment : Fragment() {
             showPopupMenuSearch(it)
         }
 
-        viewModel.contacts.observe(viewLifecycleOwner) {
-            binding.rvFinderResults.adapter = FinderResultAdapter(it, viewModel)
+        binding.ddbtSearch.setOnClickListener {
+            showPopupMenuSearch(it)
         }
-
-
     }
 
     private fun showPopupMenuSports(view: View) {
@@ -175,12 +174,18 @@ class FinderFragment : Fragment() {
             when (item?.itemId) {
                 R.id.option1 -> {
                     binding.ddbtSearch.text = "Matches"
-                    binding.ddbtLvl.visibility = View.VISIBLE // Zeige ddbtLvl an
+                    binding.ddbtLvl.visibility = View.VISIBLE // Show ddbtLvl
+                    viewModel.contacts.observe(viewLifecycleOwner) {
+                        binding.rvFinderResults.adapter = FinderResultAdapter(it, viewModel)
+                    }
                     true
                 }
                 R.id.option2 -> {
                     binding.ddbtSearch.text = "Clubs"
-                    binding.ddbtLvl.visibility = View.GONE // Blende ddbtLvl aus
+                    binding.ddbtLvl.visibility = View.GONE // Hide ddbtLvl
+                    viewModel.clubdatabase.observe(viewLifecycleOwner) {
+                        binding.rvFinderResults.adapter = ClubAdapter(it, viewModel)
+                    }
                     true
                 }
                 else -> false
@@ -189,4 +194,5 @@ class FinderFragment : Fragment() {
 
         popupMenu.show()
     }
+
 }

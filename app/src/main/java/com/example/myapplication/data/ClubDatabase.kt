@@ -1,11 +1,23 @@
 package com.example.myapplication.data
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.myapplication.model.Club
 
-//Fussball, badminton, Squash, tischtennis, tennis, hockey, cricket, handball
-class ClubDatabase() {
-    fun getClub(): Club {
-        val clubs = listOf(
+class ClubDatabase {
+    private val clubsData: MutableLiveData<List<Club>> = MutableLiveData()
+
+    init {
+        // Hier werden die Daten beim Erstellen der ClubDatabase initialisiert.
+        clubsData.value = getClubData()
+    }
+
+    fun getClubs(): LiveData<List<Club>> {
+        return clubsData
+    }
+
+    private fun getClubData(): MutableList<Club> {
+        return mutableListOf<Club>(
             Club(
                 "FC Kickers",
                 "Fußball",
@@ -271,6 +283,6 @@ class ClubDatabase() {
                 "Schnelle Breaks und Siege im Handball."
             )
         )
-        return clubs.random()
     }
 }
+//Fussball, badminton, Squash, tischtennis, tennis, hockey, cricket, handball
