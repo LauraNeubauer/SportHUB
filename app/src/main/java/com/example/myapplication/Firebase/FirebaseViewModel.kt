@@ -1,5 +1,6 @@
 package com.example.myapplication.Firebase
 
+import Groups
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +20,17 @@ class FirebaseViewModel: ViewModel() {
     val currentUser: LiveData<FirebaseUser?>
         get() = _currentUser
 
-    private lateinit var profileRef: DocumentReference
+    lateinit var profileRef: DocumentReference
+
+    init {
+        if (firebaseAuth.currentUser != null) {
+            profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
+        }
+    }
+
+    fun addChatGroupToCollection(groupId: String, groupName: String, easyJoin: Boolean) {
+        profileRef.collection("groups").add(Groups(groupId, groupName, easyJoin))
+    }
 
     fun register(email: String, password: String, PersonData: PersonData) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { authResult ->

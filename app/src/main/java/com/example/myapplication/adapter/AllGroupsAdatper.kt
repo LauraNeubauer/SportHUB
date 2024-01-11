@@ -30,5 +30,9 @@ class AllGroupsAdatper(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
+        holder.binding.btAdd.setOnClickListener {
+            firebaseVM.addChatGroupToCollection(item.id!!, item.name!!, item.easyJoin!!)
+        }
+
     }
 }

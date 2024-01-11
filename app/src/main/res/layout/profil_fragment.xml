@@ -188,13 +188,13 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfe_number"
+        android:id="@+id/tv_stats_matches"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
         android:gravity="center"
-        android:text="22"
+        android:text="0"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView4dddddwd"
@@ -207,7 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="Alter"
+        android:text="MATCHES"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="9dp"
@@ -227,7 +227,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_age_numfber"
+        android:id="@+id/tv_age_size"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -241,12 +241,12 @@
         app:layout_constraintTop_toTopOf="@+id/ff" />
 
     <TextView
-        android:id="@+id/tv_afge"
+        android:id="@+id/tv_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="Alter"
+        android:text="GRÖSSE"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="9dp"
@@ -266,13 +266,13 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfe_nfumber"
+        android:id="@+id/tv_stats_pokale"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
         android:gravity="center"
-        android:text="22"
+        android:text="0"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/sss"
@@ -280,12 +280,12 @@
         app:layout_constraintTop_toTopOf="@+id/sss" />
 
     <TextView
-        android:id="@+id/tvdf_age"
+        android:id="@+id/tv_pokale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="Alter"
+        android:text="POKALE"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="9dp"
@@ -305,13 +305,13 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfefff_nfumber"
+        android:id="@+id/tv_stats_wins"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/kronaone_regular"
         android:gravity="center"
-        android:text="22"
+        android:text="0"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="@+id/ssdds"
@@ -319,12 +319,12 @@
         app:layout_constraintTop_toTopOf="@+id/ssdds" />
 
     <TextView
-        android:id="@+id/tvdf_ffage"
+        android:id="@+id/tv_wins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/inter_semibold"
-        android:text="Alter"
+        android:text="WINS"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="9dp"
@@ -340,7 +340,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4dddddwd">
 
         <TextView
-            android:id="@+id/tv_tfitle_"
+            android:id="@+id/bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
