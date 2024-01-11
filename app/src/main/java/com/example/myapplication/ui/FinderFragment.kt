@@ -45,6 +45,11 @@ class FinderFragment : Fragment() {
             showPopupMenuSort(it)
         }
 
+        binding.ddbtSearch.text = "SEARCH"
+        binding.ddbtSearch.setOnClickListener {
+            showPopupMenuSearch(it)
+        }
+
         viewModel.contacts.observe(viewLifecycleOwner) {
             binding.rvFinderResults.adapter = FinderResultAdapter(it, viewModel)
         }
@@ -139,6 +144,30 @@ class FinderFragment : Fragment() {
                     true
                 }
 
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+
+    private fun showPopupMenuSearch(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dd_menu_search, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    binding.ddbtSearch.text = "Matches"
+                    binding.ddbtLvl.visibility = View.VISIBLE // Zeige ddbtLvl an
+                    true
+                }
+                R.id.option2 -> {
+                    binding.ddbtSearch.text = "Clubs"
+                    binding.ddbtLvl.visibility = View.GONE // Blende ddbtLvl aus
+                    true
+                }
                 else -> false
             }
         }
