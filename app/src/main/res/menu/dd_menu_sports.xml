@@ -1,4 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
         android:id="@+id/option1"
         android:title="Badminton" />
@@ -11,4 +12,16 @@
     <item
         android:id="@+id/option4"
         android:title="Tennis" />
+    <item
+        android:id="@+id/option5"
+        android:title="Fussball" />
+    <item
+        android:id="@+id/option6"
+        android:title="Hockey" />
+    <item
+        android:id="@+id/option7"
+        android:title="Cricket" />
+    <item
+        android:id="@+id/option8"
+        android:title="Handball" />
 </menu>

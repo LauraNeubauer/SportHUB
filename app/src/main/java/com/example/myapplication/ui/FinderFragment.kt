@@ -61,7 +61,6 @@ class FinderFragment : Fragment() {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
         menuInflater.inflate(R.menu.dd_menu_sports, popupMenu.menu)
-
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
                 R.id.option1 -> {
@@ -78,6 +77,22 @@ class FinderFragment : Fragment() {
                 }
                 R.id.option4 -> {
                     binding.ddBtSports.text = "TENNIS"
+                    true
+                }
+                R.id.option5 -> {
+                    binding.ddBtSports.text = "FUSSBALL"
+                    true
+                }
+                R.id.option6 -> {
+                    binding.ddBtSports.text = "HOCKEY"
+                    true
+                }
+                R.id.option7 -> {
+                    binding.ddBtSports.text = "CRICKET"
+                    true
+                }
+                R.id.option8 -> {
+                    binding.ddBtSports.text = "HANDBALL"
                     true
                 }
 

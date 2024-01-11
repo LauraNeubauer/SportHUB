@@ -1,12 +1,14 @@
 package com.example.myapplication.model
 
 class Club(
-    var name: String,
-    var place: String,
-    var est: String,
-    var matches: Int,
+    var name: String?,
+    var sport: String,
     var participants: Int,
+    var est: Int,
+    var pokale: Int,
+    var ligen: Int,
+    var Quote: String,
+    var tuniere: Int,
     var bio: String,
-    var sport: String
 ) {
 }

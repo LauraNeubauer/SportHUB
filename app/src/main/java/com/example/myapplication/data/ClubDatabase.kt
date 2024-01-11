@@ -2,179 +2,273 @@ package com.example.myapplication.data
 
 import com.example.myapplication.model.Club
 
+//Fussball, badminton, Squash, tischtennis, tennis, hockey, cricket, handball
 class ClubDatabase() {
     fun getClub(): Club {
         val clubs = listOf(
             Club(
-                "Eisbären Berlin",
-                "Berlin",
-                "1954",
-                325,
-                135,
-                "Die Eisbären Berlin sind eine professionelle Eishockeymannschaft mit Sitz in Berlin, Deutschland. Gegründet im Jahr 1954, hat das Team eine reiche Geschichte im deutschen Eishockey.",
-                "Eishockey"
+                "FC Kickers",
+                "Fußball",
+                250,
+                1985,
+                23,
+                4,
+                "68%",
+                40,
+                "Wir sind stolz darauf, seit 1985 Fußball zu spielen."
             ),
             Club(
-                "Füchse Berlin",
-                "Berlin",
-                "2002",
-                232,
-                128,
-                "Die Füchse Berlin sind eine Handballmannschaft aus der lebendigen Stadt Berlin. Gegründet im Jahr 2002 hat das Team bemerkenswerten Erfolg in der Welt des Handballs erzielt.",
-                "Handball"
+                "Dynamic Strikers",
+                "Fußball",
+                180,
+                1992,
+                15,
+                3,
+                "72%",
+                30,
+                "Gemeinsam für den Sieg!"
             ),
             Club(
-                "SG Dynamo Dresden",
-                "Dresden",
-                "1953",
-                327,
+                "Goal Crushers",
+                "Fußball",
+                300,
+                1978,
+                30,
+                5,
+                "75%",
+                35,
+                "Unsere Tore sind unsere Stärke."
+            ),
+            Club(
+                "Shuttle Masters",
+                "Badminton",
+                120,
+                2000,
+                10,
+                2,
+                "80%",
+                25,
+                "Fliegende Federbälle, geschickte Spieler."
+            ),
+            Club(
+                "Swift Smashers",
+                "Badminton",
+                90,
+                1995,
+                8,
+                1,
+                "76%",
+                20,
+                "Schnell und präzise auf dem Badmintonplatz."
+            ),
+            Club(
+                "Birdie Blazers",
+                "Badminton",
+                150,
+                1988,
+                12,
+                3,
+                "78%",
+                22,
+                "Mit Leidenschaft für das Federballspiel."
+            ),
+            Club(
+                "Squash Stars",
+                "Squash",
+                80,
+                2005,
+                5,
+                2,
+                "85%",
+                15,
+                "Schnell und agil auf dem Squash-Court."
+            ),
+            Club(
+                "Powerful Rackets",
+                "Squash",
+                100,
+                1998,
+                8,
+                3,
+                "82%",
+                18,
+                "Mit Kraft und Technik zum Squash-Erfolg."
+            ),
+            Club(
+                "Smash Masters",
+                "Squash",
+                120,
+                2002,
+                7,
+                2,
+                "88%",
+                20,
+                "Präzision und Geschwindigkeit vereint im Squash."
+            ),
+            Club(
+                "Spin Kings",
+                "Tischtennis",
+                150,
+                1990,
+                12,
+                3,
+                "75%",
+                25,
+                "Unsere Tischtenniskünste sind unschlagbar."
+            ),
+            Club(
+                "Fast Paddlers",
+                "Tischtennis",
+                120,
+                1995,
+                10,
+                2,
+                "78%",
+                20,
+                "Schnell und präzise am Tischtennistisch."
+            ),
+            Club(
+                "Top Spinners",
+                "Tischtennis",
+                180,
+                1988,
+                15,
+                4,
+                "80%",
+                30,
+                "Mit Topspin zum Tischtennis-Erfolg."
+            ),
+            Club(
+                "Tennisverein XYZ",
+                "Tennis",
+                183,
+                1990,
+                17,
+                3,
+                "74%",
+                34,
+                "Unsere drei Mannschaften spielen in verschiedenen Ligen, und unser Motto lautet: 'Gewinnen ist unser Ziel!' Wir organisieren auch jedes Jahr 20 Turniere, um die Begeisterung für Tennis in unserer Gemeinschaft zu fördern."
+            ),
+            Club(
+                "Ace Aces",
+                "Tennis",
+                200,
+                1982,
+                25,
+                4,
+                "80%",
+                30,
+                "Auf dem Tennisplatz sind wir unschlagbar."
+            ),
+            Club(
+                "Net Ninjas",
+                "Tennis",
+                150,
+                1995,
+                20,
+                3,
+                "72%",
+                25,
+                "Mit Präzision und Kraft zum Sieg."
+            ),
+            Club(
+                "Icebreakers",
+                "Hockey",
+                120,
+                2008,
+                8,
+                2,
+                "82%",
+                18,
+                "Eisige Präzision auf dem Hockeyfeld."
+            ),
+            Club(
+                "Field Dominators",
+                "Hockey",
+                90,
+                2015,
+                5,
+                1,
+                "78%",
+                15,
+                "Dominanz im Hockeyfeld."
+            ),
+            Club(
+                "Puck Masters",
+                "Hockey",
+                150,
+                2002,
+                10,
+                3,
+                "85%",
+                20,
+                "Meisterhaft mit dem Puck auf dem Hockeyfeld."
+            ),
+            Club(
+                "Cricket Legends",
+                "Cricket",
+                200,
+                1980,
+                20,
+                5,
+                "88%",
+                25,
+                "Legenden des Cricketsports."
+            ),
+            Club(
+                "Bat Warriors",
+                "Cricket",
+                180,
+                1992,
+                18,
+                4,
+                "85%",
+                30,
+                "Krieger mit dem Schläger auf dem Cricketfeld."
+            ),
+            Club(
+                "Wicket Wizards",
+                "Cricket",
+                150,
+                2000,
+                15,
+                3,
+                "80%",
+                22,
+                "Die Zauberer des Wickets im Cricket."
+            ),
+            Club(
+                "Handball Heroes",
+                "Handball",
+                160,
+                1995,
+                12,
+                3,
+                "78%",
+                22,
+                "Heldenhaft im Handball."
+            ),
+            Club(
+                "Goal Guardians",
+                "Handball",
                 140,
-                "Die SG Dynamo Dresden ist eine Fußballmannschaft, die in der 3. Liga spielt. Der Verein, 1953 gegründet, hat eine starke Tradition und leidenschaftliche Fanbasis.",
-                "Fußball"
+                2002,
+                10,
+                2,
+                "80%",
+                20,
+                "Torhüterhelden im Handball."
             ),
             Club(
-                "Rhein-Neckar Löwen",
-                "Mannheim",
-                "2002",
-                230,
-                132,
-                "Die Rhein-Neckar Löwen sind eine Handballmannschaft mit Sitz in Mannheim. Gegründet im Jahr 2002, hat das Team eine beeindruckende Geschichte im deutschen Handball.",
-                "Handball"
-            ),
-            Club(
-                "THW Kiel",
-                "Kiel",
-                "1902",
-                128,
-                36,
-                "Der THW Kiel ist eine Handballmannschaft mit Sitz in Kiel, Deutschland. Gegründet im Jahr 1902, ist der Verein für seine Erfolge im deutschen und internationalen Handball bekannt.",
-                "Handball"
-            ),
-            Club(
-                "SC Magdeburg",
-                "Magdeburg",
-                "1955",
-                226,
-                68,
-                "Der SC Magdeburg ist eine Handballmannschaft mit Sitz in Magdeburg, Deutschland. Gegründet im Jahr 1955, hat das Team eine lange Geschichte im deutschen Handball.",
-                "Handball"
-            ),
-            Club(
-                "EWE Baskets Oldenburg",
-                "Oldenburg",
-                "2004",
-                129,
-                44,
-                "Die EWE Baskets Oldenburg sind eine Basketballmannschaft mit Sitz in Oldenburg, Deutschland. Gegründet im Jahr 2004, hat das Team Erfolge im deutschen Basketball verzeichnet.",
-                "Basketball"
-            ),
-            Club(
-                "Iserlohn Roosters",
-                "Iserlohn",
-                "1971",
-                122,
-                39,
-                "Die Iserlohn Roosters sind eine Eishockeymannschaft mit Sitz in Iserlohn, Deutschland. Gegründet im Jahr 1971, hat das Team eine lange Geschichte im deutschen Eishockey.",
-                "Eishockey"
-            ),
-            Club(
-                "FC Bayern München",
-                "München",
-                "1900",
-                134,
-                130,
-                "Der FC Bayern München ist eine Fußballmannschaft mit Sitz in München, Deutschland. Gegründet im Jahr 1900, ist der Verein einer der erfolgreichsten im deutschen Fußball.",
-                "Fußball"
-            ),
-            Club(
-                "Brose Bamberg",
-                "Bamberg",
-                "1955",
-                128,
-                66,
-                "Brose Bamberg ist eine Basketballmannschaft mit Sitz in Bamberg, Deutschland. Gegründet im Jahr 1955, hat das Team mehrere nationale und internationale Erfolge erzielt.",
-                "Basketball"
-            ),
-            Club(
-                "Borussia Dortmund",
-                "Dortmund",
-                "1909",
-                232,
-                71,
-                "Borussia Dortmund ist eine Fußballmannschaft mit Sitz in Dortmund, Deutschland. Gegründet im Jahr 1909, ist der Verein bekannt für seine leidenschaftlichen Fans und Erfolge im deutschen Fußball.",
-                "Fußball"
-            ),
-            Club(
-                "Bayer 04 Leverkusen",
-                "Leverkusen",
-                "1904",
-                330,
-                45,
-                "Bayer 04 Leverkusen ist eine Fußballmannschaft mit Sitz in Leverkusen, Deutschland. Gegründet im Jahr 1904, hat der Verein eine lange Geschichte im deutschen Fußball.",
-                "Fußball"
-            ),
-            Club(
-                "Adler Mannheim",
-                "Mannheim",
-                "1938",
-                524,
-                57,
-                "Die Adler Mannheim sind eine Eishockeymannschaft mit Sitz in Mannheim, Deutschland. Gegründet im Jahr 1938, hat das Team eine erfolgreiche Geschichte im deutschen Eishockey.",
-                "Eishockey"
-            ),
-            Club(
-                "HSG Wetzlar",
-                "Wetzlar",
-                "1992",
-                429,
-                133,
-                "Die HSG Wetzlar ist eine Handballmannschaft mit Sitz in Wetzlar, Deutschland. Gegründet im Jahr 1992, hat das Team Erfolge im deutschen Handball erzielt.",
-                "Handball"
-            ),
-            Club(
-                "HC Empor Rostock",
-                "Rostock",
-                "1954",
-                426,
-                238,
-                "Der HC Empor Rostock ist eine Handballmannschaft mit Sitz in Rostock, Deutschland. Gegründet im Jahr 1954, hat das Team eine lange Geschichte im deutschen Handball.",
-                "Handball"
-            ),
-            Club(
-                "1. FC Köln",
-                "Köln",
-                "1948",
-                231,
-                110,
-                "Der 1. FC Köln ist eine Fußballmannschaft mit Sitz in Köln, Deutschland. Gegründet im Jahr 1948, hat der Verein eine treue Fangemeinde und Erfolge im deutschen Fußball.",
-                "Fußball"
-            ),
-            Club(
-                "TSV 1860 München",
-                "München",
-                "1860",
-                125,
-                140,
-                "Der TSV 1860 München ist eine Fußballmannschaft mit Sitz in München, Deutschland. Gegründet im Jahr 1860, hat der Verein eine lange Geschichte und Tradition im deutschen Fußball.",
-                "Fußball"
-            ),
-            Club(
-                "ERC Ingolstadt",
-                "Ingolstadt",
-                "1964",
-                523,
-                79,
-                "Der ERC Ingolstadt ist eine Eishockeymannschaft mit Sitz in Ingolstadt, Deutschland. Gegründet im Jahr 1964, hat das Team eine erfolgreiche Geschichte im deutschen Eishockey.",
-                "Eishockey"
-            ),
-            Club(
-                "DJK Rimpar Wölfe",
-                "Rimpar",
-                "1921",
-                520,
-                75,
-                "Die DJK Rimpar Wölfe sind eine Handballmannschaft mit Sitz in Rimpar, Deutschland. Gegründet im Jahr 1921, hat das Team eine lange Tradition im deutschen Handball.",
-                "Handball"
+                "Fast Breakers",
+                "Handball",
+                180,
+                1990,
+                15,
+                4,
+                "82%",
+                25,
+                "Schnelle Breaks und Siege im Handball."
             )
         )
         return clubs.random()
