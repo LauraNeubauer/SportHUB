@@ -31,7 +31,7 @@ class AllGroupsAdatper(
         val item = dataset[position]
 
         holder.binding.btAdd.setOnClickListener {
-         //   firebaseVM.addChatGroupToCollection()
+          firebaseVM.addChatGroupToCollection(item.groupID, item.groupName, item.groupPic)
         }
 
         holder.binding.tvNameChat.text = item.groupName
