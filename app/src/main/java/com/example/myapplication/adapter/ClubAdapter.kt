@@ -34,8 +34,8 @@ class ClubAdapter(
         val item = dataset[position]
         //est, pokale, ligen, quote, tuniere
 
-        holder.binding.btClub.text = item.name
-        holder.binding.tvName.text = item.sport
+        holder.binding.btClub.text = item.sport
+        holder.binding.tvName.text = item.name
 
         holder.binding.textStatAge.text = "EST."
         holder.binding.tvStatAge.text = item.est.toString()
@@ -50,6 +50,7 @@ class ClubAdapter(
         holder.binding.tvEntfernung.text = item.entfernung.toString() + " km entfernt"
         holder.binding.tvSport.text = ""
         holder.binding.tvLevel2.text = ""
+        holder.binding.tvDate.text = ""
 
         holder.binding.btProfile.setOnClickListener {
             viewmodel.setCurrentClub(item)

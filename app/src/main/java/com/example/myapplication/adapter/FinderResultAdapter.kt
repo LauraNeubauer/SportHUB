@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
+import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
 
 class FinderResultAdapter(
@@ -33,10 +34,9 @@ class FinderResultAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.binding.btClub.text = "Club"
+        var clubs = ClubDatabase().getClubs()
 
         holder.binding.tvName.text = item.name
-
         holder.binding.textStatAge.text = "ALTER"
         holder.binding.tvStatAge.text = item.age
         holder.binding.textStatMatches.text = "MATCHES"
@@ -51,6 +51,7 @@ class FinderResultAdapter(
         holder.binding.tvSport.text = item.sportsOne
         holder.binding.tvLevel2.text = item.level
         holder.binding.tvDate.text = item.date
+        holder.binding.btClub.text = clubs.value!![item.club!!].name
 
         holder.binding.btProfile.setOnClickListener {
             viewModel.setCurrentProfile(item)
