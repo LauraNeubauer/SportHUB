@@ -55,6 +55,7 @@ class EventHomeAdapter(
                 holder.binding.tvTime2.text = item.time
                 holder.binding.tvLevel.text = item.level
                 holder.binding.tvName.text = item.name
+                holder.binding.tvTitleBig.text = item.name
                 Log.d("TAG", "Binding Elemente positiv")
 
             }

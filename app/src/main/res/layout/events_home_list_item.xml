@@ -80,12 +80,13 @@
                         android:clipToOutline="true"/>
 
                     <TextView
+                        android:id="@+id/tv_title_big"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:gravity="center_vertical"
                         android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
                         android:fontFamily="@font/inter_extrabold"
+                        android:gravity="center_vertical"
                         android:text="Holstein Cup 2024"
                         android:textAllCaps="true"
                         android:textSize="20dp"

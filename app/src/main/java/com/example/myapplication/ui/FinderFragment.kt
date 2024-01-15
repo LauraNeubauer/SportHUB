@@ -182,7 +182,6 @@ class FinderFragment : Fragment() {
                     viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
                         var filteredList = originalList // Starte mit der ursprünglichen Liste
 
-                        // Füge den Level-Filter hinzu
                         filteredList = when (binding.ddbtLvl.text) {
                             "BEGINNER" -> filteredList.filter { it.level == "BEGINNER" }.toMutableList()
                             "IMPROVER" -> filteredList.filter { it.level == "IMPROVER" }.toMutableList()
@@ -192,7 +191,6 @@ class FinderFragment : Fragment() {
                             else -> filteredList
                         }
 
-                        // Füge weitere Filter hinzu, zum Beispiel für Sportart
                         filteredList = when (binding.ddBtSports.text) {
                             "BADMINTON" -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
                             "SQUASH" -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
@@ -205,7 +203,6 @@ class FinderFragment : Fragment() {
                             else -> filteredList
                         }
 
-                        // Füge weitere Filter hinzu, zum Beispiel für Sortierung
                         filteredList = when (binding.ddBtSort.text) {
                             "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
                             "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
