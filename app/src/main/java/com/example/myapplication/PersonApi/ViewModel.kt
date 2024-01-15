@@ -20,6 +20,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     val contacts = repo.personenListe
 
+
     private val _currentClub = MutableLiveData<Club>()
     private val _currentProfile = MutableLiveData<PersonData>()
 

@@ -1,7 +1,7 @@
 package com.example.myapplication.model
 
 class Chat(
-    var groupID: Int,
-    var groupName: String,
-    var groupPic: Int,
+    var groupID: Int = 0,
+    var groupName: String = "",
+    var groupPic: Int = 0,
 )

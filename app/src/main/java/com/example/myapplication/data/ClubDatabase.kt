@@ -27,7 +27,8 @@ class ClubDatabase {
                 4,
                 "68%",
                 40,
-                "Wir sind stolz darauf, seit 1985 Fußball zu spielen."
+                "Wir sind stolz darauf, seit 1985 Fußball zu spielen.",
+                3
             ),
             Club(
                 "Dynamic Strikers",
@@ -38,7 +39,8 @@ class ClubDatabase {
                 3,
                 "72%",
                 30,
-                "Gemeinsam für den Sieg!"
+                "Gemeinsam für den Sieg!",
+                12
             ),
             Club(
                 "Goal Crushers",
@@ -49,7 +51,8 @@ class ClubDatabase {
                 5,
                 "75%",
                 35,
-                "Unsere Tore sind unsere Stärke."
+                "Unsere Tore sind unsere Stärke.",
+                11
             ),
             Club(
                 "Shuttle Masters",
@@ -60,7 +63,8 @@ class ClubDatabase {
                 2,
                 "80%",
                 25,
-                "Fliegende Federbälle, geschickte Spieler."
+                "Fliegende Federbälle, geschickte Spieler.",
+                15
             ),
             Club(
                 "Swift Smashers",
@@ -71,7 +75,8 @@ class ClubDatabase {
                 1,
                 "76%",
                 20,
-                "Schnell und präzise auf dem Badmintonplatz."
+                "Schnell und präzise auf dem Badmintonplatz.",
+                22
             ),
             Club(
                 "Birdie Blazers",
@@ -82,7 +87,8 @@ class ClubDatabase {
                 3,
                 "78%",
                 22,
-                "Mit Leidenschaft für das Federballspiel."
+                "Mit Leidenschaft für das Federballspiel.",
+                45
             ),
             Club(
                 "Squash Stars",
@@ -93,7 +99,8 @@ class ClubDatabase {
                 2,
                 "85%",
                 15,
-                "Schnell und agil auf dem Squash-Court."
+                "Schnell und agil auf dem Squash-Court.",
+                55
             ),
             Club(
                 "Powerful Rackets",
@@ -104,7 +111,8 @@ class ClubDatabase {
                 3,
                 "82%",
                 18,
-                "Mit Kraft und Technik zum Squash-Erfolg."
+                "Mit Kraft und Technik zum Squash-Erfolg.",
+                34
             ),
             Club(
                 "Smash Masters",
@@ -115,7 +123,8 @@ class ClubDatabase {
                 2,
                 "88%",
                 20,
-                "Präzision und Geschwindigkeit vereint im Squash."
+                "Präzision und Geschwindigkeit vereint im Squash.",
+                70
             ),
             Club(
                 "Spin Kings",
@@ -126,7 +135,8 @@ class ClubDatabase {
                 3,
                 "75%",
                 25,
-                "Unsere Tischtenniskünste sind unschlagbar."
+                "Unsere Tischtenniskünste sind unschlagbar.",
+                60
             ),
             Club(
                 "Fast Paddlers",
@@ -137,7 +147,8 @@ class ClubDatabase {
                 2,
                 "78%",
                 20,
-                "Schnell und präzise am Tischtennistisch."
+                "Schnell und präzise am Tischtennistisch.",
+                34
             ),
             Club(
                 "Top Spinners",
@@ -148,7 +159,8 @@ class ClubDatabase {
                 4,
                 "80%",
                 30,
-                "Mit Topspin zum Tischtennis-Erfolg."
+                "Mit Topspin zum Tischtennis-Erfolg.",
+                90
             ),
             Club(
                 "Tennisverein XYZ",
@@ -159,7 +171,8 @@ class ClubDatabase {
                 3,
                 "74%",
                 34,
-                "Unsere drei Mannschaften spielen in verschiedenen Ligen, und unser Motto lautet: 'Gewinnen ist unser Ziel!' Wir organisieren auch jedes Jahr 20 Turniere, um die Begeisterung für Tennis in unserer Gemeinschaft zu fördern."
+                "Unsere drei Mannschaften spielen in verschiedenen Ligen, und unser Motto lautet: 'Gewinnen ist unser Ziel!' Wir organisieren auch jedes Jahr 20 Turniere, um die Begeisterung für Tennis in unserer Gemeinschaft zu fördern.",
+                34
             ),
             Club(
                 "Ace Aces",
@@ -170,7 +183,8 @@ class ClubDatabase {
                 4,
                 "80%",
                 30,
-                "Auf dem Tennisplatz sind wir unschlagbar."
+                "Auf dem Tennisplatz sind wir unschlagbar.",
+                60
             ),
             Club(
                 "Net Ninjas",
@@ -181,7 +195,8 @@ class ClubDatabase {
                 3,
                 "72%",
                 25,
-                "Mit Präzision und Kraft zum Sieg."
+                "Mit Präzision und Kraft zum Sieg.",
+                35
             ),
             Club(
                 "Icebreakers",
@@ -192,7 +207,8 @@ class ClubDatabase {
                 2,
                 "82%",
                 18,
-                "Eisige Präzision auf dem Hockeyfeld."
+                "Eisige Präzision auf dem Hockeyfeld.",
+                44
             ),
             Club(
                 "Field Dominators",
@@ -203,7 +219,8 @@ class ClubDatabase {
                 1,
                 "78%",
                 15,
-                "Dominanz im Hockeyfeld."
+                "Dominanz im Hockeyfeld.",
+                67
             ),
             Club(
                 "Puck Masters",
@@ -214,7 +231,8 @@ class ClubDatabase {
                 3,
                 "85%",
                 20,
-                "Meisterhaft mit dem Puck auf dem Hockeyfeld."
+                "Meisterhaft mit dem Puck auf dem Hockeyfeld.",
+                22
             ),
             Club(
                 "Cricket Legends",
@@ -225,7 +243,8 @@ class ClubDatabase {
                 5,
                 "88%",
                 25,
-                "Legenden des Cricketsports."
+                "Legenden des Cricketsports.",
+                3
             ),
             Club(
                 "Bat Warriors",
@@ -236,7 +255,8 @@ class ClubDatabase {
                 4,
                 "85%",
                 30,
-                "Krieger mit dem Schläger auf dem Cricketfeld."
+                "Krieger mit dem Schläger auf dem Cricketfeld.",
+                17
             ),
             Club(
                 "Wicket Wizards",
@@ -247,7 +267,8 @@ class ClubDatabase {
                 3,
                 "80%",
                 22,
-                "Die Zauberer des Wickets im Cricket."
+                "Die Zauberer des Wickets im Cricket.",
+                22
             ),
             Club(
                 "Handball Heroes",
@@ -258,7 +279,8 @@ class ClubDatabase {
                 3,
                 "78%",
                 22,
-                "Heldenhaft im Handball."
+                "Heldenhaft im Handball.",
+                1
             ),
             Club(
                 "Goal Guardians",
@@ -269,7 +291,8 @@ class ClubDatabase {
                 2,
                 "80%",
                 20,
-                "Torhüterhelden im Handball."
+                "Torhüterhelden im Handball.",
+                14
             ),
             Club(
                 "Fast Breakers",
@@ -280,9 +303,9 @@ class ClubDatabase {
                 4,
                 "82%",
                 25,
-                "Schnelle Breaks und Siege im Handball."
+                "Schnelle Breaks und Siege im Handball.",
+                34
             )
         )
     }
 }
-//Fussball, badminton, Squash, tischtennis, tennis, hockey, cricket, handball

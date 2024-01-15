@@ -10,5 +10,6 @@ class Club(
     var Quote: String,
     var tuniere: Int,
     var bio: String,
+    var entfernung: Int
 ) {
 }

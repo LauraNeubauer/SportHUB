@@ -26,17 +26,24 @@ class PersonRepository(
             val club = (1..21).random()
 
             val sportsOne = listOf<String>(
-                "HOCKEY",
-                "TENNIS",
                 "BADMINTON",
                 "SQUASH",
+                "TISCHTENNIS",
+                "TENNIS",
+                "FUSSBALL",
+                "HOCKEY",
+                "CRICKET",
+                "HANDBALL"
             )
             val sportsTwo = listOf<String>(
+                "BADMINTON",
+                "SQUASH",
                 "TISCHTENNIS",
+                "TENNIS",
                 "FUSSBALL",
-                "RUGBY",
-                "GOLF",
+                "HOCKEY",
                 "CRICKET",
+                "HANDBALL"
             )
             val sportOne = sportsOne.random()
             val sportTwo = if (sportOne == "BADMINTON") {
@@ -105,6 +112,7 @@ class PersonRepository(
                     bio = randomBio(),
                     club = club,
                     chat = getGroupChat(),
+                    entfernung = entfernung()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")
@@ -143,6 +151,12 @@ class PersonRepository(
             "Pump Posse"
         )
         return group.random()
+    }
+
+    private fun entfernung(): Int {
+        val entfernung: List<Int> = listOf(
+            1, 2, 3, 5, 7, 8, 11, 13, 15, 17, 19, 22, 25, 28, 33, 43, 45, 55, 56, 67, 80, 90)
+        return entfernung.random()
     }
     private fun randomBio(): String {
         val randomBiography = listOf(
