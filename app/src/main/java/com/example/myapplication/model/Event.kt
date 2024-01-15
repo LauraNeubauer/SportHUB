@@ -6,6 +6,7 @@ class Event(
     var participants: Int?,
     var level: String?,
     var player: String?,
+    var date: String,
     var time: String,
     var place: String,
     var pictureOne: Int,

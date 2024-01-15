@@ -50,10 +50,11 @@ class EventHomeAdapter(
                 // Handle EventsItemViewHolder
                 holder.binding.btClubname.text = item.club
                 holder.binding.btParticipants.text = item.participants.toString()
-                holder.binding.tvLevel.text = item.level
                 holder.binding.tvPlace.text = item.place
-                holder.binding.tvTime.text = item.time
-                holder.binding.tvPlayer.text = item.name
+                holder.binding.tvDate2.text = item.date
+                holder.binding.tvTime2.text = item.time
+                holder.binding.tvLevel.text = item.level
+                holder.binding.tvName.text = item.name
                 Log.d("TAG", "Binding Elemente positiv")
 
             }

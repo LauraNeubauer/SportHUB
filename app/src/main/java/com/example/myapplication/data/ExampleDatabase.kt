@@ -7,17 +7,53 @@ import com.example.myapplication.model.ExamplePerson
 import com.example.myapplication.model.News
 import com.example.myapplication.model.Request
 import com.example.myapplication.model.Results
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import kotlin.random.Random
+
 
 class ExampleDatabase {
 
+
+    fun generateRandomDate(): String {
+        // Aktuelles Datum erhalten
+        val currentDate = Calendar.getInstance()
+
+        // Zufällige Anzahl von Tagen hinzufügen (hier: bis zu 30 Tage)
+        val randomDays = Random.nextInt(30)
+        currentDate.add(Calendar.DAY_OF_YEAR, randomDays)
+
+        // Datum in das gewünschte Format umwandeln
+        val dateFormat = SimpleDateFormat("dd.MM.yyyy")
+        val randomDate = currentDate.time
+        return dateFormat.format(randomDate)
+    }
+
+    fun generateRandomTime(): String {
+        // Aktuelle Uhrzeit erhalten
+        val currentTime = Calendar.getInstance()
+
+        // Zufällige Stunde und Minute hinzufügen
+        val randomHour = Random.nextInt(24)
+        val randomMinute = Random.nextInt(60)
+        currentTime.set(Calendar.HOUR_OF_DAY, randomHour)
+        currentTime.set(Calendar.MINUTE, randomMinute)
+
+        // Uhrzeit in das gewünschte Format umwandeln
+        val timeFormat = SimpleDateFormat("HH:mm")
+        val randomTime = currentTime.time
+        return timeFormat.format(randomTime)
+    }
+
     var eventList: List<Event> = listOf(
         Event(
-            "Holstein Cup",
-            "Friedländer CLT",
+            "Hamburger Liga 24",
+            "FC KICKERS",
             6,
-            "fortgeschrittene",
+            "Advanced",
             "11",
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
@@ -29,9 +65,10 @@ class ExampleDatabase {
             "Holstein Cup",
             "Friedländer CLT",
             3,
-            "fortgeschrittene",
+            "Improver",
             "11",
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
@@ -40,12 +77,13 @@ class ExampleDatabase {
             false
         ),
         Event(
-            "Holstein Cup",
-            "Friedländer CLT",
+            "2024 Cup",
+            "Dynamic Strickers",
             2,
-            "fortgeschrittene",
+            "Beginners",
             "11",
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
@@ -59,7 +97,8 @@ class ExampleDatabase {
             null,
             null,
             null,
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             null,
@@ -68,12 +107,13 @@ class ExampleDatabase {
             true
         ),
         Event(
-            "Holstein Cup",
-            "Friedländer CLT",
+            "Wilsdorfer Tunier",
+            "BAT WARRIORS",
             2,
-            "fortgeschrittene",
+            "Practitioners",
             "11",
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
@@ -82,12 +122,13 @@ class ExampleDatabase {
             false
         ),
         Event(
-            "Holstein Cup",
-            "Friedländer CLT",
+            "RED BULL CUP",
+            "SMASH MASTERS",
             4,
-            "fortgeschrittene",
+            "Expert",
             "11",
-            "20.01.2024, 13:20 Uhr",
+            generateRandomDate(),
+            generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
             R.drawable.edgar_chaparro_shfo3woggtu_unsplash,
@@ -178,7 +219,8 @@ class ExampleDatabase {
             "TurnGruppe",
             R.drawable.crash_test_m,
         ),
-        Chat(5,
+        Chat(
+            5,
             "HH SV",
             R.drawable.crash_test_m,
         ),
@@ -196,7 +238,7 @@ class ExampleDatabase {
 
     fun loadChats(): List<Chat> {
         return chatList
-        }
+    }
 
 
     val ResultList: List<Results> = listOf(
