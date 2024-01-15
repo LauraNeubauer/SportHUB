@@ -22,12 +22,6 @@ class FirebaseViewModel: ViewModel() {
 
     lateinit var profileRef: DocumentReference
 
-    init {
-        if (firebaseAuth.currentUser != null) {
-            profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
-        }
-    }
-
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
         profileRef.collection("groups").add(Chat(groupID = groupId, groupName, pic))
     }
