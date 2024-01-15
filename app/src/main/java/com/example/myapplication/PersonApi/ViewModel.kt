@@ -64,6 +64,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
                     sportsOne = profile.sportsOne,
                     sportsTwo = profile.sportsTwo,
                     bio = profile.bio,
+                    date = profile.date
                 )
                 repo.insertPerson(personData)
             } catch (e: Exception) {

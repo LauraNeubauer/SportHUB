@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ClubAdapter
@@ -18,6 +19,8 @@ class FinderFragment : Fragment() {
 
     private lateinit var binding : FinderFragmentBinding
     private val viewModel : ViewModel by activityViewModels()
+    private val firebaseViewModel : FirebaseViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -174,9 +177,45 @@ class FinderFragment : Fragment() {
             when (item?.itemId) {
                 R.id.option1 -> {
                     binding.ddbtSearch.text = "Matches"
+
                     binding.ddbtLvl.visibility = View.VISIBLE // Show ddbtLvl
-                    viewModel.contacts.observe(viewLifecycleOwner) {
-                        binding.rvFinderResults.adapter = FinderResultAdapter(it, viewModel)
+                    viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
+                        var filteredList = originalList // Starte mit der ursprünglichen Liste
+
+                        // Füge den Level-Filter hinzu
+                        filteredList = when (binding.ddbtLvl.text) {
+                            "BEGINNER" -> filteredList.filter { it.level == "BEGINNER" }.toMutableList()
+                            "IMPROVER" -> filteredList.filter { it.level == "IMPROVER" }.toMutableList()
+                            "ADVANCED" -> filteredList.filter { it.level == "ADVANCED" }.toMutableList()
+                            "PRACTITIONER" -> filteredList.filter { it.level == "PRACTITIONER" }.toMutableList()
+                            "EXPERT" -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
+                            else -> filteredList
+                        }
+
+                        // Füge weitere Filter hinzu, zum Beispiel für Sportart
+                        filteredList = when (binding.ddBtSports.text) {
+                            "BADMINTON" -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
+                            "SQUASH" -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
+                            "TISCHTENNIS" -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }.toMutableList()
+                            "TENNIS" -> filteredList.filter { it.sportsOne == "TENNIS" }.toMutableList()
+                            "FUSSBALL" -> filteredList.filter { it.sportsOne == "FUSSBALL" }.toMutableList()
+                            "HOCKEY" -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
+                            "CRICKET" -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
+                            "HANDBALL" -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
+                            else -> filteredList
+                        }
+
+                        // Füge weitere Filter hinzu, zum Beispiel für Sortierung
+                        filteredList = when (binding.ddBtSort.text) {
+                            "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
+                            "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
+                            // ÜBEREINSTIMMUNG -> - > am nächsten zu meinem rang: Wins
+                            // AGE - > am nächsten zu meinem
+
+                            else -> filteredList
+                        }
+
+                        binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
                     }
                     true
                 }

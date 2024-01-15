@@ -16,6 +16,9 @@ import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingFourFragmentBinding
+import java.util.Calendar
+
+public var name: String = ""
 
 class OnBoardingFourFragment : Fragment() {
 
@@ -45,7 +48,7 @@ class OnBoardingFourFragment : Fragment() {
 
         val email = receivedArguments!!.getString("email")
         val pw = receivedArguments.getString("pw")
-        val name = receivedArguments.getString("name")
+        name = receivedArguments.getString("name")!!
         val age = receivedArguments.getString("age")
         val size = receivedArguments.getString("size")
         val bio = receivedArguments.getString("bio")
@@ -69,6 +72,10 @@ class OnBoardingFourFragment : Fragment() {
             openGallery()
         }
 
+        val currentDate = Calendar.getInstance().time
+        val calendar = Calendar.getInstance()
+        calendar.time = currentDate
+
         val personData = PersonData(
             name = name!!,
             gender = gender,
@@ -82,6 +89,7 @@ class OnBoardingFourFragment : Fragment() {
             sportsOne = sportsOne!!,
             sportsTwo = sportsTwo!!,
             bio = bio!!,
+            date = currentDate.toString()
         )
 
         binding.btWeiter.setOnClickListener {

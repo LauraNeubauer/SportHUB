@@ -55,7 +55,6 @@ class CalenderFragment : Fragment() {
         val calendar = Calendar.getInstance()
         calendar.time = currentDate
         val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-        val dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK)
 
         when (SimpleDateFormat("EEEE").format(calendar.time)) {
             "Monday" -> {

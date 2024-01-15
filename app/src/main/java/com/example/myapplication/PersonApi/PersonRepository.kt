@@ -5,6 +5,7 @@ import com.example.myapplication.PersonApi.local.PersonDatabase
 import com.example.myapplication.PersonApi.model.Person
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.PersonApi.remote.PersonApi
+import java.util.Calendar
 
 
 class PersonRepository(
@@ -24,6 +25,23 @@ class PersonRepository(
 
             val winPercentage = (10..60).random()
             val club = (1..21).random()
+
+            val currentDate = Calendar.getInstance().time
+            val calendar = Calendar.getInstance()
+            calendar.time = currentDate
+            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+            val month = calendar.get(Calendar.MONTH)
+
+            fun date() : String {
+                var newDay = (dayOfMonth + club).toString()
+                var newMonth = month
+                if (newDay.toInt() > 31) {
+                    newMonth + 1
+                }
+                var newDate = newDay.toString() + "." + newMonth + ".2024"
+                return newDate
+            }
+
 
             val sportsOne = listOf<String>(
                 "BADMINTON",
@@ -112,7 +130,8 @@ class PersonRepository(
                     bio = randomBio(),
                     club = club,
                     chat = getGroupChat(),
-                    entfernung = entfernung()
+                    entfernung = entfernung(),
+                    date = date()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")

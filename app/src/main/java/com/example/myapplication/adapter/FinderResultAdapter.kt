@@ -50,6 +50,7 @@ class FinderResultAdapter(
         holder.binding.tvEntfernung.text = (item.entfernung.toString() + " km entfernt")
         holder.binding.tvSport.text = item.sportsOne
         holder.binding.tvLevel2.text = item.level
+        holder.binding.tvDate.text = item.date
 
         holder.binding.btProfile.setOnClickListener {
             viewModel.setCurrentProfile(item)
