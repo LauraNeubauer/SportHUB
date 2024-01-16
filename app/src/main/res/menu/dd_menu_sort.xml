@@ -10,5 +10,5 @@
         android:title="Alter" />
     <item
         android:id="@+id/option4"
-        android:title="Übereinstimmung" />
+        android:title="Wins" />
 </menu>

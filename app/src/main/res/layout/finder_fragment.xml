@@ -84,6 +84,7 @@
     <Button
         android:id="@+id/dd_bt_sort"
         style="@style/ib_dd_sort"
+        android:layout_width="159dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:textAlignment="textStart"
@@ -120,12 +121,24 @@
     <Button
         android:id="@+id/ddbt_search"
         style="@style/ib_dd_level"
-        android:layout_marginEnd="20dp"
+        android:layout_width="150dp"
+        android:layout_marginEnd="11dp"
         android:text="SEARCH"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="@+id/dd_bt_sort"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt_search"
         app:layout_constraintTop_toTopOf="@+id/dd_bt_sort" />
 
+    <ImageButton
+        android:id="@+id/bt_search"
+        style="@style/ib_search"
+        android:layout_height="30dp"
+        android:padding="5dp"
+        android:paddingBottom="2dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_profilpictures"
+        app:layout_constraintBottom_toBottomOf="@+id/ddbt_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ddbt_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

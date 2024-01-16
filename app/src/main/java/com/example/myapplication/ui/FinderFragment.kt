@@ -124,7 +124,7 @@ class FinderFragment : Fragment() {
                     true
                 }
                 R.id.option4 -> {
-                    binding.ddBtSort.text = "ÜBEREINSTIMMUNG"
+                    binding.ddBtSort.text = "WINS"
                     true
                 }
                 else -> false
@@ -177,7 +177,6 @@ class FinderFragment : Fragment() {
             when (item?.itemId) {
                 R.id.option1 -> {
                     binding.ddbtSearch.text = "Matches"
-
                     binding.ddbtLvl.visibility = View.VISIBLE // Show ddbtLvl
                     viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
                         var filteredList = originalList // Starte mit der ursprünglichen Liste
@@ -212,7 +211,9 @@ class FinderFragment : Fragment() {
                             else -> filteredList
                         }
 
-                        binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
+                        binding.btSearch.setOnClickListener {
+                            binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
+                        }
                     }
                     true
                 }
