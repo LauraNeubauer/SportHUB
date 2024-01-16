@@ -27,5 +27,5 @@ data class PersonData(
     var club: Int? = 0,
     var chat: String = "",
     var entfernung: Int = 0,
-    var date: String
+    var date: String = ""
 )

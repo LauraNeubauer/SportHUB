@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ClubAdapter
 import com.example.myapplication.adapter.FinderResultAdapter
@@ -20,7 +21,8 @@ class FinderFragment : Fragment() {
     private lateinit var binding : FinderFragmentBinding
     private val viewModel : ViewModel by activityViewModels()
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
-
+    var myAge = ""
+    var myWins = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +35,15 @@ class FinderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        firebaseViewModel.profileRef.addSnapshotListener { value, error ->
+            if (error == null && value != null) {
+                // Umwandeln des Snapshots in eine Klassen-Instanz von der Klasse Profil und setzen der Felder
+                val myProfile = value.toObject(PersonData::class.java)
+                myAge = myProfile!!.age
+                myWins = myProfile.wins
+            }
+        }
 
         binding.ddBtSports.text = "SPORTS"
         binding.ddBtSports.setOnClickListener {
@@ -205,9 +216,8 @@ class FinderFragment : Fragment() {
                         filteredList = when (binding.ddBtSort.text) {
                             "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
                             "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
-                            // ÜBEREINSTIMMUNG -> - > am nächsten zu meinem rang: Wins
-                            // AGE - > am nächsten zu meinem
-
+                            "WINS" -> filteredList.sortedBy { it.wins > myWins }.toMutableList()
+                            "ALTER" -> filteredList.sortedBy { it.age > myAge }.toMutableList()
                             else -> filteredList
                         }
 
