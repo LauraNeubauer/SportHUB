@@ -42,11 +42,11 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     enum class Level {
-        BEGINNER, IMPROVER, ADVANCED, EXPERT, ELITE, ALLE
+        BEGINNER, IMPROVER, ADVANCED, EXPERT, ELITE, ALLE, LEVEL
     }
 
     enum class Sports {
-        BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL, ALLE
+        BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL, ALLE, SPORTS
     }
 
     fun filterAndSort(
@@ -64,6 +64,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             Level.EXPERT -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
             Level.ELITE -> filteredList.filter { it.level == "ELITE" }.toMutableList()
             Level.ALLE -> originalList
+            Level.LEVEL -> originalList
             else -> originalList
         }
 
@@ -77,6 +78,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             Sports.CRICKET -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
             Sports.HANDBALL -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
             Sports.ALLE -> originalList
+            Sports.SPORTS -> originalList
             else -> originalList
         }
 

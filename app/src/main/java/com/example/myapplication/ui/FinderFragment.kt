@@ -281,8 +281,7 @@ class FinderFragment : Fragment() {
 
                                 Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
 
-                                binding.rvFinderResults.adapter =
-                                    FinderResultAdapter(filteredList, viewModel)
+                                binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
                             }
                         }
                     }
