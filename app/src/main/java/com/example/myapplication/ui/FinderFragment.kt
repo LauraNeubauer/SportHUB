@@ -1,6 +1,7 @@
 package com.example.myapplication.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -60,13 +61,28 @@ class FinderFragment : Fragment() {
             showPopupMenuSort(it)
         }
 
-        binding.ddbtSearch.text = "SEARCH"
         binding.ddbtSearch.setOnClickListener {
             showPopupMenuSearch(it)
         }
 
-        binding.ddbtSearch.setOnClickListener {
-            showPopupMenuSearch(it)
+
+
+        binding.btSearch.setOnClickListener {
+            viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
+                Log.d("FinderFragment", "Original list size: ${originalList.size}")
+
+                val filteredList = viewModel.filterAndSort(
+                    ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
+                    ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                    binding.ddBtSort.text.toString(),
+                    originalList.toMutableList(),
+                )
+
+                Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
+
+                // Aktualisieren Sie den Adapter mit der gefilterten Liste
+                binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
+            }
         }
     }
 
@@ -164,7 +180,7 @@ class FinderFragment : Fragment() {
                     true
                 }
                 R.id.option4 -> {
-                    binding.ddbtLvl.text = "PRACTICER"
+                    binding.ddbtLvl.text = "PRACTITIONER"
                     true
                 }
                 R.id.option5 -> {
@@ -190,47 +206,43 @@ class FinderFragment : Fragment() {
                     binding.ddbtSearch.text = "Matches"
                     binding.ddbtLvl.visibility = View.VISIBLE // Show ddbtLvl
                     viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
-                        var filteredList = originalList // Starte mit der ursprünglichen Liste
+                        Log.d("FinderFragment", "Original list size: ${originalList.size}")
 
-                        filteredList = when (binding.ddbtLvl.text) {
-                            "BEGINNER" -> filteredList.filter { it.level == "BEGINNER" }.toMutableList()
-                            "IMPROVER" -> filteredList.filter { it.level == "IMPROVER" }.toMutableList()
-                            "ADVANCED" -> filteredList.filter { it.level == "ADVANCED" }.toMutableList()
-                            "PRACTITIONER" -> filteredList.filter { it.level == "PRACTITIONER" }.toMutableList()
-                            "EXPERT" -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
-                            else -> filteredList
-                        }
+                        val filteredList = viewModel.filterAndSort(
+                            ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
+                            ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                            binding.ddBtSort.text.toString(),
+                            originalList.toMutableList(),
+                        )
 
-                        filteredList = when (binding.ddBtSports.text) {
-                            "BADMINTON" -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
-                            "SQUASH" -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
-                            "TISCHTENNIS" -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }.toMutableList()
-                            "TENNIS" -> filteredList.filter { it.sportsOne == "TENNIS" }.toMutableList()
-                            "FUSSBALL" -> filteredList.filter { it.sportsOne == "FUSSBALL" }.toMutableList()
-                            "HOCKEY" -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
-                            "CRICKET" -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
-                            "HANDBALL" -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
-                            else -> filteredList
-                        }
-
-                        filteredList = when (binding.ddBtSort.text) {
-                            "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
-                            "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
-                            "WINS" -> filteredList.sortedBy { it.wins > myWins }.toMutableList()
-                            "ALTER" -> filteredList.sortedBy { it.age > myAge }.toMutableList()
-                            else -> filteredList
-                        }
+                        Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
 
                         binding.btSearch.setOnClickListener {
-                            binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
-                        }
-                    }
+                            // Verwenden Sie den vorher initialisierten Adapter
+
+                            viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
+                                Log.d("FinderFragment", "Original list size: ${originalList.size}")
+
+                                val filteredList = viewModel.filterAndSort(
+                                    ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
+                                    ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                                    binding.ddBtSort.text.toString(),
+                                    originalList.toMutableList(),
+                                )
+
+                                Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
+
+                                // Aktualisieren Sie den Adapter mit der gefilterten Liste
+                                binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
+                            }                    }}
                     true
                 }
                 R.id.option2 -> {
                     binding.ddbtSearch.text = "Clubs"
                     binding.ddbtLvl.visibility = View.GONE // Hide ddbtLvl
                     viewModel.clubdatabase.observe(viewLifecycleOwner) {
+                        Log.d("FinderFragment", "Club database size: ${it.size}")
+
                         binding.rvFinderResults.adapter = ClubAdapter(it, viewModel)
                     }
                     true
@@ -241,5 +253,6 @@ class FinderFragment : Fragment() {
 
         popupMenu.show()
     }
+
 
 }

@@ -41,6 +41,52 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         loadPersons()
     }
 
+    enum class Level {
+        BEGINNER, IMPROVER, ADVANCED, PRACTITIONER, EXPERT
+    }
+
+    enum class Sports {
+        BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL
+    }
+
+    fun filterAndSort(
+        level: Level,
+        sports: Sports,
+        sortBy: String,
+        originalList: MutableList<PersonData>,
+    ): List<PersonData> {
+        var filteredList = originalList
+
+        filteredList = when (level) {
+            Level.BEGINNER -> filteredList.filter { it.level == "BEGINNER" }.toMutableList()
+            Level.IMPROVER -> filteredList.filter { it.level == "IMPROVER" }.toMutableList()
+            Level.ADVANCED -> filteredList.filter { it.level == "ADVANCED" }.toMutableList()
+            Level.PRACTITIONER -> filteredList.filter { it.level == "PRACTITIONER" }.toMutableList()
+            Level.EXPERT -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
+        }
+
+        filteredList = when (sports) {
+            Sports.BADMINTON -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
+            Sports.SQUASH -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
+            Sports.TISCHTENNIS -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }.toMutableList()
+            Sports.TENNIS -> filteredList.filter { it.sportsOne == "TENNIS" }.toMutableList()
+            Sports.FUSSBALL -> filteredList.filter { it.sportsOne == "FUSSBALL" }.toMutableList()
+            Sports.HOCKEY -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
+            Sports.CRICKET -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
+            Sports.HANDBALL -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
+        }
+
+        filteredList = when (sortBy) {
+            "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
+            "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
+            "WINS" -> filteredList.sortedByDescending { it.wins.toInt() }.toMutableList()
+            "ALTER" -> filteredList.sortedByDescending { it.age.toInt() }.toMutableList()
+            else -> filteredList
+        }
+
+        return filteredList
+    }
+
     fun loadPersons() {
         viewModelScope.launch {
             repo.getPerson()
