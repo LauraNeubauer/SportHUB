@@ -10,5 +10,17 @@
         android:title="Alter" />
     <item
         android:id="@+id/option4"
+        android:title="Größe" />
+    <item
+        android:id="@+id/option5"
+        android:title="Matches" />
+    <item
+        android:id="@+id/option6"
         android:title="Wins" />
+    <item
+        android:id="@+id/option7"
+        android:title="Pokale" />
+    <item
+        android:id="@+id/option8"
+        android:title="Alle" />
 </menu>

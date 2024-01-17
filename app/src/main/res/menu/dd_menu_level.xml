@@ -10,8 +10,11 @@
         android:title="Advanced" />
     <item
         android:id="@+id/option4"
-        android:title="Practitioner" />
+        android:title="Expert" />
     <item
         android:id="@+id/option5"
-        android:title="Expert" />
+        android:title="Elite" />
+    <item
+        android:id="@+id/option6"
+        android:title="Alle" />
 </menu>

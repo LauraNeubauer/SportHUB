@@ -24,4 +24,7 @@
     <item
         android:id="@+id/option8"
         android:title="Handball" />
+    <item
+        android:id="@+id/option9"
+        android:title="Alle" />
 </menu>

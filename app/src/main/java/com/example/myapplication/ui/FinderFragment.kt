@@ -19,9 +19,9 @@ import com.example.myapplication.databinding.FinderFragmentBinding
 
 class FinderFragment : Fragment() {
 
-    private lateinit var binding : FinderFragmentBinding
-    private val viewModel : ViewModel by activityViewModels()
-    private val firebaseViewModel : FirebaseViewModel by activityViewModels()
+    private lateinit var binding: FinderFragmentBinding
+    private val viewModel: ViewModel by activityViewModels()
+    private val firebaseViewModel: FirebaseViewModel by activityViewModels()
     var myAge = ""
     var myWins = ""
 
@@ -96,32 +96,44 @@ class FinderFragment : Fragment() {
                     binding.ddBtSports.text = "BADMINTON"
                     true
                 }
+
                 R.id.option2 -> {
                     binding.ddBtSports.text = "SQUASH"
                     true
                 }
+
                 R.id.option3 -> {
                     binding.ddBtSports.text = "TISCHTENNIS"
                     true
                 }
+
                 R.id.option4 -> {
                     binding.ddBtSports.text = "TENNIS"
                     true
                 }
+
                 R.id.option5 -> {
                     binding.ddBtSports.text = "FUSSBALL"
                     true
                 }
+
                 R.id.option6 -> {
                     binding.ddBtSports.text = "HOCKEY"
                     true
                 }
+
                 R.id.option7 -> {
                     binding.ddBtSports.text = "CRICKET"
                     true
                 }
+
                 R.id.option8 -> {
                     binding.ddBtSports.text = "HANDBALL"
+                    true
+                }
+
+                R.id.option9 -> {
+                    binding.ddBtSports.text = "SPORTS"
                     true
                 }
 
@@ -131,6 +143,7 @@ class FinderFragment : Fragment() {
 
         popupMenu.show()
     }
+
     private fun showPopupMenuSort(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -142,24 +155,49 @@ class FinderFragment : Fragment() {
                     binding.ddBtSort.text = "ENTFERNUNG"
                     true
                 }
+
                 R.id.option2 -> {
                     binding.ddBtSort.text = "DATUM"
                     true
                 }
+
                 R.id.option3 -> {
                     binding.ddBtSort.text = "ALTER"
                     true
                 }
+
                 R.id.option4 -> {
+                    binding.ddBtSort.text = "GRÖSSE"
+                    true
+                }
+
+                R.id.option5 -> {
+                    binding.ddBtSort.text = "MATCHES"
+                    true
+                }
+
+                R.id.option6 -> {
                     binding.ddBtSort.text = "WINS"
                     true
                 }
+
+                R.id.option7 -> {
+                    binding.ddBtSort.text = "POKALE"
+                    true
+                }
+
+                R.id.option8 -> {
+                    binding.ddBtSort.text = "SORT"
+                    true
+                }
+
                 else -> false
             }
         }
 
         popupMenu.show()
     }
+
     private fun showPopupMenuLevel(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -171,20 +209,29 @@ class FinderFragment : Fragment() {
                     binding.ddbtLvl.text = "BEGINNER"
                     true
                 }
+
                 R.id.option2 -> {
                     binding.ddbtLvl.text = "IMPROVER"
                     true
                 }
+
                 R.id.option3 -> {
                     binding.ddbtLvl.text = "ADVANCED"
                     true
                 }
+
                 R.id.option4 -> {
-                    binding.ddbtLvl.text = "PRACTITIONER"
+                    binding.ddbtLvl.text = "EXPERT"
                     true
                 }
+
                 R.id.option5 -> {
-                    binding.ddbtLvl.text = "EXPERT"
+                    binding.ddbtLvl.text = "ELITE"
+                    true
+                }
+
+                R.id.option6 -> {
+                    binding.ddbtLvl.text = "LEVEL"
                     true
                 }
 
@@ -208,15 +255,6 @@ class FinderFragment : Fragment() {
                     viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
                         Log.d("FinderFragment", "Original list size: ${originalList.size}")
 
-                        val filteredList = viewModel.filterAndSort(
-                            ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
-                            ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
-                            binding.ddBtSort.text.toString(),
-                            originalList.toMutableList(),
-                        )
-
-                        Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
-
                         binding.btSearch.setOnClickListener {
                             // Verwenden Sie den vorher initialisierten Adapter
 
@@ -224,19 +262,33 @@ class FinderFragment : Fragment() {
                                 Log.d("FinderFragment", "Original list size: ${originalList.size}")
 
                                 val filteredList = viewModel.filterAndSort(
-                                    ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
-                                    ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                                    ViewModel.Level.valueOf(
+                                        if (binding.ddbtLvl.text.toString() == "LEVEL") {
+                                            "ALLE"
+                                        } else {
+                                            binding.ddbtLvl.text.toString()
+                                        }
+                                    ),
+                                    ViewModel.Sports.valueOf(
+                                        if (binding.ddBtSports.text.toString() == "SPORTS") {
+                                            "ALLE"
+                                        } else {
+                                            binding.ddBtSports.text.toString()
+                                        }),
                                     binding.ddBtSort.text.toString(),
                                     originalList.toMutableList(),
                                 )
 
                                 Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
 
-                                // Aktualisieren Sie den Adapter mit der gefilterten Liste
-                                binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
-                            }                    }}
+                                binding.rvFinderResults.adapter =
+                                    FinderResultAdapter(filteredList, viewModel)
+                            }
+                        }
+                    }
                     true
                 }
+
                 R.id.option2 -> {
                     binding.ddbtSearch.text = "Clubs"
                     binding.ddbtLvl.visibility = View.GONE // Hide ddbtLvl
@@ -247,6 +299,7 @@ class FinderFragment : Fragment() {
                     }
                     true
                 }
+
                 else -> false
             }
         }

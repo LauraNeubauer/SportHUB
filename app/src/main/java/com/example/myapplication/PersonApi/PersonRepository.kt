@@ -100,11 +100,11 @@ class PersonRepository(
                     }
 
                     in (150..200) -> {
-                        "PRACTITIONER"
+                        "EXPERT"
                     }
 
                     else -> {
-                        "EXPERT"
+                        "ELITE"
                     }
                 }
 

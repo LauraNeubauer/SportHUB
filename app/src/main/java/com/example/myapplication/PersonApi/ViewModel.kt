@@ -42,17 +42,17 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     enum class Level {
-        BEGINNER, IMPROVER, ADVANCED, PRACTITIONER, EXPERT
+        BEGINNER, IMPROVER, ADVANCED, EXPERT, ELITE, ALLE
     }
 
     enum class Sports {
-        BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL
+        BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL, ALLE
     }
 
     fun filterAndSort(
-        level: Level,
-        sports: Sports,
-        sortBy: String,
+        level: Level? = null,
+        sports: Sports? = null,
+        sortBy: String? = null,
         originalList: MutableList<PersonData>,
     ): List<PersonData> {
         var filteredList = originalList
@@ -61,8 +61,10 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             Level.BEGINNER -> filteredList.filter { it.level == "BEGINNER" }.toMutableList()
             Level.IMPROVER -> filteredList.filter { it.level == "IMPROVER" }.toMutableList()
             Level.ADVANCED -> filteredList.filter { it.level == "ADVANCED" }.toMutableList()
-            Level.PRACTITIONER -> filteredList.filter { it.level == "PRACTITIONER" }.toMutableList()
             Level.EXPERT -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
+            Level.ELITE -> filteredList.filter { it.level == "ELITE" }.toMutableList()
+            Level.ALLE -> originalList
+            else -> originalList
         }
 
         filteredList = when (sports) {
@@ -74,14 +76,20 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             Sports.HOCKEY -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
             Sports.CRICKET -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
             Sports.HANDBALL -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
+            Sports.ALLE -> originalList
+            else -> originalList
         }
 
         filteredList = when (sortBy) {
             "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
             "DATUM" -> filteredList.sortedBy { it.date }.toMutableList()
-            "WINS" -> filteredList.sortedByDescending { it.wins.toInt() }.toMutableList()
             "ALTER" -> filteredList.sortedByDescending { it.age.toInt() }.toMutableList()
-            else -> filteredList
+            "GRÖSSE" -> filteredList.sortedByDescending { it.size.toInt() }.toMutableList()
+            "MATCHES" -> filteredList.sortedByDescending { it.matches.toInt() }.toMutableList()
+            "WINS" -> filteredList.sortedByDescending { it.wins.toInt() }.toMutableList()
+            "POKALE" -> filteredList.sortedByDescending { it.trophys.toInt() }.toMutableList()
+            "ALLE" -> originalList
+            else -> originalList
         }
 
         return filteredList
