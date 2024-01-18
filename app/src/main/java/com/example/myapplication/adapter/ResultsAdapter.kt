@@ -3,6 +3,7 @@ package com.example.myapplication.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ResultsListItemSmallBinding
 import com.example.myapplication.model.Results
 
@@ -30,7 +31,8 @@ class ResultsAdapter(
         holder.binding.tvTime.text = randomTime()
         holder.binding.tvGroupOneGoals.text = randomGoals()
         holder.binding.tvGroupTwoGoals.text = randomGoals()
-
+        holder.binding.grouponepic.setImageResource(randomPicture())
+        holder.binding.grouptwopic.setImageResource(randomPicture())
     }
 
     override fun getItemCount(): Int {
@@ -45,6 +47,11 @@ class ResultsAdapter(
     fun randomGoals() : String {
         val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4")
         return randomGoals.random()
+    }
+
+    fun randomPicture() : Int {
+        var pictures = listOf<Int>(R.drawable.achievement_1, R.drawable.award_1, R.drawable.download, R.drawable.download__1_)
+        return pictures.random()
     }
 
 }

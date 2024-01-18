@@ -36,5 +36,10 @@ class AllChatsFragment : Fragment() {
         binding.btChats.setOnClickListener {
             findNavController().navigate(R.id.action_allChatsFragment_to_myChatsFragment)
         }
+
+        binding.btBack.setOnClickListener {
+            findNavController().navigate(R.id.action_allChatsFragment_to_myChatsFragment)
+        }
+
     }
 }
