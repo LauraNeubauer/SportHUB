@@ -57,9 +57,7 @@ class FinderFragment : Fragment() {
         }
 
         binding.ddBtSort.text = "SORT"
-        binding.ddBtSort.setOnClickListener {
-            showPopupMenuSort(it)
-        }
+        binding.ddBtSort.isClickable = false
 
         binding.ddbtSearch.setOnClickListener {
             showPopupMenuSearch(it)
@@ -200,6 +198,49 @@ class FinderFragment : Fragment() {
         popupMenu.show()
     }
 
+    private fun showPopupMenuSortClubs(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dd_menu_sort_clubs, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    binding.ddBtSort.text = "ENTFERNUNG"
+                    true
+                }
+
+                R.id.option2 -> {
+                    binding.ddBtSort.text = "EST"
+                    true
+                }
+
+                R.id.option3 -> {
+                    binding.ddBtSort.text = "QUOTE"
+                    true
+                }
+
+                R.id.option4 -> {
+                    binding.ddBtSort.text = "POKALE"
+                    true
+                }
+
+                R.id.option5 -> {
+                    binding.ddBtSort.text = "TUNIERE"
+                    true
+                }
+
+                R.id.option6 -> {
+                    binding.ddBtSort.text = "LIGEN"
+                    true
+                }
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+
     private fun showPopupMenuLevel(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -254,6 +295,11 @@ class FinderFragment : Fragment() {
                 R.id.option1 -> {
                     binding.ddbtSearch.text = "Matches"
                     binding.ddbtLvl.visibility = View.VISIBLE // Show ddbtLvl
+                    binding.ddBtSort.text = "SORT"
+                    binding.ddBtSort.isClickable = true
+                    binding.ddBtSort.setOnClickListener {
+                        showPopupMenuSort(it)
+                    }
                     binding.btSearch.setOnClickListener {
                         // Verwenden Sie den vorher initialisierten Adapter
                         viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
@@ -289,10 +335,24 @@ class FinderFragment : Fragment() {
                 R.id.option2 -> {
                     binding.ddbtSearch.text = "Clubs"
                     binding.ddbtLvl.visibility = View.GONE // Hide ddbtLvl
+                    binding.ddBtSort.isClickable = true
+                    binding.ddBtSort.setOnClickListener {
+                        showPopupMenuSortClubs(it)
+                    }
                     binding.btSearch.setOnClickListener {
+                        // Verwenden Sie den vorher initialisierten Adapter
                         viewModel.clubdatabase.observe(viewLifecycleOwner) {
-                            Log.d("FinderFragment", "Club database size: ${it.size}")
-                            binding.rvFinderResults.adapter = ClubAdapter(it, viewModel)
+                            Log.d("FinderFragment", "Original list size: ${it.size}")
+                            val filteredList = viewModel.filterAndSortClubs(
+                                ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                                binding.ddBtSort.text.toString(),
+                                it.toMutableList(),
+                            )
+
+                            Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
+
+                            binding.rvFinderResults.adapter = ClubAdapter(filteredList, viewModel)
+
                         }
                     }
                     true

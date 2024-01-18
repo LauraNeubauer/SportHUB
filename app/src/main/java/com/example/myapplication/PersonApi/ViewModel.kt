@@ -97,6 +97,41 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         return filteredList
     }
 
+    fun filterAndSortClubs(
+        sports: Sports? = null,
+        sortBy: String? = null,
+        originalList: MutableList<Club>,
+    ): MutableList<Club> {
+        var filteredList = originalList
+
+        filteredList = when (sports) {
+            Sports.BADMINTON -> filteredList.filter { it.sport == "BADMINTON" }.toMutableList()
+            Sports.SQUASH -> filteredList.filter { it.sport == "SQUASH" }.toMutableList()
+            Sports.TISCHTENNIS -> filteredList.filter { it.sport == "TISCHTENNIS" }.toMutableList()
+            Sports.TENNIS -> filteredList.filter { it.sport == "TENNIS" }.toMutableList()
+            Sports.FUSSBALL -> filteredList.filter { it.sport == "FUSSBALL" }.toMutableList()
+            Sports.HOCKEY -> filteredList.filter { it.sport == "HOCKEY" }.toMutableList()
+            Sports.CRICKET -> filteredList.filter { it.sport == "CRICKET" }.toMutableList()
+            Sports.HANDBALL -> filteredList.filter { it.sport == "HANDBALL" }.toMutableList()
+            Sports.ALLE -> originalList
+            Sports.SPORTS -> originalList
+            else -> originalList
+        }
+
+        filteredList = when (sortBy) {
+            "ENTFERNUNG" -> filteredList.sortedBy { it.entfernung }.toMutableList()
+            "EST" -> filteredList.sortedBy { it.est }.toMutableList()
+            "QUOTE" -> filteredList.sortedByDescending { it.Quote }.toMutableList()
+            "POKALE" -> filteredList.sortedByDescending { it.pokale }.toMutableList()
+            "TUNIERE" -> filteredList.sortedByDescending { it.tuniere }.toMutableList()
+            "LIGEN" -> filteredList.sortedByDescending { it.ligen }.toMutableList()
+            "ALLE" -> originalList
+            else -> originalList
+        }
+
+        return filteredList
+    }
+
     fun loadPersons() {
         viewModelScope.launch {
             repo.getPerson()

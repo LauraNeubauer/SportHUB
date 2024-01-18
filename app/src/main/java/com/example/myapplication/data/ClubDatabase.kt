@@ -20,7 +20,7 @@ class ClubDatabase {
         return mutableListOf<Club>(
             Club(
                 "FC Kickers",
-                "Fußball",
+                "FUSSBALL",
                 250,
                 1985,
                 23,
@@ -32,7 +32,7 @@ class ClubDatabase {
             ),
             Club(
                 "Dynamic Strikers",
-                "Fußball",
+                "FUSSBALL",
                 180,
                 1992,
                 15,
@@ -44,7 +44,7 @@ class ClubDatabase {
             ),
             Club(
                 "Goal Crushers",
-                "Fußball",
+                "FUSSBALL",
                 300,
                 1978,
                 30,
@@ -56,7 +56,7 @@ class ClubDatabase {
             ),
             Club(
                 "Shuttle Masters",
-                "Badminton",
+                "BADMINTON",
                 120,
                 2000,
                 10,
@@ -68,7 +68,7 @@ class ClubDatabase {
             ),
             Club(
                 "Swift Smashers",
-                "Badminton",
+                "BADMINTON",
                 90,
                 1995,
                 8,
@@ -80,7 +80,7 @@ class ClubDatabase {
             ),
             Club(
                 "Birdie Blazers",
-                "Badminton",
+                "BADMINTON",
                 150,
                 1988,
                 12,
@@ -92,7 +92,7 @@ class ClubDatabase {
             ),
             Club(
                 "Squash Stars",
-                "Squash",
+                "SQUASH",
                 80,
                 2005,
                 5,
@@ -104,7 +104,7 @@ class ClubDatabase {
             ),
             Club(
                 "Powerful Rackets",
-                "Squash",
+                "SQUASH",
                 100,
                 1998,
                 8,
@@ -116,7 +116,7 @@ class ClubDatabase {
             ),
             Club(
                 "Smash Masters",
-                "Squash",
+                "SQUASH",
                 120,
                 2002,
                 7,
@@ -128,7 +128,7 @@ class ClubDatabase {
             ),
             Club(
                 "Spin Kings",
-                "Tischtennis",
+                "TISCHTENNIS",
                 150,
                 1990,
                 12,
@@ -140,7 +140,7 @@ class ClubDatabase {
             ),
             Club(
                 "Fast Paddlers",
-                "Tischtennis",
+                "TISCHTENNIS",
                 120,
                 1995,
                 10,
@@ -152,7 +152,7 @@ class ClubDatabase {
             ),
             Club(
                 "Top Spinners",
-                "Tischtennis",
+                "TISCHTENNIS",
                 180,
                 1988,
                 15,
@@ -164,7 +164,7 @@ class ClubDatabase {
             ),
             Club(
                 "Tennisverein XYZ",
-                "Tennis",
+                "TENNIS",
                 183,
                 1990,
                 17,
@@ -176,7 +176,7 @@ class ClubDatabase {
             ),
             Club(
                 "Ace Aces",
-                "Tennis",
+                "TENNIS",
                 200,
                 1982,
                 25,
@@ -188,7 +188,7 @@ class ClubDatabase {
             ),
             Club(
                 "Net Ninjas",
-                "Tennis",
+                "TENNIS",
                 150,
                 1995,
                 20,
@@ -200,7 +200,7 @@ class ClubDatabase {
             ),
             Club(
                 "Icebreakers",
-                "Hockey",
+                "HOCKEY",
                 120,
                 2008,
                 8,
@@ -212,7 +212,7 @@ class ClubDatabase {
             ),
             Club(
                 "Field Dominators",
-                "Hockey",
+                "HOCKEY",
                 90,
                 2015,
                 5,
@@ -224,7 +224,7 @@ class ClubDatabase {
             ),
             Club(
                 "Puck Masters",
-                "Hockey",
+                "HOCKEY",
                 150,
                 2002,
                 10,
@@ -236,7 +236,7 @@ class ClubDatabase {
             ),
             Club(
                 "Cricket Legends",
-                "Cricket",
+                "CRICKET",
                 200,
                 1980,
                 20,
@@ -248,7 +248,7 @@ class ClubDatabase {
             ),
             Club(
                 "Bat Warriors",
-                "Cricket",
+                "CRICKET",
                 180,
                 1992,
                 18,
@@ -260,7 +260,7 @@ class ClubDatabase {
             ),
             Club(
                 "Wicket Wizards",
-                "Cricket",
+                "CRICKET",
                 150,
                 2000,
                 15,
@@ -272,7 +272,7 @@ class ClubDatabase {
             ),
             Club(
                 "Handball Heroes",
-                "Handball",
+                "HANDBALL",
                 160,
                 1995,
                 12,
@@ -284,7 +284,7 @@ class ClubDatabase {
             ),
             Club(
                 "Goal Guardians",
-                "Handball",
+                "HANDBALL",
                 140,
                 2002,
                 10,
@@ -296,7 +296,7 @@ class ClubDatabase {
             ),
             Club(
                 "Fast Breakers",
-                "Handball",
+                "HANDBALL",
                 180,
                 1990,
                 15,

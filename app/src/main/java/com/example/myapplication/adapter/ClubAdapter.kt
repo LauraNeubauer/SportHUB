@@ -48,9 +48,10 @@ class ClubAdapter(
         holder.binding.textStatWins.text = "TUNIERE"
         holder.binding.tvStatWins.text = item.tuniere.toString()
         holder.binding.tvEntfernung.text = item.entfernung.toString() + " km entfernt"
-        holder.binding.tvSport.text = ""
+        holder.binding.tvSport.text = item.sport.toString()
         holder.binding.tvLevel2.text = ""
         holder.binding.tvDate.text = ""
+        holder.binding.tvTitle.text = item.bio
 
         holder.binding.btProfile.setOnClickListener {
             viewmodel.setCurrentClub(item)
