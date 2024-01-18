@@ -55,7 +55,10 @@ class HomeFragment : Fragment() {
       }
 
       binding.btClub.setOnClickListener {
+         viewModel.clubdatabase.observe(viewLifecycleOwner) {
+            viewModel.setCurrentClub(it[1])
             findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
+         }
       }
 
       binding.rvHome.adapter = EventHomeAdapter(datasetEvents, viewModel)

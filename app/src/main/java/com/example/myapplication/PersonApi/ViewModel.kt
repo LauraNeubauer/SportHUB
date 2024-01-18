@@ -25,7 +25,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
     private val _currentClub = MutableLiveData<Club>()
     private val _currentProfile = MutableLiveData<PersonData>()
 
-    val currentClub: MutableLiveData<Club>
+    val getCurrentClub: MutableLiveData<Club>
         get() = _currentClub
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
@@ -64,24 +64,22 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             Level.ADVANCED -> filteredList.filter { it.level == "ADVANCED" }.toMutableList()
             Level.EXPERT -> filteredList.filter { it.level == "EXPERT" }.toMutableList()
             Level.ELITE -> filteredList.filter { it.level == "ELITE" }.toMutableList()
-            Level.ALLE -> originalList
-            Level.LEVEL -> originalList
+            Level.ALLE -> filteredList
+            Level.LEVEL -> filteredList
             else -> originalList
         }
 
         filteredList = when (sports) {
             Sports.BADMINTON -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
             Sports.SQUASH -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
-            Sports.TISCHTENNIS -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }
-                .toMutableList()
-
+            Sports.TISCHTENNIS -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }.toMutableList()
             Sports.TENNIS -> filteredList.filter { it.sportsOne == "TENNIS" }.toMutableList()
             Sports.FUSSBALL -> filteredList.filter { it.sportsOne == "FUSSBALL" }.toMutableList()
             Sports.HOCKEY -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
             Sports.CRICKET -> filteredList.filter { it.sportsOne == "CRICKET" }.toMutableList()
             Sports.HANDBALL -> filteredList.filter { it.sportsOne == "HANDBALL" }.toMutableList()
-            Sports.ALLE -> originalList
-            Sports.SPORTS -> originalList
+            Sports.ALLE -> filteredList
+            Sports.SPORTS -> filteredList
             else -> originalList
         }
 
@@ -93,7 +91,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             "MATCHES" -> filteredList.sortedByDescending { it.matches.toInt() }.toMutableList()
             "WINS" -> filteredList.sortedByDescending { it.wins.toInt() }.toMutableList()
             "POKALE" -> filteredList.sortedByDescending { it.trophys.toInt() }.toMutableList()
-            "ALLE" -> originalList
+            "ALLE" -> filteredList
             else -> originalList
         }
 
@@ -128,7 +126,8 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             "POKALE" -> filteredList.sortedByDescending { it.pokale }.toMutableList()
             "TUNIERE" -> filteredList.sortedByDescending { it.tuniere }.toMutableList()
             "LIGEN" -> filteredList.sortedByDescending { it.ligen }.toMutableList()
-            "ALLE" -> originalList
+            "ALLE" -> filteredList
+            "SORT" -> filteredList
             else -> originalList
         }
 

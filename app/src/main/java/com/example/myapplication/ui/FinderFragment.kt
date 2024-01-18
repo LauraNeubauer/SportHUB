@@ -223,6 +223,10 @@ class FinderFragment : Fragment() {
                     binding.ddBtSort.text = "LIGEN"
                     true
                 }
+                R.id.option7 -> {
+                    binding.ddBtSort.text = "SORT"
+                    true
+                }
                 else -> false
             }
         }

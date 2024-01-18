@@ -17,4 +17,7 @@
     <item
         android:id="@+id/option6"
         android:title="Ligen" />
+    <item
+        android:id="@+id/option7"
+        android:title="Alle" />
 </menu>
