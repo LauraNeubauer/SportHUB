@@ -3,12 +3,15 @@ package com.example.myapplication.ui
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.CalenderFragmentBinding
@@ -37,6 +40,10 @@ class CalenderFragment : Fragment() {
 
         viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
             binding.ads.setImageResource(viewModel.imageList[index])
+        }
+
+        binding.ddBtSortCal.setOnClickListener {
+            showPopupMenuCal(it)
         }
 
         binding.rvEvents.adapter = EventHomeAdapter(datasetEvents, viewModel)
@@ -134,4 +141,48 @@ class CalenderFragment : Fragment() {
             }
         }
     }
+    private fun showPopupMenuCal(view: View) {
+        val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
+        val menuInflater = popupMenu.menuInflater
+        menuInflater.inflate(R.menu.dd_menu_sort_cal, popupMenu.menu)
+
+        popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
+            when (item?.itemId) {
+                R.id.option1 -> {
+                    binding.ddBtSortCal.text = "DIESE WOCHE"
+                    true
+                }
+
+                R.id.option2 -> {
+                    binding.ddBtSortCal.text = "NÄCHSTE WOCHE"
+                    true
+                }
+
+                R.id.option3 -> {
+                    binding.ddBtSortCal.text = "IN 2 WOCHEN"
+                    true
+                }
+
+                R.id.option4 -> {
+                    binding.ddBtSortCal.text = "IN 3 WOCHEN"
+                    true
+                }
+
+                R.id.option5 -> {
+                    binding.ddBtSortCal.text = "NÄCHSTEN MONAT"
+                    true
+                }
+
+                R.id.option6 -> {
+                    binding.ddBtSortCal.text = "SPEZIELLES DATUM"
+                    true
+                }
+
+                else -> false
+            }
+        }
+
+        popupMenu.show()
+    }
+
 }
