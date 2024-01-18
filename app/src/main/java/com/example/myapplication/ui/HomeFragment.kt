@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
       }
 
       binding.btClub.setOnClickListener {
-         findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
       }
 
       binding.rvHome.adapter = EventHomeAdapter(datasetEvents, viewModel)

@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.databinding.ClubFragmentBinding
 
 class ClubFragment : Fragment() {
 
     private lateinit var binding: ClubFragmentBinding
+    private lateinit var vielmodel : ViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,

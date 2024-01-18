@@ -27,11 +27,24 @@ class ResultsAdapter(
         holder.binding.tvGroupOne.text = item.mainPlayer
         holder.binding.tvGroupTwo.text = item.playerOpps
         holder.binding.tvLand.text = item.place
+        holder.binding.tvTime.text = randomTime()
+        holder.binding.tvGroupOneGoals.text = randomGoals()
+        holder.binding.tvGroupTwoGoals.text = randomGoals()
 
     }
 
     override fun getItemCount(): Int {
         return dataset.size
+    }
+
+    fun randomTime() : String {
+        val randomTime = listOf<String>("11", "17", "19", "22", "31", "42", "45+2", "48", "52", "57", "63", "67", "71", "75", "88", "90+2", "90+4")
+        return randomTime.random()
+    }
+
+    fun randomGoals() : String {
+        val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4")
+        return randomGoals.random()
     }
 
 }

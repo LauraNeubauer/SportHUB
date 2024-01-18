@@ -183,7 +183,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_stat_age"
+        android:id="@+id/tv_stat_est"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -197,7 +197,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4ddddwd" />
 
     <TextView
-        android:id="@+id/text_stat_age"
+        android:id="@+id/est"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -222,7 +222,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfe_number"
+        android:id="@+id/tv_stats_ligen"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -236,7 +236,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4dddddwd" />
 
     <TextView
-        android:id="@+id/tvf_age"
+        android:id="@+id/ligen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -261,7 +261,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_age_numfber"
+        android:id="@+id/tv_stats_pokale"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -275,7 +275,7 @@
         app:layout_constraintTop_toTopOf="@+id/ff" />
 
     <TextView
-        android:id="@+id/tv_afge"
+        android:id="@+id/pokale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -300,7 +300,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfe_nfumber"
+        android:id="@+id/tv_stats_tuniere"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -314,7 +314,7 @@
         app:layout_constraintTop_toTopOf="@+id/sss" />
 
     <TextView
-        android:id="@+id/tvdf_age"
+        android:id="@+id/tuniere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -339,7 +339,7 @@
         tools:ignore="UnknownIdInLayout" />
 
     <TextView
-        android:id="@+id/tv_agfefff_nfumber"
+        android:id="@+id/tv_stats_quote"
         android:layout_width="40dp"
         android:layout_height="30dp"
         android:layout_marginTop="9dp"
@@ -353,7 +353,7 @@
         app:layout_constraintTop_toTopOf="@+id/ssdds" />
 
     <TextView
-        android:id="@+id/tvdf_ffage"
+        android:id="@+id/quoten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -374,7 +374,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4dddddwd">
 
         <TextView
-            android:id="@+id/tv_tfitle_"
+            android:id="@+id/bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -510,15 +510,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:padding="5dp"
-                            app:srcCompat="@drawable/balls" />
+                            app:srcCompat="@drawable/achievement_1" />
 
                         <ImageView
-                            android:id="@+id/grouptwopic"
+                            android:id="@+id/group1"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_marginBottom="5dp"
                             android:padding="5dp"
-                            app:srcCompat="@drawable/balls_bg" />
+                            app:srcCompat="@drawable/download__1_" />
 
                     </LinearLayout>
 
@@ -588,7 +588,7 @@
         app:srcCompat="@drawable/property_1_linear_kopie_7" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ergebnisse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -614,7 +614,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/mitglieder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -627,7 +627,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logout" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton7"
+        android:id="@+id/fb_saved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -639,19 +639,19 @@
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/fb_matches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
         app:layout_constraintEnd_toStartOf="@+id/fb_results"
-        app:layout_constraintStart_toEndOf="@+id/bt_club_"
+        app:layout_constraintStart_toEndOf="@+id/bt_infos_"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
         app:srcCompat="@drawable/clipboard"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bt_club_"
+        android:id="@+id/bt_infos_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -665,7 +665,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/infos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -673,12 +673,12 @@
         android:text="Infos"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/bt_club_"
-        app:layout_constraintStart_toStartOf="@+id/bt_club_"
-        app:layout_constraintTop_toBottomOf="@+id/bt_club_" />
+        app:layout_constraintEnd_toEndOf="@+id/fb_saved"
+        app:layout_constraintStart_toStartOf="@+id/fb_saved"
+        app:layout_constraintTop_toBottomOf="@+id/fb_saved" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/events"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -686,12 +686,12 @@
         android:text="Events"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton4"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton4" />
+        app:layout_constraintEnd_toEndOf="@+id/fb_matches"
+        app:layout_constraintStart_toStartOf="@+id/fb_matches"
+        app:layout_constraintTop_toBottomOf="@+id/fb_matches" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -699,9 +699,9 @@
         android:text="News"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton7"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton7" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_infos_"
+        app:layout_constraintStart_toStartOf="@+id/bt_infos_"
+        app:layout_constraintTop_toBottomOf="@+id/bt_infos_" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
