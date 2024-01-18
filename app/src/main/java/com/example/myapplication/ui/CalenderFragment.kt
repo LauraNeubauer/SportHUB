@@ -55,15 +55,16 @@ class CalenderFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private fun weekdays() {
-
         val currentDate = Calendar.getInstance().time
         val calendar = Calendar.getInstance()
         calendar.time = currentDate
+        val lastDayOfMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
 
         val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+
         fun setBindingText(binding: TextView, day: Int) {
-            val wrappedDay = (day + 31) % 31 // Ensure day is within 1 to 31
-            binding.text = if (wrappedDay == 0) "31" else wrappedDay.toString()
+            val wrappedDay = (day + lastDayOfMonth) % lastDayOfMonth // Ensure day is within 1 to lastDayOfMonth
+            binding.text = if (wrappedDay == 0) lastDayOfMonth.toString() else wrappedDay.toString()
         }
         when (SimpleDateFormat("EEEE").format(calendar.time)) {
             "Monday" -> {
