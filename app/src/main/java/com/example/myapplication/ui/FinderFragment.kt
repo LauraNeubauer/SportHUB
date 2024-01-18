@@ -61,6 +61,12 @@ class FinderFragment : Fragment() {
             showPopupMenuLevel(it)
         }
 
+        if (binding.ddbtSearch.text == "SEARCH") {
+            binding.btSearch.setOnClickListener {
+                showPopUp("Was möchten Sie suchen?", "Sie müssen zwischen Clubs oder \nMatches wählen. \n\nIm Suchfeld: SEARCH")
+            }
+        }
+
         binding.ddBtSort.text = "SORT"
         binding.ddBtSort.isClickable = false
 
