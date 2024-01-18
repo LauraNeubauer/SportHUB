@@ -260,23 +260,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/dd_bt_sort_cal"
-        style="@style/ib_dd_sort"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-    <Button
-        android:id="@+id/bt_saved"
-        style="@style/ctab_saved"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_events"
         android:layout_width="409dp"
@@ -294,32 +277,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/kronaone_regular"
         android:text="Nächste Events"
         android:textColor="@color/header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dd_bt_sort_cal" />
-
-    <Button
-        android:id="@+id/bt_show_all_events"
-        style="@style/ctab_saved"
-        android:text="Alle"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <View
         android:id="@+id/view2"
-        android:layout_width="60dp"
+        android:layout_width="225dp"
         android:layout_height="2dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="-15dp"
         android:background="@color/header"
         app:layout_constraintBottom_toBottomOf="@+id/tv_title_"
-        app:layout_constraintEnd_toStartOf="@+id/bt_show_all_events"
-        app:layout_constraintStart_toEndOf="@+id/tv_title_"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_title_" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

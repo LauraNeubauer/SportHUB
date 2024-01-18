@@ -70,15 +70,6 @@
                     android:layout_height="40dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_marginLeft="15dp"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/crash_test_m"
-                        android:background="@drawable/rounded_profilpictures"
-                        android:clipToOutline="true"/>
-
                     <TextView
                         android:id="@+id/tv_title_big"
                         android:layout_width="match_parent"
@@ -96,7 +87,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="horizontal">
 
 
@@ -112,15 +104,15 @@
                         android:id="@+id/trenner"
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="•" />
+                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/tv_level"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="textEnd" />
 
                 </LinearLayout>
 
@@ -128,6 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="horizontal">
 
 
@@ -143,15 +136,15 @@
                         android:id="@+id/textView6"
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="•" />
+                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/tv_time2"
-                        android:layout_width="180dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textAlignment="textEnd" />
 
                 </LinearLayout>
 
