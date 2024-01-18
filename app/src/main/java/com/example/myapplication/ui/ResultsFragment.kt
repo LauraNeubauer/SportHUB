@@ -40,6 +40,7 @@ class ResultsFragment : Fragment() {
         binding.btBack.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
         }
+
     }
 }
 
