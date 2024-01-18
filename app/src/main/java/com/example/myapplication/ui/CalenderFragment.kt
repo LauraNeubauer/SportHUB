@@ -39,6 +39,10 @@ class CalenderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
+            binding.ads.setImageResource(viewModel.imageList[index])
+        }
+
         binding.rvEvents.adapter = EventHomeAdapter(datasetEvents, viewModel)
 
         binding.ddBtSortCal.text = "SORT"

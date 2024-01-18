@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.PersonApi.local.getDatabase
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.R
 import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.model.Club
 import kotlinx.coroutines.launch
@@ -16,7 +17,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val repo = PersonRepository(database)
-    val clubdatabase : LiveData<List<Club>> = ClubDatabase().getClubs()
+    val clubdatabase: LiveData<List<Club>> = ClubDatabase().getClubs()
 
     val contacts = repo.personenListe
 
@@ -71,7 +72,9 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
         filteredList = when (sports) {
             Sports.BADMINTON -> filteredList.filter { it.sportsOne == "BADMINTON" }.toMutableList()
             Sports.SQUASH -> filteredList.filter { it.sportsOne == "SQUASH" }.toMutableList()
-            Sports.TISCHTENNIS -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }.toMutableList()
+            Sports.TISCHTENNIS -> filteredList.filter { it.sportsOne == "TISCHTENNIS" }
+                .toMutableList()
+
             Sports.TENNIS -> filteredList.filter { it.sportsOne == "TENNIS" }.toMutableList()
             Sports.FUSSBALL -> filteredList.filter { it.sportsOne == "FUSSBALL" }.toMutableList()
             Sports.HOCKEY -> filteredList.filter { it.sportsOne == "HOCKEY" }.toMutableList()
@@ -163,4 +166,34 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    private val _currentImageIndex = MutableLiveData<Int>()
+    val currentImageIndex: LiveData<Int> get() = _currentImageIndex
+
+    val imageList = listOf(
+        R.drawable.ad_1,
+        R.drawable.ad_2,
+        R.drawable.ad_3,
+        R.drawable.ad_4,
+        R.drawable.ad_5,
+        R.drawable.ad_6,
+    )
+
+    private var currentIndex = 0
+    private val intervalMillis = 20000
+
+    init {
+        startImageChange()
+    }
+
+    private fun startImageChange() {
+        Thread {
+            while (true) {
+                Thread.sleep(intervalMillis.toLong())
+                currentIndex = (currentIndex + 1) % imageList.size
+                _currentImageIndex.postValue(currentIndex)
+            }
+        }.start()
+    }
 }
+

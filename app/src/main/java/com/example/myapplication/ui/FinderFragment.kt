@@ -1,5 +1,6 @@
 package com.example.myapplication.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -37,6 +38,10 @@ class FinderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
+            binding.ads.setImageResource(viewModel.imageList[index])
+        }
+
         firebaseViewModel.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
                 // Umwandeln des Snapshots in eine Klassen-Instanz von der Klasse Profil und setzen der Felder
@@ -61,28 +66,6 @@ class FinderFragment : Fragment() {
 
         binding.ddbtSearch.setOnClickListener {
             showPopupMenuSearch(it)
-        }
-
-
-
-        binding.btSearch.setOnClickListener {
-            if (binding.ddbtSearch.text == "MATCHES") {
-                viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
-                    Log.d("FinderFragment", "Original list size: ${originalList.size}")
-
-                    val filteredList = viewModel.filterAndSort(
-                        ViewModel.Level.valueOf(binding.ddbtLvl.text.toString()),
-                        ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
-                        binding.ddBtSort.text.toString(),
-                        originalList.toMutableList(),
-                    )
-
-                    Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
-
-                    // Aktualisieren Sie den Adapter mit der gefilterten Liste
-                    binding.rvFinderResults.adapter = FinderResultAdapter(filteredList, viewModel)
-                }
-            }
         }
     }
 
@@ -363,6 +346,18 @@ class FinderFragment : Fragment() {
         }
 
         popupMenu.show()
+    }
+
+    private fun showPopUp(titel: String, nachricht: String) {
+        val builder = AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
+        builder.setTitle(titel)
+        builder.setMessage(nachricht)
+        builder.setPositiveButton("OK") { dialog, which ->
+            dialog.dismiss()
+        }
+        builder.setCancelable(false)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 
 
