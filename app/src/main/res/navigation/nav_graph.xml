@@ -204,4 +204,8 @@
             android:id="@+id/action_myChatsFragment_to_allChatsFragment"
             app:destination="@id/allChatsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/strangerClubFragment"
+        android:name="com.example.myapplication.ui.StrangerClubFragment"
+        android:label="StrangerClubFragment" />
 </navigation>

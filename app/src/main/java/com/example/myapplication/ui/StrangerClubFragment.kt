@@ -9,11 +9,11 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
-import com.example.myapplication.databinding.ClubFragmentBinding
+import com.example.myapplication.databinding.StrangerClubFragmentBinding
 
-class ClubFragment : Fragment() {
+class StrangerClubFragment : Fragment() {
 
-    private lateinit var binding: ClubFragmentBinding
+    private lateinit var binding: StrangerClubFragmentBinding
     private val vielmodel: ViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class ClubFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = ClubFragmentBinding.inflate(layoutInflater)
+        binding = StrangerClubFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -45,7 +45,7 @@ class ClubFragment : Fragment() {
         }
 
         binding.btBack.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
+            findNavController().navigate(R.id.finderFragment)
         }
 
     }

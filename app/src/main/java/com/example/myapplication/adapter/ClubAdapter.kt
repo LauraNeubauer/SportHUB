@@ -56,7 +56,7 @@ class ClubAdapter(
         holder.binding.btProfile.setOnClickListener {
             viewmodel.setCurrentClub(item)
             // Navigation zu einem anderen Fragment mit Hilfe des NavController
-            holder.itemView.findNavController().navigate(R.id.clubFragment)
+            holder.itemView.findNavController().navigate(R.id.strangerClubFragment)
         }
     }
 }

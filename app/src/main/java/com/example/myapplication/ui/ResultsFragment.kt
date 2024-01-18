@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.R
 import com.example.myapplication.adapter.ResultsAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ResultsFragmentBinding
@@ -34,6 +36,10 @@ class ResultsFragment : Fragment() {
         }
 
         binding.rvResults.adapter = ResultsAdapter(dataset)
+
+        binding.btBack.setOnClickListener {
+            findNavController().navigate(R.id.homeFragment)
+        }
     }
 }
 

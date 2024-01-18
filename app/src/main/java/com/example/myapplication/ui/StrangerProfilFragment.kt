@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.StrangerProfilFragmentBinding
 
 class StrangerProfilFragment : Fragment() {
@@ -28,9 +30,8 @@ class StrangerProfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.currentProfile.observe(viewLifecycleOwner) {
-            binding.tvName.text = it.name
-            binding.ivProfilePicture.load(it.pic)
 
+            binding.ivProfilePicture.load(it.pic)
             binding.statOne.text = it.age
             binding.textStatOne.text = "ALTER"
             binding.statTwo.text = it.size
@@ -41,13 +42,17 @@ class StrangerProfilFragment : Fragment() {
             binding.textStatFour.text = "WINS"
             binding.statFive.text = it.trophys
             binding.textStatFive.text = "POKALE"
+            binding.tvName.text = it.name
 
             binding.tvBio.text = it.bio
 
             binding.tvLevel.text = it.level
-
             binding.btSportsOne.text = it.sportsOne
             binding.btSportsTwo.text = it.sportsTwo
+
+            binding.btBack.setOnClickListener {
+                findNavController().navigate(R.id.finderFragment)
+            }
         }
     }
 }
