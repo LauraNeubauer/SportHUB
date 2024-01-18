@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
 
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bnv.visibility = when (destination.id) {
+                R.id.onBoardingThreeFragment,
+                R.id.onBoardingFourFragment,
                 R.id.onBoardingOneFragment,
                 R.id.registrateFragment,
                 R.id.onBoardingTwoFragment,

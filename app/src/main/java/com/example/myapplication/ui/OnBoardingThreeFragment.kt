@@ -64,6 +64,7 @@ class OnBoardingThreeFragment : Fragment() {
                 binding.tietName.text!!.isNotEmpty() &&
                 binding.tietAge.text!!.isNotEmpty() &&
                 binding.tietSize.text!!.isNotEmpty() &&
+                binding.tietPlace.text!!.isNotEmpty() &&
                 selectedLevel != null
             ) {
 
