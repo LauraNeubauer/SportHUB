@@ -60,23 +60,6 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
-    fun fetchMessages() {
-        profileRef.collection("chats").addSnapshotListener { value, error ->
-            if (error == null && value != null) {
-                val messageList = value.documents.map { document ->
-                    Message(
-                        text = document.get("text") as? String ?: "",
-                        from = document.get("from") as? String ?: "",
-                        timestamp = document.get("timestamp") as? String
-                            ?: "", // Beachten Sie, dass timestamp wahrscheinlich ein Long ist
-                        send = document.get("send") as? Boolean ?: false
-                    )
-                }
-                _messages.postValue(messageList.toMutableList())
-            }
-        }
-    }
-
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
         profileRef.collection("groups").add(Chat(groupID = groupId, groupName = groupName, pic))
             .addOnSuccessListener { documentReference ->
