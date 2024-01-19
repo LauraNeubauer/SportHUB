@@ -32,6 +32,15 @@ class FirebaseViewModel: ViewModel() {
     private val _myChats = MutableLiveData<MutableList<Chat>>()
     val myChats: LiveData<MutableList<Chat>> get() = _myChats
 
+    private val _currentChat = MutableLiveData<Int>()
+
+    val getCurrentChat: MutableLiveData<Int>
+        get() = _currentChat
+
+    fun setCurrentChat(id: Int) {
+        _currentChat.postValue(id)
+    }
+
     fun fetchMyChats() {
         profileRef.collection("groups").addSnapshotListener { value, error ->
             if (error == null && value != null) {
@@ -42,7 +51,6 @@ class FirebaseViewModel: ViewModel() {
                         groupPic = document.get("groupPic") as? Int ?: 0
                     )
                 }
-
                 _myChats.postValue(myChatsList.toMutableList())
             }
         }

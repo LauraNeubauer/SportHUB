@@ -3,8 +3,10 @@ package com.example.myapplication.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Firebase.FirebaseViewModel
+import com.example.myapplication.R
 import com.example.myapplication.databinding.ChatListItemBinding
 import com.example.myapplication.model.Chat
 
@@ -32,5 +34,10 @@ class MyChatsAdapter(
 
         holder.binding.tvNameChat.text = item.groupName
         holder.binding.ivGroupPic.setImageResource(item.groupPic)
+
+        holder.binding.cvChat.setOnClickListener {
+            firebaseVM.setCurrentChat(item.groupID)
+            holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
+        }
     }
 }

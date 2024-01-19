@@ -36,6 +36,5 @@ class AllGroupsAdatper(
 
         holder.binding.tvNameChat.text = item.groupName
         holder.binding.imageView.setImageResource(item.groupPic)
-
     }
 }
