@@ -36,28 +36,76 @@ class FirebaseViewModel : ViewModel() {
     private val _myChats = MutableLiveData<MutableList<Chat>>()
     val myChats: LiveData<MutableList<Chat>> get() = _myChats
 
-    private val _currentChat = MutableLiveData<Int>()
+    private val _currentChat = MutableLiveData<Chat>()
 
-    val getCurrentChat: MutableLiveData<Int>
+    val getCurrentChat: MutableLiveData<Chat>
         get() = _currentChat
 
-    fun setCurrentChat(id: Int) {
+    fun setCurrentChat(id: Chat) {
         _currentChat.postValue(id)
     }
 
     fun fetchMyChats() {
         profileRef.collection("groups").addSnapshotListener { value, error ->
             if (error == null && value != null) {
-                val myChatsList = value.documents.map { document ->
-                    Chat(
+                val myChatsList = mutableListOf<Chat>()
+
+                for (document in value.documents) {
+                    val chat = Chat(
                         groupID = document.get("groupID") as? Int ?: 0,
                         groupName = document.get("groupName") as? String ?: "",
                         groupPic = document.get("groupPic") as? Int ?: 0
                     )
+
+                    // Fetch messages within each group
+                    val chatId = document.id
+                    val chatCollectionRef = profileRef.collection("groups").document(chatId).collection("chats")
+
+                    chatCollectionRef.addSnapshotListener { chatValue, chatError ->
+                        if (chatError == null && chatValue != null) {
+                            val messagesList = chatValue.documents.map { chatDocument ->
+                                Message(
+                                    text = chatDocument.get("text") as? String ?: "",
+                                    from = chatDocument.get("sender") as? String ?: "",
+                                    timestamp = chatDocument.get("timestamp") as? String ?: "",
+                                    send = chatDocument.get("isRead") as? Boolean ?: false
+                                )
+                            }
+                            chat.messages = messagesList.toMutableList()
+
+                            // Add the chat to the list after fetching messages
+                            myChatsList.add(chat)
+                            _myChats.postValue(myChatsList.toMutableList())
+                        } else {
+                            Log.e("FIREBASE", "Error fetching chats: $chatError")
+                        }
+                    }
                 }
-                _myChats.postValue(myChatsList.toMutableList())
+            } else {
+                Log.e("FIREBASE", "Error fetching groups: $error")
             }
         }
+    }
+
+
+    fun addMessageToChat(
+        groupId: String,
+        messageText: String,
+        sender: String,
+        timestamp: String,
+        send: Boolean
+    ) {
+        val chatCollectionRef =
+            profileRef.collection("groups").document(groupId).collection("chats")
+
+        val newMessage = Message(text = messageText, sender, timestamp = timestamp, send)
+        chatCollectionRef.add(newMessage)
+            .addOnSuccessListener {
+                Log.d("FIREBASE", "Message added successfully.")
+            }
+            .addOnFailureListener { e ->
+                Log.e("FIREBASE", "Error adding message: $e")
+            }
     }
 
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
@@ -68,8 +116,8 @@ class FirebaseViewModel : ViewModel() {
                         Message(text = "hallo", "phil", timestamp = "12:09", false)
                     )
             }.addOnFailureListener { e ->
-            Log.e("FIREBASE", "Error adding Chat document: $e")
-        }
+                Log.e("FIREBASE", "Error adding Chat document: $e")
+            }
     }
 
     fun register(email: String, password: String, PersonData: PersonData) {

@@ -8,16 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
-import com.example.myapplication.adapter.ChatDetailAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
 
 class ChatDetailFragment : Fragment() {
 
-    private lateinit var binding : ChatDetailFragmentBinding
+    private lateinit var binding: ChatDetailFragmentBinding
     var datasetChats = ExampleDatabase().loadChats()
-    private val personViewModel : ViewModel by activityViewModels()
-    private val firebaseViewModel : FirebaseViewModel by activityViewModels()
+    private val personViewModel: ViewModel by activityViewModels()
+    private val firebaseViewModel: FirebaseViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +30,10 @@ class ChatDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        firebaseViewModel.messages.observe(viewLifecycleOwner) {
-            binding.rvMessages.adapter = ChatDetailAdapter(it, personViewModel)
+        firebaseViewModel.fetchMyChats()
 
+        firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
+            binding.tvChatName.text = it.groupName
         }
     }
 }

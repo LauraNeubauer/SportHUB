@@ -36,7 +36,7 @@ class MyChatsAdapter(
         holder.binding.ivGroupPic.setImageResource(item.groupPic)
 
         holder.binding.cvChat.setOnClickListener {
-            firebaseVM.setCurrentChat(item.groupID)
+            firebaseVM.setCurrentChat(item)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }
     }
