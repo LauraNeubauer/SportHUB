@@ -29,6 +29,25 @@ class FirebaseViewModel: ViewModel() {
         }
     }
 
+    private val _myChats = MutableLiveData<MutableList<Chat>>()
+    val myChats: LiveData<MutableList<Chat>> get() = _myChats
+
+    fun fetchMyChats() {
+        profileRef.collection("groups").addSnapshotListener { value, error ->
+            if (error == null && value != null) {
+                val myChatsList = value.documents.map { document ->
+                    Chat(
+                        groupID = document.get("groupID") as? Int ?: 0,
+                        groupName = document.get("groupName") as? String ?: "",
+                        groupPic = document.get("groupPic") as? Int ?: 0
+                    )
+                }
+
+                _myChats.postValue(myChatsList.toMutableList())
+            }
+        }
+    }
+
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
         profileRef.collection("groups").add(Chat(groupID = groupId, groupName, pic))
     }
