@@ -67,7 +67,8 @@ class FirebaseViewModel : ViewModel() {
                     Message(
                         text = document.get("text") as? String ?: "",
                         from = document.get("from") as? String ?: "",
-                        timestamp = document.get("timestamp") as? String ?: "", // Beachten Sie, dass timestamp wahrscheinlich ein Long ist
+                        timestamp = document.get("timestamp") as? String
+                            ?: "", // Beachten Sie, dass timestamp wahrscheinlich ein Long ist
                         send = document.get("send") as? Boolean ?: false
                     )
                 }
@@ -77,11 +78,15 @@ class FirebaseViewModel : ViewModel() {
     }
 
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
-        profileRef.collection("groups").add(Chat(groupID = groupId, groupName, pic))
-    }
-    fun addMessagesToChatCollection(groupId: String, text: String, from: String, timestamp: String, send: Boolean) {
-        val newMessage = Message(text, from, timestamp, send)
-        profileRef.collection("groups").document(groupId).collection("messages").add(newMessage)
+        profileRef.collection("groups").add(Chat(groupID = groupId, groupName = groupName, pic))
+            .addOnSuccessListener { documentReference ->
+                profileRef.collection("groups").document(documentReference.id).collection("chats")
+                    .add(
+                        Message(text = "hallo", "phil", timestamp = "12:09", false)
+                    )
+            }.addOnFailureListener { e ->
+            Log.e("FIREBASE", "Error adding Chat document: $e")
+        }
     }
 
     fun register(email: String, password: String, PersonData: PersonData) {
