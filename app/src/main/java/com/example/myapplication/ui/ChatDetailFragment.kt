@@ -8,8 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.adapter.ChatDetailAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class ChatDetailFragment : Fragment() {
 
@@ -34,6 +37,13 @@ class ChatDetailFragment : Fragment() {
 
         firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
             binding.tvChatName.text = it.groupName
+            binding.rvMessages.adapter = ChatDetailAdapter(it.messages, personViewModel)
         }
+    }
+
+    fun getCurrentTime(): String {
+        val currentTime = LocalTime.now()
+        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
+        return currentTime.format(formatter)
     }
 }
