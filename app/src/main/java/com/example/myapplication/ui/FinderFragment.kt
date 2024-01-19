@@ -373,6 +373,15 @@ class FinderFragment : Fragment() {
         }
         builder.setCancelable(false)
         val dialog: AlertDialog = builder.create()
+        val window: Window? = dialog.window
+        val layoutParams = window?.attributes
+        layoutParams?.gravity = Gravity.BOTTOM // Setzen Sie die gewünschte Gravity
+
+        val displayMetrics = resources.displayMetrics
+        layoutParams?.height = (displayMetrics.heightPixels * 2) / 4
+        layoutParams?.y = (displayMetrics.heightPixels - layoutParams!!.height) / 2
+        window?.attributes = layoutParams
+
         dialog.show()
     }
     private fun showPopUpStart(titel: String, nachricht: String) {

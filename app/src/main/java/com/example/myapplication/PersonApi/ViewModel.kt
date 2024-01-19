@@ -92,6 +92,7 @@ class ViewModel(application: Application) : AndroidViewModel(application) {
             "WINS" -> filteredList.sortedByDescending { it.wins.toInt() }.toMutableList()
             "POKALE" -> filteredList.sortedByDescending { it.trophys.toInt() }.toMutableList()
             "ALLE" -> filteredList
+            "SORT" -> filteredList
             else -> originalList
         }
 
