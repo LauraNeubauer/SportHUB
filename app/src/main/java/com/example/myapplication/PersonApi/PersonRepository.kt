@@ -1,6 +1,7 @@
 package com.example.myapplication.PersonApi
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import com.example.myapplication.PersonApi.local.PersonDatabase
 import com.example.myapplication.PersonApi.model.Person
 import com.example.myapplication.PersonApi.model.PersonData
@@ -12,6 +13,10 @@ class PersonRepository(
     private val db: PersonDatabase
 ) {
     val personenListe = db.personDao.getAll()
+
+    fun getPeopleInChat(chatId: String): LiveData<List<PersonData>> {
+        return db.personDao.getPeopleInChat(chatId, 30)
+    }
 
     suspend fun getPerson() {
         val numberOfPersons = 100

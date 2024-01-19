@@ -6,12 +6,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.model.Chat
+import com.example.myapplication.model.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 
-class FirebaseViewModel: ViewModel() {
+class FirebaseViewModel : ViewModel() {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val fireStore = FirebaseFirestore.getInstance()
@@ -28,6 +29,9 @@ class FirebaseViewModel: ViewModel() {
             profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
         }
     }
+
+    private val _messages = MutableLiveData<MutableList<Message>>()
+    val messages: LiveData<MutableList<Message>> get() = _messages
 
     private val _myChats = MutableLiveData<MutableList<Chat>>()
     val myChats: LiveData<MutableList<Chat>> get() = _myChats
@@ -56,40 +60,64 @@ class FirebaseViewModel: ViewModel() {
         }
     }
 
+    fun fetchMessages() {
+        profileRef.collection("chats").addSnapshotListener { value, error ->
+            if (error == null && value != null) {
+                val messageList = value.documents.map { document ->
+                    Message(
+                        text = document.get("text") as? String ?: "",
+                        from = document.get("from") as? String ?: "",
+                        timestamp = document.get("timestamp") as? String ?: "", // Beachten Sie, dass timestamp wahrscheinlich ein Long ist
+                        send = document.get("send") as? Boolean ?: false
+                    )
+                }
+                _messages.postValue(messageList.toMutableList())
+            }
+        }
+    }
+
     fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
         profileRef.collection("groups").add(Chat(groupID = groupId, groupName, pic))
     }
+    fun addMessagesToChatCollection(groupId: String, text: String, from: String, timestamp: String, send: Boolean) {
+        val newMessage = Message(text, from, timestamp, send)
+        profileRef.collection("groups").document(groupId).collection("messages").add(newMessage)
+    }
 
     fun register(email: String, password: String, PersonData: PersonData) {
-        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { authResult ->
-            if (authResult.isSuccessful) {
-                firebaseAuth.currentUser?.sendEmailVerification()
+        firebaseAuth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { authResult ->
+                if (authResult.isSuccessful) {
+                    firebaseAuth.currentUser?.sendEmailVerification()
 
-                // Initialize profileRef here
-                profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
-                profileRef.set(PersonData)
-                _currentUser.value = firebaseAuth.currentUser
-            } else {
-                Log.e("FIREBASE", "${authResult.exception}")
+                    // Initialize profileRef here
+                    profileRef =
+                        fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
+                    profileRef.set(PersonData)
+                    _currentUser.value = firebaseAuth.currentUser
+                } else {
+                    Log.e("FIREBASE", "${authResult.exception}")
+                }
             }
-        }
     }
 
     fun login(email: String, password: String) {
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { authResult ->
-            if (authResult.isSuccessful) {
-                if (firebaseAuth.currentUser!!.isEmailVerified) {
-                    profileRef = fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
-                    _currentUser.value = firebaseAuth.currentUser
-                } else {
-                    Log.e("FIREBASE", "User not verified")
-                    logout()
-                }
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { authResult ->
+                if (authResult.isSuccessful) {
+                    if (firebaseAuth.currentUser!!.isEmailVerified) {
+                        profileRef = fireStore.collection("profiles")
+                            .document(firebaseAuth.currentUser!!.uid)
+                        _currentUser.value = firebaseAuth.currentUser
+                    } else {
+                        Log.e("FIREBASE", "User not verified")
+                        logout()
+                    }
 
-            } else {
-                Log.e("FIREBASE", "${authResult.exception}")
+                } else {
+                    Log.e("FIREBASE", "${authResult.exception}")
+                }
             }
-        }
     }
 
     fun sendPasswordReset(email: String) {

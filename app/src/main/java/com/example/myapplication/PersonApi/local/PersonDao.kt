@@ -15,4 +15,5 @@ interface PersonDao {
 
     @Query("SELECT * FROM person_table")
     fun getAll(): LiveData<MutableList<PersonData>>
+
 }

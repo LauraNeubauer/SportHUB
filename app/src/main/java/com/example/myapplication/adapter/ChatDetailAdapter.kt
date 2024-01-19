@@ -9,7 +9,7 @@ import com.example.myapplication.databinding.OutgoingBubbleListItemBinding
 import com.example.myapplication.model.Message
 
 class ChatDetailAdapter(
-    private val dataset: List<Message>,
+    private val dataset: MutableList<Message>,
     private val personVM: ViewModel,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

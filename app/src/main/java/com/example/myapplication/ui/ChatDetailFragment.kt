@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.adapter.ChatDetailAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
 
@@ -30,11 +31,8 @@ class ChatDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
-        firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
-
+        firebaseViewModel.messages.observe(viewLifecycleOwner) {
+            binding.rvMessages.adapter = ChatDetailAdapter(it, personViewModel)
 
         }
     }
