@@ -87,6 +87,17 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
+        profileRef.collection("groups").add(Chat(groupID = groupId, groupName = groupName, pic))
+            .addOnSuccessListener { documentReference ->
+                profileRef.collection("groups").document(documentReference.id).collection("chats")
+                    .add(
+                        Message(text = "hallo", "phil", timestamp = "12:09", false)
+                    )
+            }.addOnFailureListener { e ->
+                Log.e("FIREBASE", "Error adding Chat document: $e")
+            }
+    }
     fun addMessageToGroup(groupId: Int, messageText: String, senderName: String, timestamp: String, isRead: Boolean) {
         val groupRef = profileRef.collection("groups").document(groupId.toString())
 
