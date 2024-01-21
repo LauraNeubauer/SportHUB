@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1B1B">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="MITGLIEDER"
+        android:textColor="@color/header"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_add"
+        app:layout_constraintStart_toEndOf="@+id/bt_add"
+        app:layout_constraintTop_toTopOf="@+id/bt_add" />
+
+    <TextView
+        android:id="@+id/sporthub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="@string/sporthub"
+        android:textColor="@color/header"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+    <ImageView
+        android:id="@+id/iv_profil4"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_profilpictures"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="@+id/bt_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_add"
+        app:srcCompat="@drawable/crash_test_m" />
+
+    <ImageButton
+        android:id="@+id/bt_add"
+        style="@style/ib_back"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_profilpictures"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="Timo Freitag"
+        android:textAllCaps="true"
+        android:textColor="@color/header"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_profil4"
+        app:layout_constraintStart_toEndOf="@+id/iv_profil4"
+        app:layout_constraintTop_toTopOf="@+id/iv_profil4"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profil4" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_messages"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profil4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
