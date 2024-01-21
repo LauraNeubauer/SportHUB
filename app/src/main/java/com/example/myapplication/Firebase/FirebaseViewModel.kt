@@ -87,37 +87,16 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    fun addMessageToGroup(groupId: Int, messageText: String, senderName: String, timestamp: String, isRead: Boolean) {
+        val groupRef = profileRef.collection("groups").document(groupId.toString())
 
-    fun addMessageToChat(
-        groupId: String,
-        messageText: String,
-        sender: String,
-        timestamp: String,
-        send: Boolean
-    ) {
-        val chatCollectionRef =
-            profileRef.collection("groups").document(groupId).collection("chats")
-
-        val newMessage = Message(text = messageText, sender, timestamp = timestamp, send)
-        chatCollectionRef.add(newMessage)
-            .addOnSuccessListener {
-                Log.d("FIREBASE", "Message added successfully.")
-            }
-            .addOnFailureListener { e ->
-                Log.e("FIREBASE", "Error adding message: $e")
-            }
-    }
-
-    fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
-        profileRef.collection("groups").add(Chat(groupID = groupId, groupName = groupName, pic))
-            .addOnSuccessListener { documentReference ->
-                profileRef.collection("groups").document(documentReference.id).collection("chats")
-                    .add(
-                        Message(text = "hallo", "phil", timestamp = "12:09", false)
-                    )
-            }.addOnFailureListener { e ->
-                Log.e("FIREBASE", "Error adding Chat document: $e")
-            }
+        groupRef.collection("chats").add(
+            Message(text = messageText, from = senderName, timestamp = timestamp, send = isRead)
+        ).addOnSuccessListener { documentReference ->
+            Log.d("FIREBASE", "Benutzerdefinierte Nachricht erfolgreich hinzugefügt mit der ID: ${documentReference.id}")
+        }.addOnFailureListener { e ->
+            Log.e("FIREBASE", "Fehler beim Hinzufügen der benutzerdefinierten Nachricht: $e")
+        }
     }
 
     fun register(email: String, password: String, PersonData: PersonData) {
