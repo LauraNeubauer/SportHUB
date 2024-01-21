@@ -30,7 +30,7 @@
         app:srcCompat="@drawable/tennis" />
 
     <TextView
-        android:id="@+id/tv_tiftle"
+        android:id="@+id/title_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiftle">
+        app:layout_constraintTop_toBottomOf="@+id/title_mail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_email"
@@ -64,7 +64,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_tifftle"
+        android:id="@+id/title_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -85,10 +85,10 @@
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
+        app:layout_constraintTop_toBottomOf="@+id/title_pw">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_age"
+            android:id="@+id/tiet_pw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ihr Passwort"
@@ -96,7 +96,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/bt_registrate"
+        android:id="@+id/bt_signUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -112,14 +112,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/bt_register"
         style="@style/ctab_infos"
         android:layout_width="160dp"
-        android:text="LOGIN"
+        android:text="REGISTRIEREN"
         android:layout_marginRight="24dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_signUp" />
 
     <TextView
         android:id="@+id/textView21"
@@ -130,7 +130,7 @@
         android:textColor="@color/gray_Text"
         android:text="Du hast schon ein Konto?"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_signUp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

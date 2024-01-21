@@ -1,6 +1,7 @@
 package com.example.myapplication.ui
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,5 +35,28 @@ class SigninFragment : Fragment() {
                 findNavController().navigate(R.id.homeFragment)
             }
         }
+
+        binding.btSignUp.setOnClickListener {
+            if (binding.tietEmail.text!!.isNotEmpty() && binding.tietPw.text!!.isNotEmpty()) {
+                var mail = binding.tietEmail.text!!.toString()
+                var email = binding.tietPw.text!!.toString()
+                firebaseViewModel.login(mail, email)
+            } else {
+                showPopUp("Daten fehlen", "Bitte geben Sie die Email-Adresse und das Passwort ein, mit dem Sie sich registriert haben!")
+            }
+        }
+    }
+
+    private fun showPopUp(titel: String, nachricht: String) {
+        val builder = AlertDialog.Builder(requireContext(), R.style.CustomAlertDialog)
+        builder.setTitle(titel)
+        builder.setMessage(nachricht)
+        builder.setPositiveButton("OK") { dialog, which ->
+            binding.btSignUp.isClickable = true
+            dialog.dismiss()
+        }
+        builder.setCancelable(false)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
