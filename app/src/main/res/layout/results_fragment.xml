@@ -7,27 +7,30 @@
     android:background="#1B1B1B">
 
     <TextView
+        android:id="@+id/sporthub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/kronaone_regular"
+        android:text="@string/sporthub"
+        android:textColor="@color/header"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+    <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/kronaone_regular"
         android:text="ERGEBNISSE"
         android:textColor="@color/header"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/CHANGE"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_back"
         app:layout_constraintStart_toEndOf="@+id/bt_back"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/CHANGE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/button_settings_background" />
+        app:layout_constraintTop_toTopOf="@+id/bt_back" />
 
     <ImageButton
         android:id="@+id/bt_back"
@@ -98,19 +101,6 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
-
-    <TextView
-        android:id="@+id/sporthub"
-        android:layout_width="wrap_content"
-        android:layout_height="13dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/kronaone_regular"
-        android:text="@string/sporthub"
-        android:textColor="@color/header"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/CHANGE"
-        app:layout_constraintStart_toEndOf="@+id/bt_back"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <androidx.recyclerview.widget.RecyclerView

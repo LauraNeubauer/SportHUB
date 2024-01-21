@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/sporthub1"
         android:layout_width="wrap_content"
-        android:layout_height="13dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/kronaone_regular"
         android:text="@string/sporthub"
