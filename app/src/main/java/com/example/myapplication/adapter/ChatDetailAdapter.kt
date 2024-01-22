@@ -25,7 +25,7 @@ class ChatDetailAdapter(
     override fun getItemViewType(position: Int): Int {
         val itemChatDetail = dataset[position]
 
-        return if (itemChatDetail.send) {
+        return if (!itemChatDetail.send) {
             chatIn
         } else {
             chatOut

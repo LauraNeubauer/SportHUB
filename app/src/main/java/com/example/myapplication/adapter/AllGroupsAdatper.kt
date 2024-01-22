@@ -39,7 +39,7 @@ class AllGroupsAdatper(
 
 
         holder.binding.btAdd.setOnClickListener {
-            firebaseVM.addChatGroupToCollection(item.groupID, item.groupName, item.groupPic)
+            firebaseVM.addChatGroupToCollection(item.groupName, item.groupPic)
         }
 
         holder.binding.tvNameChat.text = item.groupName

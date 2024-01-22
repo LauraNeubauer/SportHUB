@@ -245,37 +245,30 @@ class ExampleDatabase {
 
     var chatList: List<Chat> = listOf(
         Chat(
-            1,
             "GymBros",
             R.drawable.crash_test_m,
         ),
         Chat(
-            2,
             "Holsteiner Eagels",
             R.drawable.crash_test_m,
         ),
         Chat(
-            3,
             "Ski-Bergen 08",
             R.drawable.crash_test_m,
         ),
         Chat(
-            4,
             "TurnGruppe",
             R.drawable.crash_test_m,
         ),
         Chat(
-            5,
             "HH SV",
             R.drawable.crash_test_m,
         ),
         Chat(
-            6,
             "SkatePark",
             R.drawable.crash_test_m,
         ),
         Chat(
-            7,
             "Helo",
             R.drawable.crash_test_m,
         )

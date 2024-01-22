@@ -52,7 +52,7 @@ class FirebaseViewModel : ViewModel() {
 
                 for (document in value.documents) {
                     val chat = Chat(
-                        groupID = document.get("groupID") as? Int ?: 0,
+                        groupID = document.get("groupID") as? String ?: "",
                         groupName = document.get("groupName") as? String ?: "",
                         groupPic = document.get("groupPic") as? Int ?: 0
                     )
@@ -87,27 +87,38 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
-    fun addChatGroupToCollection(groupId: Int, groupName: String, pic: Int) {
-        profileRef.collection("groups").add(Chat(groupID = groupId, groupName = groupName, pic))
-            .addOnSuccessListener { documentReference ->
-                profileRef.collection("groups").document(documentReference.id).collection("chats")
+    fun addChatGroupToCollection(groupName: String, pic: Int) {
+        val chatRef = profileRef.collection("groups").document()
+        val groupId = chatRef.id
+        chatRef.set(Chat(groupName = groupName, pic, groupID = groupId))
+            .addOnSuccessListener {
+                chatRef.collection("chats")
                     .add(
-                        Message(text = "hallo", "phil", timestamp = "12:09", false)
+                        Message(text = "hallo", from = "phil", timestamp = "12:09", send = false)
                     )
-            }.addOnFailureListener { e ->
+                    .addOnSuccessListener {
+                        Log.d("FIREBASE", "Chat and message added successfully")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e("FIREBASE", "Error adding message: $e")
+                    }
+            }
+            .addOnFailureListener { e ->
                 Log.e("FIREBASE", "Error adding Chat document: $e")
             }
     }
-    fun addMessageToGroup(groupId: Int, messageText: String, senderName: String, timestamp: String, isRead: Boolean) {
-        val groupRef = profileRef.collection("groups").document(groupId.toString())
 
-        groupRef.collection("chats").add(
-            Message(text = messageText, from = senderName, timestamp = timestamp, send = isRead)
-        ).addOnSuccessListener { documentReference ->
-            Log.d("FIREBASE", "Benutzerdefinierte Nachricht erfolgreich hinzugefügt mit der ID: ${documentReference.id}")
-        }.addOnFailureListener { e ->
-            Log.e("FIREBASE", "Fehler beim Hinzufügen der benutzerdefinierten Nachricht: $e")
-        }
+    fun addMessageToChat(groupId: String, text: String, senderName: String, time: String) {
+        val message = Message(text = text, from = senderName, timestamp = time, send = false)
+
+        profileRef.collection("groups").document(groupId).collection("chats")
+            .add(message)
+            .addOnSuccessListener {
+                Log.d("FIREBASE", "Message added successfully")
+            }
+            .addOnFailureListener { e ->
+                Log.e("FIREBASE", "Error adding message: $e")
+            }
     }
 
     fun register(email: String, password: String, PersonData: PersonData) {

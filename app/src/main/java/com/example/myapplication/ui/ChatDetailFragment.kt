@@ -39,6 +39,19 @@ class ChatDetailFragment : Fragment() {
             binding.tvChatName.text = it.groupName
             binding.rvMessages.adapter = ChatDetailAdapter(it.messages, personViewModel)
         }
+
+        binding.btSend.setOnClickListener {
+            if (binding.tietText.text!!.isNotEmpty()) {
+                var text = binding.tietText.text!!.toString()
+                firebaseViewModel.addMessageToChat(
+                    firebaseViewModel.getCurrentChat.value!!.groupID!!, text,
+                    name, getCurrentTime()
+                )
+                binding.tietText.text!!.clear()
+            } else {
+                binding.tietText.text!!.clear()
+            }
+        }
     }
 
     fun getCurrentTime(): String {
