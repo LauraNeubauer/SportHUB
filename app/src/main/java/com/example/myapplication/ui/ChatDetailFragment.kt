@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
+import com.example.myapplication.R
 import com.example.myapplication.adapter.ChatDetailAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
@@ -38,6 +40,10 @@ class ChatDetailFragment : Fragment() {
         firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
             binding.tvChatName.text = it.groupName
             binding.rvMessages.adapter = ChatDetailAdapter(it.messages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
+        }
+
+        binding.btAdd.setOnClickListener {
+            findNavController().navigate(R.id.MyChatsFragment)
         }
 
         binding.btSend.setOnClickListener {
