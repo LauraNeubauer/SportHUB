@@ -40,6 +40,10 @@ class ChatDetailFragment : Fragment() {
         firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
             binding.tvChatName.text = it.groupName
             binding.rvMessages.adapter = ChatDetailAdapter(it.messages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
+            val itemCount = it.messages.size
+            if (itemCount > 0) {
+                binding.rvMessages.scrollToPosition(itemCount - 1)
+            }
         }
 
         binding.btAdd.setOnClickListener {
