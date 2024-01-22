@@ -57,11 +57,12 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Profil"
+        android:text="Chat- Anfragen"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/fb_results"
@@ -83,11 +84,12 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="62dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Events"
+        android:text="Match- Anfragen"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/logout"
@@ -147,11 +149,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Finder"
+        android:text="Group- Finder"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
@@ -160,11 +163,12 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Verein"
+        android:text="Vereins- Chat"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"

@@ -37,7 +37,7 @@ class ChatDetailFragment : Fragment() {
 
         firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
             binding.tvChatName.text = it.groupName
-            binding.rvMessages.adapter = ChatDetailAdapter(it.messages, personViewModel)
+            binding.rvMessages.adapter = ChatDetailAdapter(it.messages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
         }
 
         binding.btSend.setOnClickListener {

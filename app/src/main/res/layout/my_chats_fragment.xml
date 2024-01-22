@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/user" />
+        app:srcCompat="@drawable/property_1_linear_kopie_2" />
 
     <TextView
         android:id="@+id/textView4"
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Profil"
+        android:text="Archiv"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/fb_results"
@@ -72,11 +72,12 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="62dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Events"
+        android:text="Match- Anfragen"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/logout"
@@ -104,7 +105,7 @@
         app:layout_constraintEnd_toStartOf="@+id/fb_results"
         app:layout_constraintStart_toEndOf="@+id/bt_groups_"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/search_zoom_in"
+        app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -136,11 +137,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Finder"
+        android:text="Neue Gruppe"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
@@ -149,11 +151,12 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Verein"
+        android:text="Vereins- Chat"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"
