@@ -5,7 +5,10 @@ import com.example.myapplication.PersonApi.local.PersonDatabase
 import com.example.myapplication.PersonApi.model.Person
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.PersonApi.remote.PersonApi
-import java.util.Calendar
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+import java.util.concurrent.ThreadLocalRandom
 
 
 class PersonRepository(
@@ -26,22 +29,14 @@ class PersonRepository(
             val winPercentage = (10..60).random()
             val club = (1..21).random()
 
-            val currentDate = Calendar.getInstance().time
-            val calendar = Calendar.getInstance()
-            calendar.time = currentDate
-            val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-            val month = calendar.get(Calendar.MONTH)
+            fun zufaelligesZukunftsDatum(maxTageInDerZukunft: Long): String {
+                val heute = LocalDate.now()
+                val zufaelligeAnzahlTage = ThreadLocalRandom.current().nextLong(1, maxTageInDerZukunft + 1)
+                val zukunftsDatum = heute.plus(zufaelligeAnzahlTage, ChronoUnit.DAYS)
 
-            fun date() : String {
-                var newDay = (dayOfMonth + club).toString()
-                var newMonth = month
-                if (newDay.toInt() > 31) {
-                    newMonth + 1
-                }
-                var newDate = newDay.toString() + "." + newMonth + ".2024"
-                return newDate
+                val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
+                return zukunftsDatum.format(formatter)
             }
-
 
             val sportsOne = listOf<String>(
                 "BADMINTON",
@@ -131,7 +126,7 @@ class PersonRepository(
                     club = club,
                     chat = getGroupChat(),
                     entfernung = entfernung(),
-                    date = date()
+                    date = zufaelligesZukunftsDatum(30).toString()
                 )
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")

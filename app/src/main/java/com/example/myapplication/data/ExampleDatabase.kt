@@ -8,25 +8,27 @@ import com.example.myapplication.model.News
 import com.example.myapplication.model.Request
 import com.example.myapplication.model.Results
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
 import java.util.Calendar
+import java.util.concurrent.ThreadLocalRandom
 import kotlin.random.Random
 
 
 class ExampleDatabase {
 
 
-    fun generateRandomDate(): String {
-        // Aktuelles Datum erhalten
-        val currentDate = Calendar.getInstance()
+    fun generateRandomDate(maxTageInDerZukunft: Long): String {
+        val heute = LocalDate.now()
+        val zufaelligeAnzahlTage = ThreadLocalRandom.current().nextLong(1, maxTageInDerZukunft + 1)
+        val zukunftsDatum = heute.plus(zufaelligeAnzahlTage, ChronoUnit.DAYS)
 
-        // Zufällige Anzahl von Tagen hinzufügen (hier: bis zu 30 Tage)
-        val randomDays = Random.nextInt(30)
-        currentDate.add(Calendar.DAY_OF_YEAR, randomDays)
+        // Datumsformat festlegen (dd.MM.yy)
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
 
-        // Datum in das gewünschte Format umwandeln
-        val dateFormat = SimpleDateFormat("dd.MM.yyyy")
-        val randomDate = currentDate.time
-        return dateFormat.format(randomDate)
+        // Datum in das gewünschte Format konvertieren und als String zurückgeben
+        return zukunftsDatum.format(formatter)
     }
 
     fun generateRandomTime(): String {
@@ -52,7 +54,7 @@ class ExampleDatabase {
             6,
             "Advanced",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "St. Pauli Stadion",
             R.drawable.crash_test_m,
@@ -67,7 +69,7 @@ class ExampleDatabase {
             3,
             "Improver",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Kieler Promenade",
             R.drawable.crash_test_m,
@@ -82,7 +84,7 @@ class ExampleDatabase {
             2,
             "Beginners",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Sport-Vereins-Halle Berlin",
             R.drawable.crash_test_m,
@@ -97,7 +99,7 @@ class ExampleDatabase {
             null,
             null,
             null,
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Elmshorner SportPark",
             R.drawable.crash_test_m,
@@ -112,7 +114,7 @@ class ExampleDatabase {
             2,
             "Practitioners",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Wilsdorfer Sportanlage",
             R.drawable.crash_test_m,
@@ -127,7 +129,7 @@ class ExampleDatabase {
             4,
             "Expert",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Berliner SV",
             R.drawable.crash_test_m,
@@ -142,7 +144,7 @@ class ExampleDatabase {
             4,
             "Beginner",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Hamburger SportPark",
             R.drawable.crash_test_m,
@@ -157,7 +159,7 @@ class ExampleDatabase {
             4,
             "Advanced",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Halle Neuss",
             R.drawable.crash_test_m,
@@ -172,7 +174,7 @@ class ExampleDatabase {
             4,
             "Expert",
             "11",
-            generateRandomDate(),
+            generateRandomDate(30),
             generateRandomTime(),
             "Dingenfelder Anlage",
             R.drawable.crash_test_m,
