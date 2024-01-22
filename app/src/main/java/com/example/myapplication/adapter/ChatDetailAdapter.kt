@@ -25,7 +25,7 @@ class ChatDetailAdapter(
     override fun getItemViewType(position: Int): Int {
         val itemChatDetail = dataset[position]
 
-        return if (!itemChatDetail.send) {
+        return if (itemChatDetail.send == false) {
             chatIn
         } else {
             chatOut
@@ -65,6 +65,7 @@ class ChatDetailAdapter(
             holder.binding.tvMessageOut.text = itemChatDetails.text
             holder.binding.tvTimeOut.text = itemChatDetails.timestamp
             holder.binding.tvSendOut.text = itemChatDetails.from
+
         }
     }
 }

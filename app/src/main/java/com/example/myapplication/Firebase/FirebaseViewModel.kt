@@ -94,7 +94,7 @@ class FirebaseViewModel : ViewModel() {
             .addOnSuccessListener {
                 chatRef.collection("chats")
                     .add(
-                        Message(text = "hallo", from = "phil", timestamp = "12:09", send = false)
+                        Message(text = "Willkommen", from = "Moderator", timestamp = "12:09", send = false)
                     )
                     .addOnSuccessListener {
                         Log.d("FIREBASE", "Chat and message added successfully")
@@ -109,7 +109,7 @@ class FirebaseViewModel : ViewModel() {
     }
 
     fun addMessageToChat(groupId: String, text: String, senderName: String, time: String) {
-        val message = Message(text = text, from = senderName, timestamp = time, send = false)
+        val message = Message(text = text, from = senderName, timestamp = time, send = true)
 
         profileRef.collection("groups").document(groupId).collection("chats")
             .add(message)

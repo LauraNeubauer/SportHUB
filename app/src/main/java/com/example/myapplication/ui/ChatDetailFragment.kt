@@ -44,8 +44,7 @@ class ChatDetailFragment : Fragment() {
             if (binding.tietText.text!!.isNotEmpty()) {
                 var text = binding.tietText.text!!.toString()
                 firebaseViewModel.addMessageToChat(
-                    firebaseViewModel.getCurrentChat.value!!.groupID!!, text,
-                    name, getCurrentTime()
+                    firebaseViewModel.getCurrentChat.value!!.groupID!!, text, name, getCurrentTime()
                 )
                 binding.tietText.text!!.clear()
             } else {
@@ -56,7 +55,7 @@ class ChatDetailFragment : Fragment() {
 
     fun getCurrentTime(): String {
         val currentTime = LocalTime.now()
-        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
+        val formatter = DateTimeFormatter.ofPattern("HH:mm")
         return currentTime.format(formatter)
     }
 }
