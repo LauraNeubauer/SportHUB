@@ -10,6 +10,8 @@ import coil.load
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.data.ClubDatabase
+import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ProfilFragmentBinding
 
 class ProfilFragment : Fragment() {
@@ -47,6 +49,20 @@ class ProfilFragment : Fragment() {
                 binding.tvAgeSize.setText(myProfile.size)
 
                 binding.tvBio.setText(myProfile.bio)
+                binding.cvMatch.visibility = View.INVISIBLE
+
+
+                if (myProfile.matches != "0") {
+                    binding.cvMatch.visibility = View.VISIBLE
+                    binding.tvLeague.text = ExampleDatabase().eventList.random().name
+                    binding.tvLand.text = myProfile.sportsOne
+                    binding.tvTime.text = ""
+                    var clubs = ClubDatabase().getClubs()
+                    binding.tvGroupOne.text = clubs.value!![myProfile.club!!].name
+                    binding.tvGroupTwo.text = clubs.value!!.random().name
+                    binding.tvGroupOneGoals.text = listOf<Int>(1,2,3,4,5,6,7,8).random().toString()
+                    binding.tvGroupTwoGoals.text = listOf<Int>(1,2,3,4,5,6,7,8).random().toString()
+                }
             }
         }
     }
