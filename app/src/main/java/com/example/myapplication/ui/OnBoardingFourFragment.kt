@@ -18,8 +18,6 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingFourFragmentBinding
 import java.util.Calendar
 
-public var name: String = ""
-
 class OnBoardingFourFragment : Fragment() {
 
     private lateinit var binding: OnboardingFourFragmentBinding
@@ -48,13 +46,15 @@ class OnBoardingFourFragment : Fragment() {
 
         val email = receivedArguments!!.getString("email")
         val pw = receivedArguments.getString("pw")
-        name = receivedArguments.getString("name")!!
+        val name = receivedArguments.getString("name")!!
         val age = receivedArguments.getString("age")
         val size = receivedArguments.getString("size")
         val bio = receivedArguments.getString("bio")
         val level = receivedArguments.getString("level")
         val sports = receivedArguments.getString("selectedSports")
         val gender = receivedArguments.getString("gender")
+
+        firebaseViewModel.setName(name)
 
         val sportsList = sports?.split(", ")
         val sportsOne = sportsList?.getOrNull(0)

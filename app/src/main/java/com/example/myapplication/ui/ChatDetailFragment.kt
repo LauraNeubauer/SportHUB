@@ -57,11 +57,11 @@ class ChatDetailFragment : Fragment() {
             if (binding.tietText.text!!.isNotEmpty()) {
                 var text = binding.tietText.text!!.toString()
                 firebaseViewModel.addMessageToChat(
-                    firebaseViewModel.getCurrentChat.value!!.groupID!!, text, name, getCurrentTime()
+                    firebaseViewModel.getCurrentChat.value!!.groupID!!, text, firebaseViewModel.getName.value!!, getCurrentTime()
                 )
                 binding.tietText.text!!.clear()
                 lifecycleScope.launch {
-                    delay(10000)
+                    delay(1500)
                     var updatedMessages = firebaseViewModel.getCurrentChat.value!!.messages
                     binding.rvMessages.adapter = ChatDetailAdapter(updatedMessages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
                 }
@@ -73,7 +73,7 @@ class ChatDetailFragment : Fragment() {
 
     fun getCurrentTime(): String {
         val currentTime = LocalTime.now()
-        val formatter = DateTimeFormatter.ofPattern("HH:mm")
+        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
         return currentTime.format(formatter)
     }
 }
