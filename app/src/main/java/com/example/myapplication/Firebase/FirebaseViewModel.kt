@@ -68,7 +68,7 @@ class FirebaseViewModel : ViewModel() {
                                     text = chatDocument.get("text") as? String ?: "",
                                     from = chatDocument.get("from") as? String ?: "",
                                     timestamp = chatDocument.get("timestamp") as? String ?: "",
-                                    send = chatDocument.get("isRead") as? Boolean ?: false
+                                    send = chatDocument.get("send") as? Boolean ?: false
                                 )
                             }
                             chat.messages = messagesList.toMutableList()
