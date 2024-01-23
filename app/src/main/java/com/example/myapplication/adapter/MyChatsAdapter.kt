@@ -34,11 +34,11 @@ class MyChatsAdapter(
 
         holder.binding.tvNameChat.text = item.groupName
         if (item.messages.last().text != null) {
-            holder.binding.tvLastMessage.text = item.messages.last().text
+            holder.binding.tvLastMessage.text = item.messages.first().text
         } else {
             "Willkommen"
         }
-        holder.binding.tvChatLastTexter.text = (item.messages.lastOrNull()?.from?.split(" ")?.firstOrNull() ?: "") + ":"
+        holder.binding.tvChatLastTexter.text = (item.messages.first()?.from?.split(" ")?.firstOrNull() ?: "") + ":"
         holder.binding.cvChat.setOnClickListener {
             firebaseVM.setCurrentChat(item)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
