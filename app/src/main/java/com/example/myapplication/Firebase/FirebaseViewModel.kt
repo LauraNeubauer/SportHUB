@@ -66,7 +66,7 @@ class FirebaseViewModel : ViewModel() {
                             val messagesList = chatValue.documents.map { chatDocument ->
                                 Message(
                                     text = chatDocument.get("text") as? String ?: "",
-                                    from = chatDocument.get("sender") as? String ?: "",
+                                    from = chatDocument.get("from") as? String ?: "",
                                     timestamp = chatDocument.get("timestamp") as? String ?: "",
                                     send = chatDocument.get("isRead") as? Boolean ?: false
                                 )
