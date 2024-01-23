@@ -33,7 +33,6 @@ class MyChatsAdapter(
         val item = dataset[position]
 
         holder.binding.tvNameChat.text = item.groupName
-        holder.binding.ivGroupPic.setImageResource(item.groupPic)
         if (item.messages.last().text != null) {
             holder.binding.tvLastMessage.text = item.messages.last().text
         } else {
