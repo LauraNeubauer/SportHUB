@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
@@ -13,6 +14,8 @@ import com.example.myapplication.R
 import com.example.myapplication.adapter.ChatDetailAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
@@ -57,6 +60,11 @@ class ChatDetailFragment : Fragment() {
                     firebaseViewModel.getCurrentChat.value!!.groupID!!, text, name, getCurrentTime()
                 )
                 binding.tietText.text!!.clear()
+                lifecycleScope.launch {
+                    delay(10000)
+                    var updatedMessages = firebaseViewModel.getCurrentChat.value!!.messages
+                    binding.rvMessages.adapter = ChatDetailAdapter(updatedMessages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
+                }
             } else {
                 binding.tietText.text!!.clear()
             }
