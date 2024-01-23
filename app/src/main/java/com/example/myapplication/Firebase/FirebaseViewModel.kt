@@ -11,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class FirebaseViewModel : ViewModel() {
 
@@ -18,6 +20,7 @@ class FirebaseViewModel : ViewModel() {
     private val fireStore = FirebaseFirestore.getInstance()
 
     private var _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
+    private var _name = MutableLiveData<String>()
     val currentUser: LiveData<FirebaseUser?>
         get() = _currentUser
 
@@ -41,11 +44,25 @@ class FirebaseViewModel : ViewModel() {
     val getCurrentChat: MutableLiveData<Chat>
         get() = _currentChat
 
+    val getName: MutableLiveData<String>
+        get() = _name
+
     fun setCurrentChat(id: Chat) {
         _currentChat.postValue(id)
     }
 
+    fun setName(name : String) {
+        _name.postValue(name)
+    }
+
     fun fetchMyChats() {
+        profileRef.addSnapshotListener { value, error ->
+            if (error == null && value != null) {
+                val myProfile = value.toObject(PersonData::class.java)
+                val name = myProfile!!.name
+                setName(name)
+            }
+        }
         profileRef.collection("groups").addSnapshotListener { value, error ->
             if (error == null && value != null) {
                 val myChatsList = mutableListOf<Chat>()
@@ -94,7 +111,7 @@ class FirebaseViewModel : ViewModel() {
             .addOnSuccessListener {
                 chatRef.collection("chats")
                     .add(
-                        Message(text = "Willkommen", from = "Moderator", timestamp = "12:09", send = false)
+                        Message(text = "Willkommen", from = "Moderator", timestamp = getCurrentTime(), send = false)
                     )
                     .addOnSuccessListener {
                         Log.d("FIREBASE", "Chat and message added successfully")
@@ -106,6 +123,11 @@ class FirebaseViewModel : ViewModel() {
             .addOnFailureListener { e ->
                 Log.e("FIREBASE", "Error adding Chat document: $e")
             }
+    }
+    fun getCurrentTime(): String {
+        val currentTime = LocalTime.now()
+        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
+        return currentTime.format(formatter)
     }
 
     fun addMessageToChat(groupId: String, text: String, senderName: String, time: String) {

@@ -50,7 +50,7 @@ class ChatDetailFragment : Fragment() {
         }
 
         binding.btAdd.setOnClickListener {
-            findNavController().navigate(R.id.MyChatsFragment)
+            findNavController().navigate(R.id.myChatsFragment)
         }
 
         binding.btSend.setOnClickListener {

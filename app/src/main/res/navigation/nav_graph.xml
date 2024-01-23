@@ -25,8 +25,8 @@
             android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_myChatsFragment"
-            app:destination="@id/myChatsFragment" />
+            android:id="@+id/action_homeFragment_to_allChatsFragment"
+            app:destination="@id/allChatsFragment" />
     </fragment>
     <fragment
         android:id="@+id/finderFragment"
@@ -38,17 +38,6 @@
         <action
             android:id="@+id/action_finderFragment_to_strangerProfilFragment"
             app:destination="@id/strangerProfilFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/MyChatsFragment"
-        android:name="com.example.myapplication.ui.MyChatsFragment"
-        android:label="ChatFragment">
-        <action
-            android:id="@+id/action_chatFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_chatFragment_to_chatDetailFragment"
-            app:destination="@id/chatDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"
@@ -126,11 +115,7 @@
     <fragment
         android:id="@+id/chatDetailFragment"
         android:name="com.example.myapplication.ui.ChatDetailFragment"
-        android:label="ChatDetailFragment" >
-        <action
-            android:id="@+id/action_chatDetailFragment_to_chatFragment"
-            app:destination="@id/MyChatsFragment" />
-    </fragment>
+        android:label="ChatDetailFragment" />
     <fragment
         android:id="@+id/onBoardingThreeFragment"
         android:name="com.example.myapplication.ui.OnBoardingThreeFragment"

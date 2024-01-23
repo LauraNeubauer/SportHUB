@@ -8,8 +8,6 @@ import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.databinding.AllChatsItemBinding
 import com.example.myapplication.model.Chat
-import java.time.LocalTime
-import java.time.format.DateTimeFormatter
 
 class AllGroupsAdatper(
     private val dataset: List<Chat>,
@@ -43,12 +41,7 @@ class AllGroupsAdatper(
         }
 
         holder.binding.tvNameChat.text = item.groupName
+        holder.binding.tvLastMessage.text = "Ohne Beitrittsanfrage"
         holder.binding.imageView.setImageResource(item.groupPic)
-    }
-
-    fun getCurrentTime(): String {
-        val currentTime = LocalTime.now()
-        val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
-        return currentTime.format(formatter)
     }
 }
