@@ -2,6 +2,7 @@ package com.example.myapplication.ui
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
@@ -17,6 +18,8 @@ import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingFourFragmentBinding
 import java.util.Calendar
+
+var selectedImageUri : Uri? = null
 
 class OnBoardingFourFragment : Fragment() {
 
@@ -35,12 +38,6 @@ class OnBoardingFourFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
-            if (it != null) {
-                findNavController().navigate(R.id.homeFragment)
-            }
-        }
 
         val receivedArguments = arguments
 
@@ -86,8 +83,6 @@ class OnBoardingFourFragment : Fragment() {
             wins = "0",
             size = size!!,
             level = level!!,
-            sportsOne = sportsOne!!,
-            sportsTwo = sportsTwo!!,
             bio = bio!!,
             date = currentDate.toString()
         )
@@ -95,6 +90,7 @@ class OnBoardingFourFragment : Fragment() {
         binding.btWeiter.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
             personViewModel.insertPerson(personData)
+            firebaseViewModel.uploadImage(selectedImageUri!!)
         }
     }
 
@@ -102,7 +98,7 @@ class OnBoardingFourFragment : Fragment() {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val data: Intent? = result.data
-                val selectedImageUri = data?.data
+                selectedImageUri = data?.data
                 binding.ivProfilpicture.setImageURI(selectedImageUri)
             }
         }

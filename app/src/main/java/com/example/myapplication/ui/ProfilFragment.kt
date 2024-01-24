@@ -1,9 +1,11 @@
 package com.example.myapplication.ui
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
@@ -20,6 +22,12 @@ class ProfilFragment : Fragment() {
     private val viewModel : ViewModel by activityViewModels()
     private val firebaseVM : FirebaseViewModel by activityViewModels()
 
+    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+        if (uri != null) {
+            firebaseVM.uploadImage(uri)
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +39,10 @@ class ProfilFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.profilPic.setOnClickListener {
+            getContent.launch("image/*")
+        }
 
         firebaseVM.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {

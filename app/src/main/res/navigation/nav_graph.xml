@@ -156,10 +156,10 @@
             android:name="level"
             app:argType="string" />
         <argument
-            android:name="sport1"
+            android:name="sportOne"
             app:argType="string" />
         <argument
-            android:name="sport2"
+            android:name="sportTwo"
             app:argType="string" />
         <argument
             android:name="age"
