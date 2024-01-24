@@ -11,8 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.Firebase.FirebaseViewModel
+import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingThreeFragmentBinding
+import java.util.Calendar
 
 class OnBoardingThreeFragment : Fragment() {
 
@@ -76,8 +78,13 @@ class OnBoardingThreeFragment : Fragment() {
                 age = binding.tietAge.text!!.toString()
                 size = binding.tietSize.text!!.toString()
                 bio = binding.tietBio.text!!.toString()
+                var gender = if (binding.switch1.isChecked) "female" else "male"
 
                 val selectedSportsString = getSelectedSportsAsString()
+                val sportsList = selectedSportsString.split(", ")
+
+                val sportsOne = sportsList.getOrNull(0)
+                val sportsTwo = sportsList.getOrNull(1)
 
                 val bundle = Bundle()
 
@@ -88,9 +95,28 @@ class OnBoardingThreeFragment : Fragment() {
                 bundle.putString("size", size)
                 bundle.putString("bio", bio)
                 bundle.putString("level", selectedLevel)
-                bundle.putString("selectedSports", selectedSportsString)
-                bundle.putString("gender", if (binding.switch1.isChecked) "female" else "male")
+                bundle.putString("sportOne", sportsOne)
+                bundle.putString("sportTwo", sportsTwo)
+                bundle.putString("gender", gender)
 
+                val currentDate = Calendar.getInstance().time
+
+                val personData = PersonData(
+                    name = name!!,
+                    gender = gender,
+                    age = age!!,
+                    trophys = "0",
+                    matches = "0",
+                    wins = "0",
+                    size = size!!,
+                    level = selectedLevel!!,
+                    sportsOne = sportsOne!!,
+                    sportsTwo = sportsTwo!!,
+                    bio = bio!!,
+                    date = currentDate.toString()
+                )
+
+                firebaseViewModel.register(email!!, pw!!, personData)
 
                 findNavController().navigate(
                     R.id.action_onBoardingThreeFragment_to_onBoardingFourFragment,
