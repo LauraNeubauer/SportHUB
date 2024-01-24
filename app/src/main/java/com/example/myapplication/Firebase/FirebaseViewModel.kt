@@ -1,5 +1,6 @@
 package com.example.myapplication.Firebase
 
+import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
@@ -18,6 +20,8 @@ class FirebaseViewModel : ViewModel() {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val fireStore = FirebaseFirestore.getInstance()
+    private val storage = FirebaseStorage.getInstance()
+    private val storageRef = storage.reference
 
     private var _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
     private var _name = MutableLiveData<String>()
@@ -187,6 +191,25 @@ class FirebaseViewModel : ViewModel() {
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser
+    }
+
+    fun uploadImage(uri: Uri) {
+        // Erstellen einer Referenz und des Upload Tasks
+        val imageRef = storageRef.child("images/${firebaseAuth.currentUser!!.uid}/profilePic")
+        val uploadTask = imageRef.putFile(uri)
+
+        // Wenn UploadTask ausgeführt und erfolgreich ist, wird die Download-Url des Bildes an die setUserImage Funktion weitergegeben
+        uploadTask.addOnCompleteListener {
+            imageRef.downloadUrl.addOnCompleteListener {
+                if (it.isSuccessful) {
+                    setUserImage(it.result)
+                }
+            }
+        }
+    }
+
+    private fun setUserImage(uri: Uri) {
+        profileRef.update("profilePicture", uri.toString())
     }
 
 }
