@@ -209,7 +209,7 @@ class FirebaseViewModel : ViewModel() {
     }
 
     private fun setUserImage(uri: Uri) {
-        profileRef.update("profilePicture", uri.toString())
+        profileRef.update("pic", uri.toString())
     }
 
 }

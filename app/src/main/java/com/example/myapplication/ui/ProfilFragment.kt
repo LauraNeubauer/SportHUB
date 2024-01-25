@@ -40,10 +40,6 @@ class ProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.profilPic.setOnClickListener {
-            getContent.launch("image/*")
-        }
-
         firebaseVM.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
                 // Umwandeln des Snapshots in eine Klassen-Instanz von der Klasse Profil und setzen der Felder
