@@ -33,12 +33,12 @@ class MyChatsAdapter(
         val item = dataset[position]
 
         holder.binding.tvNameChat.text = item.groupName
-        if (item.messages.last().text != null) {
-            holder.binding.tvLastMessage.text = item.messages.first().text
+        if (item.messages.sortedBy { it.timestamp }.last().text != null) {
+            holder.binding.tvLastMessage.text = item.messages.sortedBy { it.timestamp }.last().text
         } else {
             "Willkommen"
         }
-        holder.binding.tvChatLastTexter.text = (item.messages.first()?.from?.split(" ")?.firstOrNull() ?: "") + ":"
+        holder.binding.tvChatLastTexter.text = (item.messages.sortedBy { it.timestamp }.last()?.from?.split(" ")?.firstOrNull() ?: "") + ":"
         holder.binding.cvChat.setOnClickListener {
             firebaseVM.setCurrentChat(item)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
