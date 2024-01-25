@@ -51,8 +51,15 @@ class ClubAdapter(
         holder.binding.tvSport.text = item.sport.toString()
         holder.binding.tvLevel2.text = ""
         holder.binding.tvDate.text = ""
-        holder.binding.tvTitle.text = item.bio
+        val maxCharCount = 97
+        val originalText = item.bio
+        val truncatedText = if (originalText.length > maxCharCount) {
+            originalText.substring(0, maxCharCount - 3) + "..."
+        } else {
+            originalText
+        }
 
+        holder.binding.tvTitle.text = truncatedText
         holder.binding.btProfile.setOnClickListener {
             viewmodel.setCurrentClub(item)
             // Navigation zu einem anderen Fragment mit Hilfe des NavController

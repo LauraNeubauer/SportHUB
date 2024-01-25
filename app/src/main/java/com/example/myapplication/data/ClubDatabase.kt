@@ -27,7 +27,7 @@ class ClubDatabase {
                 4,
                 "68%",
                 40,
-                "Wir sind stolz darauf, seit 1985 Fußball zu spielen.",
+                "Seit 1985 stolz auf unser Fußballspiel. Gemeinsam kämpfen wir für Siege und Ehre. Die Tore sind unsere Geschichte, der Ball unser Herz.",
                 3
             ),
             Club(
@@ -39,7 +39,7 @@ class ClubDatabase {
                 3,
                 "72%",
                 30,
-                "Gemeinsam für den Sieg!",
+                "In jedem Schlag steckt unsere Dynamik. Seit 1992 vereinen wir Kraft und Präzision. 'Gemeinsam für den Sieg!' ist unser Credo auf dem Spielfeld.",
                 12
             ),
             Club(
@@ -51,7 +51,7 @@ class ClubDatabase {
                 5,
                 "75%",
                 35,
-                "Unsere Tore sind unsere Stärke.",
+                "Seit 1978 zermalmen wir Ziele mit Fußballkraft. Tore sind unser Vermächtnis, Siege unser Ziel. 'Unsere Stärke liegt in jedem Schuss' - 75% Erfolgsquote.",
                 11
             ),
             Club(
@@ -63,7 +63,7 @@ class ClubDatabase {
                 2,
                 "80%",
                 25,
-                "Fliegende Federbälle, geschickte Spieler.",
+                "Seit 2000 fliegen unsere Federbälle. Schnell, geschickt, erfolgreich. 'Gemeinsam hoch hinaus!' ist unser Motto, 80% Quote spricht für sich.",
                 15
             ),
             Club(
@@ -75,7 +75,7 @@ class ClubDatabase {
                 1,
                 "76%",
                 20,
-                "Schnell und präzise auf dem Badmintonplatz.",
+                "Badminton in Perfektion seit 1995. Schnell, präzise, unaufhaltsam. 'Schnelligkeit ist unser Schlüssel, Präzision unsere Waffe",
                 22
             ),
             Club(
@@ -87,7 +87,7 @@ class ClubDatabase {
                 3,
                 "78%",
                 22,
-                "Mit Leidenschaft für das Federballspiel.",
+                "Seit 1988 mit Leidenschaft am Federball. 'Fliegende Bälle, brennende Herzen.' Mit 78% Erfolgsquote sind wir die Flammen.",
                 45
             ),
             Club(
@@ -99,7 +99,7 @@ class ClubDatabase {
                 2,
                 "85%",
                 15,
-                "Schnell und agil auf dem Squash-Court.",
+                "Seit 2005 agil und schnell auf dem Squash-Court. 'Eleganz und Siegeswille' sind unser Antrieb. 85% Treffgenauigkeit.",
                 55
             ),
             Club(
@@ -111,7 +111,7 @@ class ClubDatabase {
                 3,
                 "82%",
                 18,
-                "Mit Kraft und Technik zum Squash-Erfolg.",
+                "Kraft und Technik im Squash-Erfolg. Seit 1998 dominieren wir den Court. Stärke in jedem Schlag, Technik im Triumph!",
                 34
             ),
             Club(
@@ -123,7 +123,7 @@ class ClubDatabase {
                 2,
                 "88%",
                 20,
-                "Präzision und Geschwindigkeit vereint im Squash.",
+                "Squash mit Präzision und Geschwindigkeit. Vereint im Erfolg seit 2002. 'Schnell, präzise, unschlagbar' - 88% Erfolgsquote.",
                 70
             ),
             Club(
@@ -135,7 +135,7 @@ class ClubDatabase {
                 3,
                 "75%",
                 25,
-                "Unsere Tischtenniskünste sind unschlagbar.",
+                "Tischtenniskünstler seit 1990. 'Unsere Bälle, unbezwingbar.' Mit 75% Treffgenauigkeit beherrschen wir den Tischtennisplatz.",
                 60
             ),
             Club(
@@ -147,7 +147,7 @@ class ClubDatabase {
                 2,
                 "78%",
                 20,
-                "Schnell und präzise am Tischtennistisch.",
+                "Schnell, präzise, Tischtennis-Meister seit 1995. 'Geschwindigkeit ist unsere Taktik, Präzision unser Erfolg.' 78% Treffgenauigkeit.",
                 34
             ),
             Club(
@@ -159,7 +159,7 @@ class ClubDatabase {
                 4,
                 "80%",
                 30,
-                "Mit Topspin zum Tischtennis-Erfolg.",
+                "Mit Topspin zum Tischtennis-Erfolg. Unser Team hat sich über die Jahre sehr gut entwickelt und wir sind seit Jahren die Liga-Meister",
                 90
             ),
             Club(
@@ -171,7 +171,7 @@ class ClubDatabase {
                 3,
                 "74%",
                 34,
-                "Unsere drei Mannschaften spielen in verschiedenen Ligen, und unser Motto lautet: 'Gewinnen ist unser Ziel!' Wir organisieren auch jedes Jahr 20 Turniere, um die Begeisterung für Tennis in unserer Gemeinschaft zu fördern.",
+                "Unsere drei Mannschaften spielen in verschiedenen Ligen, und unser Motto lautet: 'Gewinnen ist unser Ziel!' Wir organisieren auch jedes Jahr 20 Turniere.",
                 34
             ),
             Club(
@@ -183,7 +183,7 @@ class ClubDatabase {
                 4,
                 "80%",
                 30,
-                "Auf dem Tennisplatz sind wir unschlagbar.",
+                "Auf dem Tennisplatz sind wir unschlagbar. Unsere Quote liegt bei 80 Prozent, danken wir unseren langjährigen Coaches Nick Brest, Uta Grin und Mario Unwald",
                 60
             ),
             Club(
@@ -195,7 +195,7 @@ class ClubDatabase {
                 3,
                 "72%",
                 25,
-                "Mit Präzision und Kraft zum Sieg.",
+                "Mit Präzision und Kraft zum Sieg. Mit Morivation zum Platz. Mit guter Laune in das Spiel. Wir haben klare Regeln und Richtlinien, suchen derzeit neue Mitglieder!",
                 35
             ),
             Club(
@@ -207,7 +207,7 @@ class ClubDatabase {
                 2,
                 "82%",
                 18,
-                "Eisige Präzision auf dem Hockeyfeld.",
+                "Eisige Präzision im Hockey seit 2008. 'Kälte, Präzision, Sieg.' Unsere Stärke, unser Puck, unsere Dominanz - 82% Erfolgsquote.",
                 44
             ),
             Club(
@@ -219,7 +219,7 @@ class ClubDatabase {
                 1,
                 "78%",
                 15,
-                "Dominanz im Hockeyfeld.",
+                "Dominanz im Hockey seit 2015. 'Das Feld gehört uns.' Mit 78% Erfolgsquote brechen wir Regeln und erobern Herzen.",
                 67
             ),
             Club(
@@ -231,7 +231,7 @@ class ClubDatabase {
                 3,
                 "85%",
                 20,
-                "Meisterhaft mit dem Puck auf dem Hockeyfeld.",
+                "Meisterhaft mit dem Puck seit 2002. 'Puck, Power, Perfektion.' Unsere Stärke, unser Spiel, unser Erfolg - 85% Treffgenauigkeit.",
                 22
             ),
             Club(
@@ -243,7 +243,7 @@ class ClubDatabase {
                 5,
                 "88%",
                 25,
-                "Legenden des Cricketsports.",
+                "Legenden des Cricketsports seit 1980. 'Jeder Schlag, ein Mythos.' Mit 88% Erfolgsquote prägen wir Geschichte.",
                 3
             ),
             Club(
@@ -255,7 +255,7 @@ class ClubDatabase {
                 4,
                 "85%",
                 30,
-                "Krieger mit dem Schläger auf dem Cricketfeld.",
+                "Krieger mit dem Schläger auf dem Cricketfeld seit 1992. 'Schlagkraft und Siegeswille.' 85% Erfolgsquote, unser Weg zum Ruhm.",
                 17
             ),
             Club(
@@ -267,7 +267,7 @@ class ClubDatabase {
                 3,
                 "80%",
                 22,
-                "Die Zauberer des Wickets im Cricket.",
+                "Die Zauberer des Wickets im Cricket seit 2000. 'Magie in jedem Wurf.' Mit 80% Erfolgsquote gestalten wir das Spiel der Legenden.",
                 22
             ),
             Club(
@@ -279,7 +279,7 @@ class ClubDatabase {
                 3,
                 "78%",
                 22,
-                "Heldenhaft im Handball.",
+                "Heldenhaft im Handball seit 1995. 'Jeder Wurf, ein Triumph.' Unsere Kraft, unser Spiel, unsere Siege - 78% Erfolgsquote.",
                 1
             ),
             Club(
@@ -291,7 +291,7 @@ class ClubDatabase {
                 2,
                 "80%",
                 20,
-                "Torhüterhelden im Handball.",
+                "Torhüterhelden im Handball seit 2002. 'Tor um Tor, Sieg um Sieg.' Mit 80% Erfolgsquote beschützen wir unser Reich.",
                 14
             ),
             Club(
@@ -303,7 +303,7 @@ class ClubDatabase {
                 4,
                 "82%",
                 25,
-                "Schnelle Breaks und Siege im Handball.",
+                "Schnelle Breaks, Siege im Handball seit 1990. 'Tempo, Taktik, Triumph.' Unsere Spielweise, unsere Erfolge - 82% Erfolgsquote.",
                 34
             )
         )
