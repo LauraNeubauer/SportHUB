@@ -12,9 +12,10 @@ import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.adapter.NewsHomeAdapter
-import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.HomeFragmentBinding
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class HomeFragment : Fragment() {
 
@@ -62,38 +63,26 @@ class HomeFragment : Fragment() {
             }
         }
 
+
         binding.rvHome.adapter = EventHomeAdapter(datasetEvents, viewModel)
         binding.rvNews.adapter = NewsHomeAdapter(datasetNews)
 
-        val clubs = ClubDatabase().getClubs().value
+        binding.tvGroupOne.text = "FC St. Pauli"
+        binding.tvGroupTwo.text = "Nürnberger SV"
+        binding.tvGroupOneGoals.text = "1"
+        binding.tvGroupTwoGoals.text = "2"
+        binding.tvLeague.text = "2ste Liga"
+        binding.tvSport.text = "FUSSBALL"
+        binding.tvTime.text = "61"
+        binding.tvDate.text = ("HEUTE, " + generateCurrentDate())
+        binding.grouponepic.setImageResource(R.drawable.download)
+        binding.grouptwopic.setImageResource(R.drawable.download__1_)
+    }
 
-        if (clubs != null && clubs.size >= 2) {
-            // Teile die Liste in zwei Hälften
-            val firstHalf = clubs.subList(0, clubs.size / 2)
-            val secondHalf = clubs.subList(clubs.size / 2, clubs.size)
-
-            // Zufällige Auswahl von Clubs für die Gruppen
-            val randomClubGroup1 = firstHalf.random()
-            val randomClubGroup2 = secondHalf.random()
-
-            // Zufällige Anzahl von Toren für Gruppe 2
-            val randomGoalsGroup2 = listOf(1, 2, 2, 1, 4, 2, 3, 6, 5).random()
-
-            // Setze die Werte in die UI-Elemente
-            binding.tvGroupOne.text = randomClubGroup1.name
-            binding.tvGroupTwo.text = randomClubGroup2.name
-            binding.tvGroupOneGoals.text = randomGoalsGroup2.toString()
-            binding.tvGroupTwoGoals.text = randomGoalsGroup2.toString()
-
-        }
-
-       var events = ClubDatabase().getClubs()
-
-       binding.tvLeague.text = "events.value!!.random().sport"
-       binding.tvSport.text = events.value!!.random().sport
-
-       binding.tvTime.text = listOf<Int>(29,34,36,38,41,43,45,47,50,53,56,61,64,67,69,73,75,77,83,84,88,90).random().toString()
-
+    fun generateCurrentDate(): String {
+        val today = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
+        return today.format(formatter)
     }
 }
 

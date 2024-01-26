@@ -6,13 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ResultsListItemSmallBinding
 import com.example.myapplication.model.Club
-import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
-import java.util.Calendar
 import java.util.concurrent.ThreadLocalRandom
-import kotlin.random.Random
 
 class ResultsAdapter(
     private val dataset: MutableList<Club>
@@ -25,16 +22,22 @@ class ResultsAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ResultsAdapter.ItemViewHolder {
-        val binding = ResultsListItemSmallBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ResultsListItemSmallBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
+        val firstHalf = dataset.subList(0, dataset.size / 2)
+        val secondHalf = dataset.subList(dataset.size / 2, dataset.size)
 
-        holder.binding.tvGroupOne.text = item.name
-        holder.binding.tvGroupTwo.text = dataset.random().name
+        val randomClubGroup1 = firstHalf.random()
+        val randomClubGroup2 = secondHalf.random()
+
+        holder.binding.tvGroupOne.text = randomClubGroup1.name
+        holder.binding.tvGroupTwo.text = randomClubGroup2.name
         holder.binding.tvSport.text = item.sport
 
         val generatedDate = generateRandomDateWithDistribution(30)
@@ -82,48 +85,148 @@ class ResultsAdapter(
         return dataset.size
     }
 
-    fun randomTime() : String {
-        val randomTime = listOf<String>("11", "17", "19", "22", "31", "42", "45+2", "48", "52", "57", "63", "67", "71", "75", "88", "90+2", "90+4")
+    fun randomTime(): String {
+        val randomTime = listOf<String>(
+            "11",
+            "17",
+            "19",
+            "22",
+            "31",
+            "42",
+            "45+2",
+            "48",
+            "52",
+            "57",
+            "63",
+            "67",
+            "71",
+            "75",
+            "88",
+            "90+2",
+            "90+4"
+        )
         return randomTime.random()
     }
 
-    fun randomGoals() : String {
+    fun randomGoals(): String {
         val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4")
         return randomGoals.random()
     }
-    fun randomGoalsBadminton() : String {
-        val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15")
+
+    fun randomGoalsBadminton(): String {
+        val randomGoals = listOf<String>(
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+        )
         return randomGoals.random()
     }
 
-    fun randomGoalsSquash() : String {
-        val randomGoals = listOf<String>("7", "8", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21")
+    fun randomGoalsSquash(): String {
+        val randomGoals = listOf<String>(
+            "7",
+            "8",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"
+        )
         return randomGoals.random()
     }
 
-    fun randomGoalsTennis() : String {
+    fun randomGoalsTennis(): String {
         val randomGoals = listOf<String>("1", "1", "1", "2", "3", "4", "3", "5", "2")
         return randomGoals.random()
     }
-    fun randomCricket() : String {
-        val randomGoals = listOf<String>("231/1", "219/3", "119/4", "118/2", "167/7", "122/2", "145/3", "212/2", "223/1", "198/4")
+
+    fun randomCricket(): String {
+        val randomGoals = listOf<String>(
+            "231/1",
+            "219/3",
+            "119/4",
+            "118/2",
+            "167/7",
+            "122/2",
+            "145/3",
+            "212/2",
+            "223/1",
+            "198/4"
+        )
         return randomGoals.random()
     }
 
-    fun randomHandball() : String {
-        val randomGoals = listOf<String>("12", "13", "24", "32", "27", "42", "37", "42", "51", "14", "39", "32", "27", "24", "32")
+    fun randomHandball(): String {
+        val randomGoals = listOf<String>(
+            "12",
+            "13",
+            "24",
+            "32",
+            "27",
+            "42",
+            "37",
+            "42",
+            "51",
+            "14",
+            "39",
+            "32",
+            "27",
+            "24",
+            "32"
+        )
         return randomGoals.random()
     }
 
 
-    fun randomPicture() : Int {
-        var pictures = listOf<Int>(R.drawable.achievement_1, R.drawable.award_1, R.drawable.download, R.drawable.download__1_)
+    fun randomPicture(): Int {
+        var pictures = listOf<Int>(
+            R.drawable.achievement_1,
+            R.drawable.award_1,
+            R.drawable.download,
+            R.drawable.download__1_
+        )
         return pictures.random()
     }
 
-    fun randomLiga() : String {
-        var ligen = listOf<String>("1ste Liga", "2te Liga", "3te Liga", "Freunschaftsspiel", "4te Liga", "Bundesliga", "Landesspiel")
-        return  ligen.random()
+    fun randomLiga(): String {
+        var ligen = listOf<String>(
+            "1ste Liga",
+            "2te Liga",
+            "3te Liga",
+            "Freunschaftsspiel",
+            "4te Liga",
+            "Bundesliga",
+            "Landesspiel"
+        )
+        return ligen.random()
     }
 
     fun generateRandomDateWithDistribution(maxDaysInPast: Long): String {
@@ -138,24 +241,6 @@ class ResultsAdapter(
         }
         val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
         return generatedDate.format(formatter)
-    }
-
-    fun generateRandomTime(): String {
-        // Aktuelle Uhrzeit erhalten
-        val currentTime = Calendar.getInstance()
-
-        // Zufällige Stunde zwischen 7 und 23 auswählen
-        val randomHour = Random.nextInt(7, 24)
-        // Zufällige Minute aus den erlaubten Werten auswählen (00, 15, 30, 45)
-        val randomMinute = listOf(0, 15, 30, 45).random()
-
-        currentTime.set(Calendar.HOUR_OF_DAY, randomHour)
-        currentTime.set(Calendar.MINUTE, randomMinute)
-
-        // Uhrzeit in das gewünschte Format umwandeln
-        val timeFormat = SimpleDateFormat("HH:mm")
-        val randomTime = currentTime.time
-        return timeFormat.format(randomTime)
     }
 
     fun generateCurrentDate(): String {
