@@ -43,5 +43,6 @@ class MyChatsAdapter(
             firebaseVM.setCurrentChat(item)
             holder.itemView.findNavController().navigate(R.id.chatDetailFragment)
         }
+        holder.binding.tvChatDay.text = "Heute"
     }
 }
