@@ -63,7 +63,7 @@ class ProfilFragment : Fragment() {
                 if (myProfile.matches != "0") {
                     binding.cvMatch.visibility = View.VISIBLE
                     binding.tvLeague.text = ExampleDatabase().eventList.random().name
-                    binding.tvLand.text = myProfile.sportsOne
+                    binding.tvSport.text = myProfile.sportsOne
                     binding.tvTime.text = ""
                     var clubs = ClubDatabase().getClubs()
                     binding.tvGroupOne.text = clubs.value!![myProfile.club!!].name

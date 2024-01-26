@@ -3,10 +3,7 @@ package com.example.myapplication.data
 import com.example.myapplication.R
 import com.example.myapplication.model.Chat
 import com.example.myapplication.model.Event
-import com.example.myapplication.model.ExamplePerson
 import com.example.myapplication.model.News
-import com.example.myapplication.model.Request
-import com.example.myapplication.model.Results
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -35,9 +32,11 @@ class ExampleDatabase {
         // Aktuelle Uhrzeit erhalten
         val currentTime = Calendar.getInstance()
 
-        // Zufällige Stunde und Minute hinzufügen
-        val randomHour = Random.nextInt(24)
-        val randomMinute = Random.nextInt(60)
+        // Zufällige Stunde zwischen 7 und 23 auswählen
+        val randomHour = Random.nextInt(7, 24)
+        // Zufällige Minute aus den erlaubten Werten auswählen (00, 15, 30, 45)
+        val randomMinute = listOf(0, 15, 30, 45).random()
+
         currentTime.set(Calendar.HOUR_OF_DAY, randomHour)
         currentTime.set(Calendar.MINUTE, randomMinute)
 
@@ -221,30 +220,6 @@ class ExampleDatabase {
         return newsList
     }
 
-    var examplePersonLists: List<ExamplePerson> = listOf(
-        ExamplePerson("Anna", "Friedel", "22", "Beginner", "23", 12, 18, "Hockeyclub Hamburg"),
-        ExamplePerson("Max", "Mustermann", "30", "Intermediate", "42", 10, 15, "Football Club"),
-        ExamplePerson("Lena", "Schmidt", "25", "Advanced", "55", 8, 20, "Tennis Club"),
-        ExamplePerson("Jan", "Müller", "28", "Beginner", "37", 14, 16, "Chess Club"),
-        ExamplePerson("Sophie", "Schneider", "33", "Advanced", "61", 9, 22, "Swimming Club"),
-    )
-
-    fun loadPersons(): List<ExamplePerson> {
-        return examplePersonLists
-    }
-
-    var matchList: List<Request> = listOf(
-        Request(examplePersonLists[0], false),
-        Request(examplePersonLists[1], false),
-        Request(examplePersonLists[2], false),
-        Request(examplePersonLists[3], false),
-        Request(examplePersonLists[4], false),
-    )
-
-    fun loadMatches(): List<Request> {
-        return matchList
-    }
-
     var chatList: List<Chat> = listOf(
         Chat(
             "GymBros",
@@ -278,113 +253,5 @@ class ExampleDatabase {
 
     fun loadChats(): List<Chat> {
         return chatList
-    }
-
-
-    val ResultList: List<Results> = listOf(
-        Results(
-            "HEUTE, 19:50 Uhr",
-            "FUSSBALL-FREUNDSCHAFTSSPIEL",
-            "StadionSignal Iduna Park, Dortmund",
-            "Borussia Dortmund",
-            "Gruppe F",
-            "Paris Saint-Germain",
-            "Gruppe F",
-            "0:0"
-        ),
-        Results(
-            "GESTERN, 18:20 Uhr",
-            "Champions League",
-            "StadionMarakana, Belgrad",
-            "Roter Stern Belgra",
-            "Gruppe G",
-            "Manchester City",
-            "Gruppe G",
-            "0:1"
-        ),
-        Results(
-            "GESTERN, 15:30 Uhr",
-            "Bundesliga",
-            "Allianz Arena, München",
-            "FC Bayern München",
-            "Gruppe A",
-            "Borussia Mönchengladbach",
-            "Gruppe A",
-            "2:1"
-        ),
-        Results(
-            "MORGEN, 20:00 Uhr",
-            "Premier League",
-            "Old Trafford, Manchester",
-            "Manchester United",
-            "Gruppe B",
-            "Liverpool FC",
-            "Gruppe B",
-            "0:0"
-        ),
-        Results(
-            "MORGEN, 21:00 Uhr",
-            "La Liga",
-            "Camp Nou, Barcelona",
-            "FC Barcelona",
-            "Gruppe C",
-            "Real Madrid",
-            "Gruppe C",
-            "0:0"
-        ),
-        Results(
-            "ÜBERMORGEN, 19:45 Uhr",
-            "Serie A",
-            "San Siro, Mailand",
-            "AC Mailand",
-            "Gruppe D",
-            "Juventus",
-            "Gruppe D",
-            "0:0"
-        ),
-        Results(
-            "05.03.2023, 18:30 Uhr",
-            "Eredivisie",
-            "Johan Cruyff Arena, Amsterdam",
-            "Ajax Amsterdam",
-            "Gruppe E",
-            "PSV Eindhoven",
-            "Gruppe E",
-            "0:0"
-        ),
-        Results(
-            "07.03.2023, 20:15 Uhr",
-            "Primeira Liga",
-            "Estádio da Luz, Lissabon",
-            "Benfica Lissabon",
-            "Gruppe F",
-            "FC Porto",
-            "Gruppe F",
-            "0:0"
-        ),
-        Results(
-            "10.03.2023, 17:00 Uhr",
-            "Super Lig",
-            "Türk Telekom Stadyumu, Istanbul",
-            "Galatasaray Istanbul",
-            "Gruppe G",
-            "Fenerbahçe",
-            "Gruppe G",
-            "0:0"
-        ),
-        Results(
-            "12.03.2023, 16:45 Uhr",
-            "Russian Premier League",
-            "Gazprom Arena, Sankt Petersburg",
-            "Zenit Sankt Petersburg",
-            "Gruppe H",
-            "CSKA Moskau",
-            "Gruppe H",
-            "0:0"
-        )
-    )
-
-    fun loadResults(): List<Results> {
-        return ResultList
     }
 }

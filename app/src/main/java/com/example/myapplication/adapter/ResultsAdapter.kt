@@ -5,10 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ResultsListItemSmallBinding
-import com.example.myapplication.model.Results
+import com.example.myapplication.model.Club
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+import java.util.Calendar
+import java.util.concurrent.ThreadLocalRandom
+import kotlin.random.Random
 
 class ResultsAdapter(
-    private val dataset: List<Results>
+    private val dataset: MutableList<Club>
 ) : RecyclerView.Adapter<ResultsAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: ResultsListItemSmallBinding) :
@@ -25,14 +32,50 @@ class ResultsAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
-        holder.binding.tvGroupOne.text = item.mainPlayer
-        holder.binding.tvGroupTwo.text = item.playerOpps
-        holder.binding.tvLand.text = item.place
-        holder.binding.tvTime.text = randomTime()
-        holder.binding.tvGroupOneGoals.text = randomGoals()
-        holder.binding.tvGroupTwoGoals.text = randomGoals()
+
+        holder.binding.tvGroupOne.text = item.name
+        holder.binding.tvGroupTwo.text = dataset.random().name
+        holder.binding.tvSport.text = item.sport
+
+        val generatedDate = generateRandomDateWithDistribution(30)
+        val generatedTime = if (generatedDate == generateCurrentDate()) {
+            randomTime()
+        } else {
+            "//"
+        }
+        holder.binding.tvTime.text = generatedTime
+
+        val generatedDatePlus = if (generatedDate == generateCurrentDate()) {
+            ("HEUTE, " + generatedDate)
+        } else {
+            (generatedDate)
+        }
+        holder.binding.tvDate.text = generatedDatePlus
+
+        when (holder.binding.tvSport.text) {
+            "FUSSBALL" -> holder.binding.tvGroupOneGoals.text = randomGoals()
+            "BADMINTON" -> holder.binding.tvGroupOneGoals.text = randomGoals()
+            "SQUASH" -> holder.binding.tvGroupOneGoals.text = randomGoalsSquash()
+            "TISCHTENNIS" -> holder.binding.tvGroupOneGoals.text = randomGoals()
+            "TENNIS" -> holder.binding.tvGroupOneGoals.text = randomGoals()
+            "HOCKEY" -> holder.binding.tvGroupOneGoals.text = randomGoals()
+            "CRICKET" -> holder.binding.tvGroupOneGoals.text = randomCricket()
+            "HANDBALL" -> holder.binding.tvGroupOneGoals.text = randomHandball()
+        }
+        when (holder.binding.tvSport.text) {
+            "FUSSBALL" -> holder.binding.tvGroupTwoGoals.text = randomGoals()
+            "BADMINTON" -> holder.binding.tvGroupTwoGoals.text = randomGoals()
+            "SQUASH" -> holder.binding.tvGroupTwoGoals.text = randomGoalsSquash()
+            "TISCHTENNIS" -> holder.binding.tvGroupTwoGoals.text = randomGoals()
+            "TENNIS" -> holder.binding.tvGroupTwoGoals.text = randomGoals()
+            "HOCKEY" -> holder.binding.tvGroupTwoGoals.text = randomGoals()
+            "CRICKET" -> holder.binding.tvGroupTwoGoals.text = ""
+            "HANDBALL" -> holder.binding.tvGroupTwoGoals.text = randomHandball()
+        }
+
         holder.binding.grouponepic.setImageResource(randomPicture())
         holder.binding.grouptwopic.setImageResource(randomPicture())
+        holder.binding.tvLeague.text = randomLiga()
     }
 
     override fun getItemCount(): Int {
@@ -48,10 +91,77 @@ class ResultsAdapter(
         val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4")
         return randomGoals.random()
     }
+    fun randomGoalsBadminton() : String {
+        val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15")
+        return randomGoals.random()
+    }
+
+    fun randomGoalsSquash() : String {
+        val randomGoals = listOf<String>("7", "8", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21")
+        return randomGoals.random()
+    }
+
+    fun randomGoalsTennis() : String {
+        val randomGoals = listOf<String>("1", "1", "1", "2", "3", "4", "3", "5", "2")
+        return randomGoals.random()
+    }
+    fun randomCricket() : String {
+        val randomGoals = listOf<String>("231/1", "219/3", "119/4", "118/2", "167/7", "122/2", "145/3", "212/2", "223/1", "198/4")
+        return randomGoals.random()
+    }
+
+    fun randomHandball() : String {
+        val randomGoals = listOf<String>("12", "13", "24", "32", "27", "42", "37", "42", "51", "14", "39", "32", "27", "24", "32")
+        return randomGoals.random()
+    }
+
 
     fun randomPicture() : Int {
         var pictures = listOf<Int>(R.drawable.achievement_1, R.drawable.award_1, R.drawable.download, R.drawable.download__1_)
         return pictures.random()
+    }
+
+    fun randomLiga() : String {
+        var ligen = listOf<String>("1ste Liga", "2te Liga", "3te Liga", "Freunschaftsspiel", "4te Liga", "Bundesliga", "Landesspiel")
+        return  ligen.random()
+    }
+
+    fun generateRandomDateWithDistribution(maxDaysInPast: Long): String {
+        val today = LocalDate.now()
+        val randomValue = ThreadLocalRandom.current().nextDouble()
+
+        val generatedDate = if (randomValue < 1.0 / 3.0) {
+            today
+        } else {
+            val randomDays = ThreadLocalRandom.current().nextLong(1, maxDaysInPast + 1)
+            today.minus(randomDays, ChronoUnit.DAYS)
+        }
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
+        return generatedDate.format(formatter)
+    }
+
+    fun generateRandomTime(): String {
+        // Aktuelle Uhrzeit erhalten
+        val currentTime = Calendar.getInstance()
+
+        // Zufällige Stunde zwischen 7 und 23 auswählen
+        val randomHour = Random.nextInt(7, 24)
+        // Zufällige Minute aus den erlaubten Werten auswählen (00, 15, 30, 45)
+        val randomMinute = listOf(0, 15, 30, 45).random()
+
+        currentTime.set(Calendar.HOUR_OF_DAY, randomHour)
+        currentTime.set(Calendar.MINUTE, randomMinute)
+
+        // Uhrzeit in das gewünschte Format umwandeln
+        val timeFormat = SimpleDateFormat("HH:mm")
+        val randomTime = currentTime.time
+        return timeFormat.format(randomTime)
+    }
+
+    fun generateCurrentDate(): String {
+        val today = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
+        return today.format(formatter)
     }
 
 }

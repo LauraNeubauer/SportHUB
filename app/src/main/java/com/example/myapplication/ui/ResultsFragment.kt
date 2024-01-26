@@ -10,13 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ResultsAdapter
-import com.example.myapplication.data.ExampleDatabase
+import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.databinding.ResultsFragmentBinding
 
 class ResultsFragment : Fragment() {
 
     private lateinit var binding : ResultsFragmentBinding
-    var dataset = ExampleDatabase().loadResults()
+    var dataset = ClubDatabase().getClubs()
     private val viewModel: ViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -35,7 +35,10 @@ class ResultsFragment : Fragment() {
             binding.ads.setImageResource(viewModel.imageList[index])
         }
 
-        binding.rvResults.adapter = ResultsAdapter(dataset)
+        viewModel.clubdatabase.observe(viewLifecycleOwner){
+            var list = viewModel.clubdatabase.value!!.toMutableList()
+            binding.rvResults.adapter = ResultsAdapter(list)
+        }
 
         binding.btBack.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)

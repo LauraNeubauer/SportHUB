@@ -87,10 +87,10 @@ class HomeFragment : Fragment() {
 
         }
 
-       var events = ExampleDatabase().ResultList
+       var events = ClubDatabase().getClubs()
 
-       binding.tvLeague.text = events.random().title
-       binding.tvLand.text = events.random().place
+       binding.tvLeague.text = "events.value!!.random().sport"
+       binding.tvSport.text = events.value!!.random().sport
 
        binding.tvTime.text = listOf<Int>(29,34,36,38,41,43,45,47,50,53,56,61,64,67,69,73,75,77,83,84,88,90).random().toString()
 
