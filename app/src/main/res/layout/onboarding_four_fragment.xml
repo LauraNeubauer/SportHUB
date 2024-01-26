@@ -116,7 +116,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/back"
         style="@style/ctab_infos"
         android:layout_width="160dp"
         android:layout_marginTop="15dp"
@@ -125,14 +125,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_weiter" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bio"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_weiter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
     <TextView
         android:id="@+id/tv_title_"
         android:layout_width="wrap_content"
@@ -222,7 +214,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4dddddwd" />
 
     <TextView
-        android:id="@+id/tvf_age"
+        android:id="@+id/matches"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -261,7 +253,7 @@
         app:layout_constraintTop_toTopOf="@+id/ff" />
 
     <TextView
-        android:id="@+id/tv_afge"
+        android:id="@+id/size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -300,7 +292,7 @@
         app:layout_constraintTop_toTopOf="@+id/sss" />
 
     <TextView
-        android:id="@+id/tvdf_age"
+        android:id="@+id/pokale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -339,7 +331,7 @@
         app:layout_constraintTop_toTopOf="@+id/ssdds" />
 
     <TextView
-        android:id="@+id/tvdf_ffage"
+        android:id="@+id/wins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -360,7 +352,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4dddddwd">
 
         <TextView
-            android:id="@+id/tv_tfitle_"
+            android:id="@+id/bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"

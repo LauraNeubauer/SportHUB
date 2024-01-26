@@ -42,6 +42,6 @@ class AllGroupsAdatper(
 
         holder.binding.tvNameChat.text = item.groupName
         holder.binding.tvLastMessage.text = "Ohne Beitrittsanfrage"
-        holder.binding.imageView.setImageResource(item.groupPic)
+        holder.binding.ivGroupPic.setImageResource(item.groupPic)
     }
 }

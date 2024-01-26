@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toStartOf="@+id/logout"
         app:layout_constraintStart_toEndOf="@+id/fb_results"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:srcCompat="@drawable/property_1_linear_kopie_2"
+        app:srcCompat="@drawable/save_icon"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -122,7 +122,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/club"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -274,7 +274,7 @@
                             android:layout_height="15dp"
                             android:layout_marginTop="-1dp"
                             android:gravity="center_vertical"
-                            android:src="@drawable/property_1_linear_kopie_2" />
+                            android:src="@drawable/icon_time"/>
 
                         <TextView
                             android:id="@+id/tv_time"

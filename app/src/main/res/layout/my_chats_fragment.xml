@@ -34,7 +34,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb_results"
+        android:id="@+id/bt_archiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -53,13 +53,13 @@
         android:text="Archiv"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/fb_results"
+        app:layout_constraintEnd_toEndOf="@+id/bt_archiv"
         app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="@+id/fb_results"
-        app:layout_constraintTop_toBottomOf="@+id/fb_results" />
+        app:layout_constraintStart_toStartOf="@+id/bt_archiv"
+        app:layout_constraintTop_toBottomOf="@+id/bt_archiv" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/logout"
+        android:id="@+id/bt_request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -80,29 +80,29 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/logout"
-        app:layout_constraintStart_toStartOf="@+id/logout"
-        app:layout_constraintTop_toBottomOf="@+id/logout" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_request"
+        app:layout_constraintStart_toStartOf="@+id/bt_request"
+        app:layout_constraintTop_toBottomOf="@+id/bt_request" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton7"
+        android:id="@+id/bt_clubchat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
-        app:layout_constraintEnd_toStartOf="@+id/logout"
-        app:layout_constraintStart_toEndOf="@+id/fb_results"
+        app:layout_constraintEnd_toStartOf="@+id/bt_request"
+        app:layout_constraintStart_toEndOf="@+id/bt_archiv"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@drawable/notification_circle"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/bt_new_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
-        app:layout_constraintEnd_toStartOf="@+id/fb_results"
+        app:layout_constraintEnd_toStartOf="@+id/bt_archiv"
         app:layout_constraintStart_toEndOf="@+id/bt_groups_"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:srcCompat="@android:drawable/ic_input_add"
@@ -123,7 +123,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/groups"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bt_groups_" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/new_groups"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -145,9 +145,9 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton4"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton4"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton4" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_new_group"
+        app:layout_constraintStart_toStartOf="@+id/bt_new_group"
+        app:layout_constraintTop_toBottomOf="@+id/bt_new_group" />
 
     <TextView
         android:id="@+id/textView6"
@@ -159,9 +159,9 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton7"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton7" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_clubchat"
+        app:layout_constraintStart_toStartOf="@+id/bt_clubchat"
+        app:layout_constraintTop_toBottomOf="@+id/bt_clubchat" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -178,15 +178,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Durchsuchen Sie SportHUB" />
-    </com.google.android.material.textfield.TextInputLayout><![CDATA[
-
-
-    />
-
-    ]]>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView111"
+        android:id="@+id/allChats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -195,16 +190,16 @@
         android:text="Alle Chats"
         android:textColor="@color/header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/groups" />
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/devider"
         android:layout_width="255dp"
         android:layout_height="2dp"
         android:background="@color/header"
-        app:layout_constraintBottom_toBottomOf="@+id/textView111"
+        app:layout_constraintBottom_toBottomOf="@+id/allChats"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView111" />
+        app:layout_constraintTop_toTopOf="@+id/allChats" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_chats"
@@ -217,6 +212,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView111" />
+        app:layout_constraintTop_toBottomOf="@+id/allChats" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

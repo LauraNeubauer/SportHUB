@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_title" />
 
     <ImageView
-        android:id="@+id/iv_profil4"
+        android:id="@+id/iv_chatPic"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="25dp"
@@ -65,9 +65,9 @@
         android:textAllCaps="true"
         android:textColor="@color/header"
         android:textSize="17dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_profil4"
-        app:layout_constraintStart_toEndOf="@+id/iv_profil4"
-        app:layout_constraintTop_toTopOf="@+id/iv_profil4"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_chatPic"
+        app:layout_constraintStart_toEndOf="@+id/iv_chatPic"
+        app:layout_constraintTop_toTopOf="@+id/iv_chatPic"
         app:layout_constraintVertical_bias="0.555" />
 
     <View
@@ -78,7 +78,7 @@
         android:background="@color/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profil4" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_chatPic" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_messages"
@@ -92,7 +92,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profil4" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_chatPic" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"

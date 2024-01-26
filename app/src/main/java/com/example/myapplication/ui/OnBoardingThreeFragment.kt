@@ -51,10 +51,10 @@ class OnBoardingThreeFragment : Fragment() {
             }
         }
 
-        binding.ddBtSortCal.setOnClickListener {
+        binding.ddBtSports.setOnClickListener {
             showMultiSelectionDialog(it)
         }
-        binding.ddBtSortCal2.setOnClickListener {
+        binding.ddBtLevel.setOnClickListener {
             showPopupMenuLevel(it)
         }
 
@@ -177,7 +177,7 @@ class OnBoardingThreeFragment : Fragment() {
             }
             .setPositiveButton("OK") { _, _ ->
                 val selectedCount = checkedItems.count { it }
-                binding.ddBtSortCal.text = "$selectedCount Sportarten ausgewählt"
+                binding.ddBtSports.text = "$selectedCount Sportarten ausgewählt"
                 val selectedSports = sportsArray.filterIndexed { index, _ ->
                     checkedItems[index]
                 }
@@ -196,31 +196,31 @@ class OnBoardingThreeFragment : Fragment() {
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
                 R.id.option1 -> {
-                    binding.ddBtSortCal2.text = "BEGINNER"
+                    binding.ddBtLevel.text = "BEGINNER"
                     selectedLevel = "BEGINNER"
                     true
                 }
 
                 R.id.option2 -> {
-                    binding.ddBtSortCal2.text = "IMPROVER"
+                    binding.ddBtLevel.text = "IMPROVER"
                     selectedLevel = "IMPROVER"
                     true
                 }
 
                 R.id.option3 -> {
-                    binding.ddBtSortCal2.text = "ADVANCED"
+                    binding.ddBtLevel.text = "ADVANCED"
                     selectedLevel = "ADVANCED"
                     true
                 }
 
                 R.id.option4 -> {
-                    binding.ddBtSortCal2.text = "PRACTICER"
+                    binding.ddBtLevel.text = "PRACTICER"
                     selectedLevel = "PRACTICER"
                     true
                 }
 
                 R.id.option5 -> {
-                    binding.ddBtSortCal2.text = "EXPERT"
+                    binding.ddBtLevel.text = "EXPERT"
                     selectedLevel = "EXPERT"
                     true
                 }

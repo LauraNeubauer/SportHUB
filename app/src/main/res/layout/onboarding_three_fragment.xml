@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_tiftle"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tiftle">
+        app:layout_constraintTop_toBottomOf="@+id/name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_name"
@@ -55,7 +55,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_tifftle"
+        android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -73,7 +73,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
+        app:layout_constraintTop_toBottomOf="@+id/age">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_age"
@@ -102,7 +102,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_tifftle">
+        app:layout_constraintTop_toBottomOf="@+id/age">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiet_size"
@@ -130,7 +130,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/reset"
+        android:id="@+id/bt_back"
         style="@style/ctab_infos"
         android:layout_width="160dp"
         android:layout_marginTop="15dp"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bt_weiter" />
 
     <Button
-        android:id="@+id/dd_bt_sort_cal"
+        android:id="@+id/dd_bt_sports"
         style="@style/ib_dd_sports"
         android:layout_width="370dp"
         android:layout_marginTop="20dp"
@@ -150,13 +150,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 
     <Button
-        android:id="@+id/dd_bt_sort_cal2"
+        android:id="@+id/dd_bt_level"
         style="@style/ib_dd_level"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dd_bt_sort_cal" />
+        app:layout_constraintTop_toBottomOf="@+id/dd_bt_sports" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/bio"
@@ -183,10 +183,10 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/dd_bt_sort_cal2"
+        app:layout_constraintBottom_toBottomOf="@+id/dd_bt_level"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dd_bt_sort_cal2"
-        app:layout_constraintTop_toTopOf="@+id/dd_bt_sort_cal2">
+        app:layout_constraintStart_toEndOf="@+id/dd_bt_level"
+        app:layout_constraintTop_toTopOf="@+id/dd_bt_level">
 
         <TextView
             android:id="@+id/textMale"

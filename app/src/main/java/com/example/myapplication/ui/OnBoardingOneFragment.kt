@@ -37,7 +37,7 @@ class OnBoardingOneFragment : Fragment() {
             }
         }
 
-        binding.btLogIn.setOnClickListener {
+        binding.btLogin.setOnClickListener {
             findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
         }
 

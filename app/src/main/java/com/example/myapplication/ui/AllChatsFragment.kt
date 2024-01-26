@@ -37,7 +37,7 @@ class AllChatsFragment : Fragment() {
 
         binding.rvChats.adapter = AllGroupsAdatper(dataset, firebaseVM = FirebaseViewModel(), viewModel)
 
-        binding.btChats.setOnClickListener {
+        binding.btMyChats.setOnClickListener {
             findNavController().navigate(R.id.action_allChatsFragment_to_myChatsFragment)
         }
 

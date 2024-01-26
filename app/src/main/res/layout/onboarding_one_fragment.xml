@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/pic"
         android:layout_width="wrap_content"
         android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,11 +40,11 @@
         android:textColor="@color/header"
         android:textSize="35sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/pic" />
 
 
     <TextView
-        android:id="@+id/tfextView21"
+        android:id="@+id/discription"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_tiftle" />
 
     <Button
-        android:id="@+id/bt_registrate"
+        android:id="@+id/bt_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -71,17 +71,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bt_log_in"
+        android:id="@+id/bt_registrate"
         style="@style/ctab_infos"
         android:layout_width="140dp"
         android:text="REGISTRIEREN"
         android:layout_marginRight="24dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/registrate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -89,7 +89,7 @@
         android:textColor="@color/gray_Text"
         android:text="Noch kein Konto? Hier:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_registrate" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_login" />
 
 
 

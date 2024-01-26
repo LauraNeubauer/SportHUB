@@ -492,7 +492,7 @@
                             android:layout_height="15dp"
                             android:layout_marginTop="-1dp"
                             android:gravity="center_vertical"
-                            android:src="@drawable/property_1_linear_kopie_2" />
+                            android:src="@drawable/club_icon" />
 
                         <TextView
                             android:id="@+id/tv_time"
@@ -613,7 +613,7 @@
         app:layout_constraintTop_toBottomOf="@+id/fb_results" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/logout"
+        android:id="@+id/bt_parti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -633,36 +633,36 @@
         android:text="Mitglieder"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/logout"
-        app:layout_constraintStart_toStartOf="@+id/logout"
-        app:layout_constraintTop_toBottomOf="@+id/logout" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_parti"
+        app:layout_constraintStart_toStartOf="@+id/bt_parti"
+        app:layout_constraintTop_toBottomOf="@+id/bt_parti" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb_saved"
+        android:id="@+id/bt_infos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
-        app:layout_constraintEnd_toStartOf="@+id/logout"
+        app:layout_constraintEnd_toStartOf="@+id/bt_parti"
         app:layout_constraintStart_toEndOf="@+id/fb_results"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
-        app:srcCompat="@drawable/property_1_linear_kopie_2"
+        app:srcCompat="@drawable/property_1_linear_kopie"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fb_matches"
+        android:id="@+id/bt_events"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:backgroundTint="@color/header"
         app:layout_constraintEnd_toStartOf="@+id/fb_results"
-        app:layout_constraintStart_toEndOf="@+id/bt_infos_"
+        app:layout_constraintStart_toEndOf="@+id/bt_news"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
         app:srcCompat="@drawable/clipboard"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/bt_infos_"
+        android:id="@+id/bt_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -684,9 +684,9 @@
         android:text="Infos"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/fb_saved"
-        app:layout_constraintStart_toStartOf="@+id/fb_saved"
-        app:layout_constraintTop_toBottomOf="@+id/fb_saved" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_infos"
+        app:layout_constraintStart_toStartOf="@+id/bt_infos"
+        app:layout_constraintTop_toBottomOf="@+id/bt_infos" />
 
     <TextView
         android:id="@+id/events"
@@ -697,9 +697,9 @@
         android:text="Events"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/fb_matches"
-        app:layout_constraintStart_toStartOf="@+id/fb_matches"
-        app:layout_constraintTop_toBottomOf="@+id/fb_matches" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_events"
+        app:layout_constraintStart_toStartOf="@+id/bt_events"
+        app:layout_constraintTop_toBottomOf="@+id/bt_events" />
 
     <TextView
         android:id="@+id/news"
@@ -710,9 +710,9 @@
         android:text="News"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/bt_infos_"
-        app:layout_constraintStart_toStartOf="@+id/bt_infos_"
-        app:layout_constraintTop_toBottomOf="@+id/bt_infos_" />
+        app:layout_constraintEnd_toEndOf="@+id/bt_news"
+        app:layout_constraintStart_toStartOf="@+id/bt_news"
+        app:layout_constraintTop_toBottomOf="@+id/bt_news" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
