@@ -1,5 +1,7 @@
 package com.example.myapplication.adapter
 
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -58,6 +60,17 @@ class EventHomeAdapter(
                 holder.binding.tvTitleProfil.text = item.level
                 Log.d("TAG", "Binding Elemente positiv")
 
+                holder.itemView.setOnLongClickListener {
+                    val color = Color.parseColor("#D9D9D9")
+                    val roundedCornerDrawable = GradientDrawable()
+                    val cornerRadius = holder.itemView.resources.displayMetrics.density * 20
+
+                    roundedCornerDrawable.cornerRadius = cornerRadius
+                    roundedCornerDrawable.setColor(color)
+
+                    holder.binding.cvEventItem.background = roundedCornerDrawable
+                    true
+                }
             }
             is MatchItemViewHolder -> {
                 holder.binding.btClubname.text = item.club

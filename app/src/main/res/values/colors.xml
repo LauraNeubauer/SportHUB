@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="header">#BDFF00</color>
+    <color name="action">#FF9900</color>
     <color name="tags">#688D00</color>
     <color name="button_callToAction">#FF000000</color>
     <color name="button_inAppDircetion">#FF000000</color>
