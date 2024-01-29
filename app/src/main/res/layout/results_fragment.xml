@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
     <TextView
         android:id="@+id/sporthub2"
@@ -96,9 +96,9 @@
     <Button
         android:id="@+id/bt_saved"
         style="@style/ctab_saved"
-        android:text="GESPEICHERT"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:text="GESPEICHERT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
 

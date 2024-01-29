@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
     <TextView
         android:id="@+id/tv_title"
@@ -287,8 +287,8 @@
     <Button
         android:id="@+id/bt_show_all_events"
         style="@style/ctab_saved"
-        android:text="Alle"
         android:layout_marginRight="20dp"
+        android:text="Alle"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
     <TextView
         android:id="@+id/sporthub2"
@@ -126,10 +126,10 @@
         android:id="@+id/bt_search"
         style="@style/ib_search"
         android:layout_height="30dp"
-        android:padding="5dp"
-        android:paddingBottom="2dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_profilpictures"
+        android:padding="5dp"
+        android:paddingBottom="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/ddbt_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ddbt_search" />

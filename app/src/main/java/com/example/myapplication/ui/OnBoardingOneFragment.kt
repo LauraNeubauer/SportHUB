@@ -38,11 +38,11 @@ class OnBoardingOneFragment : Fragment() {
         }
 
         binding.btLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
+            findNavController().navigate(R.id.action_onBoardingOneFragment_to_registrateFragment)
         }
 
         binding.btRegistrate.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingOneFragment_to_registrateFragment)
+            findNavController().navigate(R.id.action_onBoardingOneFragment_to_onBoardingTwoFragment)
         }
     }
 }

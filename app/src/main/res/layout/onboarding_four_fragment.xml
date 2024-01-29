@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
 
     <TextView
@@ -96,7 +96,6 @@
         app:layout_constraintBottom_toTopOf="@+id/bt_weiter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
     <Button

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
 
     <TextView
@@ -37,9 +37,9 @@
         android:id="@+id/iv_profil1"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="-20dp"
         android:background="@drawable/rounded_profilpictures"
         android:clipToOutline="true"
-        android:layout_marginLeft="-20dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/iv_profil2"
         app:layout_constraintStart_toEndOf="@+id/iv_profil2"
@@ -50,9 +50,9 @@
         android:id="@+id/iv_profil2"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="-20dp"
         android:background="@drawable/rounded_profilpictures"
         android:clipToOutline="true"
-        android:layout_marginLeft="-20dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/iv_profil3"
         app:layout_constraintStart_toEndOf="@+id/iv_profil3"
@@ -76,9 +76,9 @@
         android:id="@+id/iv_profil4"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_marginLeft="-20dp"
         android:background="@drawable/rounded_profilpictures"
         android:clipToOutline="true"
-        android:layout_marginLeft="-20dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/bt_participants"
         app:layout_constraintStart_toEndOf="@+id/bt_participants"
@@ -88,8 +88,8 @@
     <Button
         android:id="@+id/bt_participants"
         style="@style/bt_info_participants"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="255dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_club_name" />
 
@@ -482,9 +482,9 @@
                     <LinearLayout
                         android:layout_width="10dp"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_marginLeft="20dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -509,8 +509,8 @@
                     <LinearLayout
                         android:layout_width="10dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
 

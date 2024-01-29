@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1B1B1B">
+    android:background="#0D0D0D">
 
 
     <TextView
@@ -264,9 +264,9 @@
                     <LinearLayout
                         android:layout_width="10dp"
                         android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:layout_marginLeft="20dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -274,7 +274,7 @@
                             android:layout_height="15dp"
                             android:layout_marginTop="-1dp"
                             android:gravity="center_vertical"
-                            android:src="@drawable/icon_time"/>
+                            android:src="@drawable/icon_time" />
 
                         <TextView
                             android:id="@+id/tv_time"
@@ -291,8 +291,8 @@
                     <LinearLayout
                         android:layout_width="10dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
 
