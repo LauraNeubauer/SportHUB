@@ -4,15 +4,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.viewmodel.FirebaseViewModel
-import com.example.myapplication.viewmodel.MainViewModel
 import com.example.myapplication.databinding.AllChatsItemBinding
 import com.example.myapplication.model.Chat
+import com.example.myapplication.viewmodel.FirebaseViewModel
+
+// Der Adapter der die ChatGruppen übergibt
 
 class AllGroupsAdatper(
     private val dataset: List<Chat>,
     private val firebaseVM: FirebaseViewModel,
-    private val personMainViewModel: MainViewModel
 ) : RecyclerView.Adapter<AllGroupsAdatper.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: AllChatsItemBinding) :

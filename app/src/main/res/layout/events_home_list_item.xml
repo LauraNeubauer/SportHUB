@@ -133,7 +133,7 @@
                         android:text="TextView" />
 
                     <TextView
-                        android:id="@+id/saved_"
+                        android:id="@+id/trophys_"
                         android:layout_width="5dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />

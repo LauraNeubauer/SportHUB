@@ -71,7 +71,7 @@
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/events_"
+        android:id="@+id/bilder_"
         android:layout_width="62dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -150,7 +150,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bt_new_group" />
 
     <TextView
-        android:id="@+id/saved_"
+        android:id="@+id/trophys_"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

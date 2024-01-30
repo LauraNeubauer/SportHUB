@@ -401,16 +401,16 @@
         app:backgroundTint="@color/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_bio"
-        app:srcCompat="@drawable/clipboard"
+        app:srcCompat="@drawable/property_1_linear_kopie"
         tools:ignore="ContentDescription" />
 
     <TextView
-        android:id="@+id/events_"
+        android:id="@+id/bilder_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Events"
+        android:text="Bilder"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/logout"
@@ -426,7 +426,7 @@
         app:layout_constraintEnd_toStartOf="@+id/logout"
         app:layout_constraintStart_toEndOf="@+id/fb_results"
         app:layout_constraintTop_toBottomOf="@+id/tv_bio"
-        app:srcCompat="@drawable/property_1_linear_kopie_2"
+        app:srcCompat="@drawable/property_1_linear"
         tools:ignore="ContentDescription" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -482,12 +482,12 @@
         app:layout_constraintTop_toBottomOf="@+id/floatingActionButton4" />
 
     <TextView
-        android:id="@+id/saved_"
+        android:id="@+id/trophys_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/kronaone_regular"
-        android:text="Saved"
+        android:text="Trophäen"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/floatingActionButton7"

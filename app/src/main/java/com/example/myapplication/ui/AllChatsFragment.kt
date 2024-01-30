@@ -34,7 +34,7 @@ class AllChatsFragment : Fragment() {
 
         val dataset = ExampleDatabase().loadChats()
 
-        binding.rvChats.adapter = AllGroupsAdatper(dataset, firebaseVM = FirebaseViewModel(), mainViewModel)
+        binding.rvChats.adapter = AllGroupsAdatper(dataset, firebaseVM = FirebaseViewModel())
 
         binding.btMyChats.setOnClickListener {
             findNavController().navigate(R.id.action_allChatsFragment_to_myChatsFragment)
