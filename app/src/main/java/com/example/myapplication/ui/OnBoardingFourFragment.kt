@@ -48,14 +48,11 @@ class OnBoardingFourFragment : Fragment() {
         val size = receivedArguments.getString("size")
         val bio = receivedArguments.getString("bio")
         val level = receivedArguments.getString("level")
-        val sports = receivedArguments.getString("selectedSports")
+        val sportsOne = receivedArguments.getString("sportOne")
+        val sportsTwo = receivedArguments.getString("sportTwo")
         val gender = receivedArguments.getString("gender")
 
         firebaseViewModel.setName(name)
-
-        val sportsList = sports?.split(", ")
-        val sportsOne = sportsList?.getOrNull(0)
-        val sportsTwo = sportsList?.getOrNull(1)
 
         binding.tvName.text = name
         binding.tvStatAge.text = age
