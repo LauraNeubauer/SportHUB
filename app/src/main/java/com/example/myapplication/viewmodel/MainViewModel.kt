@@ -1,4 +1,4 @@
-package com.example.myapplication.PersonApi
+package com.example.myapplication.viewmodel
 
 import android.app.Application
 import android.util.Log
@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.myapplication.PersonApi.PersonRepository
 import com.example.myapplication.PersonApi.local.getDatabase
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
@@ -13,7 +14,7 @@ import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.model.Club
 import kotlinx.coroutines.launch
 
-class ViewModel(application: Application) : AndroidViewModel(application) {
+class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
     private val repo = PersonRepository(database)

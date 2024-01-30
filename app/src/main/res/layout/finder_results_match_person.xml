@@ -161,12 +161,12 @@
 
 
         <ImageView
-            android:id="@+id/imageViewd4dddwd"
+            android:id="@+id/bg22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-25dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4dddwd"
-            app:layout_constraintStart_toEndOf="@+id/imageView4ddddwd"
+            app:layout_constraintEnd_toStartOf="@+id/bg23"
+            app:layout_constraintStart_toEndOf="@+id/bg1"
             app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
             app:srcCompat="@drawable/text_field" />
 
@@ -180,9 +180,9 @@
             android:text="22"
             android:textColor="@color/white"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddwd"
-            app:layout_constraintTop_toTopOf="@+id/imageViewd4dddwd" />
+            app:layout_constraintEnd_toEndOf="@+id/bg22"
+            app:layout_constraintStart_toStartOf="@+id/bg22"
+            app:layout_constraintTop_toTopOf="@+id/bg22" />
 
         <TextView
             android:id="@+id/text_stat_size"
@@ -194,12 +194,12 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4dddwd"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddwd" />
+            app:layout_constraintBottom_toBottomOf="@+id/bg22"
+            app:layout_constraintEnd_toEndOf="@+id/bg22"
+            app:layout_constraintStart_toStartOf="@+id/bg22" />
 
         <ImageView
-            android:id="@+id/imageView4dddwd"
+            android:id="@+id/bg23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-25dp"
@@ -218,9 +218,9 @@
             android:text="22"
             android:textColor="@color/white"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4dddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageView4dddwd"
-            app:layout_constraintTop_toTopOf="@+id/imageView4dddwd" />
+            app:layout_constraintEnd_toEndOf="@+id/bg23"
+            app:layout_constraintStart_toStartOf="@+id/bg23"
+            app:layout_constraintTop_toTopOf="@+id/bg23" />
 
         <TextView
             android:id="@+id/text_stat_matches"
@@ -232,12 +232,12 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4dddwd"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4dddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageView4dddwd" />
+            app:layout_constraintBottom_toBottomOf="@+id/bg23"
+            app:layout_constraintEnd_toEndOf="@+id/bg23"
+            app:layout_constraintStart_toStartOf="@+id/bg23" />
 
         <ImageView
-            android:id="@+id/imageView4ddddwd"
+            android:id="@+id/bg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -256,9 +256,9 @@
             android:text="22"
             android:textColor="@color/white"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4ddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageView4ddddwd"
-            app:layout_constraintTop_toTopOf="@+id/imageView4ddddwd" />
+            app:layout_constraintEnd_toEndOf="@+id/bg1"
+            app:layout_constraintStart_toStartOf="@+id/bg1"
+            app:layout_constraintTop_toTopOf="@+id/bg1" />
 
         <TextView
             android:id="@+id/text_stat_age"
@@ -270,12 +270,12 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4ddddwd"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4ddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageView4ddddwd" />
+            app:layout_constraintBottom_toBottomOf="@+id/bg1"
+            app:layout_constraintEnd_toEndOf="@+id/bg1"
+            app:layout_constraintStart_toStartOf="@+id/bg1" />
 
         <ImageView
-            android:id="@+id/imageViewd4ddddwd"
+            android:id="@+id/bg24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-25dp"
@@ -294,9 +294,9 @@
             android:text="22"
             android:textColor="@color/white"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4ddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4ddddwd"
-            app:layout_constraintTop_toTopOf="@+id/imageViewd4ddddwd" />
+            app:layout_constraintEnd_toEndOf="@+id/bg24"
+            app:layout_constraintStart_toStartOf="@+id/bg24"
+            app:layout_constraintTop_toTopOf="@+id/bg24" />
 
         <TextView
             android:id="@+id/text_stat_pokale"
@@ -308,17 +308,17 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4ddddwd"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4ddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4ddddwd" />
+            app:layout_constraintBottom_toBottomOf="@+id/bg24"
+            app:layout_constraintEnd_toEndOf="@+id/bg24"
+            app:layout_constraintStart_toStartOf="@+id/bg24" />
 
         <ImageView
-            android:id="@+id/imageViewd4dddddwd"
+            android:id="@+id/bg232"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-25dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageViewd4ddddwd"
-            app:layout_constraintStart_toEndOf="@+id/imageView4dddwd"
+            app:layout_constraintEnd_toStartOf="@+id/bg24"
+            app:layout_constraintStart_toEndOf="@+id/bg23"
             app:layout_constraintTop_toBottomOf="@+id/cl_item_finder"
             app:srcCompat="@drawable/text_field" />
 
@@ -332,9 +332,9 @@
             android:text="22"
             android:textColor="@color/white"
             android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddddwd"
-            app:layout_constraintTop_toTopOf="@+id/imageViewd4dddddwd" />
+            app:layout_constraintEnd_toEndOf="@+id/bg232"
+            app:layout_constraintStart_toStartOf="@+id/bg232"
+            app:layout_constraintTop_toTopOf="@+id/bg232" />
 
         <TextView
             android:id="@+id/text_stat_wins"
@@ -346,9 +346,9 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="9dp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageViewd4dddddwd"
-            app:layout_constraintEnd_toEndOf="@+id/imageViewd4dddddwd"
-            app:layout_constraintStart_toStartOf="@+id/imageViewd4dddddwd" />
+            app:layout_constraintBottom_toBottomOf="@+id/bg232"
+            app:layout_constraintEnd_toEndOf="@+id/bg232"
+            app:layout_constraintStart_toStartOf="@+id/bg232" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

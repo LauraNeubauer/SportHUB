@@ -10,10 +10,10 @@ import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingThreeFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
 import java.util.Calendar
 
 class OnBoardingThreeFragment : Fragment() {

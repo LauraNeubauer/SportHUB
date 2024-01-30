@@ -10,11 +10,11 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.CalenderFragmentBinding
+import com.example.myapplication.viewmodel.MainViewModel
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
@@ -22,7 +22,7 @@ class CalenderFragment : Fragment() {
 
     private lateinit var binding: CalenderFragmentBinding
     private var datasetEvents = ExampleDatabase().loadEvents()
-    private val viewModel: ViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -38,15 +38,15 @@ class CalenderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
-            binding.ads.setImageResource(viewModel.imageList[index])
+        mainViewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
+            binding.ads.setImageResource(mainViewModel.imageList[index])
         }
 
         binding.ddBtSortCal.setOnClickListener {
             showPopupMenuCal(it)
         }
 
-        binding.rvEvents.adapter = EventHomeAdapter(datasetEvents, viewModel)
+        binding.rvEvents.adapter = EventHomeAdapter(datasetEvents, mainViewModel)
 
         weekdays()
     }

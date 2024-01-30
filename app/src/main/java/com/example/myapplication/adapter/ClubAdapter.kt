@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
 import com.example.myapplication.model.Club
+import com.example.myapplication.viewmodel.MainViewModel
 
 class ClubAdapter(
     private val dataset: List<Club>,
-    private val viewmodel: ViewModel
+    private val viewmodel: MainViewModel
 ) : RecyclerView.Adapter<ClubAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FinderResultsMatchPersonBinding) :

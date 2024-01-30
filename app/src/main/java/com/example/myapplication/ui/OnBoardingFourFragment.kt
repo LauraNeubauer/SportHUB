@@ -12,11 +12,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingFourFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
+import com.example.myapplication.viewmodel.MainViewModel
 import java.util.Calendar
 
 var selectedImageUri : Uri? = null
@@ -25,7 +25,7 @@ class OnBoardingFourFragment : Fragment() {
 
     private lateinit var binding: OnboardingFourFragmentBinding
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
-    private val personViewModel : ViewModel by activityViewModels()
+    private val personMainViewModel : MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -89,7 +89,7 @@ class OnBoardingFourFragment : Fragment() {
 
         binding.btWeiter.setOnClickListener {
             findNavController().navigate(R.id.homeFragment)
-            personViewModel.insertPerson(personData)
+            personMainViewModel.insertPerson(personData)
             firebaseViewModel.uploadImage(selectedImageUri!!)
         }
     }

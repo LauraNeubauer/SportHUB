@@ -9,17 +9,15 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ProfilFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class ProfilFragment : Fragment() {
 
     lateinit var binding: ProfilFragmentBinding
-    private val viewModel : ViewModel by activityViewModels()
     private val firebaseVM : FirebaseViewModel by activityViewModels()
 
     private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
@@ -42,7 +40,6 @@ class ProfilFragment : Fragment() {
 
         firebaseVM.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
-                // Umwandeln des Snapshots in eine Klassen-Instanz von der Klasse Profil und setzen der Felder
                 val myProfile = value.toObject(PersonData::class.java)
                 binding.tvName.setText(myProfile!!.name)
                 binding.tvLevel.setText(myProfile.level)

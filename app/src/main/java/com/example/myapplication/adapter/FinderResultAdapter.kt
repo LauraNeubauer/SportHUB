@@ -4,15 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
+import com.example.myapplication.viewmodel.MainViewModel
 
 class FinderResultAdapter(
     private val dataset: List<PersonData>,
-    private val viewModel: ViewModel,
+    private val mainViewModel: MainViewModel,
 ) : RecyclerView.Adapter<FinderResultAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FinderResultsMatchPersonBinding) :
@@ -54,7 +54,7 @@ class FinderResultAdapter(
         holder.binding.btClub.text = clubs.value!![item.club!!].name
 
         holder.binding.btProfile.setOnClickListener {
-            viewModel.setCurrentProfile(item)
+            mainViewModel.setCurrentProfile(item)
             // Navigation zu einem anderen Fragment mit Hilfe des NavController
             holder.itemView.findNavController().navigate(R.id.strangerProfilFragment)
         }

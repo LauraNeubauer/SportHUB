@@ -10,16 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.StrangerProfilFragmentBinding
+import com.example.myapplication.viewmodel.MainViewModel
 
 class StrangerProfilFragment : Fragment() {
 
     private lateinit var binding : StrangerProfilFragmentBinding
-    private val viewModel : ViewModel by activityViewModels()
+    private val mainViewModel : MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +33,7 @@ class StrangerProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.currentProfile.observe(viewLifecycleOwner) {
+        mainViewModel.currentProfile.observe(viewLifecycleOwner) {
 
             binding.ivProfilePicture.load(it.pic)
             binding.statOne.text = it.age

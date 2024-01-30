@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ChatListItemBinding
 import com.example.myapplication.model.Chat
+import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class MyChatsAdapter(
     private val dataset: MutableList<Chat>,

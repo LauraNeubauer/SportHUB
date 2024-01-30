@@ -8,12 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ChatDetailAdapter
-import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ChatDetailFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
+import com.example.myapplication.viewmodel.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.time.LocalTime
@@ -22,8 +21,7 @@ import java.time.format.DateTimeFormatter
 class ChatDetailFragment : Fragment() {
 
     private lateinit var binding: ChatDetailFragmentBinding
-    var datasetChats = ExampleDatabase().loadChats()
-    private val personViewModel: ViewModel by activityViewModels()
+    private val personMainViewModel: MainViewModel by activityViewModels()
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -42,7 +40,7 @@ class ChatDetailFragment : Fragment() {
 
         firebaseViewModel.getCurrentChat.observe(viewLifecycleOwner) {
             binding.tvChatName.text = it.groupName
-            binding.rvMessages.adapter = ChatDetailAdapter(it.messages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
+            binding.rvMessages.adapter = ChatDetailAdapter(it.messages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personMainViewModel)
             val itemCount = it.messages.size
             if (itemCount > 0) {
                 binding.rvMessages.scrollToPosition(itemCount - 1)
@@ -63,7 +61,7 @@ class ChatDetailFragment : Fragment() {
                 lifecycleScope.launch {
                     delay(1500)
                     var updatedMessages = firebaseViewModel.getCurrentChat.value!!.messages
-                    binding.rvMessages.adapter = ChatDetailAdapter(updatedMessages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personViewModel)
+                    binding.rvMessages.adapter = ChatDetailAdapter(updatedMessages.sortedByDescending { it.timestamp }.reversed().toMutableList(), personMainViewModel)
                 }
             } else {
                 binding.tietText.text!!.clear()

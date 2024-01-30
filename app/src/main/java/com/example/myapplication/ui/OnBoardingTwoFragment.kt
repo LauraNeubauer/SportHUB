@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingTwoFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class OnBoardingTwoFragment : Fragment() {
 
     private lateinit var binding: OnboardingTwoFragmentBinding
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
-    private var bioVerified = false
 
     override fun onCreateView(
         inflater: LayoutInflater,

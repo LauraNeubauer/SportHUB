@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ClubFragmentBinding
+import com.example.myapplication.viewmodel.MainViewModel
 
 class ClubFragment : Fragment() {
 
     private lateinit var binding: ClubFragmentBinding
-    private val vielmodel: ViewModel by activityViewModels()
+    private val vielmodel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

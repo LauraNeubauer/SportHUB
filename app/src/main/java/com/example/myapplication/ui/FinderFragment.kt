@@ -12,18 +12,18 @@ import android.view.Window
 import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.PersonApi.model.PersonData
 import com.example.myapplication.R
 import com.example.myapplication.adapter.ClubAdapter
 import com.example.myapplication.adapter.FinderResultAdapter
 import com.example.myapplication.databinding.FinderFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
+import com.example.myapplication.viewmodel.MainViewModel
 
 class FinderFragment : Fragment() {
 
     private lateinit var binding: FinderFragmentBinding
-    private val viewModel: ViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
     var myAge = ""
     var myWins = ""
@@ -40,8 +40,8 @@ class FinderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
-            binding.ads.setImageResource(viewModel.imageList[index])
+        mainViewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
+            binding.ads.setImageResource(mainViewModel.imageList[index])
         }
 
         firebaseViewModel.profileRef.addSnapshotListener { value, error ->
@@ -301,17 +301,17 @@ class FinderFragment : Fragment() {
                     }
                     binding.btSearch.setOnClickListener {
                         // Verwenden Sie den vorher initialisierten Adapter
-                        viewModel.contacts.observe(viewLifecycleOwner) { originalList ->
+                        mainViewModel.contacts.observe(viewLifecycleOwner) { originalList ->
                             Log.d("FinderFragment", "Original list size: ${originalList.size}")
-                            val filteredList = viewModel.filterAndSort(
-                                ViewModel.Level.valueOf(
+                            val filteredList = mainViewModel.filterAndSort(
+                                MainViewModel.Level.valueOf(
                                     if (binding.ddbtLvl.text.toString() == "LEVEL") {
                                         "ALLE"
                                     } else {
                                         binding.ddbtLvl.text.toString()
                                     }
                                 ),
-                                ViewModel.Sports.valueOf(
+                                MainViewModel.Sports.valueOf(
                                     if (binding.ddBtSports.text.toString() == "SPORTS") {
                                         "ALLE"
                                     } else {
@@ -325,7 +325,7 @@ class FinderFragment : Fragment() {
                             Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
 
                             binding.rvFinderResults.adapter =
-                                FinderResultAdapter(filteredList, viewModel)
+                                FinderResultAdapter(filteredList, mainViewModel)
                         }
                     }
                     true
@@ -340,17 +340,17 @@ class FinderFragment : Fragment() {
                     }
                     binding.btSearch.setOnClickListener {
                         // Verwenden Sie den vorher initialisierten Adapter
-                        viewModel.clubdatabase.observe(viewLifecycleOwner) {
+                        mainViewModel.clubdatabase.observe(viewLifecycleOwner) {
                             Log.d("FinderFragment", "Original list size: ${it.size}")
-                            val filteredList = viewModel.filterAndSortClubs(
-                                ViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
+                            val filteredList = mainViewModel.filterAndSortClubs(
+                                MainViewModel.Sports.valueOf(binding.ddBtSports.text.toString()),
                                 binding.ddBtSort.text.toString(),
                                 it.toMutableList(),
                             )
 
                             Log.d("FinderFragment", "Filtered list size: ${filteredList.size}")
 
-                            binding.rvFinderResults.adapter = ClubAdapter(filteredList, viewModel)
+                            binding.rvFinderResults.adapter = ClubAdapter(filteredList, mainViewModel)
 
                         }
                     }
@@ -395,7 +395,7 @@ class FinderFragment : Fragment() {
         val dialog: AlertDialog = builder.create()
         val window: Window? = dialog.window
         val layoutParams = window?.attributes
-        layoutParams?.gravity = Gravity.BOTTOM // Setzen Sie die gewünschte Gravity
+        layoutParams?.gravity = Gravity.BOTTOM
 
         val displayMetrics = resources.displayMetrics
         layoutParams?.height = (displayMetrics.heightPixels * 2) / 4

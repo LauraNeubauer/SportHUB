@@ -7,15 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.databinding.OnboardingOneFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class OnBoardingOneFragment : Fragment() {
 
     private lateinit var binding : OnboardingOneFragmentBinding
-    private val viewModel : ViewModel by activityViewModels()
     private val firebaseViewModel : FirebaseViewModel by activityViewModels()
 
 

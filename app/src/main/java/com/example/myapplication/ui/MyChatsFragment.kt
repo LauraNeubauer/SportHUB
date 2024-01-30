@@ -7,17 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.MyChatsAdapter
 import com.example.myapplication.databinding.MyChatsFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class MyChatsFragment : Fragment() {
 
 
     private lateinit var binding: MyChatsFragmentBinding
-    private val personViewModel: ViewModel by activityViewModels()
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
 
     override fun onCreateView(

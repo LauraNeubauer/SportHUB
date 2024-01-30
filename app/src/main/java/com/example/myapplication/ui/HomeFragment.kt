@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.Firebase.FirebaseViewModel
-import com.example.myapplication.PersonApi.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.adapter.EventHomeAdapter
 import com.example.myapplication.adapter.NewsHomeAdapter
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.HomeFragmentBinding
+import com.example.myapplication.viewmodel.FirebaseViewModel
+import com.example.myapplication.viewmodel.MainViewModel
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -22,7 +22,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: HomeFragmentBinding
     var datasetEvents = ExampleDatabase().loadEvents()
     var datasetNews = ExampleDatabase().loadNews()
-    private val viewModel: ViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = HomeFragmentBinding.inflate(layoutInflater)
-        viewModel.loadPersons()
+        mainViewModel.loadPersons()
         return binding.root
     }
 
@@ -57,14 +57,14 @@ class HomeFragment : Fragment() {
         }
 
         binding.btClub.setOnClickListener {
-            viewModel.clubdatabase.observe(viewLifecycleOwner) {
-                viewModel.setCurrentClub(it[1])
+            mainViewModel.clubdatabase.observe(viewLifecycleOwner) {
+                mainViewModel.setCurrentClub(it[1])
                 findNavController().navigate(R.id.action_homeFragment_to_clubFragment)
             }
         }
 
 
-        binding.rvHome.adapter = EventHomeAdapter(datasetEvents, viewModel)
+        binding.rvHome.adapter = EventHomeAdapter(datasetEvents, mainViewModel)
         binding.rvNews.adapter = NewsHomeAdapter(datasetNews)
 
         binding.tvGroupOne.text = "FC St. Pauli"

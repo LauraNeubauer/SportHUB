@@ -1,4 +1,4 @@
-package com.example.myapplication.Firebase
+package com.example.myapplication.viewmodel
 
 import android.net.Uri
 import android.util.Log
@@ -78,7 +78,6 @@ class FirebaseViewModel : ViewModel() {
                         groupPic = document.get("groupPic") as? Int ?: 0
                     )
 
-                    // Fetch messages within each group
                     val chatId = document.id
                     val chatCollectionRef = profileRef.collection("groups").document(chatId).collection("chats")
 
@@ -93,8 +92,6 @@ class FirebaseViewModel : ViewModel() {
                                 )
                             }
                             chat.messages = messagesList.toMutableList()
-
-                            // Add the chat to the list after fetching messages
                             myChatsList.add(chat)
                             _myChats.postValue(myChatsList.toMutableList())
                         } else {
@@ -152,8 +149,6 @@ class FirebaseViewModel : ViewModel() {
             .addOnCompleteListener { authResult ->
                 if (authResult.isSuccessful) {
                     firebaseAuth.currentUser?.sendEmailVerification()
-
-                    // Initialize profileRef here
                     profileRef =
                         fireStore.collection("profiles").document(firebaseAuth.currentUser!!.uid)
                     profileRef.set(PersonData)
@@ -187,18 +182,14 @@ class FirebaseViewModel : ViewModel() {
         firebaseAuth.sendPasswordResetEmail(email)
     }
 
-    // Funktion um User auszuloggen
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser
     }
 
     fun uploadImage(uri: Uri) {
-        // Erstellen einer Referenz und des Upload Tasks
         val imageRef = storageRef.child("images/${firebaseAuth.currentUser!!.uid}/profilePic")
         val uploadTask = imageRef.putFile(uri)
-
-        // Wenn UploadTask ausgeführt und erfolgreich ist, wird die Download-Url des Bildes an die setUserImage Funktion weitergegeben
         uploadTask.addOnCompleteListener {
             imageRef.downloadUrl.addOnCompleteListener {
                 if (it.isSuccessful) {
