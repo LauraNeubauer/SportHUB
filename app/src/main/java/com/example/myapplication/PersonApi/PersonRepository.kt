@@ -14,21 +14,27 @@ import java.util.concurrent.ThreadLocalRandom
 class PersonRepository(
     private val db: PersonDatabase
 ) {
+    // LiveData-Objekt, das die Liste aller Personen in der lokalen Datenbank hält
     val personenListe = db.personDao.getAll()
 
+    // Funktion zum Abrufen einer zufälligen Person von der Remote-API und Hinzufügen in die lokale Datenbank
     suspend fun getPerson() {
+        // Anzahl der abzurufenden Personen
         val numberOfPersons = 100
         val personList = mutableListOf<Person>()
 
         repeat(numberOfPersons) {
+            // Aufruf der Remote-API, um eine zufällige Person zu erhalten
             val response = PersonApi.retrofitService.getPerson()
             personList.addAll(response.results)
 
+            // Extraktion der ersten zufälligen Person aus der API-Antwort
             val person = response.results.first()
 
             val winPercentage = (10..60).random()
             val club = (1..21).random()
 
+            //erstellung zusälliges Datum
             fun zufaelligesZukunftsDatum(maxTageInDerZukunft: Long): String {
                 val heute = LocalDate.now()
                 val zufaelligeAnzahlTage = ThreadLocalRandom.current().nextLong(1, maxTageInDerZukunft + 1)
@@ -38,6 +44,7 @@ class PersonRepository(
                 return zukunftsDatum.format(formatter)
             }
 
+            //liste aller möglichen sportarten
             val sportsOne = listOf<String>(
                 "BADMINTON",
                 "SQUASH",
@@ -48,6 +55,7 @@ class PersonRepository(
                 "CRICKET",
                 "HANDBALL"
             )
+            //liste aller möglichen sportarten
             val sportsTwo = listOf<String>(
                 "BADMINTON",
                 "SQUASH",
@@ -66,6 +74,7 @@ class PersonRepository(
                     "CRICKET"
                 ).random()
             } else sportsTwo.random()
+            //Auslesen der daten
             val personFullName = "${person.name.first} ${person.name.last}"
             val personAge = person.dob.age
             val personPicture = person.picture.large
@@ -102,7 +111,7 @@ class PersonRepository(
                         "ELITE"
                     }
                 }
-
+            //Überprüfung nach Schrift, länge ua
             if (!isArabicName(personFullName) &&
                 personFullName.length <= 18 &&
                 personAge in 16..65 &&
@@ -110,6 +119,7 @@ class PersonRepository(
                 personTrophys < personWins &&
                 personMatches in 1..999
             ) {
+                //Zuweisung der Daten für die Person mittels Klasse
                 val personData = PersonData(
                     name = personFullName,
                     gender = person.gender,
@@ -128,12 +138,14 @@ class PersonRepository(
                     entfernung = entfernung(),
                     date = zufaelligesZukunftsDatum(30).toString()
                 )
+                //Einfügen der Person mittels Klasse in die Datenbank
                 db.personDao.insertPerson(personData)
                 Log.d("TAG", "Person in die Liste geladen")
             }
         }
     }
 
+    //Funktion um einzelne Person in die Datenbank zu laden
     suspend fun insertPerson(person: PersonData) {
         try {
             db.personDao.insertPerson(person)
@@ -142,10 +154,13 @@ class PersonRepository(
         }
     }
 
+    //Überprüfung nach Schrift
     private fun isArabicName(name: String): Boolean {
         val arabicRegex = Regex("[\\p{InArabic}]+")
         return arabicRegex.containsMatchIn(name)
     }
+
+    //Zufällige ChatGruppen-Namen ausgabe
     private fun getGroupChat(): String {
         val group = listOf(
             "FitFam Legends",
@@ -167,11 +182,13 @@ class PersonRepository(
         return group.random()
     }
 
+    //Zufällige Entfernungs-Ausgabe
     private fun entfernung(): Int {
         val entfernung: List<Int> = listOf(
             1, 2, 3, 5, 7, 8, 11, 13, 15, 17, 19, 22, 25, 28, 33, 43, 45, 55, 56, 67, 80, 90)
         return entfernung.random()
     }
+    //Zufällige Biografie-Ausgabe
     private fun randomBio(): String {
         val randomBiography = listOf(
             "Begeisterter Tennisspieler, Kletterer, Schwimmer und Golfenthusiast. Immer auf der Suche nach neuen sportlichen Herausforderungen und Adrenalinkicks.",

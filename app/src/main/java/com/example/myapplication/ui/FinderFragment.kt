@@ -20,30 +20,38 @@ import com.example.myapplication.databinding.FinderFragmentBinding
 import com.example.myapplication.viewmodel.FirebaseViewModel
 import com.example.myapplication.viewmodel.MainViewModel
 
+// Klasse für das Fragment des Finders
 class FinderFragment : Fragment() {
 
+    //die benötigten Variablen für das Binding und die ViewModels
     private lateinit var binding: FinderFragmentBinding
     private val mainViewModel: MainViewModel by activityViewModels()
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
+    //Platzhalter-Initialisierungen für Alter und Wins
     var myAge = ""
     var myWins = ""
 
+    // Wird aufgerufen, um die Ansichtshierarchie des Fragments zu erstellen und zurückzugeben
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        // Inflatiere das Layout für dieses Fragment
         binding = FinderFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
+    // Wird sofort nach onCreateView() aufgerufen und wird verwendet, um mit den Ansichten zu interagieren
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Beobachte Änderungen im aktuellen Bildindex im ViewModel und aktualisiere die Anzeige
         mainViewModel.currentImageIndex.observe(viewLifecycleOwner) { index ->
             binding.ads.setImageResource(mainViewModel.imageList[index])
         }
 
+        // Überwache Änderungen am Profil-Snapshot in Firebase und aktualisiere die relevanten Daten
         firebaseViewModel.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
                 // Umwandeln des Snapshots in eine Klassen-Instanz von der Klasse Profil und setzen der Felder
@@ -53,6 +61,7 @@ class FinderFragment : Fragment() {
             }
         }
 
+        // Initialisiere Dropdown-Buttons und zeige Popup-Menüs für Sportarten, Level und Suche an
         binding.ddBtSports.text = "SPORTS"
         binding.ddBtSports.setOnClickListener {
             showPopupMenuSports(it)
@@ -72,21 +81,25 @@ class FinderFragment : Fragment() {
         binding.ddBtSort.text = "SORT"
         binding.ddBtSort.isClickable = false
 
+        // Initialisiere das Popup für den Start des Fragments
         if (binding.ddbtSearch.text == "SEARCH") {
             showPopUpStart("FINDER", "Hier können Sie mittels Filter nach passenden Matches sowie nach Vereinen in der Datenbank suchen")
         }
 
+        // Setze den Click-Listener für die Suche, abhängig von der ausgewählten Option (Matches oder Clubs)
         binding.ddbtSearch.setOnClickListener {
             showPopupMenuSearch(it)
         }
     }
 
+    // Funktion zum Anzeigen des Popup-Menüs für Sportarten
     private fun showPopupMenuSports(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
         menuInflater.inflate(R.menu.dd_menu_sports, popupMenu.menu)
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
+                // Handling für verschiedene Sportarten
                 R.id.option1 -> {
                     binding.ddBtSports.text = "BADMINTON"
                     true
@@ -139,6 +152,7 @@ class FinderFragment : Fragment() {
         popupMenu.show()
     }
 
+    // Funktion zum Anzeigen des Popup-Menüs für Sortieroptionen
     private fun showPopupMenuSort(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -147,6 +161,7 @@ class FinderFragment : Fragment() {
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
                 R.id.option1 -> {
+                    // Handling für verschiedene Sortieroptionen
                     binding.ddBtSort.text = "ENTFERNUNG"
                     true
                 }
@@ -193,6 +208,7 @@ class FinderFragment : Fragment() {
         popupMenu.show()
     }
 
+    // Funktion zum Anzeigen des Popup-Menüs für Sortieroptionen von Clubs
     private fun showPopupMenuSortClubs(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -200,6 +216,7 @@ class FinderFragment : Fragment() {
 
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
+                // Handling für verschiedene Sortieroptionen von Clubs
                 R.id.option1 -> {
                     binding.ddBtSort.text = "ENTFERNUNG"
                     true
@@ -240,6 +257,7 @@ class FinderFragment : Fragment() {
         popupMenu.show()
     }
 
+    // Funktion zum Anzeigen des Popup-Menüs für Level-Optionen
     private fun showPopupMenuLevel(view: View) {
         val popupMenu = PopupMenu(requireContext(), view, 0, 2, R.style.PopupMenu)
         val menuInflater = popupMenu.menuInflater
@@ -247,6 +265,7 @@ class FinderFragment : Fragment() {
 
         popupMenu.setOnMenuItemClickListener { item: MenuItem? ->
             when (item?.itemId) {
+                // Handling für verschiedene Level-Optionen
                 R.id.option1 -> {
                     binding.ddbtLvl.text = "BEGINNER"
                     true

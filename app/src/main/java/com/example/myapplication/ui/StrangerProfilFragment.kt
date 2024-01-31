@@ -18,9 +18,11 @@ import com.example.myapplication.viewmodel.MainViewModel
 
 class StrangerProfilFragment : Fragment() {
 
+    // die benötigten Variablen für das Binding und des ViewModels
     private lateinit var binding : StrangerProfilFragmentBinding
     private val mainViewModel : MainViewModel by activityViewModels()
 
+    // Wird aufgerufen, um das Fragment zu erstellen und die Ansichtshierarchie des Fragments zu erstellen und zurückzugeben
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,11 +32,14 @@ class StrangerProfilFragment : Fragment() {
         return binding.root
     }
 
+    // Wird sofort nach onCreateView() aufgerufen und wird verwendet, um mit den Ansichten zu interagieren
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Beobachte Änderungen am aktuellen Profil im MainViewModel
         mainViewModel.currentProfile.observe(viewLifecycleOwner) {
 
+            // Setze die Ansichten entsprechend der Profildaten
             binding.ivProfilePicture.load(it.pic)
             binding.statOne.text = it.age
             binding.textStatOne.text = "ALTER"
@@ -55,11 +60,12 @@ class StrangerProfilFragment : Fragment() {
             binding.btSportsTwo.text = it.sportsTwo
             binding.cvMatch.visibility = INVISIBLE
 
-
+            // Reagiere auf Klicks auf die Schaltfläche "Zurück"
             binding.btBack.setOnClickListener {
                 findNavController().navigate(R.id.finderFragment)
             }
 
+            // Zeige zusätzliche Informationen an, wenn es Matches gibt
             if (it.matches != "0") {
                binding.cvMatch.visibility = VISIBLE
                 binding.tvLeague.text = ExampleDatabase().eventList.random().name

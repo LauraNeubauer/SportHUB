@@ -17,15 +17,18 @@ import com.example.myapplication.viewmodel.FirebaseViewModel
 
 class ProfilFragment : Fragment() {
 
+    // die benötigten Variablen für das Binding und des ViewModels
     lateinit var binding: ProfilFragmentBinding
     private val firebaseVM : FirebaseViewModel by activityViewModels()
 
+    // Aktivitätsresultat, um Bild aus der Galerie auszuwählen
     private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         if (uri != null) {
             firebaseVM.uploadImage(uri)
         }
     }
 
+    // Wird aufgerufen, um das Fragment zu erstellen und die Ansichtshierarchie des Fragments zu erstellen und zurückzugeben
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -35,12 +38,17 @@ class ProfilFragment : Fragment() {
         return binding.root
     }
 
+    // Wird sofort nach onCreateView() aufgerufen und wird verwendet, um mit den Ansichten zu interagieren
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Überwache Änderungen im Firebase-Datensatz des Benutzerprofils
         firebaseVM.profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
+                // Konvertiere die Daten des Profils in ein PersonData-Objekt
                 val myProfile = value.toObject(PersonData::class.java)
+
+                // Aktualisiere die UI mit den Profilinformationen
                 binding.tvName.setText(myProfile!!.name)
                 binding.tvLevel.setText(myProfile.level)
                 binding.profilPic.load(myProfile.pic)
@@ -56,7 +64,7 @@ class ProfilFragment : Fragment() {
                 binding.tvBio.setText(myProfile.bio)
                 binding.cvMatch.visibility = View.INVISIBLE
 
-
+                // Überprüfe, ob der Benutzer Matches hat, und aktualisiere die UI entsprechend
                 if (myProfile.matches != "0") {
                     binding.cvMatch.visibility = View.VISIBLE
                     binding.tvLeague.text = ExampleDatabase().eventList.random().name

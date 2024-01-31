@@ -14,17 +14,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Setzt die Farbe der Statusleiste
         window.statusBarColor = ContextCompat.getColor(this, R.color.tags)
 
+        // Initialisierung des Binding-Objekts
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Verknüpft das BottomNavigationView mit dem NavController des NavHostFragments
         val navHost =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         binding.bnv.setupWithNavController(navHost.navController)
 
         navHost.navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bnv.visibility = when (destination.id) {
+                // Blendet das BottomNavigationView für bestimmte Ziele aus
                 R.id.chatDetailFragment,
                 R.id.onBoardingThreeFragment,
                 R.id.onBoardingFourFragment,
@@ -33,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.onBoardingTwoFragment,
                 R.id.resultsFragment -> View.GONE
 
+                // Zeigt das BottomNavigationView für andere Ziele an
                 else -> View.VISIBLE
             }
         }

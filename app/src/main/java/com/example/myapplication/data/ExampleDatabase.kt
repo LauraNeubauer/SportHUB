@@ -15,7 +15,7 @@ import kotlin.random.Random
 
 class ExampleDatabase {
 
-
+    // Funktion zur Generierung eines zufälligen Datums in der Zukunft
     fun generateRandomDate(maxTageInDerZukunft: Long): String {
         val heute = LocalDate.now()
         val zufaelligeAnzahlTage = ThreadLocalRandom.current().nextLong(1, maxTageInDerZukunft + 1)
@@ -46,7 +46,9 @@ class ExampleDatabase {
         return timeFormat.format(randomTime)
     }
 
+    // Liste von Beispiel-Events
     var eventList: List<Event> = listOf(
+        // Hier werden verschiedene Event-Objekte mit Beispieldaten erstellt
         Event(
             "Hamburger Liga",
             "FC KICKERS",
@@ -184,11 +186,14 @@ class ExampleDatabase {
         ),
     )
 
+    // Funktion zum Laden der Events
     fun loadEvents(): List<Event> {
         return eventList
     }
 
+    // Liste von Beispiel-News
     var newsList: List<News> = listOf(
+        // Hier werden verschiedene News-Objekte mit Beispieldaten erstellt
         News(
             "Neue Sponsoren",
             "Zwei Sponsoren unterstützen die Veranstaltung, um sie auf ein neues Niveau zu heben."
@@ -215,12 +220,14 @@ class ExampleDatabase {
         ),
     )
 
-
+    // Funktion zum Laden der News
     fun loadNews(): List<News> {
         return newsList
     }
 
+    // Liste von Beispiel-Chats
     var chatList: List<Chat> = listOf(
+        // Hier werden verschiedene Chat-Objekte mit Beispieldaten erstellt
         Chat(
             "GymBros",
             R.drawable.crash_test_m,
@@ -251,6 +258,7 @@ class ExampleDatabase {
         )
     )
 
+    // Funktion zum Laden der Chats
     fun loadChats(): List<Chat> {
         return chatList
     }

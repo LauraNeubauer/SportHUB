@@ -4,10 +4,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.firebase.firestore.DocumentId
 
+// Datenklasse für die Repräsentation von Personendaten
 @Entity("person_table")
 data class PersonData(
+    // Primärschlüssel mit automatischer Generierung
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
+    // Dokumenten-ID für Firestore
     @DocumentId
     var uid: String? = "",
     val email: String? = "",

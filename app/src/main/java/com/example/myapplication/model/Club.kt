@@ -1,6 +1,7 @@
 package com.example.myapplication.model
 
 class Club(
+    // Datenklasse für die Speicherung der Daten für Vereine
     var name: String?,
     var sport: String,
     var participants: Int,

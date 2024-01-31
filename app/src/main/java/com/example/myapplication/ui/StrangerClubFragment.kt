@@ -13,9 +13,11 @@ import com.example.myapplication.viewmodel.MainViewModel
 
 class StrangerClubFragment : Fragment() {
 
+    // die benötigten Variablen für das Binding und des ViewModels
     private lateinit var binding: StrangerClubFragmentBinding
     private val vielmodel: MainViewModel by activityViewModels()
 
+    // Wird aufgerufen, um das Fragment zu erstellen und die Ansichtshierarchie des Fragments zu erstellen und zurückzugeben
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,11 +27,14 @@ class StrangerClubFragment : Fragment() {
         return binding.root
     }
 
+    // Wird sofort nach onCreateView() aufgerufen und wird verwendet, um mit den Ansichten zu interagieren
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Beobachte Änderungen am aktuellen Club im MainViewModel
         vielmodel.getCurrentClub.observe(viewLifecycleOwner){
 
+            // Setze die Ansichten entsprechend der Clubdaten
             binding.tvClubName.text = it.name
             binding.btParticipants.text = it.participants.toString()
             binding.btSportsOne.text = it.sport
@@ -44,6 +49,7 @@ class StrangerClubFragment : Fragment() {
 
         }
 
+        // Reagiere auf Klicks auf die Schaltfläche "Zurück"
         binding.btBack.setOnClickListener {
             findNavController().navigate(R.id.finderFragment)
         }

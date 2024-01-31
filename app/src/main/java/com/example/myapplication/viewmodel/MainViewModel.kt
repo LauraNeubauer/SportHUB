@@ -16,12 +16,17 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
+    // Datenbank-Instanz und Repository für Personen
     private val database = getDatabase(application)
     private val repo = PersonRepository(database)
+
+    // LiveData für die Club-Datenbank
     val clubdatabase: LiveData<List<Club>> = ClubDatabase().getClubs()
 
+    // LiveData für die Liste der Personen
     val contacts = repo.personenListe
 
+    // LiveData für den aktuellen ausgewählten Club und das aktuelle Profil
     private val _currentClub = MutableLiveData<Club>()
     private val _currentProfile = MutableLiveData<PersonData>()
 
@@ -30,26 +35,32 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val currentProfile: MutableLiveData<PersonData>
         get() = _currentProfile
 
+    // Setzt den aktuellen ausgewählten Club
     fun setCurrentClub(club: Club) {
         _currentClub.postValue(club)
     }
 
+    // Setzt das aktuelle Profil
     fun setCurrentProfile(profile: PersonData) {
         _currentProfile.postValue(profile)
     }
 
+    // Initialisierung beim Erstellen der Instanz
     init {
         loadPersons()
     }
 
+    // Enumeration für Level
     enum class Level {
         BEGINNER, IMPROVER, ADVANCED, EXPERT, ELITE, ALLE, LEVEL
     }
 
+    // Enumeration für Sportarten
     enum class Sports {
         BADMINTON, SQUASH, TISCHTENNIS, TENNIS, FUSSBALL, HOCKEY, CRICKET, HANDBALL, ALLE, SPORTS
     }
 
+    // Funktion zum Filtern und Sortieren von Personen
     fun filterAndSort(
         level: Level? = null,
         sports: Sports? = null,
@@ -99,6 +110,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return filteredList
     }
 
+    // Funktion zum Filtern und Sortieren von Clubs
     fun filterAndSortClubs(
         sports: Sports? = null,
         sortBy: String? = null,
@@ -135,6 +147,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         return filteredList
     }
 
+    // Funktion zum Laden von Personen
     fun loadPersons() {
         viewModelScope.launch {
             repo.getPerson()
@@ -142,6 +155,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    // Funktion zum Einfügen einer Person in die Datenbank
     fun insertPerson(profile: PersonData) {
         viewModelScope.launch {
             try {
@@ -167,9 +181,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    // LiveData für den aktuellen Bildindex in der ImageList
     private val _currentImageIndex = MutableLiveData<Int>()
     val currentImageIndex: LiveData<Int> get() = _currentImageIndex
 
+    // Liste von Drawable-Ressourcen für Anzeigen
     val imageList = listOf(
         R.drawable.ad_1,
         R.drawable.ad_2,
@@ -179,13 +195,16 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         R.drawable.ad_6,
     )
 
+    // Variable für den aktuellen Index und Intervall für den Bildwechsel
     private var currentIndex = 0
     private val intervalMillis = 20000
 
+    // Initialisierung für den automatischen Bildwechsel
     init {
         startImageChange()
     }
 
+    // Funktion für den automatischen Bildwechsel
     private fun startImageChange() {
         Thread {
             while (true) {

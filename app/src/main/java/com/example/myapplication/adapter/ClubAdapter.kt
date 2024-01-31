@@ -9,14 +9,17 @@ import com.example.myapplication.databinding.FinderResultsMatchPersonBinding
 import com.example.myapplication.model.Club
 import com.example.myapplication.viewmodel.MainViewModel
 
+// Adapter-Klasse für die Anzeige von Clubs in der Ergebnisliste im Finder
 class ClubAdapter(
-    private val dataset: List<Club>,
-    private val viewmodel: MainViewModel
+    private val dataset: List<Club>, // Liste von Club-Objekten als Datensatz für den Adapter
+    private val viewmodel: MainViewModel // Instanz des MainViewModels für Dateninteraktion
 ) : RecyclerView.Adapter<ClubAdapter.ItemViewHolder>() {
 
+    // View Holder-Klasse, die die Darstellung eines einzelnen Elements in der RecyclerView hält
     inner class ItemViewHolder(val binding: FinderResultsMatchPersonBinding) :
         RecyclerView.ViewHolder(binding.root)
 
+    // Methode zur Erstellung eines neuen View Holders
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val binding = FinderResultsMatchPersonBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -26,14 +29,16 @@ class ClubAdapter(
         return ItemViewHolder(binding)
     }
 
+    // Methode zur Abrufung der Anzahl der Elemente im Datensatz
     override fun getItemCount(): Int {
         return dataset.size
     }
 
+    // Methode zur Anpassung der Inhalte eines View Holders basierend auf seiner Position im Datensatz
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        //est, pokale, ligen, quote, tuniere
 
+        // Setzen von Texten und Daten für die Anzeige von Club-Informationen
         holder.binding.btClub.text = item.sport
         holder.binding.tvName.text = item.name
 
@@ -51,6 +56,8 @@ class ClubAdapter(
         holder.binding.tvSport.text = item.sport.toString()
         holder.binding.tvLevel2.text = ""
         holder.binding.tvDate.text = ""
+
+        // Kürzen der Biografie, wenn sie zu lang ist
         val maxCharCount = 97
         val originalText = item.bio
         val truncatedText = if (originalText.length > maxCharCount) {
@@ -58,11 +65,12 @@ class ClubAdapter(
         } else {
             originalText
         }
-
         holder.binding.tvTitle.text = truncatedText
+
+        // Click-Listener für die Schaltfläche "btProfile" zum Navigieren zu einem anderen Fragment
         holder.binding.btProfile.setOnClickListener {
             viewmodel.setCurrentClub(item)
-            // Navigation zu einem anderen Fragment mit Hilfe des NavController
+            // Navigation zu einem anderen Profil mit Hilfe des NavController
             holder.itemView.findNavController().navigate(R.id.strangerClubFragment)
         }
     }

@@ -18,18 +18,28 @@ import java.time.format.DateTimeFormatter
 
 class FirebaseViewModel : ViewModel() {
 
+    // Firebase-Authentifizierungsinstanz
     private val firebaseAuth = FirebaseAuth.getInstance()
+    // Firebase Firestore-Instanz
     private val fireStore = FirebaseFirestore.getInstance()
+    // Firebase Storage-Instanz
     private val storage = FirebaseStorage.getInstance()
     private val storageRef = storage.reference
 
+    // Mutable LiveData für den aktuellen Benutzer
     private var _currentUser = MutableLiveData<FirebaseUser?>(firebaseAuth.currentUser)
-    private var _name = MutableLiveData<String>()
     val currentUser: LiveData<FirebaseUser?>
         get() = _currentUser
 
+    // Mutable LiveData für den Namen
+    private var _name = MutableLiveData<String>()
+    val getName: MutableLiveData<String>
+        get() = _name
+
+    // Referenz zur Firestore-Dokumentenreferenz des aktuellen Benutzers
     lateinit var profileRef: DocumentReference
 
+    // Initialisierung beim Erstellen der Instanz
     init {
         if (firebaseAuth.currentUser != null) {
             _currentUser.value = firebaseAuth.currentUser
@@ -37,28 +47,31 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    // Mutable LiveData für Nachrichten
     private val _messages = MutableLiveData<MutableList<Message>>()
     val messages: LiveData<MutableList<Message>> get() = _messages
 
+    // Mutable LiveData für den aktuellen Chat
     private val _myChats = MutableLiveData<MutableList<Chat>>()
     val myChats: LiveData<MutableList<Chat>> get() = _myChats
 
+    // Mutable LiveData für den aktuellen Chat
     private val _currentChat = MutableLiveData<Chat>()
 
     val getCurrentChat: MutableLiveData<Chat>
         get() = _currentChat
 
-    val getName: MutableLiveData<String>
-        get() = _name
-
+    // Setzt den aktuellen Chat
     fun setCurrentChat(id: Chat) {
         _currentChat.postValue(id)
     }
 
+    // Setzt den Namen
     fun setName(name : String) {
         _name.postValue(name)
     }
 
+    // Holt meine Chats aus der Firestore-Datenbank
     fun fetchMyChats() {
         profileRef.addSnapshotListener { value, error ->
             if (error == null && value != null) {
@@ -105,6 +118,7 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    // Fügt eine Chat-Gruppe zur Sammlung hinzu
     fun addChatGroupToCollection(groupName: String, pic: Int) {
         val chatRef = profileRef.collection("groups").document()
         val groupId = chatRef.id
@@ -125,12 +139,15 @@ class FirebaseViewModel : ViewModel() {
                 Log.e("FIREBASE", "Error adding Chat document: $e")
             }
     }
+
+    // Gibt die aktuelle Uhrzeit zurück
     fun getCurrentTime(): String {
         val currentTime = LocalTime.now()
         val formatter = DateTimeFormatter.ofPattern("HH:mm:ss")
         return currentTime.format(formatter)
     }
 
+    // Fügt eine Nachricht zu einem Chat hinzu
     fun addMessageToChat(groupId: String, text: String, senderName: String, time: String) {
         val message = Message(text = text, from = senderName, timestamp = time, send = true)
 
@@ -144,6 +161,7 @@ class FirebaseViewModel : ViewModel() {
             }
     }
 
+    // Registriert einen neuen Benutzer
     fun register(email: String, password: String, PersonData: PersonData) {
         firebaseAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { authResult ->
@@ -159,6 +177,7 @@ class FirebaseViewModel : ViewModel() {
             }
     }
 
+    // Loggt einen Benutzer ein
     fun login(email: String, password: String) {
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { authResult ->
@@ -178,15 +197,18 @@ class FirebaseViewModel : ViewModel() {
             }
     }
 
+    // Sendet eine E-Mail zur Zurücksetzung des Passworts
     fun sendPasswordReset(email: String) {
         firebaseAuth.sendPasswordResetEmail(email)
     }
 
+    // Loggt den Benutzer aus
     fun logout() {
         firebaseAuth.signOut()
         _currentUser.value = firebaseAuth.currentUser
     }
 
+    // Läd Bild in den Storage
     fun uploadImage(uri: Uri) {
         val imageRef = storageRef.child("images/${firebaseAuth.currentUser!!.uid}/profilePic")
         val uploadTask = imageRef.putFile(uri)
@@ -199,6 +221,7 @@ class FirebaseViewModel : ViewModel() {
         }
     }
 
+    // Updated das Bild
     private fun setUserImage(uri: Uri) {
         profileRef.update("pic", uri.toString())
     }

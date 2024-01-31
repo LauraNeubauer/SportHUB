@@ -1,6 +1,7 @@
 package com.example.myapplication.model
 
 class Event(
+    // Datenklasse für die Speicherung der Daten für Events der Vereine
     var name: String,
     var club: String,
     var participants: Int?,

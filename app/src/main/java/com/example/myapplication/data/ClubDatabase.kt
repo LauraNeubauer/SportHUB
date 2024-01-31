@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.myapplication.model.Club
 
 class ClubDatabase {
+    // LiveData-Objekt für die Clubdaten
     private val clubsData: MutableLiveData<List<Club>> = MutableLiveData()
 
     init {
@@ -12,11 +13,14 @@ class ClubDatabase {
         clubsData.value = getClubData()
     }
 
+    // Funktion, um LiveData-Objekt der Clubdaten abzurufen
     fun getClubs(): LiveData<List<Club>> {
         return clubsData
     }
 
+    // Funktion zur Bereitstellung von Beispielclubdaten
     private fun getClubData(): MutableList<Club> {
+        // Hier werden verschiedene Club-Objekte mit Beispieldaten erstellt
         return mutableListOf<Club>(
             Club(
                 "FC Kickers",

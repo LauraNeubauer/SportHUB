@@ -18,6 +18,7 @@ import java.util.Calendar
 
 class OnBoardingThreeFragment : Fragment() {
 
+    // die benötigten Variablen für das Binding, die Initialisierung der Daten und die ViewModels
     private lateinit var binding: OnboardingThreeFragmentBinding
     private var Verified = false
     private var selectedLevel: String? = null
@@ -32,33 +33,42 @@ class OnBoardingThreeFragment : Fragment() {
     private var size: String? = null
     private var bio: String? = null
 
-
+    // Wird aufgerufen, um das Fragment zu erstellen und die Ansichtshierarchie des Fragments zu erstellen und zurückzugeben
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflatiere das Layout für dieses Fragment
         binding = OnboardingThreeFragmentBinding.inflate(layoutInflater)
         return binding.root
     }
 
+    // Wird sofort nach onCreateView() aufgerufen und wird verwendet, um mit den Ansichten zu interagieren
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Überwache Änderungen im aktuellen Benutzerstatus im FirebaseViewModel
         firebaseViewModel.currentUser.observe(viewLifecycleOwner) {
+            // Navigiere zum HomeFragment, wenn ein Benutzer angemeldet ist
             if (it != null) {
                 findNavController().navigate(R.id.homeFragment)
             }
         }
 
+        // Setzt einen Click-Listener für den Sportarten-Dropdown-Button, um ein Multi-Auswahl-Dialog anzuzeigen
         binding.ddBtSports.setOnClickListener {
             showMultiSelectionDialog(it)
         }
+
+        // Setzt einen Click-Listener für den Level-Dropdown-Button, um ein Popup-Menü anzuzeigen
         binding.ddBtLevel.setOnClickListener {
             showPopupMenuLevel(it)
         }
 
+        // Setzt einen Click-Listener für den "Weiter"-Button
         binding.btWeiter.setOnClickListener {
+            // Überprüft, ob alle erforderlichen Daten eingegeben wurden
             if (
                 Verified &&
                 binding.tietBio.text!!.isNotEmpty() &&
@@ -69,7 +79,7 @@ class OnBoardingThreeFragment : Fragment() {
                 binding.tietPlace.text!!.isNotEmpty() &&
                 selectedLevel != null
             ) {
-
+                // Erstellt ein Bundle mit den eingegebenen Daten
                 val receivedArguments = arguments
 
                 email = receivedArguments!!.getString("email")
@@ -101,6 +111,7 @@ class OnBoardingThreeFragment : Fragment() {
 
                 val currentDate = Calendar.getInstance().time
 
+                // Erstelle eine Instanz von PersonData mit den eingegebenen Daten
                 val personData = PersonData(
                     name = name!!,
                     gender = gender,
@@ -116,8 +127,8 @@ class OnBoardingThreeFragment : Fragment() {
                     date = currentDate.toString()
                 )
 
+                // Registriere den Benutzer in Firebase und navigiere zum nächsten Onboarding-Schritt
                 firebaseViewModel.register(email!!, pw!!, personData)
-
                 findNavController().navigate(
                     R.id.action_onBoardingThreeFragment_to_onBoardingFourFragment,
                     bundle
@@ -131,6 +142,7 @@ class OnBoardingThreeFragment : Fragment() {
                 binding.tietSize.text!!.isEmpty() ||
                 selectedLevel == null)
             ) {
+                // Wenn Daten fehlen, zeige einen Hinweis an
                 Verified = false
                 showPopUp(
                     "Fehlende Daten",

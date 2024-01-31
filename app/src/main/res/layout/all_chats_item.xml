@@ -74,7 +74,7 @@
                 </LinearLayout>
 
                 <ImageButton
-                    android:id="@+id/bt_add"
+                    android:id="@+id/bt_back"
                     style="@style/ib_plus"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"

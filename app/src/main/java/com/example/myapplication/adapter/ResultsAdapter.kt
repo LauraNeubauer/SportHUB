@@ -11,13 +11,16 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.concurrent.ThreadLocalRandom
 
+// Adapter-Klasse für die Anzeige von Ergebnissen // Home und Kalender
 class ResultsAdapter(
     private val dataset: MutableList<Club>
 ) : RecyclerView.Adapter<ResultsAdapter.ItemViewHolder>() {
 
+    // View Holder-Klasse, die die Darstellung eines einzelnen Elements in der RecyclerView hält
     inner class ItemViewHolder(val binding: ResultsListItemSmallBinding) :
         RecyclerView.ViewHolder(binding.root)
 
+    // Methode zur Erstellung eines neuen View Holders
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -27,15 +30,18 @@ class ResultsAdapter(
         return ItemViewHolder(binding)
     }
 
+    // Methode zur Anpassung der Inhalte eines View Holders basierend auf seiner Position im Datensatz
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 
+        // Aufteilen der Club-Liste in zwei Hälften und Zufällige Auswahl von zwei Clubs
         val firstHalf = dataset.subList(0, dataset.size / 2)
         val secondHalf = dataset.subList(dataset.size / 2, dataset.size)
 
         val randomClubGroup1 = firstHalf.random()
         val randomClubGroup2 = secondHalf.random()
 
+        // Setzen von Texten und Daten für die Anzeige von Ergebnissen
         holder.binding.tvGroupOne.text = randomClubGroup1.name
         holder.binding.tvGroupTwo.text = randomClubGroup2.name
         holder.binding.tvSport.text = item.sport
@@ -55,6 +61,7 @@ class ResultsAdapter(
         }
         holder.binding.tvDate.text = generatedDatePlus
 
+        // Setzen der Ergebnisse basierend auf dem Sporttyp
         when (holder.binding.tvSport.text) {
             "FUSSBALL" -> holder.binding.tvGroupOneGoals.text = randomGoals()
             "BADMINTON" -> holder.binding.tvGroupOneGoals.text = randomGoals()
@@ -76,15 +83,18 @@ class ResultsAdapter(
             "HANDBALL" -> holder.binding.tvGroupTwoGoals.text = randomHandball()
         }
 
+        // Setzen von zufälligen Bildern für die Clubs
         holder.binding.grouponepic.setImageResource(randomPicture())
         holder.binding.grouptwopic.setImageResource(randomPicture())
         holder.binding.tvLeague.text = randomLiga()
     }
 
+    // Methode zur Abrufung der Anzahl der Elemente im Datensatz
     override fun getItemCount(): Int {
         return dataset.size
     }
 
+    // Funktion zur Generierung einer zufälligen Uhrzeit
     fun randomTime(): String {
         val randomTime = listOf<String>(
             "11",
@@ -108,10 +118,13 @@ class ResultsAdapter(
         return randomTime.random()
     }
 
+    // Funktion zur Generierung einer zufälligen Anzahl von Toren
     fun randomGoals(): String {
         val randomGoals = listOf<String>("0", "0", "0", "0", "1", "1", "1", "2", "3", "4")
         return randomGoals.random()
     }
+
+    // Funktion zur Generierung einer zufälligen Anzahl von Toren für Squash
     fun randomGoalsSquash(): String {
         val randomGoals = listOf<String>(
             "7",
@@ -135,6 +148,7 @@ class ResultsAdapter(
         return randomGoals.random()
     }
 
+    // Funktion zur Generierung einer zufälligen Anzahl von Toren für Cricket
     fun randomCricket(): String {
         val randomGoals = listOf<String>(
             "231/1",
@@ -151,6 +165,7 @@ class ResultsAdapter(
         return randomGoals.random()
     }
 
+    // Funktion zur Generierung einer zufälligen Anzahl von Toren für Handball
     fun randomHandball(): String {
         val randomGoals = listOf<String>(
             "12",
@@ -172,7 +187,7 @@ class ResultsAdapter(
         return randomGoals.random()
     }
 
-
+    //Ausgabe eines zufälligen Bildes
     fun randomPicture(): Int {
         var pictures = listOf<Int>(
             R.drawable.achievement_1,
@@ -183,6 +198,7 @@ class ResultsAdapter(
         return pictures.random()
     }
 
+    //Ausgabe einer zufälligen Liga
     fun randomLiga(): String {
         var ligen = listOf<String>(
             "1ste Liga",
@@ -196,6 +212,7 @@ class ResultsAdapter(
         return ligen.random()
     }
 
+    //Ausgabe eines zufälligen Datums in der Zukunft
     fun generateRandomDateWithDistribution(maxDaysInPast: Long): String {
         val today = LocalDate.now()
         val randomValue = ThreadLocalRandom.current().nextDouble()
@@ -210,6 +227,7 @@ class ResultsAdapter(
         return generatedDate.format(formatter)
     }
 
+    //Ausgabe des heutigen Datums
     fun generateCurrentDate(): String {
         val today = LocalDate.now()
         val formatter = DateTimeFormatter.ofPattern("dd.MM.yy")
