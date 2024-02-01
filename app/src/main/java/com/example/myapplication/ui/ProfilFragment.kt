@@ -8,18 +8,22 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.myapplication.PersonApi.model.PersonData
+import com.example.myapplication.R
 import com.example.myapplication.data.ClubDatabase
 import com.example.myapplication.data.ExampleDatabase
 import com.example.myapplication.databinding.ProfilFragmentBinding
 import com.example.myapplication.viewmodel.FirebaseViewModel
+import com.example.myapplication.viewmodel.MainViewModel
 
 class ProfilFragment : Fragment() {
 
-    // die benötigten Variablen für das Binding und des ViewModels
+    // die benötigten Variablen für das Binding und der ViewModel
     lateinit var binding: ProfilFragmentBinding
     private val firebaseVM : FirebaseViewModel by activityViewModels()
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     // Aktivitätsresultat, um Bild aus der Galerie auszuwählen
     private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
@@ -63,6 +67,14 @@ class ProfilFragment : Fragment() {
 
                 binding.tvBio.setText(myProfile.bio)
                 binding.cvMatch.visibility = View.INVISIBLE
+
+                binding.btClub.setOnClickListener {
+                    // Navigiere zur Clubansicht und setze den aktuellen Club im ViewModel
+                    mainViewModel.clubdatabase.observe(viewLifecycleOwner) {
+                        mainViewModel.setCurrentClub(it[1])
+                        findNavController().navigate(R.id.action_profilFragment_to_clubFragment)
+                    }
+                }
 
                 // Überprüfe, ob der Benutzer Matches hat, und aktualisiere die UI entsprechend
                 if (myProfile.matches != "0") {

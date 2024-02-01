@@ -77,6 +77,13 @@ class StrangerProfilFragment : Fragment() {
                 binding.tvGroupOneGoals.text = listOf<Int>(1,2,3,4,5,6,7,8).random().toString()
                 binding.tvGroupTwoGoals.text = listOf<Int>(1,2,3,4,5,6,7,8).random().toString()
             }
+
+            binding.btClub.setOnClickListener {
+                mainViewModel.currentProfile.observe(viewLifecycleOwner) {
+                    mainViewModel.setCurrentClub(ClubDatabase().getClubs().value!![it.club!!])
+                    findNavController().navigate(R.id.action_strangerProfilFragment_to_clubFragment)
+                }
+            }
         }
     }
 }
