@@ -22,7 +22,7 @@ class OnBoardingThreeFragment : Fragment() {
     private lateinit var binding: OnboardingThreeFragmentBinding
     private var Verified = false
     private var selectedLevel: String? = null
-    private val checkedItems = booleanArrayOf(false, false, false, false)
+    private val checkedItems = booleanArrayOf(false, false, false, false, false, false)
     private val firebaseViewModel: FirebaseViewModel by activityViewModels()
 
 
@@ -179,7 +179,7 @@ class OnBoardingThreeFragment : Fragment() {
     }
 
     private fun showMultiSelectionDialog(view: View) {
-        val sportsArray = arrayOf("BADMINTON", "SQUASH", "TISCHTENNIS", "TENNIS")
+        val sportsArray = arrayOf("BADMINTON", "SQUASH", "TISCHTENNIS", "TENNIS", "FUSSBALL", "SQUASH")
         val bundle = Bundle()
 
         val builder = AlertDialog.Builder(requireContext(), R.style.CustomAlertDialogStyle)
@@ -271,7 +271,7 @@ class OnBoardingThreeFragment : Fragment() {
         dialog.show()
     }
     private fun getSelectedSportsAsString(): String {
-        val sportsArray = arrayOf("BADMINTON", "SQUASH", "TISCHTENNIS", "TENNIS")
+        val sportsArray = arrayOf("BADMINTON", "SQUASH", "TISCHTENNIS", "TENNIS", "FUSSBALL", "SQUASH")
         val selectedSports = sportsArray.filterIndexed { index, _ ->
             checkedItems[index]
         }
