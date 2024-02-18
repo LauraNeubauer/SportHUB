@@ -17,8 +17,8 @@ Starte die App in Android Studio -> Pixel 3 XL
 Beitrag
 Wir freuen uns über jegliche Beiträge zur Weiterentwicklung von SportHub. Wenn du einen Fehler entdeckst, eine Funktion hinzufügen möchtest oder Verbesserungsvorschläge hast, erstelle bitte ein Issue oder eine Pull-Anfrage.
 
-Lizenz
-Diese App steht unter der MIT Lizenz.
+Copyright
+Laura Neubauer
 
 Vielen Dank, dass du SportHub verwendest und zur Entwicklung beiträgst! 🚀
 
@@ -44,9 +44,8 @@ Contribution
 
 We welcome contributions to the ongoing development of SportHub. If you find a bug, want to add a feature, or have suggestions for improvement, please create an issue or a pull request.
 
-License
-
-This app is licensed under the MIT License.
+Copyright
+Laura Neubauer
 
 Thank you for using SportHub and contributing to its development! 🚀
 
