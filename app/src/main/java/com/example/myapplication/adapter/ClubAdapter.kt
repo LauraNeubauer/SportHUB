@@ -58,7 +58,7 @@ class ClubAdapter(
         holder.binding.tvDate.text = ""
 
         // Kürzen der Biografie, wenn sie zu lang ist
-        val maxCharCount = 97
+        val maxCharCount = 35
         val originalText = item.bio
         val truncatedText = if (originalText.length > maxCharCount) {
             originalText.substring(0, maxCharCount - 3) + "..."

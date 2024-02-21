@@ -29,7 +29,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_finder_results"
                 android:layout_width="0dp"
-                android:layout_height="240dp"
+                android:layout_height="205dp"
                 android:backgroundTint="@color/white"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -95,8 +95,8 @@
                             android:id="@+id/tv_level_2"
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_marginRight="8dp"
+                            android:layout_weight="1"
                             android:gravity="center"
                             android:text="TextView"
                             android:textStyle="bold" />
@@ -105,10 +105,10 @@
                     <TextView
                         android:id="@+id/tv_title"
                         android:layout_width="match_parent"
-                        android:layout_height="65dp"
+                        android:layout_height="35dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="0dp"
                         android:layout_marginRight="20dp"
                         android:fontFamily="@font/inter_bold"
                         android:gravity="center_vertical"
@@ -150,8 +150,8 @@
                         style="@style/ctab_club_name"
                         android:layout_width="match_parent"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="2dp" />
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="20dp" />
 
                 </LinearLayout>
 

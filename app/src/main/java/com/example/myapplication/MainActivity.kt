@@ -10,6 +10,8 @@ import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    //In meiner Freizeit bin ich sehr gerne in Museen und bei Poetry Slams oder gehe zum Sport wenn ich nicht grade arbeite. Grüße an alle!
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
